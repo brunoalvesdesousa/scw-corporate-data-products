@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": "5.61",
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "SCW8166271792963158.json",
+      "reportVersionAtImport": "5.61",
+      "type": "RegisteredResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "Gantt1448688115699",
+    "GanttChartByMAQSoftware1448688115701"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Info(Blue)7950286105179529.png",
+          "path": "Info(Blue)7950286105179529.png",
+          "type": "Image"
+        },
+        {
+          "name": "Information6687017335246797.png",
+          "path": "Information6687017335246797.png",
+          "type": "Image"
+        },
+        {
+          "name": "e-mail47981370862257355.png",
+          "path": "e-mail47981370862257355.png",
+          "type": "Image"
+        },
+        {
+          "name": "logo-transparent3665596538671714.png",
+          "path": "logo-transparent3665596538671714.png",
+          "type": "Image"
+        },
+        {
+          "name": "nhs_white_transparent_bg8551789625227306.png",
+          "path": "nhs_white_transparent_bg8551789625227306.png",
+          "type": "Image"
+        },
+        {
+          "name": "sample_cover021249541037407393.png",
+          "path": "sample_cover021249541037407393.png",
+          "type": "Image"
+        },
+        {
+          "name": "SCW8166271792963158.json",
+          "path": "SCW8166271792963158.json",
+          "type": "CustomTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "isPersistentUserStateDisabled": true,
+    "hideVisualContainerHeader": true,
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "useEnhancedTooltips": true,
+    "disableFilterPaneSearch": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

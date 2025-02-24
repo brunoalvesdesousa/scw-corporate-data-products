@@ -1,0 +1,165 @@
+relationship ad5e508e-39f8-4e42-b008-054dfa25e018
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 0_Environment.'Latest Refresh Date'
+	toColumn: LocalDateTable_1bf9ab83-455b-4186-aa51-b31af66c5eba.Date
+
+relationship 75d5e039-3d58-4dfa-94db-6bda167ea7cb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.ActionedOn
+	toColumn: LocalDateTable_b6c0cde6-ad9c-48f6-acd0-cfcf29d38ab7.Date
+
+relationship f6d3a1a1-c638-4491-a8fd-7b7ec29ab342
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.CabApprovalDate
+	toColumn: LocalDateTable_d8144635-685b-465a-aeb6-8527f183145c.Date
+
+relationship ece0846c-ae9a-4577-9e50-0db1f608c584
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.ApprovedByPoDate
+	toColumn: LocalDateTable_9740e63d-ac96-40bf-b221-3328ec36846a.Date
+
+relationship 20e4dda7-fa33-4cb5-a439-100886f557b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.ApprovedByBiADate
+	toColumn: LocalDateTable_80644642-1243-42f5-86e2-a1bfe7295295.Date
+
+relationship df2776fe-2770-4306-b8b2-5e6b91c164fb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.FinalApprovalByDate
+	toColumn: LocalDateTable_9b7c460a-650d-4cd1-be96-5323adc63796.Date
+
+relationship 19c848c1-a910-43b3-bc8e-419f41abef4c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Alpha_start
+	toColumn: LocalDateTable_25e3d024-f0c2-4bbe-8ef9-be45623e34e4.Date
+
+relationship efdaba42-1d48-4543-a5b9-6cf31cd9e6c4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Alpha_end
+	toColumn: LocalDateTable_eb79f2e5-5989-42a1-95c7-b48d354564da.Date
+
+relationship 2b54546a-e244-4ce8-808a-4a511844cb12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Beta_start
+	toColumn: LocalDateTable_eb7e65ed-0776-49c6-9258-00fef0a61acd.Date
+
+relationship e74e9f69-d3b8-4560-9d5e-5472e766ba41
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Beta_end
+	toColumn: LocalDateTable_ebcf43d3-253d-47af-a94f-06b5b0df997a.Date
+
+relationship 80377873-a040-404f-9179-e6195526e15e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Actual_release_date
+	toColumn: LocalDateTable_0f59f510-f816-4d22-ac5b-2c8217c2748d.Date
+
+relationship e0f1a216-aa43-4a67-beb7-23b612e59a70
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Foundations_start
+	toColumn: LocalDateTable_45d29060-68a2-4591-b3ca-ada0bab5b0bd.Date
+
+relationship f2b0fbfa-1834-4a98-808d-93aa95d14309
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Foundations_end
+	toColumn: LocalDateTable_c6490b4c-d805-4d1a-b0b4-781f1a0e278d.Date
+
+relationship b648064a-e239-45fe-b604-94f4c9228c9d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Design_start
+	toColumn: LocalDateTable_173d9f98-0466-4abb-a7f3-83e2648be467.Date
+
+relationship b202f030-916f-42ca-a633-443d2ed80ba2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Design_end
+	toColumn: LocalDateTable_a1401531-5329-4c32-bec0-5fd36c2edb48.Date
+
+relationship f055cb77-1385-47a0-baff-3e262be6c7a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Build_start
+	toColumn: LocalDateTable_4500d556-9028-4d82-825e-fb035c7a05be.Date
+
+relationship da2cb1d9-526d-4210-8094-369add85144e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Build_end
+	toColumn: LocalDateTable_debf4095-1527-4a96-b735-f4e9e2ce60e9.Date
+
+relationship 4a47d781-b792-4062-9fcf-51abc1d1876c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Modified
+	toColumn: LocalDateTable_4fe8ccb0-24d6-4ad9-86ea-62f8c984c8e0.Date
+
+relationship 98986bd8-2786-4ce0-9dab-615d810c32ed
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Created
+	toColumn: LocalDateTable_9cfefd2a-d0e8-4ece-9881-56fd201dcb94.Date
+
+relationship 899acb3a-31c3-47b4-a473-26423d370b50
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_requests.Estimated_release_date
+	toColumn: LocalDateTable_a89bf1d4-be7c-44e5-8cd7-fc821744e490.Date
+
+relationship 79e697f1-737a-4f34-a8ab-9b62e05168af
+	fromColumn: data_smarttime.Timesheet_Start
+	toColumn: LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad.Date
+
+relationship 1bc102ee-5957-42b9-8404-67a75cdd9324
+	fromColumn: data_smarttime.Timesheet_End
+	toColumn: LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9.Date
+
+relationship 66cc08a9-01f4-4a71-a563-4ebe8a5fa700
+	fromColumn: data_smarttime.Timesheet_Closed_Date
+	toColumn: LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8.Date
+
+relationship 5815c43f-01b4-4949-a08e-47fb617930aa
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5.Date
+
+relationship 0f083c25-578e-49db-bba5-f024755a4da4
+	fromColumn: data_smarttime.Activity_Submitted_Date
+	toColumn: LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478.Date
+
+relationship acfb7cb0-931a-49c4-bbc7-4ca731ce381d
+	fromColumn: data_smarttime.Activity_Created_Date
+	toColumn: LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1.Date
+
+relationship 07c29181-dca9-43e3-8970-d22148cf8522
+	fromColumn: data_smarttime.Work_Activity_Start
+	toColumn: LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f.Date
+
+relationship 742fdd01-1485-4870-8fab-1a1a8e5bbfa1
+	fromColumn: data_smarttime.Work_Activity_End
+	toColumn: LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079.Date
+
+relationship 6f553c66-a999-4054-ab28-0229ed70f383
+	fromColumn: data_smarttime.Work_Activity_Retire_Date
+	toColumn: LocalDateTable_6851690c-909b-45d1-8492-6d3a0826b01d.Date
+
+relationship ab5e0537-b0c8-432b-b065-a88b3da8a16d
+	fromColumn: data_smarttime.Solution_Start_Date
+	toColumn: LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51.Date
+
+relationship f8e80423-1cc7-42a1-ae8f-16982d4a7bae
+	fromColumn: data_smarttime.Solution_End_Date
+	toColumn: LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0.Date
+
+relationship 1e5a611c-214e-4c89-bd68-fcdda0d67ad9
+	fromColumn: data_smarttime.Contract_Start_Date
+	toColumn: LocalDateTable_9ef9bfae-9967-4a5e-8360-af829fa81e1c.Date
+
+relationship 32972082-f68c-4264-98e9-1d2d419c6982
+	fromColumn: data_smarttime.Contract_End_Date
+	toColumn: LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e.Date
+
+relationship d0af149a-5af1-4f1b-a81f-ebd1cb167814
+	fromColumn: data_smarttime.Rate_Start_Date
+	toColumn: LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1.Date
+
+relationship 2546d8aa-d76d-4c85-ba14-a5e1680e5dfb
+	fromColumn: data_smarttime.Rate_End_Date
+	toColumn: LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079.Date
+
+relationship d74e4a73-eb15-c06b-bb33-8d8d8e5ee410
+	securityFilteringBehavior: none
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: base_date.Date
+

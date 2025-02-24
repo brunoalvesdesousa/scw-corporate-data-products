@@ -1,0 +1,187 @@
+table base_date
+	lineageTag: ce72862b-1c9b-4f0d-abc6-4f3917a2e0a8
+	dataCategory: Time
+
+	measure calc_late_submission = ```
+			
+			    IF(
+			        MAX(data_smarttime[Activity_Submitted_Date])>MAX(base_date[Financial Week Start Plus 7]),
+			        "red",
+			        "green"
+			    )
+			
+			```
+		lineageTag: 70b05ce8-4343-413f-ae65-7b3690e48d67
+
+	column Date
+		isKey
+		formatString: Short Date
+		lineageTag: a672ae59-50b1-4bee-ace6-076d862aeb46
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: yyyy
+		lineageTag: 1c99249c-f59a-443a-9ad2-b629e8a0efe8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Year'
+		formatString: mmm-yy
+		lineageTag: 37f25fa7-32bf-4706-8e4d-04c097398a9e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Year]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Month
+		lineageTag: 8d2864f7-4cd3-4099-a0b7-014734c826d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: ebd9edf7-1af3-4d2f-b752-26aed56f0495
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		lineageTag: ab9fe071-4a65-4c45-9826-b63398e62890
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		formatString: 0
+		lineageTag: e4e9da06-3808-493c-9052-d2b769fb9503
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of the Month Number'
+		formatString: 0
+		lineageTag: d0a9a34e-6bfd-4112-99a6-859d65eefcb4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of the Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Year'
+		lineageTag: c6c3bcc4-faa8-4ce1-89bf-b75443bcefab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Number'
+		formatString: 0
+		lineageTag: fe7425e3-2677-4c43-8c74-c22f0a685b22
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Start'
+		formatString: General Date
+		lineageTag: 3f00eea5-dcaa-430f-9290-4afcc7f1e65c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week Start]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week End'
+		formatString: General Date
+		lineageTag: 5d74d434-e524-4ef4-bac6-d8b32b028bfc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week End]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Start Plus 7'
+		formatString: dd/mm
+		lineageTag: a5e37cf4-6c2f-4348-8550-9e692ac1a57c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week Start Plus 7]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition base_date = calculated
+		mode: import
+		source = ```
+				
+				VAR FYStart = "04"
+				VAR todayreference = TODAY()
+				VAR FirstYear = -- Customizes the first year to use
+				    MIN(data_smarttime[Activity_Date])
+				VAR LastYear = -- Customizes the last year to use
+				    max(data_smarttime[Activity_Date])
+				RETURN
+				ADDCOLUMNS (
+				    FILTER (
+				        CALENDARAUTO (),
+				        AND([Date] >= FirstYear,[Date] <= todayreference)),
+				    "Year", DATE ( YEAR ( [Date] ), 12, 31 ),
+				    "Month Year", EOMONTH ( [Date], 0 ),
+				    "Month", FORMAT ( [Date], "mmm" ),
+				    "Month Number", MONTH ( [Date] ),
+				    "Day of Week", FORMAT ( [Date], "dddd" ),
+				    "Day of Week Number", WEEKDAY ( [Date],2),
+				    "Day of the Month Number", DAY([Date]),
+				    "Financial Year", IF(FYStart <= FORMAT([Date],"MM"), YEAR([Date]) & "-" & YEAR([Date])+1 ,YEAR([Date])-1 & "-" & YEAR([Date])),
+				    "Financial Week Number", 
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1) // Adjust year for dates before April
+				        RETURN
+				            WEEKNUM(CurrentDate - FinancialYearStart + 1, 2), // Week number based on Financial Year start
+				    "Financial Week Start",
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            FinancialYearStart + (WeekNumber - 1) * 7, // Calculate week start
+				    "Financial Week End",
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            FinancialYearStart + WeekNumber * 7 - 1, // Calculate week end
+				    "Financial Week Start Plus 7",
+				         VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            CALCULATE(FinancialYearStart + (WeekNumber - 1) * 7) + 7 //Week start + 7 days
+				)
+				```
+
+	annotation PBI_Id = 200ca531d2c44f8ba9c0940dd4e6cb7f
+

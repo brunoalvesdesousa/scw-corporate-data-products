@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "smarttime_data_quality"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b990a8d7-0b30-475d-a07e-160dcb0ecdcb"
+  }
+}

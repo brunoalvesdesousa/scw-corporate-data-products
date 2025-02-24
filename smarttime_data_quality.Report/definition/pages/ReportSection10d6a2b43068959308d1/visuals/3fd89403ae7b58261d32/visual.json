@@ -1,0 +1,141 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "3fd89403ae7b58261d32",
+  "position": {
+    "x": 528,
+    "y": 72,
+    "z": 1000,
+    "height": 384,
+    "width": 728.00000000000011,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Summary Text",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#005eb8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla justo ac arcu varius sagittis. Morbi felis leo, consectetur in vehicula non, vulputate id massa. Suspendisse suscipit lacus sed fringilla aliquet. Duis eu lorem porttitor, vestibulum ante nec, sodales mauris. Nam ut congue nibh. Aenean tincidunt lectus et mauris aliquet tincidunt. Fusce rhoncus sapien nisl. Phasellus auctor suscipit nibh, vitae laoreet urna sagittis ut. Duis tempor blandit purus euismod molestie. Etiam malesuada vitae orci non sollicitudin. "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pellentesque at quam porta, vulputate mauris vel, pulvinar dui. Quisque ac magna quis ligula dapibus congue vel vel nisl. Sed vulputate sem eu lacus elementum lacinia. Maecenas ac pharetra odio, non facilisis ipsum."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Nullam turpis magna, vehicula non feugiat quis, ullamcorper a velit. Sed congue tempor tellus feugiat volutpat. Aenean purus risus, iaculis a vulputate et, rhoncus quis nulla. Donec cursus arcu purus, nec porttitor risus dapibus non. Morbi aliquam egestas lacus eu volutpat. Nam dignissim enim turpis, et laoreet metus eleifend a. Vestibulum eget sollicitudin lacus, id finibus metus. "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'txt_Report Details 1'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "068468c69a3362303e00"
+}

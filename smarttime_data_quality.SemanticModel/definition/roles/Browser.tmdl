@@ -1,0 +1,5 @@
+role Browser
+	modelPermission: read
+
+	annotation PBI_Id = 4a956c9d6fa24cc2bd65113a555c7c82
+
