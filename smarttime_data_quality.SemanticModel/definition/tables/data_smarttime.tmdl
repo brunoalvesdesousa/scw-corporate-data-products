@@ -1430,7 +1430,7 @@ table data_smarttime
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	column calc_lateness_conditional_formatting =
+	column calc_lateness_conditional_formatting = ```
 			
 			IF(
 			    AND(
@@ -1439,10 +1439,9 @@ table data_smarttime
 			    ),
 			    "grey",
 			    IF(
-			        AND(
-			            ISBLANK(data_smarttime[Timesheet_Closed_Date]),
-			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by]))
-			        ),
+			            ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
+			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
+			            data_smarttime[calc_timesheet_due_by]<=TODAY(),        
 			        "red",
 			        IF(
 			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
@@ -1451,6 +1450,7 @@ table data_smarttime
 			        )
 			    )
 			)
+			```
 		lineageTag: 5ab44cd6-7c4f-4167-af3b-49210c5babf8
 		summarizeBy: none
 
@@ -1467,7 +1467,7 @@ table data_smarttime
 
 		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
 
-	column calc_lateness =
+	column calc_lateness = ```
 			
 			IF(
 			    AND(
@@ -1475,17 +1475,19 @@ table data_smarttime
 			        ISBLANK(data_smarttime[Timesheet_Closed_Date])
 			    ),
 			    "not due",
-			IF(
-			    AND(
-			        ISBLANK(data_smarttime[Timesheet_Closed_Date]),
-			        NOT(ISBLANK(data_smarttime[calc_timesheet_due_by]))
-			    ),
-			    "unsubmitted",
 			    IF(
-			        DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
-			        "late",
-			        "on time"
-			)))
+			            ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
+			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
+			            data_smarttime[calc_timesheet_due_by]<=TODAY(),        
+			        "unsubmitted",
+			        IF(
+			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
+			            "late",
+			            "on time"
+			        )
+			    )
+			)
+			```
 		lineageTag: 6b37ac92-7cb8-4297-91a3-58cc28d78a0e
 		summarizeBy: none
 
