@@ -17,17 +17,54 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "base_date"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Activity_Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
                     }
                   },
-                  "Property": "Month Year"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "base_date.Month Year",
-              "nativeQueryRef": "Month Year",
+              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Activity_Date Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Activity_Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Activity_Date Month",
               "active": true
             }
           ]
@@ -60,7 +97,7 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_activity_count"
+                  "Property": "calc_timesheet_count"
                 }
               },
               "queryRef": "data_smarttime.calc_activity_count",
@@ -68,24 +105,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "base_date"
-                  }
-                },
-                "Property": "Month Year"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {

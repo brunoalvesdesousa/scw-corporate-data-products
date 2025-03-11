@@ -13,7 +13,7 @@ table data_smarttime
 		sourceLineageTag: 37288a89-1af3-4a8f-bade-9a1adb964c51
 		dataCategory: Uncategorized
 
-	measure calc_activity_count = ```
+	measure calc_timesheet_count = ```
 			
 			    DISTINCTCOUNT(data_smarttime[Timesheet_Id])
 			```
@@ -26,8 +26,8 @@ table data_smarttime
 			
 			1-
 			DIVIDE(
-			    CALCULATE([calc_activity_count],data_smarttime[calc_lateness]="unsubmitted"),
-			    [calc_activity_count]
+			    CALCULATE([calc_timesheet_count],data_smarttime[calc_lateness]="unsubmitted"),
+			    [calc_timesheet_count]
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5bb47a37-49ae-4812-a5a3-758395d6fb59
@@ -35,6 +35,129 @@ table data_smarttime
 		changedProperty = Name
 
 		changedProperty = FormatString
+
+	measure calc_submitted_timesheets = ```
+			
+			CALCULATE(
+			    [calc_timesheet_count],
+			    data_smarttime[calc_lateness] = "late" || data_smarttime[calc_lateness] = "on time"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e3c5598b-d4c7-4da6-b480-34bab0831a5b
+
+		changedProperty = Name
+
+	measure calc_unsubmitted_timesheets =
+			
+			CALCULATE(
+			    [calc_timesheet_count],
+			    data_smarttime[calc_lateness] = "unsubmitted"
+			)
+		formatString: 0
+		lineageTag: 0d1c2f8a-222f-4edf-968f-8e093c970d48
+
+		changedProperty = Name
+
+	measure calc_submitted_hours =
+			
+			CALCULATE(
+			    [calc_total_activity_hours],
+			    data_smarttime[calc_lateness] = "late" || data_smarttime[calc_lateness] = "on time"
+			)
+		lineageTag: e592e13c-6470-47d9-9ab9-9779c6ed3c4e
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_unsubmitted_hours =
+			
+			CALCULATE(
+			    [calc_total_activity_hours],
+			    data_smarttime[calc_lateness] = "unsubmitted"
+			)
+		lineageTag: 5d362946-6b52-40ef-831f-127962f71622
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_total_activity_hours =
+			
+			SUM(data_smarttime[Activity_Hours])
+		lineageTag: 65452d28-30a1-4151-a095-f3695426d25f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_smarttime_days_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[calc_smarttime_days]),
+			        data_smarttime[Activity_Non_Invoiceable]=FALSE
+			    )
+			```
+		formatString: 0.00
+		lineageTag: 944b34e2-5879-4a3a-8fdc-427faf25d892
+
+		changedProperty = FormatString
+
+	measure calc_smarttime_days_non_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[calc_smarttime_days]),
+			        data_smarttime[Activity_Non_Invoiceable]=TRUE
+			    )
+			```
+		formatString: #,0.00
+		lineageTag: b2d0e000-8198-4764-a9ca-abd833198ab6
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_burn_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[Rate]),
+			        data_smarttime[Activity_Non_Invoiceable]=FALSE
+			    )
+			```
+		lineageTag: eb72e224-e6ff-49ad-9726-92af2d3dfac5
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_burn_non_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[Rate]),
+			        data_smarttime[Activity_Non_Invoiceable]=TRUE
+			    )
+			```
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: f3c174ad-636c-45f7-abba-aa244b62e776
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_activity_start_date = ```
+			
+			    CALCULATE(MIN(data_smarttime[Activity_Date]),
+			    REMOVEFILTERS(data_smarttime[Activity_Date])
+			    )
+			```
+		formatString: General Date
+		lineageTag: 70f8e708-7fb9-4daf-be82-a02ba958e04f
+
+		changedProperty = Name
 
 	column tmp_Id
 		dataType: int64
@@ -148,7 +271,7 @@ table data_smarttime
 
 	column Activity_Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd/mm/yyyy
 		lineageTag: 9899cd53-965d-421b-aebf-8314375a1241
 		sourceLineageTag: 2ddfbf5f-e434-477a-9a8a-7f974c9b979d
 		dataCategory: Uncategorized
@@ -160,7 +283,11 @@ table data_smarttime
 			relationship: 5815c43f-01b4-4949-a08e-47fb617930aa
 			defaultHierarchy: LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5.'Date Hierarchy'
 
+		changedProperty = FormatString
+
 		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Activity_Hours
 		dataType: double
@@ -900,7 +1027,7 @@ table data_smarttime
 
 	column Solution_Start_Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: fdad8b59-68b3-457a-96b0-8876be08f004
 		sourceLineageTag: 1df4c1ac-7464-49d7-8fcf-d3d37effa492
 		dataCategory: Uncategorized
@@ -912,11 +1039,13 @@ table data_smarttime
 			relationship: ab5e0537-b0c8-432b-b065-a88b3da8a16d
 			defaultHierarchy: LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51.'Date Hierarchy'
 
+		changedProperty = FormatString
+
 		annotation SummarizationSetBy = User
 
 	column Solution_End_Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 9bee971e-b03f-4fd3-98ae-4d16de2d5f8a
 		sourceLineageTag: a48ed983-34ef-42e0-b3ba-682804b4b718
 		dataCategory: Uncategorized
@@ -927,6 +1056,8 @@ table data_smarttime
 			isDefault
 			relationship: f8e80423-1cc7-42a1-ae8f-16982d4a7bae
 			defaultHierarchy: LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0.'Date Hierarchy'
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = User
 
@@ -1325,13 +1456,18 @@ table data_smarttime
 
 	column Rate
 		dataType: double
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
 		lineageTag: e687e499-0420-4f1c-96d4-4a363be63c78
 		sourceLineageTag: b81af538-557c-4954-8c2e-f782bef7c639
 		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: Rate
 
+		changedProperty = FormatString
+
 		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
 
 	column Day_Cost
 		dataType: double
@@ -1441,7 +1577,7 @@ table data_smarttime
 			    IF(
 			            ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
 			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
-			            data_smarttime[calc_timesheet_due_by]<=TODAY(),        
+			            data_smarttime[calc_timesheet_due_by]<TODAY(),        
 			        "red",
 			        IF(
 			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
@@ -1478,7 +1614,7 @@ table data_smarttime
 			    IF(
 			            ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
 			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
-			            data_smarttime[calc_timesheet_due_by]<=TODAY(),        
+			            data_smarttime[calc_timesheet_due_by]<TODAY(),        
 			        "unsubmitted",
 			        IF(
 			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
@@ -1503,6 +1639,25 @@ table data_smarttime
 		summarizeBy: sum
 
 		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_activity_name_wanumber = "WA" & data_smarttime[Work_Activity_Id] & " - " & data_smarttime[Work_Activity_Name]
+		lineageTag: c7785a85-afdf-44e6-af17-b4449ea9db46
+		summarizeBy: none
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_smarttime_days = data_smarttime[Activity_Hours]/7.5
+		formatString: 0.00
+		lineageTag: ca91cd93-377b-4576-a251-62ab5d1022fe
+		summarizeBy: sum
+
+		changedProperty = Name
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 

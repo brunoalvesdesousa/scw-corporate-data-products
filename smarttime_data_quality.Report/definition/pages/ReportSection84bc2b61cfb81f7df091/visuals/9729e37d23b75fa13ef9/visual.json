@@ -6,7 +6,7 @@
     "y": 0,
     "z": 3500,
     "height": 64,
-    "width": 192,
+    "width": 272,
     "tabOrder": 3000
   },
   "visual": {
@@ -17,106 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Selected_Group_Name_Short"
                 }
               },
-              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Activity_Date Year",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Quarter"
-                }
-              },
-              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Activity_Date Quarter",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Activity_Date Month",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Day"
-                }
-              },
-              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "Activity_Date Day",
+              "queryRef": "data_smarttime.Selected_Group_Name_Short",
+              "nativeQueryRef": "Selected_Group_Name_Short",
               "active": true
             }
           ]
@@ -131,128 +42,13 @@
         "levels": [
           {
             "queryRefs": [
-              "data_smarttime.Activity_Date.Variation.Date Hierarchy.Year"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5"
-                    }
-                  },
-                  "Property": "Year"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "data_smarttime.Activity_Date.Variation.Date Hierarchy.Quarter"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5"
-                    }
-                  },
-                  "Property": "Quarter"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "data_smarttime.Activity_Date.Variation.Date Hierarchy.Month"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5"
-                    }
-                  },
-                  "Property": "Month"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "data_smarttime.Activity_Date.Variation.Date Hierarchy.Day"
+              "data_smarttime.Selected_Group_Name_Short"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "2025L"
-                  }
-                }
-              ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Qtr 1'"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "'February'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "2024L"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'Qtr 4'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -272,108 +68,6 @@
       "general": [
         {
           "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "l",
-                    "Entity": "LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "l"
-                                }
-                              },
-                              "Property": "Year"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "2025L"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "HierarchyLevel": {
-                              "Expression": {
-                                "Hierarchy": {
-                                  "Expression": {
-                                    "PropertyVariationSource": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "data_smarttime"
-                                        }
-                                      },
-                                      "Name": "Variation",
-                                      "Property": "Activity_Date"
-                                    }
-                                  },
-                                  "Hierarchy": "Date Hierarchy"
-                                }
-                              },
-                              "Level": "Year"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "2025L"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5"
-                                    }
-                                  },
-                                  "Property": "Year"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "2025"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            },
             "outlineColor": {
               "solid": {
                 "color": {
@@ -1260,44 +954,10 @@
                 "Entity": "data_smarttime"
               }
             },
-            "Property": "calc_activity_count"
+            "Property": "calc_timesheet_count"
           }
         },
         "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "data_smarttime",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 1,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "calc_activity_count"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "0L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       }
     ]

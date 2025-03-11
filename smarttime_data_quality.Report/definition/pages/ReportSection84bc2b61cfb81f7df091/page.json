@@ -1,10 +1,88 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
   "name": "ReportSection84bc2b61cfb81f7df091",
-  "displayName": "Line Manager",
+  "displayName": "dt_individuals",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "710d9376e24e1644699a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_CostCentre"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "data_smarttime",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Person_CostCentre"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'909501'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "665fc9fda24cbd46e2b3",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "6796c5a7842de0e46223",
+        "boundFilter": "710d9376e24e1644699a",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_CostCentre"
+          }
+        }
+      }
+    ]
+  },
   "objects": {
     "background": [
       {
@@ -50,6 +128,8 @@
       }
     ]
   },
+  "visibility": "HiddenInViewMode",
+  "type": "Drillthrough",
   "visualInteractions": [
     {
       "source": "711a1a7b442de987e3a2",

@@ -158,8 +158,33 @@ relationship 2546d8aa-d76d-4c85-ba14-a5e1680e5dfb
 	fromColumn: data_smarttime.Rate_End_Date
 	toColumn: LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079.Date
 
-relationship d74e4a73-eb15-c06b-bb33-8d8d8e5ee410
+relationship 7ff7ab30-15a6-f5d8-db12-667169c2d60a
+	isActive: false
 	securityFilteringBehavior: none
 	fromColumn: data_smarttime.Activity_Date
 	toColumn: base_date.Date
+
+relationship 19fb7b1a-d6f2-48df-84b6-70993ae97556
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_oracle_income.Month
+	toColumn: LocalDateTable_4a74eef2-8371-4919-a66b-311731f5dd28.Date
+
+relationship 4127038c-6504-42fd-ab3b-cc803d817788
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_oracle_income.Posted_date
+	toColumn: LocalDateTable_b9d28b4d-885c-4a79-bb7f-3d8f0e9c6492.Date
+
+relationship a24667bc-cdc9-4250-95c9-92dd8ffcc051
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_oracle_income.Transaction_Date
+	toColumn: LocalDateTable_7367a120-51f6-40f0-916d-4d1d11bc1cee.Date
+
+relationship AutoDetected_b7299643-01b6-4532-add7-41f7623c7e61
+	fromColumn: data_oracle_income.Cost_centre
+	toColumn: data_costcentre_master.Cost_Centre
+
+relationship 55d434b0-0a1b-2438-ef5a-25d358e61c5b
+	securityFilteringBehavior: none
+	fromColumn: data_smarttime.Person_CostCentre
+	toColumn: data_costcentre_master.Cost_Centre
 

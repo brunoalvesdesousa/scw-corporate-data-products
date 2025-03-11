@@ -97,7 +97,7 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_activity_count"
+                  "Property": "calc_timesheet_count"
                 }
               },
               "queryRef": "data_smarttime.calc_activity_count",

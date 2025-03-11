@@ -56,7 +56,7 @@ table base_date
 	column 'Month Number'
 		formatString: 0
 		lineageTag: ebd9edf7-1af3-4d2f-b752-26aed56f0495
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Month Number]
 
@@ -73,7 +73,7 @@ table base_date
 	column 'Day of Week Number'
 		formatString: 0
 		lineageTag: e4e9da06-3808-493c-9052-d2b769fb9503
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Day of Week Number]
 
@@ -82,7 +82,7 @@ table base_date
 	column 'Day of the Month Number'
 		formatString: 0
 		lineageTag: d0a9a34e-6bfd-4112-99a6-859d65eefcb4
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Day of the Month Number]
 
@@ -99,7 +99,7 @@ table base_date
 	column 'Financial Week Number'
 		formatString: 0
 		lineageTag: fe7425e3-2677-4c43-8c74-c22f0a685b22
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Financial Week Number]
 
