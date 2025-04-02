@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "269fbd099e92b23a5d8e",
   "position": {
     "x": 664,
@@ -56,23 +56,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "data_smarttime"
-                        }
-                      },
-                      "Property": "Rate"
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
                     }
                   },
-                  "Function": 0
+                  "Property": "calc_rate2"
                 }
               },
-              "queryRef": "Sum(data_smarttime.Rate)",
-              "nativeQueryRef": "burn",
-              "displayName": "burn"
+              "queryRef": "data_smarttime.calc_rate2",
+              "nativeQueryRef": "calc_rate2"
             }
           ]
         }
@@ -81,18 +75,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "data_smarttime"
-                      }
-                    },
-                    "Property": "Rate"
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
                   }
                 },
-                "Function": 0
+                "Property": "calc_rate2"
               }
             },
             "direction": "Descending"
@@ -177,7 +166,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 1,
+                      "ColorId": 0,
                       "Percent": 0
                     }
                   }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "48e95f1600445278ace4",
   "position": {
     "x": 64,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "SmartTime Data Quality - Notes",
+                    "value": "SmartTime data quality - notes",
                     "textStyle": {
                       "fontSize": "16pt",
                       "color": "#ffffff"

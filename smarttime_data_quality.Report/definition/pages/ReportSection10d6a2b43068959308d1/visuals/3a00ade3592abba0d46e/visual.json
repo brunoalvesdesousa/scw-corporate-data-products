@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "3a00ade3592abba0d46e",
   "position": {
     "x": 0,
@@ -19,14 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "  ",
-                    "textStyle": {
-                      "fontSize": "16pt",
-                      "color": "#005eb8"
-                    }
-                  },
-                  {
-                    "value": "Report Information",
+                    "value": "  Report Information",
                     "textStyle": {
                       "fontSize": "12pt",
                       "color": "#005eb8"

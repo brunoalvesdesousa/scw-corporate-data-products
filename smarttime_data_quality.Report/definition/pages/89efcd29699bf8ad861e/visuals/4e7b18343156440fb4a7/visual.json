@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "4e7b18343156440fb4a7",
   "position": {
     "x": 208,
     "y": 0,
     "z": 3000,
-    "height": 248.00000000000003,
+    "height": 224.00000000000003,
     "width": 1032,
     "tabOrder": 1000
   },
@@ -83,7 +83,8 @@
                 }
               },
               "queryRef": "data_smarttime.calc_submission_late",
-              "nativeQueryRef": "calc_lateness_conditional_formatting"
+              "nativeQueryRef": "lateness",
+              "displayName": "lateness"
             }
           ]
         },
@@ -101,7 +102,8 @@
                 }
               },
               "queryRef": "data_smarttime.calc_activity_count",
-              "nativeQueryRef": "calc_timesheet_count"
+              "nativeQueryRef": "timesheet count",
+              "displayName": "timesheet count"
             }
           ]
         }
@@ -334,6 +336,26 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "enableDetailDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "c19e2fd237bf938245c2",
   "position": {
     "x": 0,
-    "y": 264,
+    "y": 240,
     "z": 1000,
-    "height": 304,
+    "height": 224.00000000000003,
     "width": 1240,
     "tabOrder": 0
   },
@@ -83,12 +83,12 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_submitted_timesheets"
+                  "Property": "calc_submitted_timesheets_%"
                 }
               },
-              "queryRef": "data_smarttime.calc_submitted_timesheets",
-              "nativeQueryRef": "submitted",
-              "displayName": "submitted"
+              "queryRef": "data_smarttime.calc_submitted_timesheets_%",
+              "nativeQueryRef": "submitted %",
+              "displayName": "submitted %"
             },
             {
               "field": {
@@ -98,12 +98,12 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_unsubmitted_timesheets"
+                  "Property": "calc_unsubmitted_timesheets_%"
                 }
               },
-              "queryRef": "data_smarttime.calc_unsubmitted_timesheets",
-              "nativeQueryRef": "unsubmitted",
-              "displayName": "unsubmitted"
+              "queryRef": "data_smarttime.calc_unsubmitted_timesheets_%",
+              "nativeQueryRef": "unsubmitted %",
+              "displayName": "unsubmitted %"
             },
             {
               "field": {
@@ -128,12 +128,12 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_submitted_hours"
+                  "Property": "calc_submitted_hours_%"
                 }
               },
-              "queryRef": "data_smarttime.calc_submitted_hours",
-              "nativeQueryRef": "submitted1",
-              "displayName": "submitted"
+              "queryRef": "data_smarttime.calc_submitted_hours_%",
+              "nativeQueryRef": "submitted hours %",
+              "displayName": "submitted hours %"
             },
             {
               "field": {
@@ -143,12 +143,12 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_unsubmitted_hours"
+                  "Property": "calc_unsubmitted_hours_%"
                 }
               },
-              "queryRef": "data_smarttime.calc_unsubmitted_hours",
-              "nativeQueryRef": "unsubmitted1",
-              "displayName": "unsubmitted"
+              "queryRef": "data_smarttime.calc_unsubmitted_hours_%",
+              "nativeQueryRef": "unsubmitted hours %",
+              "displayName": "unsubmitted hours %"
             }
           ]
         }
@@ -409,6 +409,18 @@
                   }
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -417,72 +429,6 @@
         },
         {
           "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.3
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_submitted_timesheets"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.3
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_unsubmitted_timesheets"
-          }
-        },
-        {
-          "properties": {
             "styleHeader": {
               "expr": {
                 "Literal": {
@@ -504,6 +450,18 @@
                     "ThemeDataColor": {
                       "ColorId": 0,
                       "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -512,72 +470,6 @@
           },
           "selector": {
             "metadata": "data_smarttime.calc_total_activity_hours"
-          }
-        },
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_submitted_hours"
-          }
-        },
-        {
-          "properties": {
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_unsubmitted_hours"
           }
         }
       ],
@@ -589,7 +481,15 @@
           }
         },
         {
-          "properties": {},
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "396.32450017509035D"
+                }
+              }
+            }
+          },
           "selector": {
             "metadata": "data_smarttime.Person_Cost_Centre_Level_6"
           }
@@ -609,31 +509,7 @@
         {
           "properties": {},
           "selector": {
-            "metadata": "data_smarttime.calc_submitted_timesheets"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "data_smarttime.calc_unsubmitted_timesheets"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
             "metadata": "data_smarttime.calc_total_activity_hours"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "data_smarttime.calc_submitted_hours"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "data_smarttime.calc_unsubmitted_hours"
           }
         }
       ],

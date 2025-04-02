@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "2f53a918fa21b7b700fa",
   "position": {
     "x": 40,
@@ -23,34 +23,35 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "Selected_Group_Name_Short"
+                  "Property": "Activity_Date"
                 }
               },
-              "queryRef": "data_smarttime.Selected_Group_Name_Short",
-              "nativeQueryRef": "Selected_Group_Name_Short",
+              "queryRef": "data_smarttime.Activity_Date",
+              "nativeQueryRef": "Activity_Date",
               "active": true
             }
           ]
         }
-      }
-    },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
+      },
+      "sortDefinition": {
+        "sort": [
           {
-            "queryRefs": [
-              "data_smarttime.Selected_Group_Name_Short"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Date"
+              }
+            },
+            "direction": "Ascending"
           }
         ],
-        "root": {}
+        "isDefaultSort": true
       }
-    ],
+    },
     "objects": {
       "data": [
         {
@@ -58,7 +59,14 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Between'"
+                }
+              }
+            },
+            "startDate": {
+              "expr": {
+                "Literal": {
+                  "Value": "datetime'2025-01-01T00:00:00'"
                 }
               }
             }
@@ -67,7 +75,44 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "data_smarttime",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Comparison": {
+                        "ComparisonKind": 2,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Activity_Date"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "datetime'2025-01-01T00:00:00'"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "slider": [

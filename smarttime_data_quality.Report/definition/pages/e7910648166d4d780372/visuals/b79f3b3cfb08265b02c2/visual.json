@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "b79f3b3cfb08265b02c2",
   "position": {
     "x": 0,
-    "y": 264,
+    "y": 240,
     "z": 1000,
-    "height": 304,
+    "height": 320,
     "width": 1240,
     "tabOrder": 1000
   },
@@ -43,13 +43,13 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "person_full_name"
+                  "Property": "person_fullname2"
                 }
               },
-              "queryRef": "data_smarttime.person_full_name",
-              "nativeQueryRef": "name",
+              "queryRef": "data_smarttime.person_fullname2",
+              "nativeQueryRef": "full name",
               "active": true,
-              "displayName": "name"
+              "displayName": "full name"
             },
             {
               "field": {
@@ -145,23 +145,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "data_smarttime"
-                  }
-                },
-                "Property": "person_full_name"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -172,7 +155,7 @@
         "levels": [
           {
             "queryRefs": [
-              "data_smarttime.person_full_name"
+              "data_smarttime.person_fullname2"
             ],
             "isPinned": true
           },
@@ -320,12 +303,6 @@
         }
       ],
       "columnWidth": [
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "data_smarttime.person_full_name"
-          }
-        },
         {
           "properties": {},
           "selector": {

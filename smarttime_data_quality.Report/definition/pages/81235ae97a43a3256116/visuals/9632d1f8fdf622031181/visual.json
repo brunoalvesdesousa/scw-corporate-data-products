@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "9632d1f8fdf622031181",
   "position": {
     "x": 0,
@@ -17,6 +17,21 @@
           "projections": [
             {
               "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_rate2"
+                }
+              },
+              "queryRef": "data_smarttime.calc_rate2",
+              "nativeQueryRef": "burn",
+              "displayName": "burn"
+            },
+            {
+              "field": {
                 "Aggregation": {
                   "Expression": {
                     "Column": {
@@ -25,43 +40,33 @@
                           "Entity": "data_smarttime"
                         }
                       },
-                      "Property": "Rate"
+                      "Property": "calc_burn_invoiceable"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(data_smarttime.Rate)",
-              "nativeQueryRef": "burn",
-              "displayName": "burn"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "calc_burn_invoiceable"
-                }
-              },
-              "queryRef": "data_smarttime.calc_burn_invoiceable",
+              "queryRef": "Sum(data_smarttime.calc_burn_invoiceable)",
               "nativeQueryRef": "invoiceable",
               "displayName": "invoiceable"
             },
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "calc_burn_non_invoiceable"
                     }
                   },
-                  "Property": "calc_burn_non_invoiceable"
+                  "Function": 0
                 }
               },
-              "queryRef": "data_smarttime.calc_burn_non_invoiceable",
+              "queryRef": "Sum(data_smarttime.calc_burn_non_invoiceable)",
               "nativeQueryRef": "non invoiceable",
               "displayName": "non invoiceable"
             }
@@ -72,18 +77,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "data_smarttime"
-                      }
-                    },
-                    "Property": "Rate"
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
                   }
                 },
-                "Function": 0
+                "Property": "calc_rate2"
               }
             },
             "direction": "Descending"

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "5890414d2f8cd8f3ad99",
   "position": {
     "x": 368,
@@ -53,10 +53,10 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "person_full_name"
+                  "Property": "person_fullname2"
                 }
               },
-              "queryRef": "data_smarttime.person_full_name",
+              "queryRef": "data_smarttime.person_fullname2",
               "nativeQueryRef": "name",
               "displayName": "name"
             },
@@ -82,21 +82,16 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "data_smarttime"
-                        }
-                      },
-                      "Property": "Rate"
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
                     }
                   },
-                  "Function": 0
+                  "Property": "calc_rate2"
                 }
               },
-              "queryRef": "Sum(data_smarttime.Rate)",
+              "queryRef": "data_smarttime.calc_rate2",
               "nativeQueryRef": "burn",
               "displayName": "burn"
             },
@@ -142,23 +137,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "data_smarttime"
-                  }
-                },
-                "Property": "person_full_name"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "objects": {
@@ -212,29 +190,9 @@
           }
         },
         {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "176.30508267407612D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.person_full_name"
-          }
-        },
-        {
           "properties": {},
           "selector": {
             "metadata": "Sum(data_smarttime.calc_smarttime_days)"
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "metadata": "Sum(data_smarttime.Rate)"
           }
         },
         {

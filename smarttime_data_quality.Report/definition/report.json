@@ -13,6 +13,83 @@
     }
   },
   "layoutOptimization": "None",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0255b2ebe3d17ed33156",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "data_smarttime",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Work_Activity_Type"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Non-Working'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
   "objects": {
     "section": [
       {
@@ -40,7 +117,7 @@
           "visible": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -94,14 +171,14 @@
           "type": "Image"
         },
         {
-          "name": "sample_cover021249541037407393.png",
-          "path": "sample_cover021249541037407393.png",
-          "type": "Image"
-        },
-        {
           "name": "SCW8166271792963158.json",
           "path": "SCW8166271792963158.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "cover5540706278752392.jpg",
+          "path": "cover5540706278752392.jpg",
+          "type": "Image"
         }
       ]
     }
