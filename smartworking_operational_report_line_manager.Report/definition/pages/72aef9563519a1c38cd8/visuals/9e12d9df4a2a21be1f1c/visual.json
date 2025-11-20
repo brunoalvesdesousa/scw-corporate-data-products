@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "9e12d9df4a2a21be1f1c",
+  "position": {
+    "x": 384,
+    "y": 360,
+    "z": 0,
+    "height": 144,
+    "width": 400,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "MonthlyExpectedHours"
+                }
+              },
+              "queryRef": "data_smarttime.MonthlyExpectedHours",
+              "nativeQueryRef": "MonthlyExpectedHours"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

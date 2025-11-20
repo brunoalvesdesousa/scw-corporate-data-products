@@ -1,0 +1,120 @@
+table LocalDateTable_c1e0226b-9f97-40e8-8502-142b44a9f370
+	showAsVariationsOnly
+	lineageTag: eea1ee54-3053-4056-8881-0e1837f1078d
+	sourceLineageTag: c72082c4-694f-4949-b0b4-8886f8425bfb
+
+	column Date
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: General Date
+		lineageTag: 8a2264d8-71de-4b84-8df2-f3033046c706
+		sourceLineageTag: 765dcabc-8338-42ab-a1ed-9eabde72dc07
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4719d8d1-84db-4069-85c7-bf0362f84e20
+		sourceLineageTag: f155c699-591a-4baf-be1a-dda1771f1d51
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column MonthNo
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2b03d19e-b21c-4758-81dc-ccc4ebb9a90f
+		sourceLineageTag: bacae592-b3ba-4103-9cf0-ecf389a94463
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		isHidden
+		lineageTag: ec3c2f0b-d7d8-4e7b-91c8-ff6a36b20259
+		sourceLineageTag: 065cf910-e6aa-422c-93ba-a20f180dd1d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+	column QuarterNo
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e0ec6b17-712f-4c9b-a6d0-3e8757f62f2b
+		sourceLineageTag: ccb48353-6500-45c3-b8ff-3c178237234a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		isHidden
+		lineageTag: 1126106a-38bf-44ad-b74f-b841034cd7eb
+		sourceLineageTag: 6e247587-94aa-401f-a332-bae05017146b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+	column Day
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 83f4c759-adb2-4d3c-98c5-9b6ec234a040
+		sourceLineageTag: 19acce6f-dfe3-465f-b2c8-5920bfbb8cd5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 7e04b391-e2d2-46c8-b32f-b1dbcea26867
+		sourceLineageTag: 27dea06c-c80b-4fbb-a8f2-b5dd850fbe66
+
+		level Year
+			lineageTag: 6d585715-ccfb-4c92-a14e-5242fb55fcef
+			sourceLineageTag: b07bbfb7-bda6-463b-852d-8a4a70c39fb3
+			column: Year
+
+		level Quarter
+			lineageTag: 9716441d-3526-40d2-82c2-6a8469472200
+			sourceLineageTag: c6c68826-44b1-4fba-af78-fb0b87b7eac7
+			column: Quarter
+
+		level Month
+			lineageTag: 84d213bc-4a9c-44ec-af97-458f3c5c911f
+			sourceLineageTag: 9646616a-b51d-4085-8273-17c6d9a5dfdc
+			column: Month
+
+		level Day
+			lineageTag: 59b154b6-efe9-4241-9bf9-717579ade41c
+			sourceLineageTag: b606acd5-a4ac-4898-a45a-f93f531db695
+			column: Day
+
+	partition LocalDateTable_c1e0226b-9f97-40e8-8502-142b44a9f370 = entity
+		mode: directQuery
+		source
+			entityName: LocalDateTable_c1e0226b-9f97-40e8-8502-142b44a9f370
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+

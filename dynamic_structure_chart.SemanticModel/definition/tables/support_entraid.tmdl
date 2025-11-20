@@ -1,0 +1,292 @@
+table support_entraid
+	lineageTag: 16d5a260-4262-4934-acac-1ce83ab0c359
+	sourceLineageTag: 29cdea6b-42b6-49d6-ab6a-47b5eb9a4461
+
+	column userPrincipalName
+		dataType: string
+		lineageTag: c92df416-7eb4-4b8b-b975-2788d3b825a0
+		sourceLineageTag: 6b688f22-9b75-49c1-bafe-4ebedc069d59
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		annotation SummarizationSetBy = User
+
+	column displayName
+		dataType: string
+		lineageTag: 560caaa8-ce10-4960-a345-541c046820ae
+		sourceLineageTag: 380f8bcd-b22b-4c3d-a72c-2d8d48fc3bde
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: displayName
+
+		annotation SummarizationSetBy = User
+
+	column surname
+		dataType: string
+		lineageTag: fe8079b5-80ae-4595-adb5-3ed4c9c74905
+		sourceLineageTag: 9cde26d9-48bd-492c-9505-c10ab4d5a377
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: surname
+
+		annotation SummarizationSetBy = User
+
+	column mail
+		dataType: string
+		lineageTag: 0158e9d6-6938-4281-bf25-da8dc23a4689
+		sourceLineageTag: 17e1799c-a88c-408d-a872-667ccb5eff69
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mail
+
+		annotation SummarizationSetBy = User
+
+	column givenName
+		dataType: string
+		lineageTag: a33dc7a1-87c2-4e77-8723-0e0581b691b9
+		sourceLineageTag: b16945ba-637f-4bd9-bb12-9b3fed3b1451
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: givenName
+
+		annotation SummarizationSetBy = User
+
+	column id
+		dataType: string
+		lineageTag: 988fdeee-e323-44e7-9940-11f84506989b
+		sourceLineageTag: 75e674f5-3d09-433e-bc22-f0323aba32bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = User
+
+	column userType
+		dataType: string
+		lineageTag: 2b965a6b-db2b-4547-a643-fdceb4534f1a
+		sourceLineageTag: d145bdc1-db97-4973-a08a-a367d443eb51
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: userType
+
+		annotation SummarizationSetBy = User
+
+	column jobTitle
+		dataType: string
+		lineageTag: 555d5bae-63d9-463d-aca3-b9f7bfdc5e7a
+		sourceLineageTag: 40083290-de7a-44c7-8e24-ac0f4707f69b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: jobTitle
+
+		annotation SummarizationSetBy = User
+
+	column department
+		dataType: string
+		lineageTag: 0c83d671-223c-4701-acd3-7fef750ef79d
+		sourceLineageTag: 02cefeaa-3964-472f-a061-1bfc439bb8cb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = User
+
+	column accountEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 795fd425-7c48-4f4c-ba7a-df838c068beb
+		sourceLineageTag: 77c3a5dc-c13c-4eb1-a097-a5620c1e765f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: accountEnabled
+
+		annotation SummarizationSetBy = User
+
+	column usageLocation
+		dataType: string
+		lineageTag: c5bcf0a1-f0f8-4d7f-8ef4-46ec4a8bdfb2
+		sourceLineageTag: f23a6749-2e06-4fc4-a986-9000cdf4e917
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: usageLocation
+
+		annotation SummarizationSetBy = User
+
+	column streetAddress
+		dataType: string
+		lineageTag: 9858643f-6556-471f-9f4a-e695df8b30eb
+		sourceLineageTag: a344296c-9cba-490c-b8b9-b074dd33d530
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: streetAddress
+
+		annotation SummarizationSetBy = User
+
+	column state
+		dataType: string
+		lineageTag: 7a0267bb-a636-4722-989d-fff0d150a860
+		sourceLineageTag: 0f921eb6-7372-48c1-adfb-ea8131d0682a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = User
+
+	column country
+		dataType: string
+		lineageTag: 78fd4c68-0995-4066-b5c8-095c5c05aea2
+		sourceLineageTag: 7c442fec-fada-4357-9828-b03a1795c948
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = User
+
+	column officeLocation
+		dataType: string
+		lineageTag: 0fb5e46c-d2a4-42db-849e-65459e5ea9ec
+		sourceLineageTag: e17d4b75-ce66-4e27-9fd6-68186172c87c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: officeLocation
+
+		annotation SummarizationSetBy = User
+
+	column city
+		dataType: string
+		lineageTag: 730aaa25-2ae8-4989-ae68-17e597bd50a7
+		sourceLineageTag: 3bd931c1-2698-4d2b-8862-40bd0778fcca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = User
+
+	column postalCode
+		dataType: string
+		lineageTag: a0b618c6-dfe6-4983-b26a-8587b9d9f16c
+		sourceLineageTag: 77e762c6-58f0-4f7b-b91b-128fe075e523
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: postalCode
+
+		annotation SummarizationSetBy = User
+
+	column telephoneNumber
+		dataType: string
+		lineageTag: ba0ab230-a1f7-40c3-986d-85084e123bf5
+		sourceLineageTag: 85752651-6c42-4b9c-8ad9-b90eda28ed33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: telephoneNumber
+
+		annotation SummarizationSetBy = User
+
+	column alternateEmailAddress
+		dataType: string
+		lineageTag: bfba9430-b87e-42cf-b424-597e626179c6
+		sourceLineageTag: c544d1d4-0cdf-4f9f-b4dc-f41a98bfb8ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alternateEmailAddress
+
+		annotation SummarizationSetBy = User
+
+	column ageGroup
+		dataType: string
+		lineageTag: a576a01f-a111-4912-8b7f-7fb69112257c
+		sourceLineageTag: 8c9ccebe-5551-4021-8b1b-d512e30fbd29
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ageGroup
+
+		annotation SummarizationSetBy = User
+
+	column consentProvidedForMinor
+		dataType: string
+		lineageTag: faecfb96-28ec-483b-bdf0-82933754228d
+		sourceLineageTag: 0379b528-10a1-4c30-9234-b261f6329129
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: consentProvidedForMinor
+
+		annotation SummarizationSetBy = User
+
+	column legalAgeGroupClassification
+		dataType: string
+		lineageTag: 7382632b-83ad-4593-a171-05fd519563e2
+		sourceLineageTag: a75b99fa-7734-4285-a3a8-9ab7118b73b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: legalAgeGroupClassification
+
+		annotation SummarizationSetBy = User
+
+	column companyName
+		dataType: string
+		lineageTag: 8da8e476-5eb2-4f7d-951c-21ca4e58aaee
+		sourceLineageTag: 19fc922e-e314-4cee-87e1-8f3c3b425c44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: companyName
+
+		annotation SummarizationSetBy = User
+
+	column creationType
+		dataType: string
+		lineageTag: 7cdb8cdb-7b5e-43e2-9961-92f5a9b6d114
+		sourceLineageTag: 3bba02f8-6897-47b1-8f8e-0504fe693bf0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: creationType
+
+		annotation SummarizationSetBy = User
+
+	column directorySynced
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4f62ae43-971e-4720-bc58-5656b21ca4df
+		sourceLineageTag: 74530177-bfbf-4f10-a04a-3616c95eed88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: directorySynced
+
+		annotation SummarizationSetBy = User
+
+	column invitationState
+		dataType: string
+		lineageTag: 08e833bf-2e35-4630-b6e1-7ae88efb2a17
+		sourceLineageTag: d62ab33f-ac52-45f9-8960-2778bc5476a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: invitationState
+
+		annotation SummarizationSetBy = User
+
+	column identityIssuer
+		dataType: string
+		lineageTag: 11eccdec-b466-4e70-b725-633484b7af7a
+		sourceLineageTag: 384a84ea-06f0-4e8c-bee0-b3065a58b153
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: identityIssuer
+
+		annotation SummarizationSetBy = User
+
+	column createdDateTime
+		dataType: string
+		lineageTag: 9e213e3a-9e59-4a3e-8ca7-f86d305fea4a
+		sourceLineageTag: 1700ef75-1fae-404c-a9a1-04999cdd0eb6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: createdDateTime
+
+		annotation SummarizationSetBy = User
+
+	partition support_entraid = entity
+		mode: directQuery
+		source
+			entityName: support_entraid
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+

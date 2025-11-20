@@ -1,0 +1,144 @@
+table data_oracle_staff_cost_exceptions
+	lineageTag: aa95881f-df69-4d19-bd55-5120baa613ef
+	sourceLineageTag: e477f14d-94ee-48f0-8e88-c27bec8ea7da
+
+	column Source
+		dataType: string
+		lineageTag: 89118779-901a-4baf-aea0-bcf81c6caabe
+		sourceLineageTag: 6d8b980f-5b75-4879-81be-b3049c5cf779
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = User
+
+	column Assignment_no
+		dataType: string
+		lineageTag: 858f169c-c5b8-4dcf-abc4-965d70427470
+		sourceLineageTag: dffda70b-fc07-47ee-a9e6-52a9738b5025
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Assignment_no
+
+		annotation SummarizationSetBy = User
+
+	column Name
+		dataType: string
+		lineageTag: fb465d3b-49f9-4292-9dba-c76fad799378
+		sourceLineageTag: 92c9915f-8d87-4a52-8226-008c7fc24d85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = User
+
+	column Cost_centre
+		dataType: string
+		lineageTag: b430d628-d817-4b88-90fb-fd888c6d89a6
+		sourceLineageTag: 0bd0d890-e312-42c3-8751-2ac93d6fe68d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost_centre
+
+		annotation SummarizationSetBy = User
+
+	column Service_Line_Level_3
+		dataType: string
+		lineageTag: 2ca33e9c-496a-469f-97b0-73ba3ec0f636
+		sourceLineageTag: 453b389e-6bc1-402e-a236-14c41bfcb15d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_3
+
+		annotation SummarizationSetBy = User
+
+	column Service_Line_Level_4
+		dataType: string
+		lineageTag: ecf8b0b4-95cb-408c-b210-027b361485fe
+		sourceLineageTag: ecf9dd7a-4080-45bf-98db-c89a2ba22299
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_4
+
+		annotation SummarizationSetBy = User
+
+	column Hrly_rate
+		dataType: double
+		lineageTag: c790a5df-6af1-402e-9a23-f0a3387e11d3
+		sourceLineageTag: 687b1f5d-fd34-48ff-9c4c-682b9365744f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Hrly_rate
+
+		annotation SummarizationSetBy = User
+
+	column Effective_from
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: d9eb3f9d-2686-4334-be2b-89489ee9dd52
+		sourceLineageTag: 6c63918d-b3a7-4bc5-a8e5-da62d55c607a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Effective_from
+
+		variation Variation
+			isDefault
+			relationship: b6a916c1-565a-45e8-a42b-c964cc84eecd
+			defaultHierarchy: LocalDateTable_110c007c-b262-4fe6-bead-c589dcdceddb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 4ff66a94-268a-4a35-ba08-0f803763bf4d
+		sourceLineageTag: 9f6925a1-2562-4fa1-8d8f-68ab01c7a129
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+
+		variation Variation
+			isDefault
+			relationship: 8aebb58e-661d-4ee3-a014-0f6420e04ac4
+			defaultHierarchy: LocalDateTable_e008df71-985d-4ca8-8fd1-85f2995ddc9e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column Financial_Year
+		dataType: string
+		lineageTag: d7ae51f1-f3cd-4f93-bda2-a2389dc88242
+		sourceLineageTag: 62af537d-3712-48ee-94c9-39bea502950f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		annotation SummarizationSetBy = User
+
+	column Derived_File_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d60b19d-3322-4155-bf8a-8b7eabcd065a
+		sourceLineageTag: 95544c6d-43ec-4679-9e04-cb14631c0501
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		annotation SummarizationSetBy = User
+
+	column Derived_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e1ab027b-4c10-47c7-b4d1-83d021646475
+		sourceLineageTag: c1f4216a-9381-46f2-b43c-e624f8f6324f
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		annotation SummarizationSetBy = User
+
+	partition data_oracle_staff_cost_exceptions = entity
+		mode: directQuery
+		source
+			entityName: data_oracle_staff_cost_exceptions
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model_project_view'
+

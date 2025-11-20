@@ -1,0 +1,25 @@
+table 0_Environment
+	lineageTag: 90b1b9b9-6969-48ba-a2e8-e7e5fbf5aabc
+
+	column 'Latest Refresh Date'
+		dataType: string
+		lineageTag: 1723d020-2b7f-4a86-b1c0-db0976332424
+		summarizeBy: none
+		sourceColumn: Latest Refresh Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 0_Environment = m
+		mode: import
+		source =
+				let
+				    Source = DateTime.LocalNow(),
+				    #"Converted to Table" = #table(1, {{Source}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Latest Refresh Date"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

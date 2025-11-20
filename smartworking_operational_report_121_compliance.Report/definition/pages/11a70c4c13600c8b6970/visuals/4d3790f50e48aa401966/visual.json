@@ -1,0 +1,167 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "4d3790f50e48aa401966",
+  "position": {
+    "x": 808,
+    "y": 384,
+    "z": 6001,
+    "height": 320,
+    "width": 448
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Date"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Date",
+              "nativeQueryRef": "Activity_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Id"
+                }
+              },
+              "queryRef": "CountNonNull(data_smarttime.Work_Activity_Id)",
+              "nativeQueryRef": "Work_Activity_Id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Name"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Name",
+              "nativeQueryRef": "Work_Activity_Name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1d483900bbeb0ab0372d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f53231cab5e32c5571d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "data_smarttime",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Work_Activity_Name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'1-2-1s (Receiving)'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "50c8848d6dd3ad892e30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Id"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

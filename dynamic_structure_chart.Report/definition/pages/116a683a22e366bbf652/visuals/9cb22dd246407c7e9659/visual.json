@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "9cb22dd246407c7e9659",
+  "position": {
+    "x": 0,
+    "y": 336,
+    "z": 2000,
+    "height": 136,
+    "width": 512,
+    "tabOrder": 6000
+  },
+  "visualGroup": {
+    "displayName": "Latest Refresh& Data periods",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "12cb853c929198145934"
+}

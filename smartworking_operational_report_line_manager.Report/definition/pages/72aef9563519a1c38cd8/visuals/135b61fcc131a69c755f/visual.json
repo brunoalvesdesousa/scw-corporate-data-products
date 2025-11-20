@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "135b61fcc131a69c755f",
+  "position": {
+    "x": 808,
+    "y": 360,
+    "z": 4000,
+    "height": 144,
+    "width": 400,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "base_date"
+                    }
+                  },
+                  "Property": "Count_Days_in_Month"
+                }
+              },
+              "queryRef": "base_date.Count_Days_in_Month",
+              "nativeQueryRef": "Count_Days_in_Month"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,74 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "support_rls_merged.personfk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "PersonFk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "person_id": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_merged.supervisorid_corrected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "supervisorid_corrected"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "supervisor_id": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_merged.full_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "full_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "full name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

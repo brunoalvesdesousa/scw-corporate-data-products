@@ -1,0 +1,51 @@
+table data_products
+	lineageTag: 0227a16e-3b6e-4ca8-b3be-ab43eb0ec34b
+
+	column Attribute
+		dataType: string
+		lineageTag: 4ed7da99-14b2-476f-b168-31697dddde3a
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: e4cd9a26-b554-4f10-a926-fc4eaee8122a
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_products = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Tables("https://nhs.sharepoint.com/sites/msteams_8489d9/", [ApiVersion = 14]),
+				    Products = Source{[Name="Products"]}[Content],
+				    #"Expanded Portfolio" = Table.ExpandTableColumn(Products, "Portfolio", {"Name"}, {"Portfolio.Name"}),
+				    #"Expanded ProductOwner" = Table.ExpandTableColumn(#"Expanded Portfolio", "ProductOwner", {"Name"}, {"ProductOwner.Name"}),
+				    #"Expanded PrimaryDeveloper" = Table.ExpandRecordColumn(#"Expanded ProductOwner", "PrimaryDeveloper", {"Value"}, {"PrimaryDeveloper.Value"}),
+				    #"Expanded DevelopmentStatus" = Table.ExpandRecordColumn(#"Expanded PrimaryDeveloper", "DevelopmentStatus", {"Value"}, {"DevelopmentStatus.Value"}),
+				    #"Expanded Platform" = Table.ExpandRecordColumn(#"Expanded DevelopmentStatus", "Platform", {"Value"}, {"Platform.Value"}),
+				    #"Expanded DataSource" = Table.ExpandTableColumn(#"Expanded Platform", "DataSource", {"Name"}, {"DataSource.Name"}),
+				    #"Expanded DataStatus" = Table.ExpandRecordColumn(#"Expanded DataSource", "DataStatus", {"Value"}, {"DataStatus.Value"}),
+				    #"Expanded RefreshFrequency" = Table.ExpandRecordColumn(#"Expanded DataStatus", "RefreshFrequency", {"Value"}, {"RefreshFrequency.Value"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Expanded RefreshFrequency", each ([Id] = 426)),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Filtered Rows", {}, "Attribute", "Value"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Unpivoted Columns",".value","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","."," ",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Value","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","0","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Split Column by Character Transition" = Table.SplitColumn(#"Replaced Value3", "Attribute", Splitter.SplitTextByCharacterTransition({"a".."z"}, {"A".."Z"}), {"Attribute.1", "Attribute.2", "Attribute.3"}),
+				    #"Merged Columns" = Table.CombineColumns(#"Split Column by Character Transition",{"Attribute.1", "Attribute.2", "Attribute.3"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Merged"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Merged Columns",{{"Merged", "Attribute"}}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Renamed Columns","BUCK, Lisa (NHS SOUTH, CENTRAL AND WEST COMMISSIONING SUPPORT UNIT)","Lisa Buck",Replacer.ReplaceValue,{"Value"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","BOOTHROYD, David (NHS SOUTH, CENTRAL AND WEST COMMISSIONING SUPPORT UNIT)","David Boothroyd",Replacer.ReplaceValue,{"Value"})
+				in
+				    #"Replaced Value5"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

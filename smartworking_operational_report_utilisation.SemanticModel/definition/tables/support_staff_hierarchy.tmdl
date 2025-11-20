@@ -1,0 +1,162 @@
+table support_staff_hierarchy
+	lineageTag: c6290208-5f1f-4948-ab49-ce1b942a4782
+	sourceLineageTag: 65ffb8fd-7770-4503-8840-4df932e01e7c
+
+	column Level3
+		dataType: string
+		lineageTag: 37c94179-ef38-43fa-8803-e65acef73cfd
+		sourceLineageTag: 6583c745-71b6-4339-9c65-223a74c75134
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Level3
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre
+		dataType: string
+		lineageTag: faa0cc6e-191c-4540-849c-3ce085951786
+		sourceLineageTag: 740375ea-b084-48a9-8ea3-098727513755
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		annotation SummarizationSetBy = User
+
+	column Level6
+		dataType: string
+		lineageTag: 4bc033b2-d0c0-4e54-9f46-b04bce586b0d
+		sourceLineageTag: 28be6312-69f2-4d03-872f-0032189dcd0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Level6
+
+		annotation SummarizationSetBy = User
+
+	column PersonFk
+		dataType: string
+		lineageTag: c3c64ca8-ac30-4838-ac5d-420c5d9f9a2a
+		sourceLineageTag: 6531c543-eca1-4d21-9f62-25b55e412a26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = User
+
+	column NameFirst
+		dataType: string
+		lineageTag: f5eb08c5-0d49-4356-b99a-c2a84258ae9e
+		sourceLineageTag: a913dc45-37c5-4c3e-b455-9581dfd958da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = User
+
+	column NameLast
+		dataType: string
+		lineageTag: ede6ad06-ffd7-412a-a514-50f398c77526
+		sourceLineageTag: f28574eb-80c5-45d2-8efd-731e301b74d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = User
+
+	column Email
+		dataType: string
+		lineageTag: d576ed16-31cd-49c7-b1b7-6292aa1b0ffe
+		sourceLineageTag: c6fa8d38-7084-42f0-966d-59e56043b218
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = User
+
+	column IsSupervisor
+		dataType: int64
+		formatString: 0
+		lineageTag: e1dbef52-7d78-4aec-9804-b46aefc85008
+		sourceLineageTag: 365e6e27-165d-4f92-81c5-307961c16f8e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: IsSupervisor
+
+		annotation SummarizationSetBy = User
+
+	column SupervisorId
+		dataType: string
+		lineageTag: d0abbde4-3878-4567-ad4c-45ad49576e92
+		sourceLineageTag: 893e919e-adba-4f19-ae1c-9dbe3ad8f5fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SupervisorId
+
+		annotation SummarizationSetBy = User
+
+	column Supervisor
+		dataType: string
+		lineageTag: 919a2619-2db5-40cd-b565-04d4c446be2b
+		sourceLineageTag: 867f6400-6b63-4aac-8569-92a4de0b93cd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		annotation SummarizationSetBy = User
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: aac01953-4108-4a19-a913-e138fe9b3690
+		sourceLineageTag: 5e8da0b5-4e76-4cfc-84c5-a33a20a6b15d
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = User
+
+	column Name
+		dataType: string
+		lineageTag: 52d4e0f3-109a-4bcc-9c3e-b8f3ecc8a7ca
+		sourceLineageTag: d39d231a-fe86-429f-a4ea-1d31d371f8f9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = User
+
+	column 'support_entraid.userPrincipalName'
+		dataType: string
+		lineageTag: f9a9cbe8-0126-4b7c-b1b6-7ae386093ef5
+		sourceLineageTag: 3313c3e0-b872-4570-a60d-aca4a308e74c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: support_entraid.userPrincipalName
+
+		annotation SummarizationSetBy = User
+
+	column full_name
+		dataType: string
+		lineageTag: 77af1158-daea-441d-bf75-fe0ed34d4fcb
+		sourceLineageTag: 50838a9f-2e5c-48cb-8d9c-c11e983dc827
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = User
+
+	column supervisorid_corrected
+		dataType: string
+		lineageTag: 29adabbb-bfb1-4f73-a762-8148a1a6afd1
+		sourceLineageTag: 59c2f868-c18a-4fbd-bae8-1cc1841a9c47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supervisorid_corrected
+
+		annotation SummarizationSetBy = User
+
+	partition support_staff_hierarchy = entity
+		mode: directQuery
+		source
+			entityName: support_staff_hierarchy
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+

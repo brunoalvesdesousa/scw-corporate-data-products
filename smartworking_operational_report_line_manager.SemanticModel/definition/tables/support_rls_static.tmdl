@@ -1,0 +1,153 @@
+table support_rls_static
+	lineageTag: c094375d-d571-4a81-a57d-f74cdccf3ddc
+	sourceLineageTag: 16386c9d-a96a-4ac3-83a5-d6f443148e7a
+
+	column PersonFk
+		dataType: int64
+		formatString: 0
+		lineageTag: 18c1bb61-8f1c-4a90-9ba4-7fa224024210
+		sourceLineageTag: fd36086c-4373-4873-9772-522aa8cb9714
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = User
+
+	column NameFirst
+		dataType: string
+		lineageTag: 91f411d3-6acd-486d-a326-43b761792b97
+		sourceLineageTag: a71dd56d-a9c3-4aa6-a6de-a0ef4f85ab86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = User
+
+	column NameLast
+		dataType: string
+		lineageTag: 4b10d7b4-407e-4177-9617-bc8f1f0ce185
+		sourceLineageTag: f310d8a3-86d5-4868-ad93-65b67bcdce98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = User
+
+	column Email
+		dataType: string
+		lineageTag: ceaa32f1-3584-4ad7-a729-2be3ef9fabaa
+		sourceLineageTag: 20d7c6c3-8ca3-4422-904c-7583e3eb2808
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = User
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: ce3c3ea5-7182-4c56-af06-8c2b2a9c6dfc
+		sourceLineageTag: 78ab3a54-abca-440b-a7b6-4a9b93a37fc4
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Access CostCentre'
+		dataType: string
+		lineageTag: c5763148-fcd8-4cde-8107-73aa4cddc0c0
+		sourceLineageTag: 6315cbb7-2238-462c-897b-afad8b203150
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access CostCentre
+
+		annotation SummarizationSetBy = User
+
+	column 'Access Level3'
+		dataType: string
+		lineageTag: 9368b0bf-25a8-469c-826b-28507fbd38c8
+		sourceLineageTag: aa817a4d-cca4-41bf-8652-bd916722fe16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access Level3
+
+		annotation SummarizationSetBy = User
+
+	column 'Access L4'
+		dataType: string
+		lineageTag: 4ed25378-60ab-4465-aca8-6e155d0c07c5
+		sourceLineageTag: 0a3f90d9-c8ac-4578-b6dc-5d3a4bf534f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access L4
+
+		annotation SummarizationSetBy = User
+
+	column 'Access Level6'
+		dataType: string
+		lineageTag: 0320298c-0a9b-4965-bfd6-3537c46db3d3
+		sourceLineageTag: 1b4d6135-13b0-4b31-beeb-0e0a8fa7f22b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access Level6
+
+		annotation SummarizationSetBy = User
+
+	column supervisorId
+		dataType: int64
+		formatString: 0
+		lineageTag: 1037002c-89ac-4f50-96f5-13358be8f1fc
+		sourceLineageTag: b3302711-e7af-4bef-b05f-a304059b8b18
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: supervisorId
+
+		annotation SummarizationSetBy = User
+
+	column supervisor
+		dataType: string
+		lineageTag: 2a66ea69-46ed-4a8d-ba44-a710c8479c53
+		sourceLineageTag: 63db9e32-0a9a-4824-be2a-f715952510be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supervisor
+
+		annotation SummarizationSetBy = User
+
+	column 'scwcsu email'
+		dataType: string
+		lineageTag: a329c69f-fdcf-4968-8d65-4cb57913aa53
+		sourceLineageTag: b16abeb9-5682-4c8b-98a5-c372adc4c39d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: scwcsu email
+
+		annotation SummarizationSetBy = User
+
+	column full_name
+		dataType: string
+		lineageTag: b7f8c083-534f-4ce2-ae96-ce3b4c8d6e3e
+		sourceLineageTag: f11d35a3-8abd-48ec-9c8e-87863a3c6d7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = User
+
+	column 'pg group'
+		dataType: string
+		lineageTag: 25ebf137-3e4f-4752-9580-c838af6440ca
+		sourceLineageTag: 41b30335-6902-4fbf-9748-caa527a70123
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: pg group
+
+		annotation SummarizationSetBy = User
+
+	partition support_rls_static = entity
+		mode: directQuery
+		source
+			entityName: support_rls_static
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+

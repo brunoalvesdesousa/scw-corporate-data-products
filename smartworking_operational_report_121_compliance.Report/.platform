@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "smartworking_operational_report_121_compliance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ad7308ae-470c-469a-bfdb-3267f4a468e2"
+  }
+}

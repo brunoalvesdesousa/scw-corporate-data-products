@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "dynamic_structure_chart"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "38ef4d93-ad3f-4258-9bd3-32333e5e0424"
+  }
+}

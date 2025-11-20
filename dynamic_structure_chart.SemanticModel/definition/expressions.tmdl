@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - smarttime_data_semantic_model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/%5BDI%5D%20SCW%20Corporate%20Data%20Strategy", "smarttime_data_semantic_model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 1ac5cc87-3b04-4a3c-b07a-8463f992f737
+
+	annotation PBI_IncludeFutureArtifacts = True
+

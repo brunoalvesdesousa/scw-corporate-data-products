@@ -1,0 +1,200 @@
+table base_date
+	lineageTag: 2bfefd4d-76e9-4492-9183-0062e37e2cda
+
+	column Date
+		formatString: General Date
+		lineageTag: fefe7a87-4fbc-4e30-baa8-e92e5a1dda80
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: d55c67e2-57aa-458f-a568-f43bd21a6099
+			defaultHierarchy: LocalDateTable_c9696f47-86c8-4dfc-9ec8-09fb634c899f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: General Date
+		lineageTag: 69d06358-0689-4cdc-ac48-cceb727846ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		variation Variation
+			isDefault
+			relationship: f09c6bd9-613e-43ec-a367-31d2fad05693
+			defaultHierarchy: LocalDateTable_5b688d06-896b-48d5-95a0-873835ce00f2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		formatString: Mmm-yy
+		lineageTag: 3123b72e-8856-45e0-84a2-4ab4856eb536
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Year]
+
+		variation Variation
+			isDefault
+			relationship: 4da0ef92-25f7-4683-9ef8-5f6e190e84f9
+			defaultHierarchy: LocalDateTable_69b3b8c9-8851-4dff-9280-44f26f0d77f1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Month
+		lineageTag: 95e5bf68-7ae3-4f1d-9283-362e0121c063
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: c560de4a-d4a4-4cd6-b3b6-c61bb66c0d75
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		lineageTag: cd6402eb-90cd-44c0-9e74-5b86af8f5833
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		formatString: 0
+		lineageTag: 12df7e58-d581-4510-87f3-89561f4dfeee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day of Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of the Month Number'
+		formatString: 0
+		lineageTag: 9505394d-2c8f-4be8-b4f4-b9401333c3a5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day of the Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Year'
+		lineageTag: a993daed-ee16-4f56-b51b-f3357d277793
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Number'
+		formatString: 0
+		lineageTag: bf43416d-016a-4ed5-947b-bffc955042a3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Financial Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Start'
+		formatString: General Date
+		lineageTag: 5f89fcaa-0345-46bf-91c7-c91de0e792ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week Start]
+
+		variation Variation
+			isDefault
+			relationship: 29f99baf-6bdf-46ea-b21a-ca62ec8459c9
+			defaultHierarchy: LocalDateTable_60b74060-2a85-4225-aa83-aeaa7c29e4a7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week End'
+		formatString: General Date
+		lineageTag: eb89cbe5-9924-4a10-8b00-d9687c78c3d4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week End]
+
+		variation Variation
+			isDefault
+			relationship: a76e99ea-4631-4139-8328-92e886b554d9
+			defaultHierarchy: LocalDateTable_3a59d71d-8c29-433f-88a5-6be8642ea96f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Start Plus 7'
+		formatString: General Date
+		lineageTag: 8d348028-21ae-4c43-bbf0-4f3934a162af
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Week Start Plus 7]
+
+		variation Variation
+			isDefault
+			relationship: c8e9678d-e13b-4d3b-8e3c-0b60c19559ea
+			defaultHierarchy: LocalDateTable_c6f1c97f-1be2-4f81-8dd4-73fef2a8952c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition base_date = calculated
+		mode: import
+		source = ```
+				
+				VAR FYStart = "04"
+				VAR todayreference = TODAY()
+				VAR FirstYear = -- Customizes the first year to use
+				    MIN(data_smarttime[Activity_Date])
+				VAR LastYear = -- Customizes the last year to use
+				    max(data_smarttime[Timesheet_End])
+				RETURN
+				ADDCOLUMNS (
+				    FILTER (
+				        CALENDARAUTO (),
+				        AND([Date] >= FirstYear,[Date] <= todayreference)),
+				    "Year", DATE ( YEAR ( [Date] ), 12, 31 ),
+				    "Month Year", EOMONTH ( [Date], 0 ),
+				    "Month", FORMAT ( [Date], "mmm" ),
+				    "Month Number", MONTH ( [Date] ),
+				    "Day of Week", FORMAT ( [Date], "dddd" ),
+				    "Day of Week Number", WEEKDAY ( [Date],2),
+				    "Day of the Month Number", DAY([Date]),
+				    "Financial Year", IF(FYStart <= FORMAT([Date],"MM"), YEAR([Date]) & "-" & YEAR([Date])+1 ,YEAR([Date])-1 & "-" & YEAR([Date])),
+				    "Financial Week Number", 
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1) // Adjust year for dates before April
+				        RETURN
+				            WEEKNUM(CurrentDate - FinancialYearStart + 1, 2), // Week number based on Financial Year start
+				    "Financial Week Start",
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            FinancialYearStart + (WeekNumber - 1) * 7, // Calculate week start
+				    "Financial Week End",
+				        VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            FinancialYearStart + WeekNumber * 7 - 1, // Calculate week end
+				    "Financial Week Start Plus 7",
+				         VAR CurrentDate = [Date]
+				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
+				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
+				        RETURN
+				            CALCULATE(FinancialYearStart + (WeekNumber - 1) * 7) + 7 //Week start + 7 days
+				)
+				```
+
+	annotation PBI_Id = be176ea9c4394919bcf82e2d61d4fb85
+

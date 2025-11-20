@@ -14,7 +14,7 @@ annotation PBI_QueryOrder = ["0_Environment","data_requests","DirectQuery to AS 
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
+annotation PBIDesktopVersion = 2.141.1451.0 (25.03)+5007b75f0f7edbed506e31fcb76584cd6d711788
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -59,8 +59,6 @@ ref table LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1
 ref table LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079
 ref table data_products
 ref table base_date
-
-ref role Browser
 
 ref cultureInfo en-US
 
