@@ -1,0 +1,114 @@
+table support_rls_dynamic_missing
+	lineageTag: 4bdb42eb-adf2-4eab-b6e7-b42bda4fb82a
+
+	column Level3
+		dataType: string
+		lineageTag: e7ed1319-4871-4cfc-8739-00d1025f9a23
+		summarizeBy: none
+		sourceColumn: Level3
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre
+		dataType: string
+		lineageTag: 092bea3e-1cdb-4773-9524-c97ce0dacc95
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		lineageTag: 25bd57c2-f994-44eb-92b4-19b4a5950bbc
+		summarizeBy: none
+		sourceColumn: Level6
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonFk
+		dataType: int64
+		formatString: 0
+		lineageTag: d2c10886-d2af-4053-8aaf-1a85d304512f
+		summarizeBy: sum
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		lineageTag: 0efc133f-4a3a-44dd-bb44-26d9865464ce
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		lineageTag: 3d4157a7-e8fd-44a8-af20-81189642e209
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: b4fa8d7a-1c6d-4808-ab62-71190a9850c1
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSupervisor
+		dataType: string
+		lineageTag: 7a2e40cf-62d3-413f-af02-90a2104cba9a
+		summarizeBy: none
+		sourceColumn: IsSupervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorId
+		dataType: int64
+		formatString: 0
+		lineageTag: 47e8fb08-e2ac-4737-b0e7-221d5d2db74b
+		summarizeBy: count
+		sourceColumn: SupervisorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		lineageTag: c8005507-ab5d-4244-a15d-204af15e66e2
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: f0ebca76-f76c-437a-afb0-60671e60b14d
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 85bd52b3-9a69-420f-88f7-2f351c70f7a4
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_dynamic_missing = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("pVRRT9swEP4rVp87qUmbxHlkFJEyunV0EkjAwzU51RauXTlxQ/fr50ugCUiwaJMsnxP7Pn/33Z3v70dOP2lT69F45Ef3EaVx4M1S5gJQ+dXcaY3tKT+m4czP32VuFLK126EVUqmX7cfxh7Ahj8hxDgdZeHtjagW6KDvcIAy9uZa6gCO7lnusqr+jxkFAXt9A0uEM7AGPJ8gwndCVGUIl0LKlU4UxegBoyidEBZyFlnIPkyfx6x7r7XwCNw0j4niLuqDTS7ClgJNk49GMJ0TzygjNfjy4ySRMzo2XfIiqccx5o+YGLSmwMkqBLU7YcRwR3YvdDljmKgF2iKhxQqBnurBYN8Hq7QmRJ0lKBWCUOcrSsDu3gSGQaUQ8lPwNG6xEg1pb1Dn2uHLiupL7PbBLizgkVV18lOk3EfpSjnjQFqswCkp2Y7ZoyyGoHRNv+1z+VYB3VJqc9cj4O5OIDsxxYywIlvmKFgOYvvFqWqDzo0qekuxnCp/ZxQH0gNh50Ca/FEX7o1v9D9F3qvllT7fPiS50hVsLFRbMt7KqBGuaJGbnYP0ThPYgc3xxWKxX7AtbZGs//2yubXrvKz5THl3Xx3zWvA1LqPzbULNfLn9C+3rp4x8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Level3 = _t, CostCentre = _t, Level6 = _t, PersonFk = _t, NameFirst = _t, NameLast = _t, Email = _t, IsSupervisor = _t, SupervisorId = _t, Supervisor = _t, Id = _t, Name = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Level3", type text}, {"CostCentre", type text}, {"Level6", type text}, {"PersonFk", Int64.Type}, {"NameFirst", type text}, {"NameLast", type text}, {"Email", type text}, {"IsSupervisor", type text}, {"SupervisorId", Int64.Type}, {"Supervisor", type text}, {"Id", type text}, {"Name", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

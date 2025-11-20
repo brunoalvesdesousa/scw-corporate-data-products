@@ -1,0 +1,15 @@
+expression data_oracle_agency_cost_rates =
+		let
+		    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+		    dbo_Oracle_Agency_cost_rates = Source{[Schema="dbo",Item="Oracle_Agency_cost_rates"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(dbo_Oracle_Agency_cost_rates,{{"Hrly_rate", type number}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","44930","04/01/23",Replacer.ReplaceText,{"Effective_from"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Effective_from", type date}})
+		in
+		    #"Changed Type1"
+	lineageTag: b97bfa56-3731-48c7-9435-7b2a44d7bc31
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,162 @@
+table support_rls_merged
+	lineageTag: 2b0ae4a3-76b1-4d1b-823c-ff32fa9b9696
+
+	column Level3
+		dataType: string
+		lineageTag: 18bd086b-8e4f-472f-adad-b0abd2ea0fbb
+		summarizeBy: none
+		sourceColumn: Level3
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre
+		dataType: string
+		lineageTag: b1b1588e-1e3a-47f1-b6c6-2c2f198d401d
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		lineageTag: 492e0d4f-6d1d-4006-a935-1bf3338da135
+		summarizeBy: none
+		sourceColumn: Level6
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonFk
+		dataType: int64
+		formatString: 0
+		lineageTag: e225cb86-d879-4a5e-9a14-b92318bb10b5
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		lineageTag: a0354a3e-e235-4d91-9323-327bbaefbac0
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		lineageTag: d07daf58-975e-4a43-9fae-8b811506a9a5
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: c37a5fb6-162a-4171-9b9b-4123fa475ed2
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSupervisor
+		dataType: string
+		lineageTag: 13eae1cc-74cc-4ca3-83c0-8dc05ba952f3
+		summarizeBy: none
+		sourceColumn: IsSupervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorId
+		dataType: int64
+		formatString: 0
+		lineageTag: 38672e85-610d-4704-9213-142f318f04f2
+		summarizeBy: count
+		sourceColumn: SupervisorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		lineageTag: 8136ecc6-d24f-4e33-b91f-8fce7e32178a
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: 961e5e64-81fc-4601-ab0e-a667bc8da845
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 896ea6e2-8472-4598-8ee4-b616310ab196
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'support_entraid.userPrincipalName'
+		dataType: string
+		lineageTag: b91a5d06-fbd5-4f20-b793-482f58fe4693
+		summarizeBy: none
+		sourceColumn: support_entraid.userPrincipalName
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name =
+			
+			'support_rls_merged'[NameFirst] & " " & 'support_rls_merged'[NameLast]
+		lineageTag: bac6f201-99b3-4e38-a9b1-b188b243b63c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisorid_corrected = ```
+			
+			    IF(
+			        'support_rls_merged'[PersonFk]=4037,
+			        BLANK(),
+			        'support_rls_merged'[SupervisorId]
+			        )
+			```
+		formatString: 0
+		lineageTag: 35bfd847-11d8-45ee-96a4-5896df924d68
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column hierarchy_path =
+			
+			PATH('support_rls_merged'[PersonFk],'support_rls_merged'[supervisorid_corrected])
+		lineageTag: 14fdf783-0c81-473a-b354-2a28f602ae02
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Leaver
+		dataType: int64
+		formatString: 0
+		lineageTag: 80cfcda7-e6f1-4c73-97a4-d583eba44e48
+		summarizeBy: sum
+		sourceColumn: Leaver
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_merged = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({support_rls_dynamic, support_rls_dynamic_missing}),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"PersonFk", Int64.Type}, {"SupervisorId", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"PersonFk"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,143 @@
+table base_date
+	lineageTag: d8ec2f59-77c1-4a39-a401-ac715264610b
+
+	column Date
+		formatString: Long Date
+		lineageTag: b906abc3-2e75-4f29-9f51-53cdfc8a7724
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 38052eb8-a86e-4737-8e1c-938f33b66f4e
+			defaultHierarchy: LocalDateTable_13c9a08e-3740-4ce6-8044-6906b90fb2e3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		formatString: yyyy
+		lineageTag: 89eb1f5d-6fd4-4648-92ae-8fdc04fbe140
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		variation Variation
+			isDefault
+			relationship: b735bd8a-c654-43e8-a25e-1fa6920dac31
+			defaultHierarchy: LocalDateTable_6890e82e-5f7f-48e1-9bbc-a5569cf4f6d8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Month Year'
+		formatString: Mmm-yy
+		lineageTag: 7f113e57-d648-4996-ab14-352c3a630fe3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Year]
+
+		variation Variation
+			isDefault
+			relationship: 5fe6c3f9-f196-493d-aca9-ffbe51179f40
+			defaultHierarchy: LocalDateTable_5acca7a6-9050-4ea1-b7be-7c1553f4daba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Month
+		lineageTag: 222ae3b4-7dac-41d5-8102-a80d49310ac3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 9885504f-4529-4e1c-81f4-62a63ffd3446
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		lineageTag: d6673990-1e36-428f-b6f7-6964cb1bee40
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		formatString: 0
+		lineageTag: 3f11649a-e320-40e9-8f9a-87e8956b2163
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day of Week Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of the Month Number'
+		formatString: 0
+		lineageTag: 41d44dc1-f16d-4bad-974c-45ea6e33c7cc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Day of the Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Year'
+		lineageTag: b8d707da-5013-408b-bac8-135ffeadb212
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Financial Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_date = ```
+			
+			    IF(base_date[Month Year] = MAX(base_date[Month Year]),
+			                     "Latest",
+			                     FORMAT(base_date[Month Year],"MMM")
+			   )
+			```
+		lineageTag: e3c07a4d-5513-4976-b51d-a4edc85a10e0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition base_date = calculated
+		mode: import
+		source =
+				
+				VAR FYStart = "04"
+				VAR todayreference = TODAY()
+				VAR FirstYear = -- Customizes the first year to use
+				    MIN(data_oracle_income[Month])
+				VAR LastYear = -- Customizes the last year to use
+				 todayreference
+				RETURN
+				ADDCOLUMNS (
+				 FILTER (
+				 CALENDARAUTO (),
+				 AND([Date] >= FirstYear,[Date] <= todayreference)),
+				 "Year", DATE ( YEAR ( [Date] ), 12, 31 ),
+				 "Month Year", EOMONTH ( [Date], 0 ),
+				 "Month", FORMAT ( [Date], "mmm" ),
+				 "Month Number", MONTH ( [Date] ),
+				 "Day of Week", FORMAT ( [Date], "ddd" ),
+				 "Day of Week Number", WEEKDAY ( [Date],1),
+				 "Day of the Month Number", DAY([Date]),
+				 "Financial Year", IF(FYStart <= FORMAT([Date],"MM"), YEAR([Date]) & "-" & YEAR([Date])+1 ,YEAR([Date])-1 & "-" & YEAR([Date])
+				))
+
+	annotation PBI_Id = eaa22f27e0564352bf4b70117d9c3dac
+

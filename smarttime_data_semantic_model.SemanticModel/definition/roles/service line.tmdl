@@ -1,0 +1,25 @@
+role 'service line'
+	modelPermission: read
+
+	tablePermission data_smarttime =
+			VAR CurrentUserEmail = USERPRINCIPALNAME()
+			
+			// Find the EmployeeID of the currently logged-in user.
+			// This assumes 'Employees' is the table that holds all employee details including email.
+			VAR LoggedInEmployeeID =
+			    LOOKUPVALUE(
+			        'support_rls_merged'[PersonFk],
+			        'support_rls_merged'[support_entraid.userPrincipalName],
+			        CurrentUserEmail
+			    )
+			
+			RETURN
+			    // Check if the logged-in user's EmployeeID is part of the HierarchyPath
+			    // for each row in the Main Data Table.
+			    // This will return TRUE for all employees who report (directly or indirectly)
+			    // to the logged-in user, including the user themselves.
+			    NOT ISBLANK(LoggedInEmployeeID) && // Ensure we found an ID for the logged-in user
+			    PATHCONTAINS('data_smarttime'[calc_hierarchy_path], LoggedInEmployeeID)
+
+	annotation PBI_Id = b3effcc1b0154522b300a7b18db5c3fd
+

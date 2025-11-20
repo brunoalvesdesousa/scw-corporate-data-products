@@ -1,0 +1,998 @@
+table data_salesforce_contact
+	isHidden
+	lineageTag: 984d86c8-597d-4109-8656-d915f10f30ef
+
+	column RowID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d0f4ce93-eb91-4d04-963a-ef3e382aa237
+		summarizeBy: count
+		sourceColumn: RowID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5666f11f-2ffb-4a70-ba9c-ee6383ea8516
+		summarizeBy: count
+		sourceColumn: ParentID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_type
+		dataType: string
+		isHidden
+		lineageTag: fdef3616-3c89-462c-ae64-e9947502cf39
+		summarizeBy: none
+		sourceColumn: attributes_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_url
+		dataType: string
+		isHidden
+		lineageTag: 7a9459d2-326e-42d2-9c1d-0e5bbfaf9d03
+		summarizeBy: none
+		sourceColumn: attributes_url
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		isHidden
+		lineageTag: 5dabebd3-390e-4bf5-a6be-e700664484a7
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: string
+		isHidden
+		lineageTag: d2090243-527c-492c-a9f3-f372a46239f0
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountId
+		dataType: string
+		isHidden
+		lineageTag: c10be22d-2773-4965-b317-2f111eba612d
+		summarizeBy: none
+		sourceColumn: AccountId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		isHidden
+		lineageTag: 90c96491-df26-4238-96f1-0abfe658829d
+		summarizeBy: none
+		sourceColumn: LastName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		lineageTag: cc548ac0-ae22-44f6-b193-de48c3e8da95
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OwnerId
+		dataType: string
+		isHidden
+		lineageTag: e84a3105-ebdb-4905-9188-a9d9ee7b1a13
+		summarizeBy: none
+		sourceColumn: OwnerId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasOptedOutOfEmail
+		dataType: string
+		isHidden
+		lineageTag: 4c5ca268-f817-4ec0-9a7f-003299748034
+		summarizeBy: none
+		sourceColumn: HasOptedOutOfEmail
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasOptedOutOfFax
+		dataType: string
+		isHidden
+		lineageTag: 62bb9b3a-1eaa-49fc-8c11-d86126df1f7b
+		summarizeBy: none
+		sourceColumn: HasOptedOutOfFax
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DoNotCall
+		dataType: string
+		isHidden
+		lineageTag: f233b072-9c53-4041-8201-5d152af747be
+		summarizeBy: none
+		sourceColumn: DoNotCall
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		isHidden
+		lineageTag: 0ec5febd-adf8-4741-b4cc-637039189b69
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastModifiedById
+		dataType: string
+		isHidden
+		lineageTag: 71f724f4-645c-4fb1-80fe-59c4c1136ff0
+		summarizeBy: none
+		sourceColumn: LastModifiedById
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsEmailBounced
+		dataType: string
+		isHidden
+		lineageTag: a901b6b3-0bb5-44d5-9c00-9a42fb1b9aef
+		summarizeBy: none
+		sourceColumn: IsEmailBounced
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhotoUrl
+		dataType: string
+		isHidden
+		lineageTag: 4c3dfdcd-49cc-468f-b8fd-1cf176bde829
+		summarizeBy: none
+		sourceColumn: PhotoUrl
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contact_Type__c
+		dataType: string
+		isHidden
+		lineageTag: 0e2949dc-eb03-44a6-9703-bc70e28547de
+		summarizeBy: none
+		sourceColumn: Contact_Type__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role__c
+		dataType: string
+		isHidden
+		lineageTag: 31252db5-e403-4fed-bdf4-01975fed1408
+		summarizeBy: none
+		sourceColumn: Role__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCW_DBL__c
+		dataType: string
+		isHidden
+		lineageTag: 1d43d76c-37f3-4b1f-91a4-8cc3f8b3cca8
+		summarizeBy: none
+		sourceColumn: SCW_DBL__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCW_Leaver__c
+		dataType: string
+		isHidden
+		lineageTag: e0794679-09e6-4a3c-8481-e1ba72e84c82
+		summarizeBy: none
+		sourceColumn: SCW_Leaver__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_Manager__c
+		dataType: string
+		isHidden
+		lineageTag: 3b2c7933-e30d-46c4-b39c-596415994e4a
+		summarizeBy: none
+		sourceColumn: Contract_Manager__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Can_be_Opportunity_Lead__c
+		dataType: string
+		isHidden
+		lineageTag: 40a32bd2-712b-4861-ad06-7bb79b77ba3a
+		summarizeBy: none
+		sourceColumn: Can_be_Opportunity_Lead__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Alternative_Address__c
+		dataType: string
+		isHidden
+		lineageTag: 65b08a6e-ecdb-469e-a72d-1f7babc32aeb
+		summarizeBy: none
+		sourceColumn: Alternative_Address__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancer__c
+		dataType: string
+		isHidden
+		lineageTag: 56ca42d9-eea8-4449-bda5-fcc8eb9ca30b
+		summarizeBy: none
+		sourceColumn: Cancer__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Digital_Transformation__c
+		dataType: string
+		isHidden
+		lineageTag: bbb4a6ed-ddbe-44c3-9c55-f3c2d925e9ba
+		summarizeBy: none
+		sourceColumn: Digital_Transformation__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Elective_Care__c
+		dataType: string
+		isHidden
+		lineageTag: 2cb9bffa-0359-4a2b-b102-53d084731e45
+		summarizeBy: none
+		sourceColumn: Elective_Care__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Health_Improvement_and_Inequalities__c
+		dataType: string
+		isHidden
+		lineageTag: 960c579d-d7ec-46cc-9a74-9978506e0327
+		summarizeBy: none
+		sourceColumn: Health_Improvement_and_Inequalities__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inactive__c
+		dataType: string
+		isHidden
+		lineageTag: 700cdc88-9129-4a10-b383-845e8eec86e1
+		summarizeBy: none
+		sourceColumn: Inactive__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Integrated_Care_Systems__c
+		dataType: string
+		isHidden
+		lineageTag: f08c05e1-39b7-450f-9378-2d6472f19c69
+		summarizeBy: none
+		sourceColumn: Integrated_Care_Systems__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Learning_Disabilities_and_Autism__c
+		dataType: string
+		isHidden
+		lineageTag: f2a9e943-7630-4fbe-8fa6-3423f387fac8
+		summarizeBy: none
+		sourceColumn: Learning_Disabilities_and_Autism__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Long_term_financial_sustainability__c
+		dataType: string
+		isHidden
+		lineageTag: cb73822b-129b-4503-be58-52e9731834fe
+		summarizeBy: none
+		sourceColumn: Long_term_financial_sustainability__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mental_Health__c
+		dataType: string
+		isHidden
+		lineageTag: 7529a45d-c95d-4771-91c0-b95478429d4f
+		summarizeBy: none
+		sourceColumn: Mental_Health__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prevention__c
+		dataType: string
+		isHidden
+		lineageTag: 047e37e2-20cf-4469-b6ab-165daa45e63b
+		summarizeBy: none
+		sourceColumn: Prevention__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Primary_Care__c
+		dataType: string
+		isHidden
+		lineageTag: d555d909-f312-493d-a621-0e37e8e45c5f
+		summarizeBy: none
+		sourceColumn: Primary_Care__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Protecting_the_population__c
+		dataType: string
+		isHidden
+		lineageTag: 3f190c9a-2ef8-4925-8a15-99535cd29fcc
+		summarizeBy: none
+		sourceColumn: Protecting_the_population__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Starting_well__c
+		dataType: string
+		isHidden
+		lineageTag: 00e52930-b564-4924-9cc2-7a6f084f1c57
+		summarizeBy: none
+		sourceColumn: Starting_well__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Support_the_recovery__c
+		dataType: string
+		isHidden
+		lineageTag: ceebc666-2690-49af-b250-fdfc95ffe385
+		summarizeBy: none
+		sourceColumn: Support_the_recovery__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Virtual_care_delivery__c
+		dataType: string
+		isHidden
+		lineageTag: a4ae1f0d-ca90-48d0-88c8-5c1dc07ca033
+		summarizeBy: none
+		sourceColumn: Virtual_care_delivery__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workforce__c
+		dataType: string
+		isHidden
+		lineageTag: b271d91a-d486-4f5e-866a-f3733f6aaff7
+		summarizeBy: none
+		sourceColumn: Workforce__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		isHidden
+		lineageTag: 2f9cb8b8-6f05-46c1-9ff3-410f18064f7c
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		lineageTag: 8a5892b7-670d-462f-bc98-428954214545
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		isHidden
+		lineageTag: 70e6d8a7-6a01-4999-8190-02c838a7fefb
+		summarizeBy: none
+		sourceColumn: Title
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingStreet
+		dataType: string
+		isHidden
+		lineageTag: fc91b815-ac41-4911-a262-78eb635637e0
+		summarizeBy: none
+		sourceColumn: MailingStreet
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingCity
+		dataType: string
+		isHidden
+		lineageTag: 4015cc5d-1af7-41ab-83c9-53b1ede43484
+		summarizeBy: none
+		sourceColumn: MailingCity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingPostalCode
+		dataType: string
+		isHidden
+		lineageTag: a944b58a-2a26-4616-8f25-a5ccc241f7ea
+		summarizeBy: none
+		sourceColumn: MailingPostalCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingAddress_city
+		dataType: string
+		isHidden
+		lineageTag: 24d1df29-96b4-4d26-a852-d5d16e113dee
+		summarizeBy: none
+		sourceColumn: MailingAddress_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingAddress_postalCode
+		dataType: string
+		isHidden
+		lineageTag: d99a739f-6032-43b5-9cf4-716805953107
+		summarizeBy: none
+		sourceColumn: MailingAddress_postalCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingAddress_street
+		dataType: string
+		isHidden
+		lineageTag: f5df9b65-acdd-4f7a-8f35-19b448d5fd93
+		summarizeBy: none
+		sourceColumn: MailingAddress_street
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		isHidden
+		lineageTag: 7e6be0c5-d9d7-4cf2-81a2-9ff4a9f5dd7d
+		summarizeBy: none
+		sourceColumn: Phone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Landline_Phone__c
+		dataType: string
+		isHidden
+		lineageTag: de77edb9-460b-4f4c-8218-15b278760cd7
+		summarizeBy: none
+		sourceColumn: Landline_Phone__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MobilePhone
+		dataType: string
+		isHidden
+		lineageTag: 2aa8765f-112d-4556-afdd-8479d953c496
+		summarizeBy: none
+		sourceColumn: MobilePhone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile_Phone__c
+		dataType: string
+		isHidden
+		lineageTag: 085404aa-5e99-47a8-b301-330071b00b2c
+		summarizeBy: none
+		sourceColumn: Mobile_Phone__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeadSource
+		dataType: string
+		isHidden
+		lineageTag: c4cc892d-2d10-42d6-8465-1f0d0bf746bb
+		summarizeBy: none
+		sourceColumn: LeadSource
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingState
+		dataType: string
+		isHidden
+		lineageTag: 1a353963-d0d7-4e50-a38c-a1686e3081f4
+		summarizeBy: none
+		sourceColumn: MailingState
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingCountry
+		dataType: string
+		isHidden
+		lineageTag: 27026357-f5a3-46b2-b4aa-5485a72deefb
+		summarizeBy: none
+		sourceColumn: MailingCountry
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingAddress_country
+		dataType: string
+		isHidden
+		lineageTag: 2afa1f3f-b629-42e1-8afa-e26a2e5a3b85
+		summarizeBy: none
+		sourceColumn: MailingAddress_country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MailingAddress_state
+		dataType: string
+		isHidden
+		lineageTag: 50104b5b-9674-4e7e-86a2-ca225ba4816c
+		summarizeBy: none
+		sourceColumn: MailingAddress_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		isHidden
+		lineageTag: 90584416-62ba-491b-9719-73695d33a339
+		summarizeBy: none
+		sourceColumn: Department
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relationship_Owner__c
+		dataType: string
+		isHidden
+		lineageTag: 66b87c93-57f0-4997-9f56-b1d816c54e06
+		summarizeBy: none
+		sourceColumn: Relationship_Owner__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Upload_Source__c
+		dataType: string
+		isHidden
+		lineageTag: d7187e38-97d9-4b17-9529-d3c30c7ded5a
+		summarizeBy: none
+		sourceColumn: Upload_Source__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Salutation
+		dataType: string
+		isHidden
+		lineageTag: 46d95d10-7742-4049-8bc1-92887f770363
+		summarizeBy: none
+		sourceColumn: Salutation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastActivityDate
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d297d8d8-3661-4cfc-bd65-0c08b0377a4d
+		summarizeBy: none
+		sourceColumn: LastActivityDate
+
+		variation Variation
+			isDefault
+			relationship: 83057d97-7286-45b5-8fbb-6e623e0040dd
+			defaultHierarchy: LocalDateTable_c36724dd-23bb-4a18-bab4-95875864371a.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Contact_Status__c
+		dataType: string
+		isHidden
+		lineageTag: 0465ed81-bda6-4c55-87ba-e31fb8711dcd
+		summarizeBy: none
+		sourceColumn: Contact_Status__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Influence_on_SCW_Brand_and_Income__c
+		dataType: string
+		isHidden
+		lineageTag: 3f87e149-8fd2-43d5-ae31-0fe500a83c59
+		summarizeBy: none
+		sourceColumn: Influence_on_SCW_Brand_and_Income__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relationship_Strength__c
+		dataType: string
+		isHidden
+		lineageTag: b763d16b-076d-4b58-abb1-ba3c9c9047cd
+		summarizeBy: none
+		sourceColumn: Relationship_Strength__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marcomm__c
+		dataType: string
+		isHidden
+		lineageTag: 6ee5ca0a-de60-4c9a-b7ce-325e7c7f9448
+		summarizeBy: none
+		sourceColumn: Marcomm__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinkedIn_URL__c
+		dataType: string
+		isHidden
+		lineageTag: e81e9352-28af-499f-bd52-422ef806bd58
+		summarizeBy: none
+		sourceColumn: LinkedIn_URL__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Influence_Outside_Organisation__c
+		dataType: string
+		isHidden
+		lineageTag: 6bee9720-d344-4d2b-a9de-b6e3c170515d
+		summarizeBy: none
+		sourceColumn: Influence_Outside_Organisation__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Influence_with_Organisation__c
+		dataType: string
+		isHidden
+		lineageTag: 5ee03bc5-20fc-43a7-8b85-cea000dde973
+		summarizeBy: none
+		sourceColumn: Influence_with_Organisation__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Twitter_URL__c
+		dataType: string
+		isHidden
+		lineageTag: 31310744-f58b-40e3-8b93-0bda7dc3c917
+		summarizeBy: none
+		sourceColumn: Twitter_URL__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Likes__c
+		dataType: string
+		isHidden
+		lineageTag: dc7aeb24-47f3-4e7c-8aed-83f16fd9436c
+		summarizeBy: none
+		sourceColumn: Likes__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Note__c
+		dataType: string
+		isHidden
+		lineageTag: e38b4436-9472-4b06-92cd-2955e4a2140c
+		summarizeBy: none
+		sourceColumn: Note__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Other_Role__c
+		dataType: string
+		isHidden
+		lineageTag: 4ce46b02-1dcc-4cac-a63e-9fe304ad4e45
+		summarizeBy: none
+		sourceColumn: Other_Role__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opinion_of_SCW__c
+		dataType: string
+		isHidden
+		lineageTag: a79439f6-ded1-4e73-a51a-08793fa1b9c0
+		summarizeBy: none
+		sourceColumn: Opinion_of_SCW__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Power_Influence__c
+		dataType: string
+		isHidden
+		lineageTag: f50bcb19-9948-4c01-960c-37865635c070
+		summarizeBy: none
+		sourceColumn: Power_Influence__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssistantName
+		dataType: string
+		isHidden
+		lineageTag: 74d5fd52-d6ad-4b01-9fa0-f9973507a839
+		summarizeBy: none
+		sourceColumn: AssistantName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assistant_Email__c
+		dataType: string
+		isHidden
+		lineageTag: e13e6dca-7667-432b-92d1-dc650dd8f519
+		summarizeBy: none
+		sourceColumn: Assistant_Email__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssistantPhone
+		dataType: string
+		isHidden
+		lineageTag: 0e410335-796b-483f-9f56-d7ea6cb902eb
+		summarizeBy: none
+		sourceColumn: AssistantPhone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assistant_Phone__c
+		dataType: string
+		isHidden
+		lineageTag: 5d57370c-328c-4777-9c1f-ec8a121114c4
+		summarizeBy: none
+		sourceColumn: Assistant_Phone__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtherPhone
+		dataType: string
+		isHidden
+		lineageTag: c55a926a-4aaf-4981-b618-90ccd523705b
+		summarizeBy: none
+		sourceColumn: OtherPhone
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dislikes__c
+		dataType: string
+		isHidden
+		lineageTag: ed3d41d7-accb-4e1a-beb3-ca23e44bb930
+		summarizeBy: none
+		sourceColumn: Dislikes__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WhatsApp_ID__c
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dd642053-99eb-49ce-9f6c-b4fa717a83f6
+		summarizeBy: sum
+		sourceColumn: WhatsApp_ID__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skype_ID__c
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 69cfa199-cc44-47d8-8d8d-d5ea57e5a1ed
+		summarizeBy: sum
+		sourceColumn: Skype_ID__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget__c
+		dataType: string
+		isHidden
+		lineageTag: 529b91a1-d764-45c6-a7b5-f2e6cdeb55e7
+		summarizeBy: none
+		sourceColumn: Budget__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtherState
+		dataType: string
+		isHidden
+		lineageTag: e8815552-209a-47da-9a93-8399d20895da
+		summarizeBy: none
+		sourceColumn: OtherState
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtherAddress_state
+		dataType: string
+		isHidden
+		lineageTag: 403c9d97-476d-4ac8-9e8c-0c4170eb2ba6
+		summarizeBy: none
+		sourceColumn: OtherAddress_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ddcb561d-54b5-40f6-8753-48ad26c5ca46
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_salesforce_contact = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Salesforce_Contact = Source{[Schema="dbo",Item="Salesforce_Contact"]}[Data]
+				in
+				    dbo_Salesforce_Contact
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

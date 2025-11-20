@@ -1,0 +1,904 @@
+table data_salesforce_contract_cost_centre
+	isHidden
+	lineageTag: ce8e05d1-7d19-4a7f-9424-5de786147e4f
+
+	column RowID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a7a362cd-e178-441e-aa4a-df621cb3a0d8
+		summarizeBy: count
+		sourceColumn: RowID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ead3ce9f-3666-4a18-b5f4-4f5689ba6ae8
+		summarizeBy: count
+		sourceColumn: ParentID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_type
+		dataType: string
+		isHidden
+		lineageTag: 80358960-955e-4470-a84a-19feee644b7c
+		summarizeBy: none
+		sourceColumn: attributes_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_url
+		dataType: string
+		isHidden
+		lineageTag: f6153327-614c-43c3-89c6-4372a6303dbb
+		summarizeBy: none
+		sourceColumn: attributes_url
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		isHidden
+		lineageTag: 4ed503fe-f8d9-45a5-8775-308f90c8ba4d
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: string
+		isHidden
+		lineageTag: 129f2fa4-e7e6-4e6a-9453-1b0c6ba07507
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		lineageTag: ec06b74d-82b4-487b-bc25-918a722a11f8
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		isHidden
+		lineageTag: b385fa7a-5547-4c99-a334-f47da878bbb3
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastModifiedById
+		dataType: string
+		isHidden
+		lineageTag: 7384e9d5-def2-4d35-bcc8-46b040970580
+		summarizeBy: none
+		sourceColumn: LastModifiedById
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCW_Contract__c
+		dataType: string
+		isHidden
+		lineageTag: 2ee071c1-fb57-4ba8-bf27-eb1552f023d1
+		summarizeBy: none
+		sourceColumn: SCW_Contract__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_Rev_15_16__c
+		dataType: double
+		isHidden
+		lineageTag: e1c44224-84d5-41a1-9ea4-fff13c524953
+		summarizeBy: sum
+		sourceColumn: CC_Rev_15_16__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_16_17__c
+		dataType: double
+		isHidden
+		lineageTag: 00026764-00c5-47db-9744-9899334adf15
+		summarizeBy: sum
+		sourceColumn: CC_Rev_16_17__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_17_18__c
+		dataType: double
+		isHidden
+		lineageTag: 2c4e2a9c-dc46-4d54-89fd-ebcdcc3a64ec
+		summarizeBy: sum
+		sourceColumn: CC_Rev_17_18__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_18_19__c
+		dataType: double
+		isHidden
+		lineageTag: 47cf855e-ba40-4980-ae71-aed931926712
+		summarizeBy: sum
+		sourceColumn: CC_Rev_18_19__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_19_20__c
+		dataType: double
+		isHidden
+		lineageTag: 5aae6188-ddc5-4538-bc29-ecc222567ba7
+		summarizeBy: sum
+		sourceColumn: CC_Rev_19_20__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_20_21__c
+		dataType: double
+		isHidden
+		lineageTag: 58d255bc-380f-4226-9a59-0c610bae55cb
+		summarizeBy: sum
+		sourceColumn: CC_Rev_20_21__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_21_22__c
+		dataType: double
+		isHidden
+		lineageTag: 1443e7a1-4c01-44c7-9d7e-c12112d10bb4
+		summarizeBy: sum
+		sourceColumn: CC_Rev_21_22__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_22_23__c
+		dataType: double
+		isHidden
+		lineageTag: 547a1402-2d2f-4df0-979b-ec3026cd36d4
+		summarizeBy: sum
+		sourceColumn: CC_Rev_22_23__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_23_24__c
+		dataType: double
+		isHidden
+		lineageTag: 1f7426f8-2e3d-44c9-818f-963955133212
+		summarizeBy: sum
+		sourceColumn: CC_Rev_23_24__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_24_25__c
+		dataType: double
+		isHidden
+		lineageTag: 2a9b0f22-b083-42a4-a175-a7a08bae9729
+		summarizeBy: sum
+		sourceColumn: CC_Rev_24_25__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_25_26__c
+		dataType: double
+		isHidden
+		lineageTag: ef3f23c3-d8ed-40f9-af37-7d19394fff8b
+		summarizeBy: sum
+		sourceColumn: CC_Rev_25_26__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_26_27__c
+		dataType: double
+		isHidden
+		lineageTag: 53026ade-8392-4037-be8e-164643aba1be
+		summarizeBy: sum
+		sourceColumn: CC_Rev_26_27__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_27_28__c
+		dataType: double
+		isHidden
+		lineageTag: 1df5564a-f079-4e47-bdef-e7184bbaddba
+		summarizeBy: sum
+		sourceColumn: CC_Rev_27_28__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_28_29__c
+		dataType: double
+		isHidden
+		lineageTag: 4f012947-2ffd-4735-9eea-a863e7bf4ea1
+		summarizeBy: sum
+		sourceColumn: CC_Rev_28_29__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_29_30__c
+		dataType: double
+		isHidden
+		lineageTag: e2ce94fc-3ba4-4ba4-9a79-013fcb822fd7
+		summarizeBy: sum
+		sourceColumn: CC_Rev_29_30__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_30_31__c
+		dataType: double
+		isHidden
+		lineageTag: aedb9c28-8e0e-4016-8686-486dc2d4cf40
+		summarizeBy: sum
+		sourceColumn: CC_Rev_30_31__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_31_32__c
+		dataType: double
+		isHidden
+		lineageTag: 02a0a84d-74fa-4e37-971c-00264edd6c51
+		summarizeBy: sum
+		sourceColumn: CC_Rev_31_32__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_32_33__c
+		dataType: double
+		isHidden
+		lineageTag: 158ebe7c-0fea-432c-9ee8-1ef293d1369f
+		summarizeBy: sum
+		sourceColumn: CC_Rev_32_33__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_33_34__c
+		dataType: double
+		isHidden
+		lineageTag: c151d0e3-03fd-4182-b291-aca1a8992689
+		summarizeBy: sum
+		sourceColumn: CC_Rev_33_34__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_34_35__c
+		dataType: double
+		isHidden
+		lineageTag: 821c8e83-92d5-455e-8604-4609d3ce8a10
+		summarizeBy: sum
+		sourceColumn: CC_Rev_34_35__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_35_36__c
+		dataType: double
+		isHidden
+		lineageTag: d1352c67-f8db-4a7e-97d7-c23e2fadae47
+		summarizeBy: sum
+		sourceColumn: CC_Rev_35_36__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_36_37__c
+		dataType: double
+		isHidden
+		lineageTag: fa87781f-8ecd-49a3-aac2-f0a8caf2ce42
+		summarizeBy: sum
+		sourceColumn: CC_Rev_36_37__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_37_38__c
+		dataType: double
+		isHidden
+		lineageTag: 6b23c2bf-04f3-4b6b-9d99-b4e437f8412c
+		summarizeBy: sum
+		sourceColumn: CC_Rev_37_38__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_38_39__c
+		dataType: double
+		isHidden
+		lineageTag: dd21dd15-2543-4918-b849-4641a576f20a
+		summarizeBy: sum
+		sourceColumn: CC_Rev_38_39__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_39_40__c
+		dataType: double
+		isHidden
+		lineageTag: 3793cbe1-6e17-4cd6-9820-dd1ee294ed3c
+		summarizeBy: sum
+		sourceColumn: CC_Rev_39_40__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Contribution__c
+		dataType: double
+		isHidden
+		lineageTag: 621795e2-5503-41b4-a673-4e692df94b9e
+		summarizeBy: sum
+		sourceColumn: Contribution__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cost_Centre__c
+		dataType: string
+		isHidden
+		lineageTag: 27275d89-1037-4b7a-b688-f132b730b528
+		summarizeBy: none
+		sourceColumn: Cost_Centre__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Create_Process_Complete__c
+		dataType: string
+		isHidden
+		lineageTag: 51674816-6466-4393-927b-3a33a492774e
+		summarizeBy: none
+		sourceColumn: Create_Process_Complete__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Non_Pay__c
+		dataType: string
+		isHidden
+		lineageTag: fc4760e7-54ea-46c1-9fbc-8bb0ddaf654a
+		summarizeBy: none
+		sourceColumn: Non_Pay__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pay_or_Non_Pay__c
+		dataType: string
+		isHidden
+		lineageTag: 90af6e41-ac1e-4ccc-9762-492c962e9bf7
+		summarizeBy: none
+		sourceColumn: Pay_or_Non_Pay__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_1_Value__c
+		dataType: double
+		isHidden
+		lineageTag: be966a9e-6013-478f-8418-dce73a84e955
+		summarizeBy: sum
+		sourceColumn: Year_1_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_2_Value__c
+		dataType: double
+		isHidden
+		lineageTag: d04720ee-2d80-4f6d-a68e-cddc81b07b58
+		summarizeBy: sum
+		sourceColumn: Year_2_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_3_Value__c
+		dataType: double
+		isHidden
+		lineageTag: 8fd03bab-8d30-4721-bb0d-fb304ce9f7d3
+		summarizeBy: sum
+		sourceColumn: Year_3_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_4_Value__c
+		dataType: double
+		isHidden
+		lineageTag: f75f2ba6-dc96-4a52-8eb7-10052c27b02f
+		summarizeBy: sum
+		sourceColumn: Year_4_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_5_Value__c
+		dataType: double
+		isHidden
+		lineageTag: 412357fe-715b-43dd-8baf-395483d50f16
+		summarizeBy: sum
+		sourceColumn: Year_5_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_6_Value__c
+		dataType: double
+		isHidden
+		lineageTag: 8e81c729-8a12-470a-9e66-23928b14560a
+		summarizeBy: sum
+		sourceColumn: Year_6_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_7_Value__c
+		dataType: double
+		isHidden
+		lineageTag: 82c0a072-084c-4c6f-9b54-71c8bfc059fd
+		summarizeBy: sum
+		sourceColumn: Year_7_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year_8_Value__c
+		dataType: double
+		isHidden
+		lineageTag: 7c1444ef-9084-4602-97c8-dd2c06f227ed
+		summarizeBy: sum
+		sourceColumn: Year_8_Value__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column End_Date__c
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 5a51eebc-276c-4e6c-ae61-189646be73f5
+		summarizeBy: none
+		sourceColumn: End_Date__c
+
+		variation Variation
+			isDefault
+			relationship: b37d8d48-3c04-4f06-8678-9da310e94458
+			defaultHierarchy: LocalDateTable_6042759a-affe-4206-97a8-7b34a7a013f9.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Pre_ID__c
+		dataType: string
+		isHidden
+		lineageTag: 11d6e87d-4aa3-4567-899e-cd46921b6fad
+		summarizeBy: none
+		sourceColumn: Pre_ID__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line__c
+		dataType: string
+		isHidden
+		lineageTag: c7c19045-7508-4977-9945-159c2676ef70
+		summarizeBy: none
+		sourceColumn: Service_Line__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start_Date__c
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: b999d5b7-a5d7-475c-b8ea-1f0846111176
+		summarizeBy: none
+		sourceColumn: Start_Date__c
+
+		variation Variation
+			isDefault
+			relationship: f2494bde-30a3-4c53-8d5f-c3868e46672a
+			defaultHierarchy: LocalDateTable_a8ce5be6-d21a-431d-a0e6-5b147d0af25f.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Total_Cost_Centre_Amount__c
+		dataType: double
+		isHidden
+		lineageTag: 6e96e6ea-60ec-4aae-bd21-ab23fb11c689
+		summarizeBy: sum
+		sourceColumn: Total_Cost_Centre_Amount__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year2Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 3ffd84b9-cccd-40c5-9cbd-cc4b83060320
+		summarizeBy: none
+		sourceColumn: Year2Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year3Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 683ff88b-f9c0-4165-bea4-e00af25056dd
+		summarizeBy: none
+		sourceColumn: Year3Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year4Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 2b064ca2-aaf9-4e1f-b025-f5e8564cc70e
+		summarizeBy: none
+		sourceColumn: Year4Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year5Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 8fc17a59-d743-4c31-8880-0b82e97d2249
+		summarizeBy: none
+		sourceColumn: Year5Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year6Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 1bb15d89-8e82-4136-b33c-dd794cdfc063
+		summarizeBy: none
+		sourceColumn: Year6Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year7Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 61aba64b-14e6-43ec-8cdd-e0b3aa4b0997
+		summarizeBy: none
+		sourceColumn: Year7Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year8Vis__c
+		dataType: string
+		isHidden
+		lineageTag: 4df736b6-7877-4269-b067-69f1da42ab30
+		summarizeBy: none
+		sourceColumn: Year8Vis__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_1__c
+		dataType: string
+		isHidden
+		lineageTag: d77f2d8b-10d7-44b7-afca-cbc13cc4b364
+		summarizeBy: none
+		sourceColumn: Year_1__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_2__c
+		dataType: string
+		isHidden
+		lineageTag: a16dbc30-e7cb-471f-ba06-62a2f1a01f8c
+		summarizeBy: none
+		sourceColumn: Year_2__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_3__c
+		dataType: string
+		isHidden
+		lineageTag: b6372c76-fb08-462b-acef-93c753f86600
+		summarizeBy: none
+		sourceColumn: Year_3__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_4__c
+		dataType: string
+		isHidden
+		lineageTag: 2761cf7f-ea78-46d7-a676-50d82ae56453
+		summarizeBy: none
+		sourceColumn: Year_4__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_5__c
+		dataType: string
+		isHidden
+		lineageTag: b4bd17f3-e090-4895-b49c-5b6c4d72745c
+		summarizeBy: none
+		sourceColumn: Year_5__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_6__c
+		dataType: string
+		isHidden
+		lineageTag: ae8ed658-5ad4-4967-89e5-da7c8b286834
+		summarizeBy: none
+		sourceColumn: Year_6__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_7__c
+		dataType: string
+		isHidden
+		lineageTag: 085e7078-2c8d-43fc-867e-ca05b617b6ad
+		summarizeBy: none
+		sourceColumn: Year_7__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_8__c
+		dataType: string
+		isHidden
+		lineageTag: 776b5687-ffaf-4f09-a7f5-d64bddff3561
+		summarizeBy: none
+		sourceColumn: Year_8__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CC_Rev_12_13__c
+		dataType: double
+		isHidden
+		lineageTag: 1c6a57d3-2c0b-4cc7-bea3-8eb905456e7c
+		summarizeBy: sum
+		sourceColumn: CC_Rev_12_13__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_13_14__c
+		dataType: double
+		isHidden
+		lineageTag: 2783b1ed-88e7-4592-996e-0c4858635722
+		summarizeBy: sum
+		sourceColumn: CC_Rev_13_14__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CC_Rev_14_15__c
+		dataType: double
+		isHidden
+		lineageTag: 85434f89-4bde-49f1-a418-d45e32c94f64
+		summarizeBy: sum
+		sourceColumn: CC_Rev_14_15__c
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Derived_File_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5e4c5b0e-008d-4f1f-9b81-22fa4264549b
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_salesforce_contract_cost_centre = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Salesforce_Contract_Cost_Centre = Source{[Schema="dbo",Item="Salesforce_Contract_Cost_Centre"]}[Data]
+				in
+				    dbo_Salesforce_Contract_Cost_Centre
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

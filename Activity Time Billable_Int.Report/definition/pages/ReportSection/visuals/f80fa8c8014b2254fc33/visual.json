@@ -1,0 +1,928 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "f80fa8c8014b2254fc33",
+  "position": {
+    "x": 16,
+    "y": 328,
+    "z": 0,
+    "height": 368,
+    "width": 1248,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Type"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Type",
+              "nativeQueryRef": "Activity Category",
+              "displayName": "Activity Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Type_Detail_Sub"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Type_Detail_Sub",
+              "nativeQueryRef": "Activity Sub-Category",
+              "displayName": "Activity Sub-Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Name"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Name",
+              "nativeQueryRef": "Activity Name",
+              "displayName": "Activity Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "work_activity_number"
+                }
+              },
+              "queryRef": "data_smarttime.work_activity_number",
+              "nativeQueryRef": "WAN",
+              "displayName": "WAN"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Pipeline_Code"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Pipeline_Code",
+              "nativeQueryRef": "Opportunity",
+              "displayName": "Opportunity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Verto_Number"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Verto_Number",
+              "nativeQueryRef": "Verto No",
+              "displayName": "Verto No"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Priority"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Priority",
+              "nativeQueryRef": "Priority",
+              "displayName": "Priority"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Funding_Stream"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Funding_Stream",
+              "nativeQueryRef": "Funding Stream",
+              "displayName": "Funding Stream"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Customer_Name_Short"
+                }
+              },
+              "queryRef": "data_smarttime.Customer_Name_Short",
+              "nativeQueryRef": "Customer",
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Selected_Group_Name_Short"
+                }
+              },
+              "queryRef": "data_smarttime.Selected_Group_Name_Short",
+              "nativeQueryRef": "Group Customer",
+              "displayName": "Group Customer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Cost_Centre"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Cost_Centre",
+              "nativeQueryRef": "Act Cost Centre",
+              "displayName": "Act Cost Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Cost_Centre_Level_3"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Cost_Centre_Level_3",
+              "nativeQueryRef": "Activity Service Line L3",
+              "displayName": "Activity Service Line L3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Work_Activity_Cost_Centre_Level_6"
+                }
+              },
+              "queryRef": "data_smarttime.Work_Activity_Cost_Centre_Level_6",
+              "nativeQueryRef": "Activity Service Line L6",
+              "displayName": "Activity Service Line L6"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "person_full_name"
+                }
+              },
+              "queryRef": "data_smarttime.person_full_name",
+              "nativeQueryRef": "Staff",
+              "displayName": "Staff"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_Assignment_Category"
+                }
+              },
+              "queryRef": "data_smarttime.Person_Assignment_Category",
+              "nativeQueryRef": "Assignment Category",
+              "displayName": "Assignment Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_CostCentre"
+                }
+              },
+              "queryRef": "data_smarttime.Person_CostCentre",
+              "nativeQueryRef": "Staff Cost Centre",
+              "displayName": "Staff Cost Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_Cost_Centre_Level_3"
+                }
+              },
+              "queryRef": "data_smarttime.Person_Cost_Centre_Level_3",
+              "nativeQueryRef": "Staff Cost Centre L3",
+              "displayName": "Staff Cost Centre L3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_Cost_Centre_Level_6"
+                }
+              },
+              "queryRef": "data_smarttime.Person_Cost_Centre_Level_6",
+              "nativeQueryRef": "Staff Cost Centre L6",
+              "displayName": "Staff Cost Centre L6"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Contract_Name"
+                }
+              },
+              "queryRef": "data_smarttime.Contract_Name",
+              "nativeQueryRef": "Contract Name",
+              "displayName": "Contract Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Contract_Start_Date"
+                }
+              },
+              "queryRef": "data_smarttime.Contract_Start_Date",
+              "nativeQueryRef": "Contract Start Date",
+              "displayName": "Contract Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Contract_End_Date"
+                }
+              },
+              "queryRef": "data_smarttime.Contract_End_Date",
+              "nativeQueryRef": "Contract End Date",
+              "displayName": "Contract End Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Contract_Contract_Type"
+                }
+              },
+              "queryRef": "data_smarttime.Contract_Contract_Type",
+              "nativeQueryRef": "Contract Type",
+              "displayName": "Contract Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Rate_Table_Name"
+                }
+              },
+              "queryRef": "data_smarttime.Rate_Table_Name",
+              "nativeQueryRef": "Rate Table",
+              "displayName": "Rate Table"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Date"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Date",
+              "nativeQueryRef": "Activity Date",
+              "displayName": "Activity Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Created_Date"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Created_Date",
+              "nativeQueryRef": "Activity Created Date",
+              "displayName": "Activity Created Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Activity_Hours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Activity_Hours)",
+              "nativeQueryRef": "Hours",
+              "displayName": "Hours"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "calc_smarttime_days"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(data_smarttime.calc_smarttime_days)",
+              "nativeQueryRef": "Days",
+              "displayName": "Days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Day_Rate"
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Day_Rate)",
+              "nativeQueryRef": "Day_Rate",
+              "displayName": "Day Rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Solution_Notional"
+                }
+              },
+              "queryRef": "data_smarttime.Solution_Notional",
+              "nativeQueryRef": "Solution Notional",
+              "displayName": "Solution Notional"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Rate_Is_Exception"
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Rate_Is_Exception)",
+              "nativeQueryRef": "Rate is Exception",
+              "displayName": "Rate is Exception"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Is_UnPriced"
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Is_UnPriced)",
+              "nativeQueryRef": "Unpriced",
+              "displayName": "Unpriced"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Out_Of_Hours"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Out_Of_Hours",
+              "nativeQueryRef": "Out of Hours",
+              "displayName": "Out of Hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Non_Invoiceable"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Non_Invoiceable",
+              "nativeQueryRef": "Non Invoiceable",
+              "displayName": "Non Invoiceable"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Rate"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Rate)",
+              "nativeQueryRef": "Burn",
+              "displayName": "Burn"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Cost"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(data_smarttime.Cost)",
+              "nativeQueryRef": "Standard Cost",
+              "displayName": "Standard Cost"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_Payroll_Number"
+                }
+              },
+              "queryRef": "data_smarttime.Person_Payroll_Number",
+              "nativeQueryRef": "Employee Number",
+              "displayName": "Employee Number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Oracle_Number"
+                }
+              },
+              "queryRef": "data_smarttime.Oracle_Number",
+              "nativeQueryRef": "Oracle Number",
+              "displayName": "Oracle Number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Activity_Comments"
+                }
+              },
+              "queryRef": "data_smarttime.Activity_Comments",
+              "nativeQueryRef": "Comments",
+              "displayName": "Comments"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Customer_Name_Short"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "165.72143463296678D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Work_Activity_Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "55.056338028169016D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Solution_Notional"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "251.85915750923064D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Contract_Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.61998388776918D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(data_smarttime.Activity_Hours)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.52111727583551D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(data_smarttime.Rate_Is_Exception)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "51.66196302164039D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Out_Of_Hours"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.01408450704226D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Non_Invoiceable"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "62.3823511297916D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Person_Payroll_Number"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "298.1830985915493D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Comments"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "62.97931034482759D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Contract_Start_Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "58.317253212747325D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Contract_End_Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.81378559358893D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.03334537704521D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Created_Date"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

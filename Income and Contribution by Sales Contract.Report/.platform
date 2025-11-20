@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Income and Contribution by Sales Contract"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c3764a3-c8be-4b9b-a88f-6d6db7daa2de"
+  }
+}

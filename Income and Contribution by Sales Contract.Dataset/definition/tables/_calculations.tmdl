@@ -1,0 +1,204 @@
+table _calculations
+	lineageTag: 138318f6-1750-4ec5-8642-4d2f9aed0319
+
+	measure calc_contribution_% = ```
+			
+			    IF(
+			        ISBLANK([calc_income]) ||
+			        [calc_income]=0 ||
+			        ISBLANK([calc_cost_all]) ||
+			        [calc_cost_all]=0,
+			        "",
+			(_calculations[calc_income]-_calculations[calc_cost_all])/_calculations[calc_income])
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 365a73a6-5c78-4c67-a2ad-73637e6a17bd
+
+		changedProperty = IsHidden
+
+	measure txt_contribution_% = "% Contribution: " & FORMAT((_calculations[calc_contribution_%]*100),"#,##0.00") & "%"
+		lineageTag: a8996365-46bd-4651-90fd-042c482605de
+
+		changedProperty = IsHidden
+
+	measure calc_cost_all =
+			
+			SUM(data_smarttime[Cost])+[calc_agency_cost]+[calc_exception_cost]+_calculations[calc_oracle_non_pay]
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 676c6dad-d3af-4ae8-a461-25ddd29d2e5a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_income = SUM(data_oracle_income[Amount])*-1
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: aa045001-f8f9-48bf-819c-c1e5e412b8c9
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_contract_value = sum(data_salesforce_master[Contract Value])
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		lineageTag: 3e2c1609-e765-43a7-8fad-643d13fb8604
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_invoice_value = sum(data_salesforce_master[Invoice Value])
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 96318d4a-2ca9-477b-9d69-b78ed4e9d477
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure txt_contract_value = ```
+			"Contract Value " & FORMAT([calc_contract_value], "£#,##0")
+			
+			```
+		lineageTag: 9ca8154a-77be-4742-b04c-a973675ed0a2
+
+	measure calc_planned_income = sum(data_salesforce_master[Amount])
+		lineageTag: 608a61bd-5fbf-4679-a3c2-64c55b568e93
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_oracle_non_pay = sum(data_oracle_direct_non_pay[Amount])
+		lineageTag: 0367c472-c0dd-4b5e-9413-1986ec261e37
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_agency_cost = SUM(data_smarttime[cost_agency])
+		formatString: 0
+		lineageTag: cfd5b41e-2908-4501-9343-f5240acd9d80
+
+	measure calc_exception_cost = sum(data_smarttime[cost_exception])
+		lineageTag: bfad6dd5-7f6f-4dfa-8ad3-ebfc5cea37b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_opportunity_amount = SUM(data_salesforce_master[Amount])
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 77d61050-a7b6-431a-869a-45d1fd0e0441
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure txt_opportunity_amount = "Opportunity Amount: " & FORMAT([calc_oppo_currentfy_amount], "£#,##0")
+		lineageTag: 3b1a9200-e581-4e5b-b5ba-22380fe64786
+
+	measure calc_valid_cost_income =
+			
+			IF(
+			    NOT(ISBLANK(SUM(data_smarttime[Cost]))) ||
+			    NOT(ISBLANK(SUM(data_oracle_income[Amount]))) ||
+			    NOT(ISBLANK(sum(data_oracle_direct_non_pay[Amount]))),
+			    "True",
+			    "False")
+		lineageTag: aff2dd98-9eed-44e5-8517-447265cb6816
+
+	measure calc_cost_non_pay = SUM(data_oracle_direct_non_pay[Amount])
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 484d0acf-27b1-41b4-aa4b-bd4660ab927e
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_oppo_currentfy_amount = ```
+			
+			    IF(MAX(base_date[Financial Year])= "2015-2016",SUM(data_salesforce_mdt_detail[X2015_16_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2016-2017",SUM(data_salesforce_mdt_detail[X2016_17_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2017-2018",SUM(data_salesforce_mdt_detail[X2017_18_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2018-2019",SUM(data_salesforce_mdt_detail[X2018_19_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2019-2020",SUM(data_salesforce_mdt_detail[X2019_20_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2020-2021",SUM(data_salesforce_mdt_detail[X2020_21_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2021-2022",SUM(data_salesforce_mdt_detail[X2021_22_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2022-2023",SUM(data_salesforce_mdt_detail[X2022_23_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2023-2024",SUM(data_salesforce_mdt_detail[X2023_24_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2024-2025",SUM(data_salesforce_mdt_detail[X2024_25_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2025-2026",SUM(data_salesforce_mdt_detail[X2025_26_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2026-2027",SUM(data_salesforce_mdt_detail[X2026_27_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2027-2028",SUM(data_salesforce_mdt_detail[X2027_28_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2028-2029",SUM(data_salesforce_mdt_detail[X2028_29_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2029-2030",SUM(data_salesforce_mdt_detail[X2029_30_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2030-2031",SUM(data_salesforce_mdt_detail[X2030_31_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2031-2032",SUM(data_salesforce_mdt_detail[X2031_32_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2032-2033",SUM(data_salesforce_mdt_detail[X2032_33_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2033-2034",SUM(data_salesforce_mdt_detail[X2033_34_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2034-2035",SUM(data_salesforce_mdt_detail[X2034_35_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2035-2036",SUM(data_salesforce_mdt_detail[X2035_36_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2036-2037",SUM(data_salesforce_mdt_detail[X2036_37_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2037-2038",SUM(data_salesforce_mdt_detail[X2037_38_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2038-2039",SUM(data_salesforce_mdt_detail[X2038_39_Value__c]),
+			    IF(MAX(base_date[Financial Year])= "2039-2040",SUM(data_salesforce_mdt_detail[X2039_40_Value__c])
+			)))))))))))))))))))))))))
+			```
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: ddda4d4a-4db0-4d0d-b9bb-db44c7e84549
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_cost_pay =
+			
+			SUM(data_smarttime[Cost])+[calc_agency_cost]+[calc_exception_cost]
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: 7982cccf-7f87-436d-9ef4-9d67d218ad9f
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_smarttime_latestdate = MAX(data_smarttime[Activity_Created_Date])
+		formatString: dd/mm/yyyy hh:nn
+		lineageTag: f8185185-6f9a-4b5a-b8ea-15738853d886
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure calc_oracle_latestdate = MAX(data_oracle_income[Month])
+		formatString: Short Date
+		lineageTag: 765dca64-0ac9-4195-ad61-c286fe259466
+
+	measure date_salesforce_latestdate = MAX(data_salesforce_master[LastActivityDate])
+		formatString: Short Date
+		lineageTag: ec248351-d585-405c-9705-2fe01a972d52
+
+	measure calc_contribution = ```
+			
+			    if(
+			    AND(
+			        ISBLANK([calc_income]),
+			        ISBLANK([calc_cost_all])),
+			        "",
+			        (_calculations[calc_income]-_calculations[calc_cost_all]))
+			```
+		formatString: "£"#,0;-"£"#,0;"£"#,0
+		lineageTag: a6e4055a-604f-4a3e-b637-6a464f4a1852
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_smarttime_fresheness = ```
+			
+			    IF(
+			        DATEDIFF(TODAY(),[calc_smarttime_latestdate],DAY)>1,
+			        "#F80101",
+			        "#78be20")
+			```
+		lineageTag: 42ff4112-f35f-4bd8-9594-bb36a87b863f
+
+	column _calculations
+		dataType: string
+		lineageTag: 0a598e71-cdbd-4269-8c0e-42067190f6cb
+		summarizeBy: none
+		sourceColumn: _calculations
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _calculations = m
+		mode: import
+		source =
+				let
+				    Source = ""
+				in
+				    Source
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Text
+

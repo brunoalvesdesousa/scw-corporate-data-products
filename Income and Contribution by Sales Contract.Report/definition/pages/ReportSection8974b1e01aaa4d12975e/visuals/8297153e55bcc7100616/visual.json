@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8297153e55bcc7100616",
+  "position": {
+    "x": 16,
+    "y": 64,
+    "z": 1000,
+    "height": 632,
+    "width": 1248,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "Non Pay",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

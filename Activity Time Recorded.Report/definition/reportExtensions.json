@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/reportExtension/1.0.0/schema.json",
+  "name": "extension",
+  "entities": [
+    {
+      "name": "_calculations",
+      "measures": [
+        {
+          "name": "txt_smarttime_updatedat",
+          "dataType": "Double",
+          "expression": "\"Latest SmartTime data as at: \" & _calculations[calc_smarttime_latestdate]",
+          "formatString": "General Number",
+          "references": {
+            "measures": [
+              {
+                "entity": "_calculations",
+                "name": "calc_smarttime_latestdate"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
