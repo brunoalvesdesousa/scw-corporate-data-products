@@ -4,50 +4,81 @@ Power BI reports and decomposed semantic models for monitoring Smarttime data qu
 
 ## Overview
 
-Short repo purpose and guidelines for contributors and maintainers.
+This repository contains Power BI report packages and decomposed report + semantic model projects. The layout allows model metadata and report definitions to be reviewed and versioned in text form.
+
+## Table of contents
+
+- [Smarttime Data Quality](#smarttime-data-quality)
+  - [Overview](#overview)
+  - [Table of contents](#table-of-contents)
+  - [Repository contents \& layout](#repository-contents--layout)
+    - [Packages](#packages)
+    - [Report folders](#report-folders)
+    - [Semantic model folders](#semantic-model-folders)
+    - [Datasets](#datasets)
+  - [Quick start](#quick-start)
+  - [Recommended tools \& workflow](#recommended-tools--workflow)
+  - [Data refresh \& deployment](#data-refresh--deployment)
+  - [Security \& sensitive data](#security--sensitive-data)
+  - [Contribution guidelines](#contribution-guidelines)
+  - [Troubleshooting](#troubleshooting)
+  - [Contact \& maintainers](#contact--maintainers)
 
 ## Repository contents & layout
 
-- Top-level Power BI packages: `*.pbip`, (occasionally) `*.pbix`.
-- Decomposed report folders: `YourReport.Report/` — contains `definition.pbir`, a `definition/` folder and `StaticResources/`.
-- Decomposed semantic model folders: `YourReport.SemanticModel/` — contains `definition.pbism`, `diagramLayout.json` and `definition/` files for the tabular model.
+The repository typically contains the following item types. Example names are taken from this repository.
 
-Example top-level files/folders you will see (actual examples from this repository):
+### Packages
 
 - `Activity Time Billable_Int.pbip`
-- `Activity Time Billable_Int.Report/`
 - `Activity Time Recorded.pbip`
-- `Activity Time Recorded.Report/`
 - `dynamic_structure_chart.pbip`
-- `dynamic_structure_chart.Report/`
-- `dynamic_structure_chart.SemanticModel/`
 - `Income and Contribution by Sales Contract.pbip`
-- `Income and Contribution by Sales Contract.Report/`
-- `Income and Contribution by Sales Contract.Dataset/`
 - `smarttime_data_semantic_model.pbip`
-- `smarttime_data_semantic_model.Report/`
-- `smarttime_data_semantic_model.SemanticModel/`
 - `smarttime_data_semantic_model_project_view.pbip`
-- `smarttime_data_semantic_model_project_view.Report/`
-- `smarttime_data_semantic_model_project_view.SemanticModel/`
 - `smartworking_operational_report_121_compliance.pbip`
-- `smartworking_operational_report_121_compliance.Report/`
-- `smartworking_operational_report_121_compliance.SemanticModel/`
 - `smartworking_operational_report_cover.pbip`
-- `smartworking_operational_report_cover.Report/`
-- `smartworking_operational_report_cover.SemanticModel/`
 - `smartworking_operational_report_directorate_costcentre.pbip`
-- `smartworking_operational_report_directorate_costcentre.Report/`
-- `smartworking_operational_report_directorate_costcentre.SemanticModel/`
 - `smartworking_operational_report_line_manager.pbip`
-- `smartworking_operational_report_line_manager.Report/`
-- `smartworking_operational_report_line_manager.SemanticModel/`
 - `smartworking_operational_report_project.pbip`
-- `smartworking_operational_report_project.Report/`
-- `smartworking_operational_report_project.SemanticModel/`
 - `smartworking_operational_report_utilisation.pbip`
+
+### Report folders
+
+- `Activity Time Billable_Int.Report/`
+- `Activity Time Recorded.Report/`
+- `dynamic_structure_chart.Report/`
+- `Income and Contribution by Sales Contract.Report/`
+- `smarttime_data_semantic_model.Report/`
+- `smarttime_data_semantic_model_project_view.Report/`
+- `smartworking_operational_report_121_compliance.Report/`
+- `smartworking_operational_report_cover.Report/`
+- `smartworking_operational_report_directorate_costcentre.Report/`
+- `smartworking_operational_report_line_manager.Report/`
+- `smartworking_operational_report_project.Report/`
 - `smartworking_operational_report_utilisation.Report/`
+
+Each report folder generally contains a `definition.pbir`, a `definition/` subfolder for report parts, and `StaticResources/` for images and assets.
+
+### Semantic model folders
+
+- `dynamic_structure_chart.SemanticModel/`
+- `smarttime_data_semantic_model.SemanticModel/`
+- `smarttime_data_semantic_model_project_view.SemanticModel/`
+- `smartworking_operational_report_121_compliance.SemanticModel/`
+- `smartworking_operational_report_cover.SemanticModel/`
+- `smartworking_operational_report_directorate_costcentre.SemanticModel/`
+- `smartworking_operational_report_line_manager.SemanticModel/`
+- `smartworking_operational_report_project.SemanticModel/`
 - `smartworking_operational_report_utilisation.SemanticModel/`
+
+Semantic model folders typically contain a `definition.pbism`, `diagramLayout.json` and a `definition/` folder with model metadata.
+
+### Datasets
+
+- `Income and Contribution by Sales Contract.Dataset/`
+
+Dataset folders may hold exported dataset/model files used by reports.
 
 ## Quick start
 
@@ -91,13 +122,6 @@ Add this to `.gitattributes` to enable Git LFS for typical Power BI files:
 
 - Decomposed report recompose issues: inspect the `definition/` folder for missing files and check `definition.pbir` references.
 - Model compatibility problems: use Tabular Editor and DAX Studio to validate measures and metadata.
-
-## Suggested housekeeping (optional)
-
-- Add a `LICENSE` file to make reuse/ownership explicit.
-- Add `.gitattributes` (Git LFS) to manage large binaries.
-- Create `CONTRIBUTING.md` and GitHub issue/PR templates under `.github/` to document expectations.
-- Consider `CHANGELOG.md` to track releases and significant model/report changes.
 
 ## Contact & maintainers
 
