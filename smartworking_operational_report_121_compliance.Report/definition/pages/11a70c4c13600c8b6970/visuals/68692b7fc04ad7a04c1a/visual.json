@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "68692b7fc04ad7a04c1a",
   "position": {
     "x": 16,
     "y": 152,
-    "z": 4000,
+    "z": 3000,
     "height": 224.00000000000003,
     "width": 400,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "barChart",
@@ -279,7 +279,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'121 Compliance by Directorate'"
+                  "Value": "'1:1 Compliance by Directorate'"
                 }
               }
             }
@@ -305,7 +305,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "602008fba08827aa0c60",
+        "name": "7e42f08e439e1b86d298",
         "field": {
           "Column": {
             "Expression": {
@@ -319,7 +319,7 @@
         "type": "Categorical"
       },
       {
-        "name": "74c4adb35eee900b6cc4",
+        "name": "7b9c6166da11803d5c16",
         "field": {
           "Measure": {
             "Expression": {

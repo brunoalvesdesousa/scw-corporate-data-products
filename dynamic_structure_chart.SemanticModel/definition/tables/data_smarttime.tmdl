@@ -13,8 +13,6 @@ table data_smarttime
 		sourceLineageTag: 37288a89-1af3-4a8f-bade-9a1adb964c51
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure calc_timesheet_count = EXTERNALMEASURE("calc_timesheet_count", INTEGER, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0
 		lineageTag: 12b79c3c-48ac-47ec-9e1e-edbc0928aa94
@@ -44,21 +42,15 @@ table data_smarttime
 		sourceLineageTag: 835fe66c-d727-4f4f-88f4-53b2e23e217d
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure calc_unsubmitted_hours = EXTERNALMEASURE("calc_unsubmitted_hours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		lineageTag: 6acdd5e5-2259-47d7-a2fc-9e787483aff8
 		sourceLineageTag: ae5d3f9c-556f-42df-b2e8-742f572761c6
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure calc_total_activity_hours = EXTERNALMEASURE("calc_total_activity_hours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		lineageTag: a572189e-7fcf-4d36-85d2-dce7af2d88bc
 		sourceLineageTag: ec4d7bd8-e01d-4455-bcbb-c7e0bfa8147a
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure calc_smarttime_days_invoiceable = EXTERNALMEASURE("calc_smarttime_days_invoiceable", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00
@@ -83,21 +75,15 @@ table data_smarttime
 		sourceLineageTag: 1b235038-4a61-4a51-9ca0-2dc4c5f74183
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		lineageTag: e55f116f-5cf6-416a-ab8f-85fb9e488224
 		sourceLineageTag: fad2428b-cacf-4e42-8637-361a891c4ede
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Activity_Hours minus calc_contractedhours 2' = EXTERNALMEASURE("Activity_Hours minus calc_contractedhours 2", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		lineageTag: de0f7535-fb7d-4530-825a-0416393222f7
 		sourceLineageTag: b98b7ce5-50d1-4c59-81a3-dc70ec5c1031
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -110,14 +96,10 @@ table data_smarttime
 		sourceLineageTag: 9b3635f4-a7c7-4be0-91b5-913382fb5e88
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_CORE BAU Hours' = EXTERNALMEASURE("calc_CORE BAU Hours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		lineageTag: c751a788-82e2-49e1-aea9-045a7e01a746
 		sourceLineageTag: c32df86e-f163-4578-9d48-002d53624c86
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -130,8 +112,6 @@ table data_smarttime
 		sourceLineageTag: bf2ac265-beb4-4bbc-b76b-8d7865d402ff
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 942267e5-30a8-4bab-a2a2-575bd3f00bca
@@ -142,8 +122,6 @@ table data_smarttime
 		lineageTag: 47830423-2b52-4a11-9128-ae81f7f3bb8a
 		sourceLineageTag: b557c0af-c6d0-4d75-84c4-b6e7506d04b8
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -156,8 +134,6 @@ table data_smarttime
 		sourceLineageTag: ae082df7-c643-4e72-bd28-b62907107d15
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: ab485c57-552a-4206-8740-79e815aa22b2
@@ -168,8 +144,6 @@ table data_smarttime
 		lineageTag: 7a754bf7-072d-4d6c-a159-fb3fee48fba9
 		sourceLineageTag: 4fd6da95-5ff2-40cc-930f-2b1e81a01e94
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -182,8 +156,6 @@ table data_smarttime
 		sourceLineageTag: e464a355-4c5d-4dda-9d59-aa34ccf872be
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: ffdbfb01-59cb-4af2-82bc-44cfb085a316
@@ -194,8 +166,6 @@ table data_smarttime
 		lineageTag: df8e3e00-6148-4958-88ef-c8725887a3e7
 		sourceLineageTag: 7b49bbbd-8f56-4ef2-b11e-b6740901048f
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -208,8 +178,6 @@ table data_smarttime
 		sourceLineageTag: 69a9e07d-0441-4703-8031-b5d4bae8f398
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 8de1be7b-db9b-4752-9ec2-2008fe6c9678
@@ -221,8 +189,6 @@ table data_smarttime
 		sourceLineageTag: 2be49c56-44ea-4383-b238-f322b5cea13f
 		dataCategory: Uncategorized
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 1d8bc453-414c-42b0-b85d-d234857f79d9
@@ -233,8 +199,6 @@ table data_smarttime
 		lineageTag: 292c4052-b5be-4f95-ba5c-cf38e4c9b707
 		sourceLineageTag: a5b5f030-35ab-421c-91de-82d2440dd84a
 		dataCategory: Uncategorized
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - smarttime_data_semantic_model")
 		formatString: 0.00%;-0.00%;0.00%
@@ -399,8 +363,6 @@ table data_smarttime
 		sourceColumn: Activity_Hours
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Activity_Comments
 		dataType: string
@@ -874,8 +836,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Person_Assignment_Category
 		dataType: string
 		lineageTag: 0d16606d-637f-4f31-a6ec-8bf60131b736
@@ -1122,8 +1082,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Solution_Start_Date
 		dataType: dateTime
 		formatString: Long Date
@@ -1290,8 +1248,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Contract_Consultancy_Value
 		dataType: double
 		lineageTag: 805019a0-fb59-436b-891a-1097b84f480d
@@ -1302,8 +1258,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Contract_Contractual_Value
 		dataType: double
 		lineageTag: 54f48cdc-bd04-4077-996c-38f08f3121fa
@@ -1313,8 +1267,6 @@ table data_smarttime
 		sourceColumn: Contract_Contractual_Value
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Contract_Income_Category_Id
 		dataType: int64
@@ -1555,8 +1507,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Rate
 		dataType: double
 		lineageTag: 824ea757-cfdf-4014-bceb-568cc6a599ec
@@ -1566,8 +1516,6 @@ table data_smarttime
 		sourceColumn: Rate
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Day_Cost
 		dataType: double
@@ -1579,8 +1527,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Cost
 		dataType: double
 		lineageTag: 822da706-c2c7-4bd1-9522-c3b8141e8a25
@@ -1590,8 +1536,6 @@ table data_smarttime
 		sourceColumn: Cost
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Is_Travel
 		dataType: boolean
@@ -1635,8 +1579,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column exception_rate
 		dataType: double
 		lineageTag: e71f5fd0-654b-4488-88d3-a24d3a702ecf
@@ -1646,8 +1588,6 @@ table data_smarttime
 		sourceColumn: exception_rate
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column line_manager_full_name
 		dataType: string
@@ -1687,7 +1627,6 @@ table data_smarttime
 
 	column Column
 		dataType: int64
-		formatString: 0
 		lineageTag: 8a3e7968-c22d-4da5-9a7e-bfe679fa3b36
 		sourceLineageTag: 122ac5f4-2f2a-4205-a3f0-85a46a0dac29
 		dataCategory: Uncategorized
@@ -1716,8 +1655,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column calc_burn_non_invoiceable
 		dataType: double
 		lineageTag: 46eec28b-f781-42e2-a4a0-2b6e12caced0
@@ -1727,8 +1664,6 @@ table data_smarttime
 		sourceColumn: calc_burn_non_invoiceable
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column calc_lateness
 		dataType: string
@@ -1759,8 +1694,6 @@ table data_smarttime
 		sourceColumn: calc_smarttime_days
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition data_smarttime = entity
 		mode: directQuery

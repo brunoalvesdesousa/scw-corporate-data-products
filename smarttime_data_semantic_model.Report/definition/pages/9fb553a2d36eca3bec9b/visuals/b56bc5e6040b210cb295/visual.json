@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "b56bc5e6040b210cb295",
   "position": {
     "x": 40,
@@ -440,51 +440,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5d49634c29703d5703d0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "PersonFk"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "65e19d2902ab801c4753",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "supervisorid_corrected"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0f8b3442b234e2a360bd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "full_name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

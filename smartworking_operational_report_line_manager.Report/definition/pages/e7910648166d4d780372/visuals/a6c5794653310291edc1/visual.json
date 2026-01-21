@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "a6c5794653310291edc1",
   "position": {
     "x": 0,
@@ -23,42 +23,12 @@
                       "Entity": "base_date"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "base_date.Year",
-              "nativeQueryRef": "Year",
+              "queryRef": "base_date.Date",
+              "nativeQueryRef": "Date",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "base_date"
-                    }
-                  },
-                  "Property": "Month Year"
-                }
-              },
-              "queryRef": "base_date.Month Year",
-              "nativeQueryRef": "Month Year",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "base_date"
-                    }
-                  },
-                  "Property": "Financial Week Number"
-                }
-              },
-              "queryRef": "base_date.Financial Week Number",
-              "nativeQueryRef": "Financial Week Number",
-              "active": false
             }
           ]
         }
@@ -73,7 +43,7 @@
                     "Entity": "base_date"
                   }
                 },
-                "Property": "Year"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -90,52 +60,13 @@
         "levels": [
           {
             "queryRefs": [
-              "base_date.Year"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "base_date"
-                    }
-                  },
-                  "Property": "Year"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "base_date.Month Year"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "base_date.Financial Week Number"
+              "base_date.Date"
             ],
             "isCollapsed": true,
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "datetime'2025-12-31T00:00:00'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "objects": {
@@ -149,17 +80,10 @@
                 }
               }
             },
-            "endDate": {
-              "expr": {
-                "Literal": {
-                  "Value": "datetime'2025-09-09T00:00:00'"
-                }
-              }
-            },
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Between'"
                 }
               }
             }
@@ -194,78 +118,23 @@
                 "Where": [
                   {
                     "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "b"
-                                }
-                              },
-                              "Property": "Year"
-                            }
+                      "Comparison": {
+                        "ComparisonKind": 2,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "b"
+                              }
+                            },
+                            "Property": "Date"
                           }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "datetime'2025-12-31T00:00:00'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "base_date"
-                                }
-                              },
-                              "Property": "Year"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "datetime'2025-12-31T00:00:00'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "base_date"
-                                    }
-                                  },
-                                  "Property": "Year"
-                                }
-                              }
-                            }
-                          ]
                         },
-                        "valueMap": [
-                          {
-                            "0": "2025"
+                        "Right": {
+                          "Literal": {
+                            "Value": "datetime'2025-04-01T00:00:00'"
                           }
-                        ]
+                        }
                       }
                     }
                   }
@@ -1189,6 +1058,20 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "328c2d79570e1d709730",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_date"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

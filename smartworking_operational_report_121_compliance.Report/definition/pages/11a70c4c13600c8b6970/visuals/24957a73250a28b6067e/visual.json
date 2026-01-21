@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "24957a73250a28b6067e",
   "position": {
     "x": 16,
     "y": 384,
     "z": 2000,
     "height": 320,
-    "width": 768,
-    "tabOrder": 2000
+    "width": 800.00000000000011,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -696,21 +696,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "0c6e46a4d46d1c6040a7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "person_full_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d2574005704bae4b3e65",
+        "name": "bc64e3ceed481aac600d",
         "field": {
           "Column": {
             "Expression": {
@@ -724,7 +710,21 @@
         "type": "Categorical"
       },
       {
-        "name": "03df8300dbd3404cbeb8",
+        "name": "ed8a4b8e6ba220d80b13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "person_full_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "094e25487c80d70347dd",
         "field": {
           "Measure": {
             "Expression": {

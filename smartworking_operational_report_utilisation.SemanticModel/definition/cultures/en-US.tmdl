@@ -295,24 +295,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated"
 			    },
-			    "data_smarttime.solution_start_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Solution_Start_Date"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.solution_end_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Solution_End_Date"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.customer_name_short": {
 			      "Definition": {
 			        "Binding": {
@@ -360,27 +342,6 @@ cultureInfo en-US
 			        }
 			      },
 			      "State": "Generated"
-			    },
-			    "data_smarttime.selected_group_name_short": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Selected_Group_Name_Short"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Group customer": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
 			    },
 			    "data_smarttime.calc_contractedhours": {
 			      "Definition": {

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "cbc7ffecc535f01e1c69",
   "position": {
     "x": 296,
@@ -339,5 +339,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "040ea433db50a3e3d819"
+  "parentGroupName": "040ea433db50a3e3d819",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "42cd14b140d4432b72d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "person_full_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

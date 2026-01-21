@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "017b21b8a6c5ba21bb39",
   "position": {
     "x": 848,
     "y": 152,
-    "z": 6000,
+    "z": 5000,
     "height": 224.00000000000003,
     "width": 408,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "barChart",
@@ -286,7 +286,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'121 Compliance by Cost Centre'"
+                  "Value": "'1:1 Compliance by Cost Centre'"
                 }
               }
             },
@@ -339,21 +339,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "15b28897ba06006d9c3b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "calc_121_compliance_ActiveStaff"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cca10e9e28a14a7ba396",
+        "name": "cfd4ab34718ac43ae27c",
         "field": {
           "Column": {
             "Expression": {
@@ -365,6 +351,20 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "952572c30477b3b6b271",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_121_compliance_ActiveStaff"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

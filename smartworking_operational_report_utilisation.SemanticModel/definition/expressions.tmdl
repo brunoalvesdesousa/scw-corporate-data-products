@@ -1,6 +1,6 @@
 expression 'DirectQuery to AS - smarttime_data_semantic_model' =
 		let
-		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/%5BDI%5D%20SCW%20Corporate%20Data%20Strategy", "smarttime_data_semantic_model"),
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/%5BDI%5D%20SCW%20Corporate%20Products", "smarttime_data_semantic_model"),
 		    Cubes = Table.Combine(Source[Data]),
 		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
 		in

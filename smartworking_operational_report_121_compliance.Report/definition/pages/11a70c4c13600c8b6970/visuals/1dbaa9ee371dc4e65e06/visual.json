@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "1dbaa9ee371dc4e65e06",
   "position": {
     "x": 253.25,
@@ -7,7 +7,7 @@
     "z": 6500,
     "height": 64,
     "width": 225,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -339,23 +339,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d7e5769598b22900ba00",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7c6b26cf30097c811ec8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Person_Cost_Centre_Level_3"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "d7e5769598b22900ba00"
 }

@@ -68,15 +68,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "base_date.financial_week_number": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "base_date",
-			          "ConceptualProperty": "Financial Week Number"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.timesheet_end": {
 			      "Definition": {
 			        "Binding": {
@@ -104,60 +95,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated"
 			    },
-			    "data_smarttime.calc_timesheet_count": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_timesheet_count"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_timesheets": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_timesheets"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_timesheets": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_timesheets"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_hours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_total_activity_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_total_activity_hours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_hours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.work_activity_name_wanumber": {
 			      "Definition": {
 			        "Binding": {
@@ -181,42 +118,6 @@ cultureInfo en-US
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
 			          "ConceptualProperty": "Activity_Non_Invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_smarttime_days_invoiceable": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_smarttime_days_invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_smarttime_days_non_invoiceable": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_smarttime_days_non_invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.solution_start_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Solution_Start_Date"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.solution_end_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Solution_End_Date"
 			        }
 			      },
 			      "State": "Generated"
@@ -257,15 +158,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated"
 			    },
-			    "data_smarttime.selected_group_name_short": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Selected_Group_Name_Short"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.calc_contractedhours": {
 			      "Definition": {
 			        "Binding": {
@@ -289,132 +181,6 @@ cultureInfo en-US
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
 			          "ConceptualProperty": "Person_LastName"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.activity_hours_minus_calc_contractedhours_2": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Activity_Hours minus calc_contractedhours 2"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_billablehours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_core_bau_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_core_disccretionaryhours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_pipeline_project_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_int_sla_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_int_serv_mgmt_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_noncharge_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_app_inv_hours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_win_workhours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_prod_devhours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_acct_mgmthours_divided_by_calc_contractedhours_minus_calc_nonworkinghours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours"
 			        }
 			      },
 			      "State": "Generated"
@@ -482,15 +248,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated"
 			    },
-			    "data_smarttime.calc_rate2": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_rate2"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.calc_burn_invoiceable": {
 			      "Definition": {
 			        "Binding": {
@@ -505,66 +262,6 @@ cultureInfo en-US
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
 			          "ConceptualProperty": "calc_burn_non_invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_timesheets_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_timesheets_%"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "submitted %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.calc_unsubmitted_timesheets_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_timesheets_%"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "unsubmitted %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.calc_submitted_hours_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_hours_%"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_hours_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_hours_%"
 			        }
 			      },
 			      "State": "Generated"
@@ -630,7 +327,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Staff": {
+			          "full name": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -640,7 +337,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "full name": {
+			          "Staff": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -693,6 +390,48 @@ cultureInfo en-US
 			        },
 			        {
 			          "compliance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_submitted_timesheets_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_submitted_timesheets_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "submitted %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_unsubmitted_timesheets_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_unsubmitted_timesheets_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unsubmitted %": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

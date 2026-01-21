@@ -1,0 +1,150 @@
+table support_rls_static
+	lineageTag: 0ca71189-8c6a-4f9d-934d-8fbe01cf9d02
+	sourceLineageTag: 16386c9d-a96a-4ac3-83a5-d6f443148e7a
+
+	column PersonFk
+		dataType: string
+		lineageTag: 3e0ffc82-0a44-48f4-ac4a-799091a4e854
+		sourceLineageTag: fd36086c-4373-4873-9772-522aa8cb9714
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = User
+
+	column NameFirst
+		dataType: string
+		lineageTag: cfc0a104-86bf-4e6a-9096-2a94b93ff215
+		sourceLineageTag: a71dd56d-a9c3-4aa6-a6de-a0ef4f85ab86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = User
+
+	column NameLast
+		dataType: string
+		lineageTag: 1a9454c9-3cbf-45d4-a733-d3222585c6d2
+		sourceLineageTag: f310d8a3-86d5-4868-ad93-65b67bcdce98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = User
+
+	column Email
+		dataType: string
+		lineageTag: 8022c127-4188-47c5-92f4-4eafd67a4fad
+		sourceLineageTag: 20d7c6c3-8ca3-4422-904c-7583e3eb2808
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = User
+
+	column Id
+		dataType: string
+		lineageTag: 486a60c3-17cd-423c-8237-ae4d6ecd93e1
+		sourceLineageTag: 78ab3a54-abca-440b-a7b6-4a9b93a37fc4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Access CostCentre'
+		dataType: string
+		lineageTag: e4c81a57-77e3-4ae8-8632-407a0e6bfcb8
+		sourceLineageTag: 6315cbb7-2238-462c-897b-afad8b203150
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access CostCentre
+
+		annotation SummarizationSetBy = User
+
+	column 'Access Level3'
+		dataType: string
+		lineageTag: c8a2c14e-81bc-4b1f-9f8f-c6175fdb4683
+		sourceLineageTag: aa817a4d-cca4-41bf-8652-bd916722fe16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access Level3
+
+		annotation SummarizationSetBy = User
+
+	column 'Access L4'
+		dataType: string
+		lineageTag: fb83792c-1ac3-4204-8314-519a4925a94f
+		sourceLineageTag: 0a3f90d9-c8ac-4578-b6dc-5d3a4bf534f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access L4
+
+		annotation SummarizationSetBy = User
+
+	column 'Access Level6'
+		dataType: string
+		lineageTag: 60cab56e-25f7-4df5-969f-65b78a3c32e3
+		sourceLineageTag: 1b4d6135-13b0-4b31-beeb-0e0a8fa7f22b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Access Level6
+
+		annotation SummarizationSetBy = User
+
+	column supervisorId
+		dataType: string
+		lineageTag: b259b864-32ef-4d8a-866c-1b76e9db1b57
+		sourceLineageTag: b3302711-e7af-4bef-b05f-a304059b8b18
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supervisorId
+
+		annotation SummarizationSetBy = User
+
+	column supervisor
+		dataType: string
+		lineageTag: a22e10c4-d55a-4cf8-8de7-95bbe24bd7d4
+		sourceLineageTag: 63db9e32-0a9a-4824-be2a-f715952510be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supervisor
+
+		annotation SummarizationSetBy = User
+
+	column 'scwcsu email'
+		dataType: string
+		lineageTag: 351e4cbe-ecb0-4d8c-80fe-73aa1a14d4c4
+		sourceLineageTag: b16abeb9-5682-4c8b-98a5-c372adc4c39d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: scwcsu email
+
+		annotation SummarizationSetBy = User
+
+	column full_name
+		dataType: string
+		lineageTag: 5fd0bb94-d399-4553-b988-141b10e9f264
+		sourceLineageTag: f11d35a3-8abd-48ec-9c8e-87863a3c6d7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = User
+
+	column 'pg group'
+		dataType: string
+		lineageTag: effd2be2-7a84-487f-8f4a-2881ab95a431
+		sourceLineageTag: 41b30335-6902-4fbf-9748-caa527a70123
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: pg group
+
+		annotation SummarizationSetBy = User
+
+	partition support_rls_static = entity
+		mode: directQuery
+		source
+			entityName: support_rls_static
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+

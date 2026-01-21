@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "4d3790f50e48aa401966",
   "position": {
-    "x": 808,
+    "x": 832,
     "y": 384,
-    "z": 6001,
-    "height": 320,
-    "width": 448
+    "z": 6000,
+    "height": 192,
+    "width": 424.00000000000006,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -40,7 +41,8 @@
                 }
               },
               "queryRef": "CountNonNull(data_smarttime.Work_Activity_Id)",
-              "nativeQueryRef": "Work_Activity_Id"
+              "nativeQueryRef": "Activity ID",
+              "displayName": "Activity ID"
             },
             {
               "field": {
@@ -54,7 +56,8 @@
                 }
               },
               "queryRef": "data_smarttime.Work_Activity_Name",
-              "nativeQueryRef": "Work_Activity_Name"
+              "nativeQueryRef": "Activity Name",
+              "displayName": "Activity Name"
             }
           ]
         }
@@ -77,24 +80,76 @@
         ]
       }
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "1d483900bbeb0ab0372d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Activity_Date"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "f53231cab5e32c5571d3",
         "field": {
@@ -149,7 +204,21 @@
         }
       },
       {
-        "name": "50c8848d6dd3ad892e30",
+        "name": "cc82a1cebb2c7ddd6d22",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "68033d955159d7708183",
         "field": {
           "Column": {
             "Expression": {

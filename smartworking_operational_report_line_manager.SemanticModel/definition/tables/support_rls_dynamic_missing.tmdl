@@ -33,12 +33,11 @@ table support_rls_dynamic_missing
 		annotation SummarizationSetBy = User
 
 	column PersonFk
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 2e1a322f-83bc-40f6-9d65-d4b8d9d83d0a
 		sourceLineageTag: d2c10886-d2af-4053-8aaf-1a85d304512f
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: PersonFk
 
 		annotation SummarizationSetBy = User
@@ -84,12 +83,11 @@ table support_rls_dynamic_missing
 		annotation SummarizationSetBy = User
 
 	column SupervisorId
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 49f607f6-b294-4142-9c64-8d04b7fc8b72
 		sourceLineageTag: 47e8fb08-e2ac-4737-b0e7-221d5d2db74b
 		dataCategory: Uncategorized
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: SupervisorId
 
 		annotation SummarizationSetBy = User

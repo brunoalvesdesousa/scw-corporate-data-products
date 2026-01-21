@@ -3,12 +3,11 @@ table support_rls_static
 	sourceLineageTag: 16386c9d-a96a-4ac3-83a5-d6f443148e7a
 
 	column PersonFk
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: f655173f-29f2-4f0e-9a18-1a917625e02f
 		sourceLineageTag: fd36086c-4373-4873-9772-522aa8cb9714
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: PersonFk
 
 		annotation SummarizationSetBy = User
@@ -44,12 +43,11 @@ table support_rls_static
 		annotation SummarizationSetBy = User
 
 	column Id
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 5e19b46f-b8aa-4d07-ad0e-1c98a159fa26
 		sourceLineageTag: 78ab3a54-abca-440b-a7b6-4a9b93a37fc4
 		dataCategory: Uncategorized
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Id
 
 		annotation SummarizationSetBy = User
@@ -95,12 +93,11 @@ table support_rls_static
 		annotation SummarizationSetBy = User
 
 	column supervisorId
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 769fcd4c-ae5c-4aba-adf5-12211e87f340
 		sourceLineageTag: b3302711-e7af-4bef-b05f-a304059b8b18
 		dataCategory: Uncategorized
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: supervisorId
 
 		annotation SummarizationSetBy = User

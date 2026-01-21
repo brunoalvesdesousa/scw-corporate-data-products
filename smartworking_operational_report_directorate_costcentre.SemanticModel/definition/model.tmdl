@@ -14,8 +14,6 @@ annotation PBI_QueryOrder = ["0_Environment","DirectQuery to AS - smarttime_data
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.144.679.0 (25.06)+ef40146207b86a826d1c72a7727a743ee37450e9
-
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table DateTableTemplate_5bea37e1-dcac-4d17-bea8-6fe8b8fd7306
@@ -38,6 +36,11 @@ ref table LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e
 ref table LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1
 ref table LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079
 ref table base_date
+ref table support_rls_dynamic
+ref table support_rls_dynamic_missing
+ref table support_rls_merged
+ref table support_rls_static
+ref table LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8
 
 ref cultureInfo en-US
 

@@ -125,13 +125,13 @@
         },
         {
           "location": {
-            "x": 13,
-            "y": 532.25
+            "x": 17,
+            "y": 466.25
           },
-          "nodeIndex": "Query",
-          "nodeLineageTag": "a92e3437-5bc1-4f52-a36c-8fdef294bba2",
+          "nodeIndex": "base_date",
+          "nodeLineageTag": "2ad8d938-1e5c-4a20-b418-265dde1b3880",
           "size": {
-            "height": 300,
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

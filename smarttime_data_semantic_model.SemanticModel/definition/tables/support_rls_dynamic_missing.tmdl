@@ -26,10 +26,9 @@ table support_rls_dynamic_missing
 		annotation SummarizationSetBy = Automatic
 
 	column PersonFk
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: d2c10886-d2af-4053-8aaf-1a85d304512f
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: PersonFk
 
 		annotation SummarizationSetBy = Automatic
@@ -67,10 +66,9 @@ table support_rls_dynamic_missing
 		annotation SummarizationSetBy = Automatic
 
 	column SupervisorId
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 47e8fb08-e2ac-4737-b0e7-221d5d2db74b
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: SupervisorId
 
 		annotation SummarizationSetBy = Automatic
@@ -104,7 +102,7 @@ table support_rls_dynamic_missing
 		source =
 				let
 				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("pVRRT9swEP4rVp87qUmbxHlkFJEyunV0EkjAwzU51RauXTlxQ/fr50ugCUiwaJMsnxP7Pn/33Z3v70dOP2lT69F45Ef3EaVx4M1S5gJQ+dXcaY3tKT+m4czP32VuFLK126EVUqmX7cfxh7Ahj8hxDgdZeHtjagW6KDvcIAy9uZa6gCO7lnusqr+jxkFAXt9A0uEM7AGPJ8gwndCVGUIl0LKlU4UxegBoyidEBZyFlnIPkyfx6x7r7XwCNw0j4niLuqDTS7ClgJNk49GMJ0TzygjNfjy4ySRMzo2XfIiqccx5o+YGLSmwMkqBLU7YcRwR3YvdDljmKgF2iKhxQqBnurBYN8Hq7QmRJ0lKBWCUOcrSsDu3gSGQaUQ8lPwNG6xEg1pb1Dn2uHLiupL7PbBLizgkVV18lOk3EfpSjnjQFqswCkp2Y7ZoyyGoHRNv+1z+VYB3VJqc9cj4O5OIDsxxYywIlvmKFgOYvvFqWqDzo0qekuxnCp/ZxQH0gNh50Ca/FEX7o1v9D9F3qvllT7fPiS50hVsLFRbMt7KqBGuaJGbnYP0ThPYgc3xxWKxX7AtbZGs//2yubXrvKz5THl3Xx3zWvA1LqPzbULNfLn9C+3rp4x8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Level3 = _t, CostCentre = _t, Level6 = _t, PersonFk = _t, NameFirst = _t, NameLast = _t, Email = _t, IsSupervisor = _t, SupervisorId = _t, Supervisor = _t, Id = _t, Name = _t]),
-				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Level3", type text}, {"CostCentre", type text}, {"Level6", type text}, {"PersonFk", Int64.Type}, {"NameFirst", type text}, {"NameLast", type text}, {"Email", type text}, {"IsSupervisor", type text}, {"SupervisorId", Int64.Type}, {"Supervisor", type text}, {"Id", type text}, {"Name", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Level3", type text}, {"CostCentre", type text}, {"Level6", type text}, {"PersonFk", type text}, {"NameFirst", type text}, {"NameLast", type text}, {"Email", type text}, {"IsSupervisor", type text}, {"SupervisorId", type text}, {"Supervisor", type text}, {"Id", type text}, {"Name", type text}})
 				in
 				    #"Changed Type"
 

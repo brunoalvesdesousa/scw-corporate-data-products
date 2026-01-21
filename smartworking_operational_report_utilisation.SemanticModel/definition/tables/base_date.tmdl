@@ -1,187 +1,188 @@
 table base_date
-	lineageTag: ce72862b-1c9b-4f0d-abc6-4f3917a2e0a8
-	dataCategory: Time
+	lineageTag: 94121d86-2ba1-4e1d-909d-23a395ff5607
+	sourceLineageTag: 2ad8d938-1e5c-4a20-b418-265dde1b3880
 
-	measure calc_late_submission = ```
-			
-			    IF(
-			        MAX(data_smarttime[Activity_Submitted_Date])>MAX(base_date[Financial Week Start Plus 7]),
-			        "red",
-			        "green"
-			    )
-			
-			```
-		lineageTag: 70b05ce8-4343-413f-ae65-7b3690e48d67
+	measure Count_Days_in_Month = EXTERNALMEASURE("Count_Days_in_Month", INTEGER, "DirectQuery to AS - smarttime_data_semantic_model")
+		formatString: 0
+		lineageTag: 0a6010f1-be15-40ea-8f6a-9ab3b7b95c92
+		sourceLineageTag: 5aec7444-92ab-45ef-92aa-79a464518667
+		dataCategory: Uncategorized
 
 	column Date
-		isKey
+		dataType: dateTime
+		isNullable: false
 		formatString: Short Date
-		lineageTag: a672ae59-50b1-4bee-ace6-076d862aeb46
+		lineageTag: 0b9b45ff-58df-40a9-b305-208be5623dfb
+		sourceLineageTag: b53dd241-b2b3-4631-b3cc-6d4401f9285f
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Date]
+		sourceColumn: Date
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: 8e4b5d57-c2a4-4390-ac31-bb3f01e7c072
+			defaultHierarchy: LocalDateTable_3c553266-422c-45e5-8c58-bd72be93b511.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
 
 	column Year
+		dataType: dateTime
 		formatString: yyyy
-		lineageTag: 1c99249c-f59a-443a-9ad2-b629e8a0efe8
+		lineageTag: 7f59dcd9-e2f7-4215-a805-644ecc0f8a7a
+		sourceLineageTag: 67cc5bf7-f0ba-40bb-8d04-a7d455b59562
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Year]
+		sourceColumn: Year
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: 4ae4e028-b923-4f55-8545-9b1d02d06d9e
+			defaultHierarchy: LocalDateTable_4057bcd3-da7e-4aeb-8e3f-8cad082ae077.'Date Hierarchy'
 
-		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+		annotation SummarizationSetBy = User
 
 	column 'Month Year'
-		formatString: mmm-yy
-		lineageTag: 37f25fa7-32bf-4706-8e4d-04c097398a9e
+		dataType: dateTime
+		formatString: mmm\-yy
+		lineageTag: 3240ff0a-cab1-4e06-b005-770594cacb8e
+		sourceLineageTag: a5fe4ec0-d9e8-46ef-9a14-ba8aa008c8d0
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Month Year]
+		sourceColumn: Month Year
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: e497b19e-1921-4cad-b7ea-5a21615d1e2c
+			defaultHierarchy: LocalDateTable_b4d6b22c-823b-47b1-880f-d652e4c31c07.'Date Hierarchy'
 
-		annotation PBI_FormatHint = {"isCustom":true}
+		annotation SummarizationSetBy = User
 
 	column Month
-		lineageTag: 8d2864f7-4cd3-4099-a0b7-014734c826d2
+		dataType: string
+		lineageTag: f9c6ce34-079a-406e-8348-99f74efa4327
+		sourceLineageTag: 3a28ce30-a2bc-4160-8065-12cbf3cb3d0e
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Month]
+		sourceColumn: Month
+		sortByColumn: 'Month Number'
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Month Number'
+		dataType: int64
 		formatString: 0
-		lineageTag: ebd9edf7-1af3-4d2f-b752-26aed56f0495
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Month Number]
+		lineageTag: c8daca09-fb2d-4a22-8b3d-b99c2e283a0b
+		sourceLineageTag: 59e14b28-843b-475b-857b-0a06188a00aa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Month Number
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Day of Week'
-		lineageTag: ab9fe071-4a65-4c45-9826-b63398e62890
+		dataType: string
+		lineageTag: 05d0430e-2d4b-4d1d-b55c-eed669e861c8
+		sourceLineageTag: 685bdab2-27f6-4b34-9da1-5ab1b2e53ddb
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Day of Week]
+		sourceColumn: Day of Week
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Day of Week Number'
+		dataType: int64
 		formatString: 0
-		lineageTag: e4e9da06-3808-493c-9052-d2b769fb9503
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Day of Week Number]
+		lineageTag: f2052bec-4655-4f79-8854-24bbc07a61c7
+		sourceLineageTag: ff711b9f-013f-42f1-a28c-92012552e935
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Day of Week Number
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Day of the Month Number'
+		dataType: int64
 		formatString: 0
-		lineageTag: d0a9a34e-6bfd-4112-99a6-859d65eefcb4
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Day of the Month Number]
+		lineageTag: bd50ae92-425a-4d06-afbb-3b7ddc090409
+		sourceLineageTag: 73ae1d0d-5690-4409-ba4d-805b7ad7b2b3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Day of the Month Number
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Financial Year'
-		lineageTag: c6c3bcc4-faa8-4ce1-89bf-b75443bcefab
+		dataType: string
+		lineageTag: 03c3a245-82ea-4f4a-a5ca-a9ac59c15dbd
+		sourceLineageTag: d2e01d80-c321-48c3-ac09-e25483e3f025
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Financial Year]
+		sourceColumn: Financial Year
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Financial Week Number'
+		dataType: int64
 		formatString: 0
-		lineageTag: fe7425e3-2677-4c43-8c74-c22f0a685b22
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Financial Week Number]
+		lineageTag: 58364c53-1754-439b-89bd-5a840762130a
+		sourceLineageTag: 2eca3a35-4654-48cf-a03d-fb7c61e04907
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Financial Week Number
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Financial Week Start'
-		formatString: General Date
-		lineageTag: 3f00eea5-dcaa-430f-9290-4afcc7f1e65c
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 4d468ab2-f3ce-4d4c-aaf7-dd8da8d8e49f
+		sourceLineageTag: 104acfe7-6664-4547-a078-9874a9421a0f
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Financial Week Start]
+		sourceColumn: Financial Week Start
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: cf7f7fb7-68f9-4e65-9326-0b6040e3cd23
+			defaultHierarchy: LocalDateTable_82e8d631-e0bb-4f1a-9fb7-90426474702f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
 
 	column 'Financial Week End'
-		formatString: General Date
-		lineageTag: 5d74d434-e524-4ef4-bac6-d8b32b028bfc
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 33997e53-0e18-40f6-94b8-2693e39d4647
+		sourceLineageTag: 58cd1ad6-b438-4839-9ddc-34a6139b07c9
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Financial Week End]
+		sourceColumn: Financial Week End
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: 6ab8baa7-ed25-4a84-91a5-4fd2dba9e19b
+			defaultHierarchy: LocalDateTable_50825905-c249-4b33-b577-77b48748f2ff.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
 
 	column 'Financial Week Start Plus 7'
-		formatString: dd/mm
-		lineageTag: a5e37cf4-6c2f-4348-8550-9e692ac1a57c
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 636cf554-0933-450d-8992-e25f81eaf3b7
+		sourceLineageTag: bc7e839b-b1e5-406e-be6b-c2a999971784
+		dataCategory: Uncategorized
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Financial Week Start Plus 7]
+		sourceColumn: Financial Week Start Plus 7
 
-		annotation SummarizationSetBy = Automatic
+		variation Variation
+			isDefault
+			relationship: f237be42-d4aa-4d0b-a4c0-3c45fc77150e
+			defaultHierarchy: LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6.'Date Hierarchy'
 
-		annotation PBI_FormatHint = {"isCustom":true}
+		annotation SummarizationSetBy = User
 
-	partition base_date = calculated
-		mode: import
-		source = ```
-				
-				VAR FYStart = "04"
-				VAR todayreference = TODAY()
-				VAR FirstYear = -- Customizes the first year to use
-				    MIN(data_smarttime[Activity_Date])
-				VAR LastYear = -- Customizes the last year to use
-				    max(data_smarttime[Timesheet_End])
-				RETURN
-				ADDCOLUMNS (
-				    FILTER (
-				        CALENDARAUTO (),
-				        AND([Date] >= FirstYear,[Date] <= todayreference)),
-				    "Year", DATE ( YEAR ( [Date] ), 12, 31 ),
-				    "Month Year", EOMONTH ( [Date], 0 ),
-				    "Month", FORMAT ( [Date], "mmm" ),
-				    "Month Number", MONTH ( [Date] ),
-				    "Day of Week", FORMAT ( [Date], "dddd" ),
-				    "Day of Week Number", WEEKDAY ( [Date],2),
-				    "Day of the Month Number", DAY([Date]),
-				    "Financial Year", IF(FYStart <= FORMAT([Date],"MM"), YEAR([Date]) & "-" & YEAR([Date])+1 ,YEAR([Date])-1 & "-" & YEAR([Date])),
-				    "Financial Week Number", 
-				        VAR CurrentDate = [Date]
-				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1) // Adjust year for dates before April
-				        RETURN
-				            WEEKNUM(CurrentDate - FinancialYearStart + 1, 2), // Week number based on Financial Year start
-				    "Financial Week Start",
-				        VAR CurrentDate = [Date]
-				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
-				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
-				        RETURN
-				            FinancialYearStart + (WeekNumber - 1) * 7, // Calculate week start
-				    "Financial Week End",
-				        VAR CurrentDate = [Date]
-				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
-				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
-				        RETURN
-				            FinancialYearStart + WeekNumber * 7 - 1, // Calculate week end
-				    "Financial Week Start Plus 7",
-				         VAR CurrentDate = [Date]
-				        VAR FinancialYearStart = DATE(YEAR(CurrentDate) + IF(MONTH(CurrentDate) < 4, -1, 0), 4, 1)
-				        VAR WeekNumber = WEEKNUM(CurrentDate - FinancialYearStart + 1, 2)
-				        RETURN
-				            CALCULATE(FinancialYearStart + (WeekNumber - 1) * 7) + 7 //Week start + 7 days
-				)
-				```
-
-	annotation PBI_Id = 200ca531d2c44f8ba9c0940dd4e6cb7f
+	partition base_date = entity
+		mode: directQuery
+		source
+			entityName: base_date
+			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
 

@@ -2,7 +2,7 @@ role person_cost_centre_l3
 	modelPermission: read
 
 	tablePermission data_smarttime =
-			data_smarttime[Person_Cost_Centre_Level_3] IN
+			[Person_Cost_Centre_Level_3] IN
 			CALCULATETABLE(
 			    VALUES('support_rls_static'[Access Level3]),
 			    support_rls_static[scwcsu email]= USERPRINCIPALNAME()

@@ -2,10 +2,9 @@ table support_rls_static
 	lineageTag: 16386c9d-a96a-4ac3-83a5-d6f443148e7a
 
 	column PersonFk
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: fd36086c-4373-4873-9772-522aa8cb9714
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: PersonFk
 
 		annotation SummarizationSetBy = Automatic
@@ -35,10 +34,9 @@ table support_rls_static
 		annotation SummarizationSetBy = Automatic
 
 	column Id
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 78ab3a54-abca-440b-a7b6-4a9b93a37fc4
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Id
 
 		annotation SummarizationSetBy = Automatic
@@ -76,10 +74,9 @@ table support_rls_static
 		annotation SummarizationSetBy = Automatic
 
 	column supervisorId
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: b3302711-e7af-4bef-b05f-a304059b8b18
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: supervisorId
 
 		annotation SummarizationSetBy = Automatic

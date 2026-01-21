@@ -72,8 +72,6 @@ table data_oracle_staff_cost_exceptions
 
 		annotation SummarizationSetBy = User
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Effective_from
 		dataType: dateTime
 		formatString: General Number

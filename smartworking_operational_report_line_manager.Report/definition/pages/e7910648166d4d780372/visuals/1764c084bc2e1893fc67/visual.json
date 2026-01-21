@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "1764c084bc2e1893fc67",
   "position": {
     "x": 440,
@@ -99,6 +99,19 @@
       },
       "sortDefinition": {
         "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "base_date"
+                  }
+                },
+                "Property": "Year"
+              }
+            },
+            "direction": "Ascending"
+          },
           {
             "field": {
               "Column": {
@@ -521,5 +534,79 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b3beed3556001470d39e"
+  "parentGroupName": "b3beed3556001470d39e",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7c869766a9015a94a79a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_submitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "056026d47410109006d2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_late_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "893c9f2c5e5483064dd7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_unsubmitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "28eced20e915b5c95cb8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f0076e0b8646637201ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

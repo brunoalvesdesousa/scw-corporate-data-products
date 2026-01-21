@@ -68,3 +68,11 @@ relationship d14271e6-f15e-748f-8e00-5045f526b082
 	fromColumn: data_smarttime.Activity_Date
 	toColumn: base_date.Date
 
+relationship 4e1b70e2-f020-4a33-bd8a-d97ac04dfdbe
+	fromColumn: data_smarttime.'calc_timesheet_due_by 2'
+	toColumn: LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8.Date
+
+relationship 64249644-196a-46ee-954c-d2928f566f0d
+	fromColumn: data_smarttime.Person_Id
+	toColumn: support_rls_merged.PersonFk
+

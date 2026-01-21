@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "b455868375ec1fc3d621",
   "position": {
     "x": 88,
@@ -37,24 +37,13 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "data_smarttime"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "Activity_Date"
-                      }
-                    },
-                    "Hierarchy": "Date Hierarchy"
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
                   }
                 },
-                "Level": "Year"
+                "Property": "Activity_Date"
               }
             },
             "direction": "Ascending"

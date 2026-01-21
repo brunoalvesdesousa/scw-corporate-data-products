@@ -20,18 +20,10 @@ ref table DateTableTemplate_2b32b97d-3aaa-469f-9dc2-f7252d2efcc8
 ref table LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad
 ref table LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9
 ref table LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8
-ref table LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5
 ref table LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478
 ref table LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1
 ref table LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f
 ref table LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079
-ref table LocalDateTable_6851690c-909b-45d1-8492-6d3a0826b01d
-ref table LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51
-ref table LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0
-ref table LocalDateTable_9ef9bfae-9967-4a5e-8360-af829fa81e1c
-ref table LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e
-ref table LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1
-ref table LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079
 ref table data_oracle_agency_cost_rates
 ref table LocalDateTable_c0b34c37-2c19-405b-930f-6c50fedfa2c7
 ref table LocalDateTable_2517b613-fee1-47f7-8c59-836c5ab8aa6e
@@ -46,6 +38,13 @@ ref table support_rls_dynamic
 ref table support_rls_dynamic_missing
 ref table support_rls_merged
 ref table support_rls_static
+ref table base_date
+ref table LocalDateTable_3c553266-422c-45e5-8c58-bd72be93b511
+ref table LocalDateTable_4057bcd3-da7e-4aeb-8e3f-8cad082ae077
+ref table LocalDateTable_b4d6b22c-823b-47b1-880f-d652e4c31c07
+ref table LocalDateTable_82e8d631-e0bb-4f1a-9fb7-90426474702f
+ref table LocalDateTable_50825905-c249-4b33-b577-77b48748f2ff
+ref table LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6
 
 ref role 'service line'
 ref role person_cost_centre_l3
