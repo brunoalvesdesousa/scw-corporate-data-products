@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "fe6c3ea8e90110971703",
   "position": {
     "x": 0,
@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "data_products"
+                          "Entity": "base_metadata_smarttime"
                         }
                       },
                       "Property": "Value"
@@ -31,8 +31,8 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(data_products.Value)",
-              "nativeQueryRef": "Value"
+              "queryRef": "Min(base_metadata_smarttime.Value)",
+              "nativeQueryRef": "First Value"
             }
           ]
         }
@@ -190,12 +190,31 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b947ce37edd00dbfbe5",
+        "name": "08aa60f8043190c74622",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "base_metadata_smarttime"
+                  }
+                },
+                "Property": "Value"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "41b353c735c3eb6104cd",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "data_products"
+                "Entity": "base_metadata_smarttime"
               }
             },
             "Property": "Attribute"
@@ -206,8 +225,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "data_products",
+              "Name": "b",
+              "Entity": "base_metadata_smarttime",
               "Type": 0
             }
           ],
@@ -220,7 +239,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "d"
+                            "Source": "b"
                           }
                         },
                         "Property": "Attribute"
@@ -231,7 +250,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Description'"
+                          "Value": "'Description  '"
                         }
                       }
                     ]
@@ -242,25 +261,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "460b0ccca593720b949d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "data_products"
-                  }
-                },
-                "Property": "Value"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

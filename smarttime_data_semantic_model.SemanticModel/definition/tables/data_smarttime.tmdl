@@ -1191,10 +1191,9 @@ table data_smarttime
 		annotation SummarizationSetBy = Automatic
 
 	column Manager_Id
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: aba3702c-a7f0-4bac-ad04-7b17144f1ec1
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Manager_Id
 
 		annotation SummarizationSetBy = Automatic
@@ -1327,10 +1326,10 @@ table data_smarttime
 
 		annotation SummarizationSetBy = Automatic
 
-	column calc_hierarchy_path = ```
+	column calc_hierarchy_path =
 			
-			    RELATED(support_rls_merged[hierarchy_path])
-			```
+			
+			RELATED(support_rls_merged[hierarchy_path])
 		displayFolder: _Calculations
 		lineageTag: 0474cb19-706f-4313-9ff0-55aa5e15d25e
 		summarizeBy: none
@@ -1489,9 +1488,10 @@ table data_smarttime
 				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value2"," C"," (C)",Replacer.ReplaceText,{"Person_Payscale"}),
 				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5"," D"," (D)",Replacer.ReplaceText,{"Person_Payscale"}),
 				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value6",{{"Person_CostCentre", type text}, {"Person_Id", type text}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"tmp_Id", "Timesheet_Token", "Activity_Out_Of_Hours", "Activity_Is_Edit_History", "Activity_With_Person_Id", "Activity_With_Person_First_Name", "Activity_With_Person_Last_Name", "Work_Activity_Is_Retired", "Work_Activity_Retire_Date", "Work_Activity_Filter_Code", "Work_Activity_Priority_Id", "Work_Activity_Priority", "Champion_Id", "Champion_First_Name", "Champion_Last_Name", "Solution_Id", "Solution_Name", "Solution_Lead_Id", "Solution_Lead_First_Name", "Solution_Lead_Last_Name", "Solution_Type_Id", "Solution_Value", "Solution_Start_Date", "Solution_End_Date", "Solution_funding_Stream", "Solution_Notional", "Contract_Id", "Contract_Name", "Contract_Start_Date", "Contract_End_Date", "Contract_Ref_No", "Contract_Owner_Id", "Contract_Owner_First_Name", "Contract_Owner_Last_Name", "Contract_Pipeline_Ref", "Contract_Value", "Contract_Consultancy_Value", "Contract_Contractual_Value", "Contract_Income_Category_Id", "Contract_Income_Category", "Contract_Contract_Type_Id", "Contract_Contract_Type", "Selected_Group_Id", "Selected_Group_Name_Common", "Selected_Group_Name_Full", "Rate_Table_Name", "Rate_Table_Code", "Rate_Table_Description", "Rate_Start_Date", "Rate_End_Date", "Rate_Is_By_Band", "Rate_Is_Exception", "Is_UnPriced", "Is_Travel", "Derived_ID", "opp-cost", "agency_rate", "exception_rate"})
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"tmp_Id", "Timesheet_Token", "Activity_Out_Of_Hours", "Activity_Is_Edit_History", "Activity_With_Person_Id", "Activity_With_Person_First_Name", "Activity_With_Person_Last_Name", "Work_Activity_Is_Retired", "Work_Activity_Retire_Date", "Work_Activity_Filter_Code", "Work_Activity_Priority_Id", "Work_Activity_Priority", "Champion_Id", "Champion_First_Name", "Champion_Last_Name", "Solution_Id", "Solution_Name", "Solution_Lead_Id", "Solution_Lead_First_Name", "Solution_Lead_Last_Name", "Solution_Type_Id", "Solution_Value", "Solution_Start_Date", "Solution_End_Date", "Solution_funding_Stream", "Solution_Notional", "Contract_Id", "Contract_Name", "Contract_Start_Date", "Contract_End_Date", "Contract_Ref_No", "Contract_Owner_Id", "Contract_Owner_First_Name", "Contract_Owner_Last_Name", "Contract_Pipeline_Ref", "Contract_Value", "Contract_Consultancy_Value", "Contract_Contractual_Value", "Contract_Income_Category_Id", "Contract_Income_Category", "Contract_Contract_Type_Id", "Contract_Contract_Type", "Selected_Group_Id", "Selected_Group_Name_Common", "Selected_Group_Name_Full", "Rate_Table_Name", "Rate_Table_Code", "Rate_Table_Description", "Rate_Start_Date", "Rate_End_Date", "Rate_Is_By_Band", "Rate_Is_Exception", "Is_UnPriced", "Is_Travel", "Derived_ID", "opp-cost", "agency_rate", "exception_rate"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Manager_Id", type text}})
 				in
-				    #"Removed Columns"
+				    #"Changed Type1"
 
 	annotation PBI_NavigationStepName = Navigation
 

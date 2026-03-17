@@ -1,0 +1,159 @@
+table support_rls_dynamic_missing
+	isHidden
+	lineageTag: 803fa0dd-b682-410e-824b-54088dbda931
+
+	column Level3
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 9cec220c-c111-48bc-a068-e44307bbf7d0
+		summarizeBy: none
+		sourceColumn: Level3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: a341c9f0-a6d5-4e1c-8f4f-c17269980521
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 812bccf6-264c-4959-b138-459552ac7fe9
+		summarizeBy: none
+		sourceColumn: Level6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonFk
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 16085be9-6188-433e-a924-0bf180bb0202
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 2ea53bf6-885d-40d6-859a-7e443ffa031a
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 589bcba9-a85a-471f-8737-4ed7cc7f1bd2
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: b91b7f84-aa43-4fd2-99b8-6ab396734c94
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSupervisor
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 28efc3a7-f7c3-487b-b916-6bcc21276be5
+		summarizeBy: none
+		sourceColumn: IsSupervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorId
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: bc855845-063a-409b-8460-0e9f2585ca94
+		summarizeBy: none
+		sourceColumn: SupervisorId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 772f3653-3014-46b6-9bd9-97abdec33a09
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 0cfa3ace-89eb-4306-8814-1ea69063496d
+		summarizeBy: none
+		sourceColumn: Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 78d42f89-f21d-43c4-bb7b-9f10a45d00d5
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_dynamic_missing = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_rls_dynamic_missing = Source{[Schema="dbo",Item="support_rls_dynamic_missing"]}[Data]
+				in
+				    dbo_support_rls_dynamic_missing
+
+	changedProperty = IsHidden
+

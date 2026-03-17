@@ -1,0 +1,21 @@
+role 'service line'
+	modelPermission: read
+
+	tablePermission data_smarttime
+
+	tablePermission RLS_Metadata = ```
+			VAR CurrentUserEmail = USERPRINCIPALNAME()
+			VAR LoggedInEmployeeID = 
+			    LOOKUPVALUE(
+			        'RLS_Metadata'[PersonFk],
+			        'RLS_Metadata'[userPrincipalName], 
+			        CurrentUserEmail
+			    )
+			
+			RETURN
+			    -- We filter the LOCAL table's OrgPath using the LOCAL table's IDs
+			    PATHCONTAINS('RLS_Metadata'[OrgPath], LoggedInEmployeeID)
+			```
+
+	annotation PBI_Id = b3effcc1b0154522b300a7b18db5c3fd
+

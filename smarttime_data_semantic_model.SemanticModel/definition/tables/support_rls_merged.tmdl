@@ -1,6 +1,16 @@
 table support_rls_merged
 	lineageTag: 2b0ae4a3-76b1-4d1b-823c-ff32fa9b9696
 
+	measure test = ```
+			
+			    LOOKUPVALUE(
+			        'support_rls_merged'[PersonFk],
+			        'support_rls_merged'[support_entraid.userPrincipalName], 
+			       USERPRINCIPALNAME()
+			    )
+			```
+		lineageTag: 7de9ebc6-b92c-4a04-9685-42abc04c0a64
+
 	column Level3
 		dataType: string
 		lineageTag: 18bd086b-8e4f-472f-adad-b0abd2ea0fbb
@@ -26,8 +36,7 @@ table support_rls_merged
 		annotation SummarizationSetBy = Automatic
 
 	column PersonFk
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: e225cb86-d879-4a5e-9a14-b92318bb10b5
 		summarizeBy: none
 		sourceColumn: PersonFk
@@ -67,10 +76,9 @@ table support_rls_merged
 		annotation SummarizationSetBy = Automatic
 
 	column SupervisorId
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 38672e85-610d-4704-9213-142f318f04f2
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: SupervisorId
 
 		annotation SummarizationSetBy = Automatic
@@ -118,14 +126,13 @@ table support_rls_merged
 	column supervisorid_corrected = ```
 			
 			    IF(
-			        'support_rls_merged'[PersonFk]=4037,
+			        'support_rls_merged'[PersonFk]="4037",
 			        BLANK(),
 			        'support_rls_merged'[SupervisorId]
 			        )
 			```
-		formatString: 0
 		lineageTag: 35bfd847-11d8-45ee-96a4-5896df924d68
-		summarizeBy: sum
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -141,7 +148,7 @@ table support_rls_merged
 		dataType: int64
 		formatString: 0
 		lineageTag: 80cfcda7-e6f1-4c73-97a4-d583eba44e48
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Leaver
 
 		annotation SummarizationSetBy = Automatic
@@ -152,9 +159,11 @@ table support_rls_merged
 				let
 				    Source = Table.Combine({support_rls_dynamic, support_rls_dynamic_missing}),
 				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"PersonFk", Int64.Type}, {"SupervisorId", Int64.Type}}),
-				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"PersonFk"})
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"PersonFk"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Duplicates",{{"PersonFk", type text}, {"SupervisorId", type text}}),
+				    #"Lowercased Text" = Table.TransformColumns(#"Changed Type1",{{"support_entraid.userPrincipalName", Text.Lower, type text}})
 				in
-				    #"Removed Duplicates"
+				    #"Lowercased Text"
 
 	annotation PBI_NavigationStepName = Navigation
 

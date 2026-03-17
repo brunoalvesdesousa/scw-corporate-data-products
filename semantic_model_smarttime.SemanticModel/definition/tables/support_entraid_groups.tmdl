@@ -1,0 +1,89 @@
+table support_entraid_groups
+	isHidden
+	lineageTag: c5c9c332-7ccb-46c7-b0db-76d281237e63
+
+	column id
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 0a74b5c8-2ef7-43cd-ae06-e4064c8d66e5
+		summarizeBy: none
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column displayName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 3e42a7ee-59f7-496a-b983-8e103301d7dc
+		summarizeBy: none
+		sourceColumn: displayName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 40a5cf8d-199c-4ac5-8191-5165ad94b4ae
+		summarizeBy: none
+		sourceColumn: description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column groupTypes
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: f806d705-8cd4-4b29-8724-08036b5f7d72
+		summarizeBy: none
+		sourceColumn: groupTypes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mailEnabled
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: d9c5eefa-00a2-4e66-8589-cef4f1dc49f9
+		summarizeBy: none
+		sourceColumn: mailEnabled
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column securityEnabled
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: da770f0a-eaec-4b97-a7da-4800cb01a7fd
+		summarizeBy: none
+		sourceColumn: securityEnabled
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_entraid_groups = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_entraid_groups = Source{[Schema="dbo",Item="support_entraid_groups"]}[Data]
+				in
+				    dbo_support_entraid_groups
+
+	changedProperty = IsHidden
+

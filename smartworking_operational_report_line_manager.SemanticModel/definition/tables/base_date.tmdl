@@ -1,88 +1,71 @@
 table base_date
-	lineageTag: a289846f-4175-47c8-a016-96fce1940481
-	sourceLineageTag: 2ad8d938-1e5c-4a20-b418-265dde1b3880
+	lineageTag: f6e05e2d-a2d0-48c2-b44f-fed3199264ff
+	sourceLineageTag: 49f459be-62ce-42d0-b14f-c94f0e11adc5
 
-	measure Count_Days_in_Month = EXTERNALMEASURE("Count_Days_in_Month", INTEGER, "DirectQuery to AS - smarttime_data_semantic_model")
+	measure Count_Days_in_Month = EXTERNALMEASURE("Count_Days_in_Month", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
 		formatString: 0
-		lineageTag: ad1f605b-acd8-45ba-adbb-0e02dfbcfed8
-		sourceLineageTag: 5aec7444-92ab-45ef-92aa-79a464518667
+		lineageTag: 228e0990-ac5f-4c77-8e14-8f521e39cde6
+		sourceLineageTag: 93c57e76-1791-48c6-ad31-61885c9e4c6b
 		dataCategory: Uncategorized
 
 	column Date
 		dataType: dateTime
 		isNullable: false
-		formatString: Short Date
-		lineageTag: 71406025-1b2a-4f1c-a1c7-936e58e26184
-		sourceLineageTag: b53dd241-b2b3-4631-b3cc-6d4401f9285f
+		formatString: Long Date
+		lineageTag: ff90f21a-daef-4822-a18a-6f1dc446502f
+		sourceLineageTag: 666f3f35-b6d8-4e3a-81ea-b9a6c19beeaf
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: e525c609-34e4-40ec-b830-634f9cfbbee0
-			defaultHierarchy: LocalDateTable_3c553266-422c-45e5-8c58-bd72be93b511.'Date Hierarchy'
-
 		annotation SummarizationSetBy = User
 
 	column Year
-		dataType: dateTime
-		formatString: yyyy
-		lineageTag: 723e5205-2651-4376-8ffc-8e63a93d0870
-		sourceLineageTag: 67cc5bf7-f0ba-40bb-8d04-a7d455b59562
+		dataType: int64
+		formatString: 0
+		lineageTag: c86700e8-446c-4659-b173-50566d7ba3bc
+		sourceLineageTag: 4fee0498-4e09-49fd-a615-44f94c713b38
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Year
 
-		variation Variation
-			isDefault
-			relationship: 3dab784b-3beb-4c26-a418-40a5a5affb62
-			defaultHierarchy: LocalDateTable_4057bcd3-da7e-4aeb-8e3f-8cad082ae077.'Date Hierarchy'
-
 		annotation SummarizationSetBy = User
 
 	column 'Month Year'
-		dataType: dateTime
-		formatString: mmm\-yy
-		lineageTag: f57d9d35-971f-4c9b-9108-131b0c27f4d8
-		sourceLineageTag: a5fe4ec0-d9e8-46ef-9a14-ba8aa008c8d0
+		dataType: string
+		lineageTag: 262c359e-3f77-4270-80dc-5b99b648d57d
+		sourceLineageTag: 7cf269ea-1aab-4ce0-aebf-6191730b5d29
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Month Year
-
-		variation Variation
-			isDefault
-			relationship: f88209dc-6a8c-40fe-b191-8fbc2b268993
-			defaultHierarchy: LocalDateTable_b4d6b22c-823b-47b1-880f-d652e4c31c07.'Date Hierarchy'
 
 		annotation SummarizationSetBy = User
 
 	column Month
 		dataType: string
-		lineageTag: 2f7ea45b-6de5-4223-a9e5-5a312b6137cc
-		sourceLineageTag: 3a28ce30-a2bc-4160-8065-12cbf3cb3d0e
+		lineageTag: e35a5ae3-e961-4728-b602-49067b16787a
+		sourceLineageTag: 66273ed1-50da-4442-88a7-0b13530222c7
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Month
-		sortByColumn: 'Month Number'
 
 		annotation SummarizationSetBy = User
 
 	column 'Month Number'
 		dataType: int64
 		formatString: 0
-		lineageTag: 26d7a003-33ee-4dd7-95f5-d37bdff763cb
-		sourceLineageTag: 59e14b28-843b-475b-857b-0a06188a00aa
+		lineageTag: 49fc8371-2abc-4246-8bae-1f23fcbec5d6
+		sourceLineageTag: 259994db-3c5a-4082-b470-5bdab61da2d1
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Month Number
 
 		annotation SummarizationSetBy = User
 
 	column 'Day of Week'
 		dataType: string
-		lineageTag: da61ecc5-6e08-4978-b571-adaa24cbb5f1
-		sourceLineageTag: 685bdab2-27f6-4b34-9da1-5ab1b2e53ddb
+		lineageTag: 7f6e5c9d-b541-4d8b-ae1f-f9baf46ba17d
+		sourceLineageTag: 370b06ee-2def-4fd1-bc42-ff88ca483d6c
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Day of Week
@@ -92,10 +75,10 @@ table base_date
 	column 'Day of Week Number'
 		dataType: int64
 		formatString: 0
-		lineageTag: 356a3e3b-e983-415c-a4a8-6b4a6c224d89
-		sourceLineageTag: ff711b9f-013f-42f1-a28c-92012552e935
+		lineageTag: 79fd3fca-e422-4d82-bfa0-574f6ee80c59
+		sourceLineageTag: bc530f22-6dfb-4514-ab88-dcf2e2a01137
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Day of Week Number
 
 		annotation SummarizationSetBy = User
@@ -103,18 +86,18 @@ table base_date
 	column 'Day of the Month Number'
 		dataType: int64
 		formatString: 0
-		lineageTag: a58667e2-fa00-4552-933a-be63d36b6fc6
-		sourceLineageTag: 73ae1d0d-5690-4409-ba4d-805b7ad7b2b3
+		lineageTag: 64088292-57cb-4306-8efc-8a3026204687
+		sourceLineageTag: 5e130b89-b008-44d0-a7f6-0588c87bb050
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Day of the Month Number
 
 		annotation SummarizationSetBy = User
 
 	column 'Financial Year'
 		dataType: string
-		lineageTag: 6c23f11f-7617-472e-b60d-a7fdfabe6722
-		sourceLineageTag: d2e01d80-c321-48c3-ac09-e25483e3f025
+		lineageTag: e147fa9b-e1cd-49b2-95e7-f8ad2d9eacc8
+		sourceLineageTag: 515708fd-abf6-4ea8-95c7-d3ce0b5e7f5d
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Financial Year
@@ -124,63 +107,44 @@ table base_date
 	column 'Financial Week Number'
 		dataType: int64
 		formatString: 0
-		lineageTag: ee40e915-c40b-435f-ab03-467a5653b7de
-		sourceLineageTag: 2eca3a35-4654-48cf-a03d-fb7c61e04907
+		lineageTag: 9a166cca-c276-4236-bf54-804336d6156c
+		sourceLineageTag: 4660cc17-0b42-4572-8419-0024a99d27b9
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Financial Week Number
 
 		annotation SummarizationSetBy = User
 
 	column 'Financial Week Start'
 		dataType: dateTime
-		formatString: dd-mmm
-		lineageTag: 5e8deeb9-e978-4bae-b268-7f04e6bfef89
-		sourceLineageTag: 104acfe7-6664-4547-a078-9874a9421a0f
+		formatString: Long Date
+		lineageTag: bdae64a1-ceca-445a-9891-40774ecefb6a
+		sourceLineageTag: b3a606aa-02cf-4517-bd23-0bf402c2e4c5
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Financial Week Start
 
-		variation Variation
-			isDefault
-			relationship: 3e3c5800-15ec-4bc9-aa31-f46a5853aee9
-			defaultHierarchy: LocalDateTable_82e8d631-e0bb-4f1a-9fb7-90426474702f.'Date Hierarchy'
-
-		changedProperty = FormatString
-
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isCustom":true}
 
 	column 'Financial Week End'
 		dataType: dateTime
-		formatString: General Number
-		lineageTag: be86cc2e-3fe4-48af-959c-79894a8d6b7b
-		sourceLineageTag: 58cd1ad6-b438-4839-9ddc-34a6139b07c9
+		formatString: Long Date
+		lineageTag: 745f46ec-c328-4f37-8b18-da7508f6e924
+		sourceLineageTag: 833dd378-9d33-403f-bdef-7f5d06f3a278
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Financial Week End
-
-		variation Variation
-			isDefault
-			relationship: 6f445619-1392-46da-9ccc-605c7a2bb228
-			defaultHierarchy: LocalDateTable_50825905-c249-4b33-b577-77b48748f2ff.'Date Hierarchy'
 
 		annotation SummarizationSetBy = User
 
 	column 'Financial Week Start Plus 7'
 		dataType: dateTime
-		formatString: General Number
-		lineageTag: e3004424-1129-4848-8220-db483d401630
-		sourceLineageTag: bc7e839b-b1e5-406e-be6b-c2a999971784
+		formatString: Long Date
+		lineageTag: 90612ac6-1c64-4b2a-9482-9bdc6ff133a5
+		sourceLineageTag: 5c213ba7-c4b1-4a0f-9cc5-c20493e3d602
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Financial Week Start Plus 7
-
-		variation Variation
-			isDefault
-			relationship: 31430580-c1de-4344-acdd-4989c04a7fd9
-			defaultHierarchy: LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6.'Date Hierarchy'
 
 		annotation SummarizationSetBy = User
 
@@ -188,5 +152,5 @@ table base_date
 		mode: directQuery
 		source
 			entityName: base_date
-			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
 

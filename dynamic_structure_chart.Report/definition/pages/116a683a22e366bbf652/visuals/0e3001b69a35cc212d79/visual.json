@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "0e3001b69a35cc212d79",
   "position": {
     "x": 0,
-    "y": 96,
+    "y": 98.518518518518519,
     "z": 3000,
-    "height": 224,
-    "width": 512,
-    "tabOrder": 11
+    "height": 221.48148148148147,
+    "width": 512.59259259259261,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,27 +20,27 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "data_products"
+                      "Entity": "base_metadata_dynamic_structure_chart"
                     }
                   },
                   "Property": "Attribute"
                 }
               },
-              "queryRef": "data_products.Attribute",
-              "nativeQueryRef": "Attribute1"
+              "queryRef": "base_metadata_dynamic_structure_chart.Attribute",
+              "nativeQueryRef": "Attribute"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "data_products"
+                      "Entity": "base_metadata_dynamic_structure_chart"
                     }
                   },
                   "Property": "Value"
                 }
               },
-              "queryRef": "data_products.Value",
+              "queryRef": "base_metadata_dynamic_structure_chart.Value",
               "nativeQueryRef": "Value"
             }
           ]
@@ -105,13 +105,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "148.65413659029173D"
+                  "Value": "244.8960701805549D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "data_products.Attribute"
+            "metadata": "base_metadata_dynamic_structure_chart.Attribute"
           }
         },
         {
@@ -119,13 +119,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "330.2330908085312D"
+                  "Value": "240.54070473876064D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "data_products.Value"
+            "metadata": "base_metadata_dynamic_structure_chart.Value"
           }
         }
       ]
@@ -218,12 +218,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9e977da04f1e7de32249",
+        "name": "02dde98377e8c055ab05",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "data_products"
+                "Entity": "base_metadata_dynamic_structure_chart"
               }
             },
             "Property": "Attribute"
@@ -234,8 +234,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "data_products",
+              "Name": "b",
+              "Entity": "base_metadata_dynamic_structure_chart",
               "Type": 0
             }
           ],
@@ -248,7 +248,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "d"
+                            "Source": "b"
                           }
                         },
                         "Property": "Attribute"
@@ -259,70 +259,56 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Current_version'"
+                          "Value": "'Data Source Name '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Data Source Name'"
+                          "Value": "'Data Status '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Data Status'"
+                          "Value": "'Development Status '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Development Status'"
+                          "Value": "'Platform  '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Di Code'"
+                          "Value": "'Portfolio Name  '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Platform'"
+                          "Value": "'Primary Developer '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Portfolio Name'"
+                          "Value": "'Product Owner '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Primary Developer'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Product Reference'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Product Owner Name'"
+                          "Value": "'Product Reference '"
                         }
                       }
                     ]
@@ -331,14 +317,21 @@
               }
             }
           ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {}
-            }
-          ]
         }
+      },
+      {
+        "name": "fa37ba7beae9b53c9ab7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_metadata_dynamic_structure_chart"
+              }
+            },
+            "Property": "Value"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

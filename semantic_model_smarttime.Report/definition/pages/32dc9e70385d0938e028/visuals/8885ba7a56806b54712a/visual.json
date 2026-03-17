@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "8885ba7a56806b54712a",
+  "position": {
+    "x": 440,
+    "y": 88,
+    "z": 2000,
+    "height": 120,
+    "width": 232
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_unsubmitted_timesheets"
+                }
+              },
+              "queryRef": "data_smarttime.calc_unsubmitted_timesheets",
+              "nativeQueryRef": "calc_unsubmitted_timesheets"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dd77c83d465975c1c200",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_unsubmitted_timesheets"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

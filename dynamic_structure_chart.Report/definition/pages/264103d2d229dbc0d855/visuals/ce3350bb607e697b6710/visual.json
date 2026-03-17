@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ce3350bb607e697b6710",
   "position": {
     "x": 32,
@@ -19,15 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "support_rls_merged"
+                      "Entity": "support_rls_hierarchy_gold"
                     }
                   },
                   "Property": "PersonFk"
                 }
               },
-              "queryRef": "support_staff_hierarchy_merged.PersonFk",
-              "nativeQueryRef": "person_id",
-              "displayName": "person_id"
+              "queryRef": "support_rls_hierarchy_gold.PersonFk",
+              "nativeQueryRef": "PersonFk1"
             }
           ]
         },
@@ -38,15 +37,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "support_rls_merged"
+                      "Entity": "support_rls_hierarchy_gold"
                     }
                   },
                   "Property": "supervisorid_corrected"
                 }
               },
-              "queryRef": "support_staff_hierarchy_merged.supervisorid_corrected",
-              "nativeQueryRef": "supervisor_id",
-              "displayName": "supervisor_id"
+              "queryRef": "support_rls_hierarchy_gold.supervisorid_corrected",
+              "nativeQueryRef": "supervisorid_corrected"
             }
           ]
         },
@@ -57,15 +55,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "support_rls_merged"
+                      "Entity": "support_rls_hierarchy_gold"
                     }
                   },
-                  "Property": "full_name"
+                  "Property": "fullname"
                 }
               },
-              "queryRef": "support_staff_hierarchy_merged.full_name",
-              "nativeQueryRef": "full name",
-              "displayName": "full name"
+              "queryRef": "support_rls_hierarchy_gold.fullname",
+              "nativeQueryRef": "fullname"
             }
           ]
         },
@@ -76,13 +73,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "support_rls_merged"
+                      "Entity": "support_rls_hierarchy_gold"
                     }
                   },
                   "Property": "Level3"
                 }
               },
-              "queryRef": "support_staff_hierarchy_merged.Level3",
+              "queryRef": "support_rls_hierarchy_gold.Level3",
               "nativeQueryRef": "Level3"
             },
             {
@@ -90,13 +87,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "support_rls_merged"
+                      "Entity": "support_rls_hierarchy_gold"
                     }
                   },
                   "Property": "Level6"
                 }
               },
-              "queryRef": "support_staff_hierarchy_merged.Level6",
+              "queryRef": "support_rls_hierarchy_gold.Level6",
               "nativeQueryRef": "Level6"
             }
           ]
@@ -453,79 +450,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "285ba883a7821696feee",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "PersonFk"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a2e563cd8e612258e9d2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "supervisorid_corrected"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a1c7a57514f0d008b51a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "full_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b217550690eaa4a6c421",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "Level3"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "37432165f69ffcb69059",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "support_rls_merged"
-              }
-            },
-            "Property": "Level6"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

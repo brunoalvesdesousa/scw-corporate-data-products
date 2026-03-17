@@ -1,11 +1,11 @@
 table support_rls_dynamic
-	lineageTag: 8b72e230-4eba-49ab-bba9-ff6ed6e2a92a
-	sourceLineageTag: 65ffb8fd-7770-4503-8840-4df932e01e7c
+	lineageTag: 5e606708-1539-404b-9ffb-18a94dae2334
+	sourceLineageTag: 97485eba-3a08-42de-8230-f217c5142afc
 
 	column Level3
 		dataType: string
-		lineageTag: 1c51a892-84bb-49d9-a2ae-9f49dff5428e
-		sourceLineageTag: 6583c745-71b6-4339-9c65-223a74c75134
+		lineageTag: 91e55c44-c4c3-4577-92b5-02eed7e694d6
+		sourceLineageTag: 66a8cac1-eb4b-4fd9-a854-170276a4f1ae
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Level3
@@ -14,8 +14,8 @@ table support_rls_dynamic
 
 	column CostCentre
 		dataType: string
-		lineageTag: 32ca2010-25ac-4311-8e71-eed221c2c77b
-		sourceLineageTag: 740375ea-b084-48a9-8ea3-098727513755
+		lineageTag: 662603b1-3413-4d5c-9999-b065000aab76
+		sourceLineageTag: c1efc552-a6bf-4d05-a027-e9657db680fd
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: CostCentre
@@ -24,8 +24,8 @@ table support_rls_dynamic
 
 	column Level6
 		dataType: string
-		lineageTag: ab9617ba-249e-4366-9806-afdbbd120fce
-		sourceLineageTag: 28be6312-69f2-4d03-872f-0032189dcd0a
+		lineageTag: 537fd9fa-8a41-4d1c-a4b6-d85b879bf398
+		sourceLineageTag: 1bf4b903-5bdb-4554-b428-9ca42f2b43a4
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Level6
@@ -34,8 +34,9 @@ table support_rls_dynamic
 
 	column PersonFk
 		dataType: string
-		lineageTag: 19398a15-7f56-4052-88e4-b15726c126a6
-		sourceLineageTag: 6531c543-eca1-4d21-9f62-25b55e412a26
+		isNullable: false
+		lineageTag: ce1868b8-7dcd-473c-9663-f53109b1d088
+		sourceLineageTag: 9dae07cd-66e0-45f0-8ce1-59a4b2774a5f
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: PersonFk
@@ -44,8 +45,8 @@ table support_rls_dynamic
 
 	column NameFirst
 		dataType: string
-		lineageTag: ba978386-05d8-4994-a891-ff83eefce017
-		sourceLineageTag: a913dc45-37c5-4c3e-b455-9581dfd958da
+		lineageTag: 01f88ec5-a12f-4d73-ad9e-96c6603891e0
+		sourceLineageTag: f98e31f5-bcfd-4792-b8fa-696bc6308bbd
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: NameFirst
@@ -54,8 +55,8 @@ table support_rls_dynamic
 
 	column NameLast
 		dataType: string
-		lineageTag: 53ee0edc-8f28-4eea-83ad-24e871224151
-		sourceLineageTag: f28574eb-80c5-45d2-8efd-731e301b74d0
+		lineageTag: ef9f20bc-88b5-45f0-9014-53fb9cf2168a
+		sourceLineageTag: 48c1fefd-f823-4536-94d0-50730a3a70ed
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: NameLast
@@ -64,8 +65,8 @@ table support_rls_dynamic
 
 	column Email
 		dataType: string
-		lineageTag: 7eb7d3f5-7390-41e6-b091-31d4445c51d5
-		sourceLineageTag: c6fa8d38-7084-42f0-966d-59e56043b218
+		lineageTag: 9fb65e76-0480-4786-a900-064953336015
+		sourceLineageTag: 0ef7c328-96a2-44ab-8537-9f24051f2aaf
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Email
@@ -75,18 +76,18 @@ table support_rls_dynamic
 	column IsSupervisor
 		dataType: int64
 		formatString: 0
-		lineageTag: ad5200c4-eaab-4ce5-9273-92c1e2a2060c
-		sourceLineageTag: 365e6e27-165d-4f92-81c5-307961c16f8e
+		lineageTag: 626d5037-6e35-4631-aec4-5e938498b5a6
+		sourceLineageTag: a240c73a-d919-4ff3-87c6-6fc0912620d8
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: IsSupervisor
 
 		annotation SummarizationSetBy = User
 
 	column SupervisorId
 		dataType: string
-		lineageTag: 77977301-c9a3-4c25-8231-d7cc49bd4489
-		sourceLineageTag: 893e919e-adba-4f19-ae1c-9dbe3ad8f5fe
+		lineageTag: b7b6ca82-0e03-4086-bc3d-6070b92555cc
+		sourceLineageTag: 5a51ddf5-0916-48df-a1a0-ca683deb4ce2
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: SupervisorId
@@ -95,8 +96,8 @@ table support_rls_dynamic
 
 	column Supervisor
 		dataType: string
-		lineageTag: 97d73a5e-d257-4e2e-b7a9-22ab553053c2
-		sourceLineageTag: 867f6400-6b63-4aac-8569-92a4de0b93cd
+		lineageTag: 5f554bee-31d4-48ed-8c19-139cfe5e129f
+		sourceLineageTag: 8cf10515-7beb-43e7-86ee-9869da1b9098
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Supervisor
@@ -106,62 +107,42 @@ table support_rls_dynamic
 	column Id
 		dataType: int64
 		formatString: 0
-		lineageTag: 86d6f917-c5d5-40e6-b323-67eb2bfdffd6
-		sourceLineageTag: 5e8da0b5-4e76-4cfc-84c5-a33a20a6b15d
+		lineageTag: 9301d6cb-120b-4051-ad21-4f2c802a878f
+		sourceLineageTag: 0ceb59b7-feed-46c6-9d98-2833cb98aff0
 		dataCategory: Uncategorized
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Id
 
 		annotation SummarizationSetBy = User
 
 	column Name
 		dataType: string
-		lineageTag: 3771db03-194e-4fae-ae89-cefb7ecb49be
-		sourceLineageTag: d39d231a-fe86-429f-a4ea-1d31d371f8f9
+		lineageTag: 1d4ea29f-4eb7-4381-9978-8c75f0468183
+		sourceLineageTag: 5034a2b6-fcbd-480e-a2b3-eee26e08e01f
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Name
 
 		annotation SummarizationSetBy = User
 
-	column 'support_entraid.userPrincipalName'
-		dataType: string
-		lineageTag: fb87cc22-fc9a-440b-91a4-1202409ad83e
-		sourceLineageTag: 3313c3e0-b872-4570-a60d-aca4a308e74c
-		dataCategory: Uncategorized
-		summarizeBy: none
-		sourceColumn: support_entraid.userPrincipalName
-
-		annotation SummarizationSetBy = User
-
-	column full_name
-		dataType: string
-		lineageTag: 2efa138d-e1f1-4a69-aa7c-4c45933d93e5
-		sourceLineageTag: 50838a9f-2e5c-48cb-8d9c-c11e983dc827
-		dataCategory: Uncategorized
-		summarizeBy: none
-		sourceColumn: full_name
-
-		annotation SummarizationSetBy = User
-
-	column supervisorid_corrected
-		dataType: string
-		lineageTag: 0732dc84-25f6-4e67-9bc7-efc64ebef501
-		sourceLineageTag: 59c2f868-c18a-4fbd-bae8-1cc1841a9c47
-		dataCategory: Uncategorized
-		summarizeBy: none
-		sourceColumn: supervisorid_corrected
-
-		annotation SummarizationSetBy = User
-
 	column Leaver
 		dataType: int64
 		formatString: 0
-		lineageTag: 1d5533ff-5e8d-4827-bd98-7d784d2f876b
-		sourceLineageTag: 2df20a99-8de3-4eb8-947b-e56a3b63038c
+		lineageTag: fc9929aa-3fdd-476b-9d7e-0bfb8a6db67e
+		sourceLineageTag: 81876aaa-d8b0-44d1-9aae-feb4983ce437
 		dataCategory: Uncategorized
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Leaver
+
+		annotation SummarizationSetBy = User
+
+	column userPrincipalName
+		dataType: string
+		lineageTag: bccced39-1f61-4f14-8cbc-9afffa65707f
+		sourceLineageTag: 2de6eb5d-a1a3-4b0c-9a6f-fb04b2161147
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: userPrincipalName
 
 		annotation SummarizationSetBy = User
 
@@ -169,5 +150,5 @@ table support_rls_dynamic
 		mode: directQuery
 		source
 			entityName: support_rls_dynamic
-			expressionSource: 'DirectQuery to AS - smarttime_data_semantic_model'
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
 

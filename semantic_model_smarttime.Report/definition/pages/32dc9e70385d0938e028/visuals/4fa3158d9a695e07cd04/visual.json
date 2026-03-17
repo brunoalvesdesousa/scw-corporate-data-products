@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "4fa3158d9a695e07cd04",
+  "position": {
+    "x": 264,
+    "y": 88,
+    "z": 1000,
+    "height": 128,
+    "width": 152
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_submitted_timesheets"
+                }
+              },
+              "queryRef": "data_smarttime.calc_submitted_timesheets",
+              "nativeQueryRef": "calc_submitted_timesheets"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

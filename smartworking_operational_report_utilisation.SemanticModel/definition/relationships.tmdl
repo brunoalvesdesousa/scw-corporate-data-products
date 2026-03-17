@@ -3,67 +3,7 @@ relationship ad5e508e-39f8-4e42-b008-054dfa25e018
 	fromColumn: 0_Environment.'Latest Refresh Date'
 	toColumn: LocalDateTable_1bf9ab83-455b-4186-aa51-b31af66c5eba.Date
 
-relationship 79e697f1-737a-4f34-a8ab-9b62e05168af
-	fromColumn: data_smarttime.Timesheet_Start
-	toColumn: LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad.Date
-
-relationship 1bc102ee-5957-42b9-8404-67a75cdd9324
-	fromColumn: data_smarttime.Timesheet_End
-	toColumn: LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9.Date
-
-relationship 66cc08a9-01f4-4a71-a563-4ebe8a5fa700
-	fromColumn: data_smarttime.Timesheet_Closed_Date
-	toColumn: LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8.Date
-
-relationship 0f083c25-578e-49db-bba5-f024755a4da4
-	fromColumn: data_smarttime.Activity_Submitted_Date
-	toColumn: LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478.Date
-
-relationship acfb7cb0-931a-49c4-bbc7-4ca731ce381d
-	fromColumn: data_smarttime.Activity_Created_Date
-	toColumn: LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1.Date
-
-relationship 07c29181-dca9-43e3-8970-d22148cf8522
-	fromColumn: data_smarttime.Work_Activity_Start
-	toColumn: LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f.Date
-
-relationship 742fdd01-1485-4870-8fab-1a1a8e5bbfa1
-	fromColumn: data_smarttime.Work_Activity_End
-	toColumn: LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079.Date
-
-relationship a6ddd5f1-a540-4a68-8835-d802eda4af75
-	fromColumn: data_smarttime.'calc_timesheet_due_by 2'
-	toColumn: LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8.Date
-
-relationship 9b79f911-7d78-41bf-9475-97583e2592d1
-	fromColumn: data_smarttime.Person_Id
-	toColumn: support_rls_merged.PersonFk
-
-relationship 868b4ca1-92cd-4dc6-8e30-0d279c430c4a
+relationship 6a0451be-bafa-4378-acf9-f83e9b379c94
 	fromColumn: data_smarttime.Activity_Date
 	toColumn: base_date.Date
-
-relationship 8e4b5d57-c2a4-4390-ac31-bb3f01e7c072
-	fromColumn: base_date.Date
-	toColumn: LocalDateTable_3c553266-422c-45e5-8c58-bd72be93b511.Date
-
-relationship 4ae4e028-b923-4f55-8545-9b1d02d06d9e
-	fromColumn: base_date.Year
-	toColumn: LocalDateTable_4057bcd3-da7e-4aeb-8e3f-8cad082ae077.Date
-
-relationship e497b19e-1921-4cad-b7ea-5a21615d1e2c
-	fromColumn: base_date.'Month Year'
-	toColumn: LocalDateTable_b4d6b22c-823b-47b1-880f-d652e4c31c07.Date
-
-relationship cf7f7fb7-68f9-4e65-9326-0b6040e3cd23
-	fromColumn: base_date.'Financial Week Start'
-	toColumn: LocalDateTable_82e8d631-e0bb-4f1a-9fb7-90426474702f.Date
-
-relationship 6ab8baa7-ed25-4a84-91a5-4fd2dba9e19b
-	fromColumn: base_date.'Financial Week End'
-	toColumn: LocalDateTable_50825905-c249-4b33-b577-77b48748f2ff.Date
-
-relationship f237be42-d4aa-4d0b-a4c0-3c45fc77150e
-	fromColumn: base_date.'Financial Week Start Plus 7'
-	toColumn: LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6.Date
 

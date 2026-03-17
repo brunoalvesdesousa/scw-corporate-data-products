@@ -1,0 +1,30 @@
+table base_metadata_smarttime
+	lineageTag: e1f21d4b-8b86-4f75-be8a-c568ab62b4fb
+	sourceLineageTag: c4cd8a19-12f5-407a-b516-7d67f274ec19
+
+	column Attribute
+		dataType: string
+		lineageTag: 3ecb0cea-ef19-4f1b-8409-c79c546385bf
+		sourceLineageTag: 201b0839-e76d-465f-b977-49de5583bd6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = User
+
+	column Value
+		dataType: string
+		lineageTag: d7fd0416-01ad-4c9b-8e4e-5786d2b8ee58
+		sourceLineageTag: 2a491fde-afef-4d99-95bd-22a14a272fa9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = User
+
+	partition base_metadata_smarttime = entity
+		mode: directQuery
+		source
+			entityName: base_metadata_smarttime
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+

@@ -1,0 +1,50 @@
+table RLS_Metadata
+	lineageTag: 77f779fb-4930-4c62-af08-061d6facf539
+
+	measure test = ```
+			
+			    LOOKUPVALUE(
+			        RLS_Metadata[PersonFk],
+			        RLS_Metadata[userPrincipalName], 
+			       USERPRINCIPALNAME()
+			    )
+			```
+		lineageTag: b18a992d-7e5b-4d24-868a-ba551a1c3d20
+
+	column PersonFk
+		lineageTag: cdd1d024-cbfb-415d-862c-a2773ab04f50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PersonFk]
+
+		annotation SummarizationSetBy = Automatic
+
+	column userPrincipalName
+		lineageTag: 74410a2f-3e87-4a74-99ff-965c7666cbea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [userPrincipalName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrgPath
+		lineageTag: bfb5fe43-cac6-4aea-b5c7-7096afbf4582
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [OrgPath]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RLS_Metadata = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS(
+				    'support_rls_hierarchy_gold',
+				    "PersonFk", 'support_rls_hierarchy_gold'[PersonFk],
+				    "userPrincipalName", 'support_rls_hierarchy_gold'[userPrincipalName],
+				    "OrgPath", 'support_rls_hierarchy_gold'[OrgPath]
+				)
+
+	annotation PBI_Id = 1aa4f1e2bb104f289dc2d0f8234357bc
+

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "675005256369a138bbe8",
   "position": {
     "x": 0,
@@ -23,10 +23,10 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "person_fullname2"
+                  "Property": "person_full_name"
                 }
               },
-              "queryRef": "data_smarttime.person_fullname2",
+              "queryRef": "data_smarttime.person_full_name",
               "nativeQueryRef": "name",
               "displayName": "name"
             },
@@ -153,7 +153,7 @@
                     "Entity": "data_smarttime"
                   }
                 },
-                "Property": "person_fullname2"
+                "Property": "person_full_name"
               }
             },
             "direction": "Ascending"
@@ -1372,20 +1372,6 @@
   "parentGroupName": "22af8984947224d549d5",
   "filterConfig": {
     "filters": [
-      {
-        "name": "72bd92b24b4c8f8a766a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "person_fullname2"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "dbd5451e6024347e419c",
         "field": {

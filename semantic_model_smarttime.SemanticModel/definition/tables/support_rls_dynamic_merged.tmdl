@@ -1,0 +1,198 @@
+table support_rls_dynamic_merged
+	isHidden
+	lineageTag: 5c6be17d-7175-45a0-95fe-0ad7d92994a1
+
+	column Level3
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: e11bb016-e6ec-47d4-ad1c-1b1a4fbee845
+		summarizeBy: none
+		sourceColumn: Level3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 4257c991-3411-46e9-90c9-25fc567d687d
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 9afd7482-57af-4a30-9809-873340c792bc
+		summarizeBy: none
+		sourceColumn: Level6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonFk
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 07715757-cddc-4276-bbaf-2be7e96f1caa
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: c90424b1-f480-45ed-8781-99024b745d14
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 88b7ef29-bbcc-4574-ba0e-a312c0dbf6cf
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: eca75a41-ce28-4a13-886a-84ee68fe242a
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorId
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: c752d528-f0d9-4c2b-adab-33cc6504d3a5
+		summarizeBy: none
+		sourceColumn: SupervisorId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 18e9c868-b89d-49f8-a188-aee2f362b871
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 862dbddf-c6ff-44e9-b279-195a96cbef80
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Leaver
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9c6c8797-9dab-4062-a031-bce35bb5c7ab
+		summarizeBy: sum
+		sourceColumn: Leaver
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column userPrincipalName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: eeb5fa1b-1231-4056-87a7-ef4eeb2451d8
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name =
+			
+			'support_rls_dynamic_merged'[NameFirst] & " " & 'support_rls_dynamic_merged'[NameLast]
+		isHidden
+		lineageTag: f9d150e7-9005-4078-8c45-663d444179cf
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column hierarchy_path =
+			
+			PATH('support_rls_dynamic_merged'[PersonFk],'support_rls_dynamic_merged'[supervisorid_corrected])
+		isHidden
+		lineageTag: 75b93a23-40f4-401f-850d-3482305e1770
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisorid_corrected = ```
+			
+			    IF(
+			        'support_rls_dynamic_merged'[PersonFk]="4037",
+			        BLANK(),
+			        'support_rls_dynamic_merged'[SupervisorId]
+			        )
+			```
+		isHidden
+		lineageTag: 649dbbdd-a268-4a19-9e15-b2d825cf288b
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_dynamic_merged = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_rls_dynamic_merged = Source{[Schema="dbo",Item="support_rls_dynamic_merged"]}[Data]
+				in
+				    dbo_support_rls_dynamic_merged
+
+	changedProperty = IsHidden
+

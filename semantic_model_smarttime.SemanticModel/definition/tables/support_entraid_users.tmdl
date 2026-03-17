@@ -1,0 +1,99 @@
+table support_entraid_users
+	isHidden
+	lineageTag: dcab03b7-f7e0-4f0f-b458-494f2016b0b3
+
+	column mail
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 3dd889f9-cb56-4c58-a4a7-3d29dcb82564
+		summarizeBy: none
+		sourceColumn: mail
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column displayName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 68c87a37-0215-4995-91d2-65ce54c9158d
+		summarizeBy: none
+		sourceColumn: displayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column givenName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e9835b0f-bc2a-4b10-80f9-e4e8d53a7591
+		summarizeBy: none
+		sourceColumn: givenName
+
+		annotation SummarizationSetBy = Automatic
+
+	column jobTitle
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b278cfb2-e2da-4eb0-976b-3d54ef3847ab
+		summarizeBy: none
+		sourceColumn: jobTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column mobilePhone
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 12a9a4a2-33a7-4b21-93b5-6e737b8574c9
+		summarizeBy: none
+		sourceColumn: mobilePhone
+
+		annotation SummarizationSetBy = Automatic
+
+	column officeLocation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 21d5557b-c03f-4f04-8ac9-69b0edf8debe
+		summarizeBy: none
+		sourceColumn: officeLocation
+
+		annotation SummarizationSetBy = Automatic
+
+	column surname
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c52a763e-7b2b-49ed-9e84-56ef6c7be625
+		summarizeBy: none
+		sourceColumn: surname
+
+		annotation SummarizationSetBy = Automatic
+
+	column userPrincipalName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0759c881-8dc0-4897-b158-261619d5c5ae
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d1acadaa-d5f3-4060-b70e-470ff13d5c8e
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_entraid_users = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_entraid_users = Source{[Schema="dbo",Item="support_entraid_users"]}[Data]
+				in
+				    dbo_support_entraid_users
+
+	changedProperty = IsHidden
+

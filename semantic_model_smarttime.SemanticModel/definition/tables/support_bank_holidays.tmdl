@@ -1,0 +1,30 @@
+table support_bank_holidays
+	isHidden
+	lineageTag: 304c1b9d-c3bc-4736-86a8-5c0e7cc408b1
+
+	column date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 2f9d59a3-95dd-44f5-aa4d-c301709c2315
+		summarizeBy: none
+		sourceColumn: date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition support_bank_holidays = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_bank_holidays = Source{[Schema="dbo",Item="support_bank_holidays"]}[Data]
+				in
+				    dbo_support_bank_holidays
+
+	changedProperty = IsHidden
+

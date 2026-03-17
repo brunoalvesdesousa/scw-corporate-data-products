@@ -67,12 +67,6 @@ relationship 3397472b-8eda-3ff2-c5ac-6340b82bef1c
 	fromColumn: data_smarttime.Person_Id
 	toColumn: support_rls_merged.PersonFk
 
-relationship 834f4d16-4d04-dfa7-0bc0-03ba8bc13c1b
-	crossFilteringBehavior: bothDirections
-	toCardinality: many
-	fromColumn: support_entraid.mail
-	toColumn: support_rls_merged.Email
-
 relationship 6485f0d5-23f7-49a2-ab45-1cda4c0797e5
 	joinOnDateBehavior: datePartOnly
 	fromColumn: base_date.Date
@@ -106,4 +100,8 @@ relationship 9f0a8549-94fb-4610-949c-0b6def0bb4e5
 	joinOnDateBehavior: datePartOnly
 	fromColumn: base_date.'Financial Week Start Plus 7'
 	toColumn: LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6.Date
+
+relationship cfca1945-cd63-f6a2-071d-42b85bb70979
+	fromColumn: data_smarttime.Person_Id
+	toColumn: support_rls_dynamic.PersonFk
 

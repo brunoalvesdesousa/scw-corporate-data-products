@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8e1e70de12003d036089",
   "position": {
     "x": 248,
@@ -28,15 +28,36 @@
                       "Property": "Latest Refresh Date"
                     }
                   },
-                  "Function": 3
+                  "Function": 4
                 }
               },
-              "queryRef": "Min(0_Environment.Last Refresh Date)"
+              "queryRef": "Min(0_Environment.Latest Refresh Date)",
+              "nativeQueryRef": "Latest Latest Refresh Date"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "0_Environment"
+                      }
+                    },
+                    "Property": "Latest Refresh Date"
+                  }
+                },
+                "Function": 4
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -98,5 +119,28 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e844e9b07978a2cce500"
+  "parentGroupName": "e844e9b07978a2cce500",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2735444ad0923e8e0025",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "0_Environment"
+                  }
+                },
+                "Property": "Latest Refresh Date"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

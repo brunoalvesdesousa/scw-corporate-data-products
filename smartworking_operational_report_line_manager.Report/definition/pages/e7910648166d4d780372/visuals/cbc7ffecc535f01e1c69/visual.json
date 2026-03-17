@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "cbc7ffecc535f01e1c69",
   "position": {
     "x": 296,
-    "y": 0,
+    "y": 0.8571428571428541,
     "z": 7000,
     "height": 64,
     "width": 472.00000000000006,
@@ -339,23 +339,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "040ea433db50a3e3d819",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "42cd14b140d4432b72d1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "person_full_name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "040ea433db50a3e3d819"
 }

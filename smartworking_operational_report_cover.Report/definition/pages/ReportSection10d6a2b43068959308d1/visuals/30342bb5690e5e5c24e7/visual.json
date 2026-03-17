@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "30342bb5690e5e5c24e7",
   "position": {
     "x": 0,
@@ -20,27 +20,27 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "data_products"
+                      "Entity": "base_metadata_smarttime"
                     }
                   },
                   "Property": "Attribute"
                 }
               },
-              "queryRef": "data_products.Attribute",
-              "nativeQueryRef": "Attribute1"
+              "queryRef": "base_metadata_smarttime.Attribute",
+              "nativeQueryRef": "Attribute"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "data_products"
+                      "Entity": "base_metadata_smarttime"
                     }
                   },
                   "Property": "Value"
                 }
               },
-              "queryRef": "data_products.Value",
+              "queryRef": "base_metadata_smarttime.Value",
               "nativeQueryRef": "Value"
             }
           ]
@@ -105,13 +105,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "148.65413659029173D"
+                  "Value": "254.15928416632698D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "data_products.Attribute"
+            "metadata": "base_metadata_smarttime.Value"
           }
         },
         {
@@ -119,13 +119,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "330.2330908085312D"
+                  "Value": "222.27085157349822D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "data_products.Value"
+            "metadata": "base_metadata_smarttime.Attribute"
           }
         }
       ]
@@ -218,12 +218,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9e977da04f1e7de32249",
+        "name": "abda58091ce100d8b480",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "data_products"
+                "Entity": "base_metadata_smarttime"
               }
             },
             "Property": "Attribute"
@@ -234,8 +234,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "data_products",
+              "Name": "b",
+              "Entity": "base_metadata_smarttime",
               "Type": 0
             }
           ],
@@ -248,7 +248,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "d"
+                            "Source": "b"
                           }
                         },
                         "Property": "Attribute"
@@ -259,70 +259,56 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Current_version'"
+                          "Value": "'Data Source Name '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Data Source Name'"
+                          "Value": "'Data Status '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Data Status'"
+                          "Value": "'Development Status '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Development Status'"
+                          "Value": "'Platform  '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Di Code'"
+                          "Value": "'Portfolio Name  '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Platform'"
+                          "Value": "'Primary Developer '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Portfolio Name'"
+                          "Value": "'Product Owner '"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Primary Developer'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Product Reference'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Product Owner Name'"
+                          "Value": "'Product Reference '"
                         }
                       }
                     ]
@@ -331,22 +317,15 @@
               }
             }
           ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {}
-            }
-          ]
         }
       },
       {
-        "name": "d21b9d7890c2732b6ce5",
+        "name": "6d7abd99ba50cb2ddbce",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "data_products"
+                "Entity": "base_metadata_smarttime"
               }
             },
             "Property": "Value"

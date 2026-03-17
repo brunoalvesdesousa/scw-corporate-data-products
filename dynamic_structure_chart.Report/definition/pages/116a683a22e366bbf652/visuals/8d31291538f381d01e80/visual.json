@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8d31291538f381d01e80",
   "position": {
-    "x": 0,
+    "x": 0.93278463648834031,
     "y": 0,
     "z": 0,
     "height": 80,
     "width": 1256,
-    "tabOrder": 13
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "data_products"
+                          "Entity": "base_metadata_dynamic_structure_chart"
                         }
                       },
                       "Property": "Value"
@@ -31,8 +31,8 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(data_products.Value)",
-              "nativeQueryRef": "Value"
+              "queryRef": "Min(base_metadata_dynamic_structure_chart.Value)",
+              "nativeQueryRef": "First Value"
             }
           ]
         }
@@ -190,12 +190,31 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b947ce37edd00dbfbe5",
+        "name": "4c63ec7a3270455c000a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "base_metadata_dynamic_structure_chart"
+                  }
+                },
+                "Property": "Value"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1caf26c516ed60076a02",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "data_products"
+                "Entity": "base_metadata_dynamic_structure_chart"
               }
             },
             "Property": "Attribute"
@@ -206,8 +225,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "d",
-              "Entity": "data_products",
+              "Name": "b",
+              "Entity": "base_metadata_dynamic_structure_chart",
               "Type": 0
             }
           ],
@@ -220,7 +239,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "d"
+                            "Source": "b"
                           }
                         },
                         "Property": "Attribute"
@@ -231,7 +250,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Description'"
+                          "Value": "'Description  '"
                         }
                       }
                     ]
@@ -242,25 +261,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "4a10916300ed06db864a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "data_products"
-                  }
-                },
-                "Property": "Value"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

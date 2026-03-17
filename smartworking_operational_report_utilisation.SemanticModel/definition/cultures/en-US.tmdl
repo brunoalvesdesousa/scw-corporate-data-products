@@ -5,17 +5,37 @@ cultureInfo en-US
 			  "Version": "2.0.0",
 			  "Language": "en-US",
 			  "Entities": {
-			    "data_smarttime.person_costcentre": {
+			    "data_smarttime.person_full_name": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_CostCentre"
+			          "ConceptualProperty": "person_full_name"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Cost Centre": {
+			          "name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "search by name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Staff": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -57,292 +77,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.person_assignment_category": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Assignment_Category"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "assignment": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "base_date.financial_week_number": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "base_date",
-			          "ConceptualProperty": "Financial Week Number"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.timesheet_end": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Timesheet_End"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "week end": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "timesheet end": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.person_cost_centre_level_3": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Cost_Centre_Level_3"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Cost Centre L3": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.person_cost_centre_level_6": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Cost_Centre_Level_6"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Cost Centre L6": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.calc_timesheet_count": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_timesheet_count"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_timesheets": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_timesheets"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_timesheets": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_timesheets"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_hours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_total_activity_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_total_activity_hours"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "recorded hrs": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.calc_unsubmitted_hours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_hours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.work_activity_name_wanumber": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "work_activity_name_wanumber"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Work activity": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.work_activity_verto_number": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Verto_Number"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Verto number": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.activity_non_invoiceable": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Activity_Non_Invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_smarttime_days_invoiceable": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_smarttime_days_invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_smarttime_days_non_invoiceable": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_smarttime_days_non_invoiceable"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.customer_name_short": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Customer_Name_Short"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Customer": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.work_activity_cost_centre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Cost_Centre"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.work_activity_cost_centre_level_3": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Cost_Centre_Level_3"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.work_activity_cost_centre_level_6": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Cost_Centre_Level_6"
-			        }
-			      },
-			      "State": "Generated"
-			    },
 			    "data_smarttime.calc_contractedhours": {
 			      "Definition": {
 			        "Binding": {
@@ -363,24 +97,6 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    },
-			    "data_smarttime.person_firstname": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_FirstName"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.person_lastname": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_LastName"
-			        }
-			      },
-			      "State": "Generated"
 			    },
 			    "data_smarttime.calc_nonworkinghours": {
 			      "Definition": {
@@ -414,6 +130,27 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "contracted-non working": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_total_activity_hours": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_total_activity_hours"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "recorded hrs": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -676,17 +413,17 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.work_activity_type_detail_sub": {
+			    "data_smarttime.customer_name_short": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Type_Detail_Sub"
+			          "ConceptualProperty": "Customer_Name_Short"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "sub category": {
+			          "Customer": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -694,9 +431,41 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
-			        },
+			        }
+			      ]
+			    },
+			    "data_smarttime.work_activity_name_wanumber": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "work_activity_name_wanumber"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "billable category": {
+			          "Work activity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.selected_group_name_short": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Selected_Group_Name_Short"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Group customer": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -738,17 +507,17 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.work_activity_id": {
+			    "data_smarttime.activity_date": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Work_Activity_Id"
+			          "ConceptualProperty": "Activity_Date"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "code": {
+			          "date": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -780,6 +549,58 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "data_smarttime.work_activity_type_detail_sub": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Work_Activity_Type_Detail_Sub"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sub category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "billable category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.work_activity_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Work_Activity_Id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
 			    "data_smarttime.activity_comments": {
 			      "Definition": {
 			        "Binding": {
@@ -801,17 +622,17 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.activity_date": {
+			    "data_smarttime.person_costcentre": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Activity_Date"
+			          "ConceptualProperty": "Person_CostCentre"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "date": {
+			          "Cost Centre": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -822,17 +643,17 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.person_fullname2": {
+			    "data_smarttime.work_activity_verto_number": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "person_fullname2"
+			          "ConceptualProperty": "Work_Activity_Verto_Number"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "name": {
+			          "Verto number": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -843,62 +664,59 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "data_smarttime.calc_rate2": {
+			    "data_smarttime.person_cost_centre_level_3": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_rate2"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_timesheets_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_timesheets_%"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_timesheets_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_timesheets_%"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_submitted_hours_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_submitted_hours_%"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.calc_unsubmitted_hours_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_unsubmitted_hours_%"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.person_full_name": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "person_full_name"
+			          "ConceptualProperty": "Person_Cost_Centre_Level_3"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "name": {
+			          "Cost Centre L3": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_cost_centre_level_6": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Cost_Centre_Level_6"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cost Centre L6": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.timesheet_end": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Timesheet_End"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "week end": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -908,7 +726,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "search by name": {
+			          "timesheet end": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -916,9 +734,20 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
-			        },
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_assignment_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Assignment_Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Staff": {
+			          "assignment": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

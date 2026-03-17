@@ -28,9 +28,10 @@ table 0_Environment
 				let
 				    Source = DateTime.LocalNow(),
 				    #"Converted to Table" = #table(1, {{Source}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Latest Refresh Date"}})
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Latest Refresh Date"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Latest Refresh Date", type date}})
 				in
-				    #"Renamed Columns"
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
 

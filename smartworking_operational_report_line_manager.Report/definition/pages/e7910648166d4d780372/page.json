@@ -60,26 +60,6 @@
       "source": "b79f3b3cfb08265b02c2",
       "target": "1764c084bc2e1893fc67",
       "type": "DataFilter"
-    },
-    {
-      "source": "b79f3b3cfb08265b02c2",
-      "target": "d3a4882a7bb826240e8a",
-      "type": "DataFilter"
-    },
-    {
-      "source": "3957202f7b8b350a2a83",
-      "target": "d3a4882a7bb826240e8a",
-      "type": "DataFilter"
-    },
-    {
-      "source": "1764c084bc2e1893fc67",
-      "target": "d3a4882a7bb826240e8a",
-      "type": "DataFilter"
-    },
-    {
-      "source": "d3a4882a7bb826240e8a",
-      "target": "1764c084bc2e1893fc67",
-      "type": "DataFilter"
     }
   ]
 }

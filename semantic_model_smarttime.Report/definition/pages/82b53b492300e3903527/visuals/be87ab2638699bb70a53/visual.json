@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "be87ab2638699bb70a53",
+  "position": {
+    "x": 1040,
+    "y": 112,
+    "z": 2000,
+    "height": 224,
+    "width": 240,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_unsubmitted_hours"
+                }
+              },
+              "queryRef": "data_smarttime.calc_unsubmitted_hours",
+              "nativeQueryRef": "calc_unsubmitted_hours"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

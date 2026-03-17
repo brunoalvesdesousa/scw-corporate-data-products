@@ -10,11 +10,11 @@
       "nodes": [
         {
           "location": {
-            "x": 852.38305001469382,
-            "y": 123
+            "x": 835.18148882150854,
+            "y": 486.78882551003869
           },
-          "nodeIndex": "BankHolidays",
-          "nodeLineageTag": "9760a877-1e68-4b50-bbf2-e97a07efcdcd",
+          "nodeIndex": "0_Environment",
+          "nodeLineageTag": "90b1b9b9-6969-48ba-a2e8-e7e5fbf5aabc",
           "size": {
             "height": 104,
             "width": 234
@@ -23,102 +23,24 @@
         },
         {
           "location": {
-            "x": 1136.3830500146937,
-            "y": 25
+            "x": 568,
+            "y": 129
           },
-          "nodeIndex": "data_oracle_agency_cost_rates",
-          "nodeLineageTag": "99efddeb-6f43-4750-ab8f-464ed2630169",
+          "nodeIndex": "base_metadata",
+          "nodeLineageTag": "83e285e6-f689-445c-b760-a9717258ce87",
           "size": {
-            "height": 300,
+            "height": 128,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 1420.3830500146937,
-            "y": 25
+            "x": 1130.1814888215085,
+            "y": 10.394412755019346
           },
-          "nodeIndex": "data_oracle_staff_cost_exceptions",
-          "nodeLineageTag": "e477f14d-94ee-48f0-8e88-c27bec8ea7da",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 618.38305001469382,
-            "y": -41.422348979922475
-          },
-          "nodeIndex": "data_smarttime",
-          "nodeLineageTag": "da5ede5f-b391-47d2-85a2-b676b9854734",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 50,
-            "y": -11.4372382003246
-          },
-          "nodeIndex": "support_entraid",
-          "nodeLineageTag": "29cdea6b-42b6-49d6-ab6a-47b5eb9a4461",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1704.3830500146937,
-            "y": 25
-          },
-          "nodeIndex": "support_rls_dynamic",
-          "nodeLineageTag": "65ffb8fd-7770-4503-8840-4df932e01e7c",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1988.3830500146937,
-            "y": 25
-          },
-          "nodeIndex": "support_rls_dynamic_missing",
-          "nodeLineageTag": "4bdb42eb-adf2-4eab-b6e7-b42bda4fb82a",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 334.20156119318534,
-            "y": -8.5776510200774112
-          },
-          "nodeIndex": "support_rls_merged",
-          "nodeLineageTag": "2b0ae4a3-76b1-4d1b-823c-ff32fa9b9696",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 2272.3830500146937,
-            "y": 25
-          },
-          "nodeIndex": "support_rls_static",
-          "nodeLineageTag": "16386c9d-a96a-4ac3-83a5-d6f443148e7a",
+          "nodeIndex": "support_rls_hierarchy_gold",
+          "nodeLineageTag": "e3f1dfb0-9bdd-4f77-8096-1d98f7e5c949",
           "size": {
             "height": 300,
             "width": 234

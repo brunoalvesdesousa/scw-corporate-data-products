@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "c19e2fd237bf938245c2",
   "position": {
     "x": 0,
@@ -119,36 +119,6 @@
               "queryRef": "data_smarttime.calc_total_activity_hours",
               "nativeQueryRef": "activity hours1",
               "displayName": "activity hours"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "calc_submitted_hours_%"
-                }
-              },
-              "queryRef": "data_smarttime.calc_submitted_hours_%",
-              "nativeQueryRef": "submitted hours %",
-              "displayName": "submitted hours %"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "calc_unsubmitted_hours_%"
-                }
-              },
-              "queryRef": "data_smarttime.calc_unsubmitted_hours_%",
-              "nativeQueryRef": "unsubmitted hours %",
-              "displayName": "unsubmitted hours %"
             }
           ]
         }
@@ -475,7 +445,15 @@
       ],
       "columnWidth": [
         {
-          "properties": {},
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "197.4516139136131D"
+                }
+              }
+            }
+          },
           "selector": {
             "metadata": "data_smarttime.Person_Cost_Centre_Level_3"
           }
@@ -485,7 +463,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "396.32450017509035D"
+                  "Value": "578.9857280571619D"
                 }
               }
             }
@@ -644,5 +622,107 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "0c8d0d0e96ad0b7b369e"
+  "parentGroupName": "0c8d0d0e96ad0b7b369e",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "557fc4f838ce27e1037e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "63a44db8253ddcd6aa12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_6"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4fb2ac3dd204395c0840",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_CostCentre"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9b7e12fdc3b500a74748",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_timesheet_count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "22c808819ee453de73e0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_submitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7d604245038ac374127b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_unsubmitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8901287e0b38b53e0d12",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_total_activity_hours"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

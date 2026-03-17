@@ -10,7 +10,7 @@ queryGroup 'SQL Resources'
 
 	annotation PBI_QueryGroupOrder = 0
 
-annotation PBI_QueryOrder = ["0_Environment","DirectQuery to AS - smarttime_data_semantic_model"]
+annotation PBI_QueryOrder = ["0_Environment","DirectQuery to AS - semantic_model_smarttime"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -22,25 +22,7 @@ ref table DateTableTemplate_5bea37e1-dcac-4d17-bea8-6fe8b8fd7306
 ref table 0_Environment
 ref table LocalDateTable_1bf9ab83-455b-4186-aa51-b31af66c5eba
 ref table data_smarttime
-ref table LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad
-ref table LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9
-ref table LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8
-ref table LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478
-ref table LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1
-ref table LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f
-ref table LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079
-ref table LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8
-ref table support_rls_dynamic
-ref table support_rls_dynamic_missing
-ref table support_rls_merged
-ref table support_rls_static
 ref table base_date
-ref table LocalDateTable_3c553266-422c-45e5-8c58-bd72be93b511
-ref table LocalDateTable_4057bcd3-da7e-4aeb-8e3f-8cad082ae077
-ref table LocalDateTable_b4d6b22c-823b-47b1-880f-d652e4c31c07
-ref table LocalDateTable_82e8d631-e0bb-4f1a-9fb7-90426474702f
-ref table LocalDateTable_50825905-c249-4b33-b577-77b48748f2ff
-ref table LocalDateTable_8eb931f5-8d2c-4ef1-84b7-31eb76039db6
 
 ref cultureInfo en-US
 

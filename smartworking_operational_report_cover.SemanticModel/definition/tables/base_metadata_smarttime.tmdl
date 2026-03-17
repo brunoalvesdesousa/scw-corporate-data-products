@@ -1,0 +1,28 @@
+table base_metadata_smarttime
+	lineageTag: 0bb685f4-85b5-481d-849c-a42fe2943de1
+
+	column Attribute
+		dataType: string
+		lineageTag: 083a060a-ed37-437f-836e-ca7dafaa6cd6
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: 9e5f2942-f6ee-4ca3-ab27-c275bd7c91d4
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition base_metadata_smarttime = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_base_metadata_smarttime = Source{[Schema="dbo",Item="base_metadata_smarttime"]}[Data]
+				in
+				    dbo_base_metadata_smarttime
+

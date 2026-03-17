@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "214cfa02eb639ea0a0ac",
   "position": {
     "x": 0,
@@ -7,7 +7,7 @@
     "z": 3500,
     "height": 72,
     "width": 300,
-    "tabOrder": 2004
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "data_smarttime"
+                      "Entity": "base_date"
                     }
                   },
-                  "Property": "Activity_Date"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "data_smarttime.Activity_Date",
-              "nativeQueryRef": "Activity_Date",
+              "queryRef": "base_date.Date",
+              "nativeQueryRef": "Date",
               "active": true
             }
           ]
@@ -40,10 +40,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "data_smarttime"
+                    "Entity": "base_date"
                   }
                 },
-                "Property": "Activity_Date"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -93,8 +93,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "data_smarttime",
+                    "Name": "b",
+                    "Entity": "base_date",
                     "Type": 0
                   }
                 ],
@@ -107,10 +107,10 @@
                           "Column": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "d"
+                                "Source": "b"
                               }
                             },
-                            "Property": "Activity_Date"
+                            "Property": "Date"
                           }
                         },
                         "Right": {

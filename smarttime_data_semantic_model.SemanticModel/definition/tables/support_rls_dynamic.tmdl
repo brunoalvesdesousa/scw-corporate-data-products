@@ -61,7 +61,7 @@ table support_rls_dynamic
 		dataType: int64
 		formatString: 0
 		lineageTag: 365e6e27-165d-4f92-81c5-307961c16f8e
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: IsSupervisor
 
 		annotation SummarizationSetBy = Automatic
@@ -86,7 +86,7 @@ table support_rls_dynamic
 		dataType: int64
 		formatString: 0
 		lineageTag: 5e8da0b5-4e76-4cfc-84c5-a33a20a6b15d
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Id
 
 		annotation SummarizationSetBy = Automatic
@@ -132,7 +132,7 @@ table support_rls_dynamic
 		dataType: int64
 		formatString: 0
 		lineageTag: 2df20a99-8de3-4eb8-947b-e56a3b63038c
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Leaver
 
 		annotation SummarizationSetBy = Automatic

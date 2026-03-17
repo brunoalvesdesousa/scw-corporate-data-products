@@ -8,42 +8,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectQuery to AS - smarttime_data_semantic_model","data_products","0_Environment"]
+annotation PBI_QueryOrder = ["DirectQuery to AS - semantic_model_smarttime","0_Environment"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table data_smarttime
-ref table data_oracle_agency_cost_rates
-ref table data_oracle_staff_cost_exceptions
-ref table BankHolidays
-ref table support_entraid
-ref table support_rls_dynamic
-ref table support_rls_dynamic_missing
-ref table support_rls_merged
-ref table support_rls_static
-ref table LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad
-ref table LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9
-ref table LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8
-ref table LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5
-ref table LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478
-ref table LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1
-ref table LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f
-ref table LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079
-ref table LocalDateTable_6851690c-909b-45d1-8492-6d3a0826b01d
-ref table LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51
-ref table LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0
-ref table LocalDateTable_9ef9bfae-9967-4a5e-8360-af829fa81e1c
-ref table LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e
-ref table LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1
-ref table LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079
-ref table LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8
-ref table LocalDateTable_c0b34c37-2c19-405b-930f-6c50fedfa2c7
-ref table LocalDateTable_2517b613-fee1-47f7-8c59-836c5ab8aa6e
-ref table LocalDateTable_110c007c-b262-4fe6-bead-c589dcdceddb
-ref table LocalDateTable_e008df71-985d-4ca8-8fd1-85f2995ddc9e
-ref table LocalDateTable_c1e0226b-9f97-40e8-8502-142b44a9f370
-ref table data_products
 ref table 0_Environment
+ref table support_rls_hierarchy_gold
+ref table base_metadata_dynamic_structure_chart
 
 ref cultureInfo en-US
 

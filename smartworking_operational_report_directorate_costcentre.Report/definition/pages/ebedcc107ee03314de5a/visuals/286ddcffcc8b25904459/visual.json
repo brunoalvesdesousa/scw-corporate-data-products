@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "286ddcffcc8b25904459",
   "position": {
     "x": 0,
@@ -17,54 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Activity_Date"
                 }
               },
               "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Year",
               "nativeQueryRef": "Activity_Date Year",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "data_smarttime"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Activity_Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "data_smarttime.Activity_Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Activity_Date Month",
               "active": true
             }
           ]

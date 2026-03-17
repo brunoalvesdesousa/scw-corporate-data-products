@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "b79f3b3cfb08265b02c2",
   "position": {
-    "x": 0,
-    "y": 240,
+    "x": 0.33566433566433496,
+    "y": 240.03729603729604,
     "z": 1000,
     "height": 320,
     "width": 1240,
@@ -818,126 +818,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b3beed3556001470d39e",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "937096f7deff76e456ee",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "base_date"
-              }
-            },
-            "Property": "Financial Week Start"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3511ddff004266887cd1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "person_full_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3aacacfbc9b1db9113c3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Person_CostCentre"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9a711349dc31fcc4ec3f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Person_Hours_Per_Week"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0a6272ff6469a02c27ba",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Person_Assignment_Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8b37b3b5c6fb279641ed",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "MonthlyExpectedHours"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bdd8d804c728363ab98b",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "data_smarttime"
-                  }
-                },
-                "Property": "Activity_Hours"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8ed0d1f53435be995f13",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "%SmartTimeCompliance"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "b3beed3556001470d39e"
 }

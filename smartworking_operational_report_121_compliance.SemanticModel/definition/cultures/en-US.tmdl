@@ -15,7 +15,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "full name": {
+			          "Staff": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -25,7 +25,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Staff": {
+			          "full name": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -35,60 +35,6 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    },
-			    "data_smarttime.person_costcentre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_CostCentre"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.person_hours_per_week": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Hours_Per_Week"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.person_assignment_category": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Assignment_Category"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.monthlyexpectedhours": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "MonthlyExpectedHours"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "data_smarttime.smarttimecompliance": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "%SmartTimeCompliance"
-			        }
-			      },
-			      "State": "Generated"
-			    },
-			    "base_date.financial_week_start": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "base_date",
-			          "ConceptualProperty": "Financial Week Start"
-			        }
-			      },
-			      "State": "Generated"
 			    },
 			    "data_smarttime.person_cost_centre_level_3": {
 			      "Definition": {
@@ -101,69 +47,6 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "Directorate": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.person_cost_centre_level_4": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Cost_Centre_Level_4"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Department": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.person_cost_centre_level_6": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "Person_Cost_Centre_Level_6"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Cost Centre": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "data_smarttime.calc_121_compliance_activestaff": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "data_smarttime",
-			          "ConceptualProperty": "calc_121_compliance_ActiveStaff"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Overall Compliance": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -206,6 +89,69 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "Activity Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_cost_centre_level_4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Cost_Centre_Level_4"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Department": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_121_compliance_activestaff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_121_compliance_ActiveStaff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Overall Compliance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_cost_centre_level_6": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Cost_Centre_Level_6"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cost Centre": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
