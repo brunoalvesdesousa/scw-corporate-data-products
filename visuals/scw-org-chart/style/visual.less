@@ -12,17 +12,17 @@
 
 .scw-org-toolbar {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  z-index: 10;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 12;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.94);
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
@@ -31,18 +31,19 @@
 .scw-search-group {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex: 1 1 280px;
-  max-width: 460px;
+  gap: 5px;
+  flex: 1 1 240px;
+  max-width: 440px;
 }
 
 .scw-search-input {
   flex: 1;
-  height: 30px;
-  padding: 0 10px;
-  font-size: 12.5px;
+  min-width: 130px;
+  height: 27px;
+  padding: 0 8px;
+  font-size: 12px;
   border: 1px solid #94a3b8;
-  border-radius: 6px;
+  border-radius: 5px;
   outline: none;
   color: #0f172a;
   background: #ffffff;
@@ -54,11 +55,29 @@
   box-shadow: 0 0 0 2px rgba(0, 94, 184, 0.2);
 }
 
-.scw-match-count {
+.scw-select {
+  height: 27px;
+  max-width: 185px;
+  padding: 0 6px;
   font-size: 11.5px;
   font-weight: 600;
+  color: #1e293b;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.scw-select:focus {
+  border-color: #005eb8;
+}
+
+.scw-match-count {
+  font-size: 11px;
+  font-weight: 600;
   color: #475569;
-  min-width: 58px;
+  min-width: 48px;
   text-align: center;
   white-space: nowrap;
 }
@@ -66,14 +85,21 @@
 .scw-btn-group {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   flex-wrap: wrap;
 }
 
+.scw-divider {
+  width: 1px;
+  height: 18px;
+  background: #cbd5e1;
+  margin: 0 3px;
+}
+
 .scw-btn {
-  height: 28px;
-  padding: 0 9px;
-  font-size: 11.5px;
+  height: 26px;
+  padding: 0 7px;
+  font-size: 11px;
   font-weight: 600;
   color: #1e293b;
   background: #f8fafc;
@@ -83,7 +109,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
   transition: all 0.12s ease;
   white-space: nowrap;
 }
@@ -108,10 +134,71 @@
   border-color: #002266;
 }
 
+.scw-btn-active {
+  background: #eff6ff;
+  color: #005eb8;
+  border-color: #005eb8;
+  font-weight: 700;
+}
+
 .scw-btn-badge-active {
   background: #fffbeb;
   color: #b45309;
   border-color: #f59e0b;
+}
+
+.scw-breadcrumb-bar {
+  position: absolute;
+  top: 50px;
+  left: 8px;
+  right: 8px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(239, 246, 255, 0.95);
+  border: 1px solid #93c5fd;
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: #1e3a8a;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+}
+
+.scw-breadcrumb-bar.scw-hidden {
+  display: none;
+}
+
+.scw-crumb {
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #005eb8;
+  transition: background 0.12s ease;
+}
+
+.scw-crumb:hover {
+  background: #dbeafe;
+  text-decoration: underline;
+}
+
+.scw-crumb-active {
+  font-weight: 700;
+  color: #0f172a;
+  cursor: default;
+}
+
+.scw-crumb-active:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+.scw-crumb-sep {
+  color: #64748b;
+  font-size: 11px;
 }
 
 .scw-canvas-svg {
@@ -128,7 +215,7 @@
 .scw-link {
   fill: none;
   stroke: #94a3b8;
-  stroke-width: 1.75px;
+  stroke-width: 1.5px;
   transition: stroke 0.2s ease;
 }
 
@@ -141,25 +228,50 @@
   cursor: pointer;
 }
 
+.scw-minimap-container {
+  position: absolute;
+  bottom: 34px;
+  right: 12px;
+  width: 176px;
+  height: 112px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #94a3b8;
+  border-radius: 7px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.scw-minimap-container.scw-hidden {
+  display: none;
+}
+
+.scw-minimap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .scw-status-bar {
   position: absolute;
-  bottom: 8px;
-  left: 12px;
-  right: 12px;
+  bottom: 6px;
+  left: 10px;
+  right: 10px;
   z-index: 9;
   display: flex;
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
-  font-size: 11px;
+  font-size: 10.5px;
   color: #475569;
 }
 
 .scw-status-pill {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid #cbd5e1;
   border-radius: 12px;
-  padding: 3px 10px;
+  padding: 2px 9px;
   pointer-events: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }

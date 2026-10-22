@@ -72,23 +72,57 @@
   "supportsHighlight": true,
   "privileges": [],
   "objects": {
-    "SearchSettings": {
-      "displayName": "Search Settings",
+    "layoutSettings": {
+      "displayName": "Layout & Navigation",
       "properties": {
-        "SearchHighlightColor": {
-          "displayName": "Search Highlight Color",
+        "DefaultLayout": {
+          "displayName": "Tree Layout Mode",
           "type": {
-            "fill": {
-              "solid": {
-                "color": true
-              }
-            }
+            "enumeration": [
+              { "displayName": "Compact Hybrid (Grid + Wrap)", "value": "compact" },
+              { "displayName": "Horizontal (Left-to-Right)", "value": "horizontal" },
+              { "displayName": "Classic Top-Down", "value": "classic" }
+            ]
+          }
+        },
+        "DefaultDensity": {
+          "displayName": "Card Size & Density",
+          "type": {
+            "enumeration": [
+              { "displayName": "Mini (Ultra-Compact)", "value": "mini" },
+              { "displayName": "Compact (Recommended)", "value": "compact" },
+              { "displayName": "Detailed (Large Cards)", "value": "detailed" }
+            ]
+          }
+        },
+        "DefaultDepth": {
+          "displayName": "Initial Expanded Levels",
+          "type": {
+            "numeric": true
+          }
+        },
+        "AccordionMode": {
+          "displayName": "Accordion Mode (Auto-Collapse Siblings)",
+          "type": {
+            "bool": true
+          }
+        },
+        "AutoFitOnToggle": {
+          "displayName": "Auto-Fit Page on Expand/Collapse",
+          "type": {
+            "bool": true
+          }
+        },
+        "ShowMinimap": {
+          "displayName": "Show Corner Minimap",
+          "type": {
+            "bool": true
           }
         }
       }
     },
     "dataCard": {
-      "displayName": "Node Card",
+      "displayName": "Node Card & Font Sizing",
       "properties": {
         "NodeBackgroundColor": {
           "displayName": "Card Background",
@@ -100,10 +134,43 @@
             }
           }
         },
+        "FontSizeScale": {
+          "displayName": "Font Size Scale (%)",
+          "type": {
+            "numeric": true
+          }
+        },
+        "CardSizeScale": {
+          "displayName": "Box Size Scale (%)",
+          "type": {
+            "numeric": true
+          }
+        },
+        "MaxColumnsWrap": {
+          "displayName": "Max Columns per Row (Compact Wrap)",
+          "type": {
+            "numeric": true
+          }
+        },
         "ShowID": {
           "displayName": "Show Person ID",
           "type": {
             "bool": true
+          }
+        }
+      }
+    },
+    "SearchSettings": {
+      "displayName": "Search Settings",
+      "properties": {
+        "SearchHighlightColor": {
+          "displayName": "Search Highlight Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
           }
         }
       }

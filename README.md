@@ -136,3 +136,14 @@ This repository includes a complete handover documentation suite in [`docs/`](do
    * To edit **central measures, relationships, or RLS roles**, open [`pbi/semantic_model_smarttime.pbip`](pbi/semantic_model_smarttime.pbip) or edit the text files under [`pbi/semantic_model_smarttime.SemanticModel/definition/`](pbi/semantic_model_smarttime.SemanticModel/definition/).
    * To edit individual **operational report visuals**, open the respective `smartworking_operational_report_*.pbip`, [`pbi/dynamic_structure_chart.pbip`](pbi/dynamic_structure_chart.pbip), or `Activity Time *.pbip`.
 3. Commit changes using [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): summary`) so TMDL and report JSON diffs remain clean and reviewable in Git.
+
+### Custom SCW Org Chart Visual (`visuals/scw-org-chart`)
+To replace the paid AppSource org chart in [`pbi/dynamic_structure_chart.pbip`](pbi/dynamic_structure_chart.pbip):
+1. In Power BI Desktop, click **`...` (Get more visuals) $\rightarrow$ Import a visual from a file** and select [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz).
+2. Map `PersonFk` $\rightarrow$ **Employee ID**, `supervisorid_corrected` $\rightarrow$ **Manager ID**, `fullname` $\rightarrow$ **Full Name**, and `Level3`, `Level6`, `HierarchyStatus` $\rightarrow$ **Extra Details**.
+3. Built-in features for large-scale NHS hierarchies (1,500+ staff):
+   * **3 Layout Modes:** **Compact Hybrid Grid** (stacks leaf staff in 2-column sub-grids below their manager and wraps wide sub-manager rows), **Left-to-Right (Horizontal)**, and **Classic Wide**.
+   * **Card & Font Sizing:** On-canvas **Mini / Compact / Detailed** density switcher, **`A-` / `A+`** quick scale buttons, Power BI **Format Pane** sliders (`FontSizeScale`, `CardSizeScale`, `MaxColumnsWrap`), and **Semantic Zoom** (automatically switches to bold high-contrast headers when zoomed out `< 48%`).
+   * **Subtree Focus & Breadcrumbs:** Click **`🎯`** or **double-click** any manager card to pin them as the temporary chart root with a top breadcrumb bar (`🏠 Full Organisation › ...`).
+   * **Directorate / Service Line Quick Filter:** Toolbar dropdown auto-populated from `Level3` (Directorate) and `Level6` (Service Line) to jump straight to any department.
+   * **Accordion Mode, Auto-Fit & Corner Minimap:** Auto-collapses sibling branches on expand, auto-fits the active tree to the page, and provides an interactive bottom-right radar minimap.
