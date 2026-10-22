@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5890414d2f8cd8f3ad99",
   "position": {
     "x": 0,
@@ -117,21 +117,6 @@
             },
             {
               "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "Activity_Non_Invoiceable"
-                }
-              },
-              "queryRef": "data_smarttime.Activity_Non_Invoiceable",
-              "nativeQueryRef": "non invoiceable",
-              "displayName": "non invoiceable"
-            },
-            {
-              "field": {
                 "Aggregation": {
                   "Expression": {
                     "Column": {
@@ -221,13 +206,6 @@
                 }
               }
             },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
-                }
-              }
-            },
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
@@ -244,7 +222,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "199.51982912063139D"
+                  "Value": "389.7788108947334D"
                 }
               }
             }
@@ -258,7 +236,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "193.1601022824409D"
+                  "Value": "389.62753743311816D"
                 }
               }
             }
@@ -283,6 +261,20 @@
           "properties": {},
           "selector": {
             "metadata": "data_smarttime.Activity_Date1"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "200.00688828756273D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.person_full_name"
           }
         }
       ],
@@ -770,5 +762,141 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "51d2b64bbc4ca0cc9447"
+  "parentGroupName": "51d2b64bbc4ca0cc9447",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "397163dddf019d5b1799",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "person_full_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8a00d5c89adf56e2a9e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "37d100bd3976e9396e12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_6"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "76a99c2a9536ee9d9797",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "calc_smarttime_days"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b6a1829ff4ea7455e1ae",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Hours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0e43617886035f40a453",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_rate2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0614dc2d6c410809c2e3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Date"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7b9a6a84dcdf71f74141",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Date"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

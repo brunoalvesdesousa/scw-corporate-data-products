@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "1dbaa9ee371dc4e65e06",
   "position": {
     "x": 312,
@@ -138,13 +138,6 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
-                }
-              }
-            },
-            "title": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Directorate / Cost Centre Hierarchy (L3 \u25b8 L4 \u25b8 L6)'"
                 }
               }
             }

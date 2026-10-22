@@ -178,7 +178,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Work activity": {
+			          "Work Activity": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -199,7 +199,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Verto number": {
+			          "Verto Number": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -342,7 +342,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Activity cost centre": {
+			          "WA Cost Centre": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -363,7 +363,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Activity service line L3": {
+			          "WA Directorate (L3)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -384,7 +384,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Activity service line L6": {
+			          "WA Team (L6)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -405,7 +405,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Group customer": {
+			          "Customer Group": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "a1b2c3d4e5f60718293a",
   "position": {
     "x": 16,
     "y": 144,
     "z": 6500,
-    "width": 1408,
     "height": 74,
+    "width": 1408,
     "tabOrder": 1500
   },
   "visual": {
@@ -74,24 +74,27 @@
               "queryRef": "data_smarttime.calc_NonWorkingHours",
               "nativeQueryRef": "Non-Working Hours",
               "displayName": "Non-Working Hours"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "calc_compliance"
-                }
-              },
-              "queryRef": "data_smarttime.calc_compliance",
-              "nativeQueryRef": "On-Time Compliance %",
-              "displayName": "On-Time Compliance %"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "calc_total_activity_hours"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

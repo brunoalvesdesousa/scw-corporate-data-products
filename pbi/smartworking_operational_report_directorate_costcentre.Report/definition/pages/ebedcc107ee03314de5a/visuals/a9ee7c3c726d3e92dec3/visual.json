@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "a9ee7c3c726d3e92dec3",
   "position": {
     "x": 40,
@@ -247,13 +247,6 @@
                   "Value": "0D"
                 }
               }
-            },
-            "title": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Period'"
-                }
-              }
             }
           }
         }
@@ -350,12 +343,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Year",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "background": [
         {
@@ -558,7 +545,13 @@
           }
         }
       ]
-    }
+    },
+    "syncGroup": {
+      "groupName": "Year",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [

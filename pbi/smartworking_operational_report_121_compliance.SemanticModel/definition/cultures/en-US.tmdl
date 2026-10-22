@@ -46,7 +46,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Directorate": {
+			          "Directorate (L3)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -109,7 +109,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Department": {
+			          "Service Area (L4)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -130,7 +130,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Overall Compliance": {
+			          "Overall 1:1 Compliance Rate": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -151,7 +151,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Cost Centre": {
+			          "Team (L6)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

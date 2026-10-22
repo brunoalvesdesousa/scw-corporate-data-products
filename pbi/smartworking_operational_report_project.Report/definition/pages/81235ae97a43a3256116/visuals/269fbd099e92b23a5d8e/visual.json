@@ -456,7 +456,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Project Spend (\u00a3) by Staff Member'"
+                  "Value": "'Project Spend (£) by Staff Member'"
                 }
               }
             }

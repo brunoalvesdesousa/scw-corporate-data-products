@@ -116,6 +116,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Non-Working Hours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -151,6 +161,16 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "recorded hrs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Total Recorded Hours": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -444,7 +464,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Work activity": {
+			          "Work Activity": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -465,7 +485,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Group customer": {
+			          "Customer Group": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -653,7 +673,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Verto number": {
+			          "Verto Number": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -674,7 +694,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Cost Centre L3": {
+			          "Directorate (L3)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -695,7 +715,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Cost Centre L6": {
+			          "Team (L6)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -748,6 +768,69 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "assignment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_billablehours": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_BillableHours"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Billable Hours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_core_bau_hours": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_CORE BAU Hours"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Core BAU Hours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_compliance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_compliance"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "On-Time Compliance %": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "635a92407056e65d3192",
   "position": {
     "x": 852,
@@ -120,13 +120,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
                 }
               }
             },
@@ -391,6 +384,20 @@
           },
           "selector": {
             "metadata": "data_smarttime.person_full_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.87263659826397D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(data_smarttime.Activity_Hours)"
           }
         }
       ],

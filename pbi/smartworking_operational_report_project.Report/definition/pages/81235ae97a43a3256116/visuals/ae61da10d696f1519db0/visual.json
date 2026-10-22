@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "ae61da10d696f1519db0",
   "position": {
     "x": 0,
@@ -218,10 +218,10 @@
                     "Entity": "data_smarttime"
                   }
                 },
-                "Property": "Activity_Comments"
+                "Property": "person_fullname2"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -499,13 +499,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "253.85114846924415D"
+                  "Value": "191.85087592765078D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "data_smarttime.Work_Activity_Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "218.81103167763473D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Comments"
           }
         }
       ],
@@ -615,13 +629,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
                 }
               }
             },
@@ -1056,5 +1063,187 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "51d2b64bbc4ca0cc9447"
+  "parentGroupName": "51d2b64bbc4ca0cc9447",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d25e45fb79433e5e230d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "person_fullname2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e7ce531cb2f6eab9d17d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_6"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2b2a7ba909bc155b01eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "07352f654f9cc9c619ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "95a653c63da556677127",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Type_Detail_Sub"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3f6c662aa0773018c75b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Non_Invoiceable"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7431ffe51149f5c24e82",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Id"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bb1dc5d58042d5a924e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d38622d93adf9ea0cac1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "calc_smarttime_days"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "29f20efc38071f651de9",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Hours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e9fef180138ad2648e40",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_rate2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "39b925f10c9f65c35746",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Comments"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

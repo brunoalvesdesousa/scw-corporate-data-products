@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "675005256369a138bbe8",
   "position": {
     "x": 0,
@@ -386,6 +386,34 @@
           "selector": {
             "metadata": "data_smarttime.calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "536.0981327638207D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Activity_Comments"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "369.7452773387396D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "data_smarttime.Work_Activity_Name"
+          }
         }
       ],
       "grid": [
@@ -494,13 +522,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
                 }
               }
             },

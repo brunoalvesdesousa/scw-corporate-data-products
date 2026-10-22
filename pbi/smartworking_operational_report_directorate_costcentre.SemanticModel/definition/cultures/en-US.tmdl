@@ -15,7 +15,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Verto number": {
+			          "Verto Number": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -36,7 +36,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Group customer": {
+			          "Customer Group": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -56,16 +56,6 @@ cultureInfo en-US
 			      },
 			      "State": "Generated",
 			      "Terms": [
-			        {
-			          "Person Cost Centre": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
 			        {
 			          "cost centre": {
 			            "State": "Suggested",
@@ -109,7 +99,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Person Cost Centre L6": {
+			          "service line": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -119,7 +109,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "service line": {
+			          "Team (L6)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -233,7 +223,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Person Cost Centre L3": {
+			          "Directorate (L3)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -296,7 +286,28 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Work activity": {
+			          "Work Activity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_compliance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_compliance"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Submission Compliance %": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

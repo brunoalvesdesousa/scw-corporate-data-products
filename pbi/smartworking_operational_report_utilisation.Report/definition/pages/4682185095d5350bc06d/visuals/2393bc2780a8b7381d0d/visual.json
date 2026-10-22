@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2393bc2780a8b7381d0d",
   "position": {
     "x": 0,
@@ -292,16 +292,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
                     "Entity": "data_smarttime"
                   }
                 },
-                "Property": "person_full_name"
+                "Property": "calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -313,7 +313,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "65.81776495109828D"
+                  "Value": "101.44391624760698D"
                 }
               }
             }
@@ -327,7 +327,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "74.40737303428719D"
+                  "Value": "97.41360310575037D"
                 }
               }
             }
@@ -341,7 +341,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "76.00538640600175D"
+                  "Value": "88.39780887108914D"
                 }
               }
             }
@@ -355,7 +355,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "82.2D"
+                  "Value": "95.38843755866932D"
                 }
               }
             }
@@ -369,7 +369,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "81.14532005917397D"
+                  "Value": "86.91842839419557D"
                 }
               }
             }
@@ -383,7 +383,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "52.67644730184243D"
+                  "Value": "65.14608044881341D"
                 }
               }
             }
@@ -411,7 +411,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "51.645503973232955D"
+                  "Value": "103.22396331842049D"
                 }
               }
             }
@@ -425,7 +425,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "68.803798297315D"
+                  "Value": "73.77540805498573D"
                 }
               }
             }
@@ -439,7 +439,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "68.16949612144651D"
+                  "Value": "79.70924862914458D"
                 }
               }
             }
@@ -453,7 +453,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "52.39761341889002D"
+                  "Value": "58.957622042699434D"
                 }
               }
             }
@@ -467,7 +467,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "77.71667047444978D"
+                  "Value": "86.00985799448591D"
                 }
               }
             }
@@ -481,7 +481,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "43.77777777777778D"
+                  "Value": "73.6788604600462D"
                 }
               }
             }
@@ -590,13 +590,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
                 }
               }
             },

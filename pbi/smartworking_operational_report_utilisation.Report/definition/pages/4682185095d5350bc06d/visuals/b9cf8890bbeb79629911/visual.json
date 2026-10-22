@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "b9cf8890bbeb79629911",
   "position": {
     "x": 284,
@@ -329,6 +329,20 @@
           "selector": {
             "metadata": "data_smarttime.Work_Activity_Name"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "104.00346556893089D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(data_smarttime.Activity_Hours)"
+          }
         }
       ],
       "columnHeaders": [
@@ -374,13 +388,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
                 }
               }
             },
