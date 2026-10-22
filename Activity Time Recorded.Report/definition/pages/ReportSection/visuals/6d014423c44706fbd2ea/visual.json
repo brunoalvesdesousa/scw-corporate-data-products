@@ -20,13 +20,13 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_calculations"
+                      "Entity": "data_smarttime"
                     }
                   },
                   "Property": "calc_smarttime_latestdate"
                 }
               },
-              "queryRef": "_calculations.calc_smarttime_latestdate",
+              "queryRef": "data_smarttime.calc_smarttime_latestdate",
               "nativeQueryRef": "calc_smarttime_latestdate"
             }
           ]
@@ -39,7 +39,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_calculations"
+                    "Entity": "data_smarttime"
                   }
                 },
                 "Property": "calc_smarttime_latestdate"
@@ -101,7 +101,7 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_calculations"
+                          "Entity": "data_smarttime"
                         }
                       },
                       "Property": "calc_smarttime_fresheness"

@@ -266,7 +266,7 @@ table data_smarttime
 		sourceLineageTag: 335beee2-dcdb-4296-b19a-7f6c621629fe
 		dataCategory: Uncategorized
 
-	measure MonthlyExpectedHours = EXTERNALMEASURE("MonthlyExpectedHours", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+	measure MonthlyExpectedHours = EXTERNALMEASURE("MonthlyExpectedHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
 		displayFolder: _Calculations\Compliance
 		lineageTag: b3e7ded0-a078-419d-97c9-abb3c8b07725
 		sourceLineageTag: 20ab7e30-3e9a-4ce3-bd1d-6eacc982278e
@@ -1058,17 +1058,6 @@ table data_smarttime
 		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: DailyExpectedHours
-
-		annotation SummarizationSetBy = User
-
-	column calc_hierarchy_path
-		dataType: int64
-		displayFolder: _Calculations
-		lineageTag: f124b789-8cc3-4eb3-9321-228080c52eee
-		sourceLineageTag: 2dd64d64-a4fd-4004-8968-a21db2b5a633
-		dataCategory: Uncategorized
-		summarizeBy: none
-		sourceColumn: calc_hierarchy_path
 
 		annotation SummarizationSetBy = User
 

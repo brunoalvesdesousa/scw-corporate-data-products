@@ -148,6 +148,17 @@ table base_date
 
 		annotation SummarizationSetBy = User
 
+	column MonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 635fc571-8ecc-4bc0-937f-7a520fa52c7b
+		sourceLineageTag: b073f1e9-fc06-4899-af8e-2185dd8c68a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MonthKey
+
+		annotation SummarizationSetBy = User
+
 	partition base_date = entity
 		mode: directQuery
 		source

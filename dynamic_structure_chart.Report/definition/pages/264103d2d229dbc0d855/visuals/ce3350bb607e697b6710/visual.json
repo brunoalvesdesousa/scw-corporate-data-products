@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "ce3350bb607e697b6710",
   "position": {
     "x": 32,
@@ -450,5 +450,86 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d023f40525afeded7663",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "PersonFk"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1ee4bdda78d621596bd7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "supervisorid_corrected"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "45c415a26d37da8b4e3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "fullname"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38619d7b2b87763f4197",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "Level3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "65f8429caf847251dae2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "Level6"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

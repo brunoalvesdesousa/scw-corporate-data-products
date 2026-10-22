@@ -15,7 +15,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Staff": {
+			          "full name": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -25,7 +25,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "full name": {
+			          "Staff": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

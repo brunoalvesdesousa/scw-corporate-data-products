@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "4d3790f50e48aa401966",
   "position": {
-    "x": 832,
-    "y": 384,
+    "x": 848.09815950920245,
+    "y": 384.13087934560326,
     "z": 6000,
-    "height": 192,
-    "width": 424.00000000000006,
+    "height": 191.73824130879345,
+    "width": 407.68916155419225,
     "tabOrder": 6000
   },
   "visual": {
@@ -202,34 +202,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "cc82a1cebb2c7ddd6d22",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Activity_Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "68033d955159d7708183",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Work_Activity_Id"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

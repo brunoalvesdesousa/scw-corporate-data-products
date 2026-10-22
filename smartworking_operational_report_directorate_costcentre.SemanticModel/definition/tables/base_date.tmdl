@@ -2,6 +2,12 @@ table base_date
 	lineageTag: 6904552e-d2b4-4437-8fcf-e0451856ebf2
 	sourceLineageTag: 49f459be-62ce-42d0-b14f-c94f0e11adc5
 
+	measure Count_Days_in_Month = EXTERNALMEASURE("Count_Days_in_Month", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		lineageTag: 565935b8-c80b-4d9a-ba6f-46c7a920abb3
+		sourceLineageTag: 93c57e76-1791-48c6-ad31-61885c9e4c6b
+		dataCategory: Uncategorized
+
 	column Date
 		dataType: dateTime
 		isNullable: false
@@ -42,6 +48,9 @@ table base_date
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Month
+		sortByColumn: 'Month Number'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = User
 
@@ -139,6 +148,17 @@ table base_date
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Financial Week Start Plus 7
+
+		annotation SummarizationSetBy = User
+
+	column MonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5863e26b-9d3d-4cd9-8d45-57be31a3e6bf
+		sourceLineageTag: b073f1e9-fc06-4899-af8e-2185dd8c68a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MonthKey
 
 		annotation SummarizationSetBy = User
 

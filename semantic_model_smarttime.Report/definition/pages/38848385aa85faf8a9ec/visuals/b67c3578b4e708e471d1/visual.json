@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b67c3578b4e708e471d1",
   "position": {
     "x": 32,
@@ -210,5 +210,182 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5300b977aae5269136dd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "086653f6b22fc0162f3e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "person_full_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5b80a18dc1dd60a8ba86",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_timesheet_due_by"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c5fea5de8c4a073e4d17",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Timesheet_Start"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2ea372057479712d2f66",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Timesheet_End"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "282afd947f72ed1e0f65",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Timesheet_Id"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b3e0405d16f06a3ef222",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d272281ac35a635fe4ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "49593bf842aa20632b99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_Cost_Centre_Level_6"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "900569d135b6a5da6d5f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Person_CostCentre"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f51926eb36797578010d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "line_manager_full_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c860a7faf08697737c78",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Manager_Id"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

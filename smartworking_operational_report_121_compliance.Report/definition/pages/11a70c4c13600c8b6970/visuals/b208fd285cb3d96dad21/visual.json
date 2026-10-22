@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b208fd285cb3d96dad21",
   "position": {
-    "x": 832,
-    "y": 592,
+    "x": 848.09815950920245,
+    "y": 592.22903885480571,
     "z": 7000,
-    "height": 112.00000000000001,
-    "width": 424.00000000000006,
+    "height": 111.90184049079755,
+    "width": 407.68916155419225,
     "tabOrder": 7000
   },
   "visual": {
@@ -94,23 +94,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f77f28fa50ec8b1a9084",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "calc_121_compliance_ActiveStaff"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

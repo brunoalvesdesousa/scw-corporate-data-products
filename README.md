@@ -1,129 +1,133 @@
-# Smarttime Data Quality
+# SCW Corporate Data Products (`scw_corporate_data_products`)
 
-Power BI reports and decomposed semantic models for monitoring Smarttime data quality, compliance and utilisation. The repository stores report and tabular model metadata in a decomposed format so changes are reviewable in Git.
+End-to-end **Microsoft Fabric** & **Power BI Project (PBIP)** repository for **NHS South, Central and West Commissioning Support Unit (SCW CSU)** corporate data products, powering the **SmartTime Data Quality & Operational Reporting Suite (`P00278` / `DI1060.10`)** and the **Dynamic Structure Chart (`P00287`)**.
 
-## Overview
+![Cover Banner](assets/cover.jpg)
 
-This repository contains Power BI report packages and decomposed report + semantic model projects. The layout allows model metadata and report definitions to be reviewed and versioned in text form.
+---
 
-## Table of contents
+## 1. Product Catalogue (SharePoint Registry)
 
-- [Smarttime Data Quality](#smarttime-data-quality)
-  - [Overview](#overview)
-  - [Table of contents](#table-of-contents)
-  - [Repository contents \& layout](#repository-contents--layout)
-    - [Packages](#packages)
-    - [Report folders](#report-folders)
-    - [Semantic model folders](#semantic-model-folders)
-    - [Datasets](#datasets)
-  - [Quick start](#quick-start)
-  - [Recommended tools \& workflow](#recommended-tools--workflow)
-  - [Data refresh \& deployment](#data-refresh--deployment)
-  - [Security \& sensitive data](#security--sensitive-data)
-  - [Contribution guidelines](#contribution-guidelines)
-  - [Troubleshooting](#troubleshooting)
-  - [Contact \& maintainers](#contact--maintainers)
+Metadata is synchronised directly from the SCW Products SharePoint list (`https://nhs.sharepoint.com/sites/msteams_8489d9/` $\rightarrow$ `Products` list) and archived in [`sharepoint list items.csv`](sharepoint%20list%20items.csv):
 
-## Repository contents & layout
+| Product Ref | SharePoint ID | Full Product Name | Product Owner | Primary Developer | Refresh Frequency | Data Governance / Status | Power BI App Link |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **`P00278`** (`DI1060.10`) | `404` | **P00278 - SmartTime Data Quality Report (Power BI - Cloud)** | Lisa Buck | Bruno Alves de Sousa | **Daily** | Official / IG Agreements (`SCW Internal`) | [Open in Power BI App](https://app.powerbi.com/groups/me/apps/d511ad50-eb9e-4b9c-a30a-51aece750057/reports/6c808620-b8a5-4f9f-8b1a-280f1974c8e8/ReportSection49041cdbb730ba8c3bc8?ctid=4088bef3-a7fb-4b63-b87b-4d8eda09b28d&experience=power-bi) |
+| **`P00287`** | `426` | **P00287 - Dynamic Structure Chart (Power BI - Cloud)** | Paul Toomer | Bruno Alves de Sousa | **Hourly** | Official / Public (`non sla`) | [Open in Power BI App](https://app.powerbi.com/groups/me/apps/d511ad50-eb9e-4b9c-a30a-51aece750057/reports/01b658af-ef23-492f-afcc-9173de31817b/831a270680c8edd96dcd?experience=power-bi) |
 
-The repository typically contains the following item types. Example names are taken from this repository.
+---
 
-### Packages
+## 2. High-Level System Architecture
 
-- `Activity Time Billable_Int.pbip`
-- `Activity Time Recorded.pbip`
-- `dynamic_structure_chart.pbip`
-- `Income and Contribution by Sales Contract.pbip`
-- `smarttime_data_semantic_model.pbip`
-- `smarttime_data_semantic_model_project_view.pbip`
-- `smartworking_operational_report_121_compliance.pbip`
-- `smartworking_operational_report_cover.pbip`
-- `smartworking_operational_report_directorate_costcentre.pbip`
-- `smartworking_operational_report_line_manager.pbip`
-- `smartworking_operational_report_project.pbip`
-- `smartworking_operational_report_utilisation.pbip`
+```mermaid
+flowchart LR
+    subgraph Sources["1. Upstream Data Sources"]
+        SQL1[("On-Prem SQL Server<br/>BIS-000-SP05:14431<br/>Corporate_Data_Strategy")]
+        SQL2[("On-Prem SQL Server<br/>CSU-000-SP03<br/>SWCSUDataReporting")]
+        GRAPH["Microsoft Graph API<br/>(/v1.0/users & /groups)"]
+        SP_META["SharePoint List: Products<br/>(msteams_8489d9)"]
+        SP_RLS["SharePoint Excel: rls_static.xlsx<br/>(msteams_7026cb)"]
+        GOV["UK Gov API<br/>(gov.uk/bank-holidays.json)"]
+    end
 
-### Report folders
+    subgraph Fabric["2. Microsoft Fabric Workspace: [DI] SCW Corporate Products"]
+        PIPE["Fabric Data Pipeline<br/>scw_corporate_data_products"]
+        DF_ST["Dataflow Gen2:<br/>data_smarttime"]
+        DF_CAL["Dataflow Gen2:<br/>base_calendar"]
+        DF_META["Dataflow Gen2:<br/>base_metadata"]
+        DF_BH["Dataflow Gen2:<br/>support_bank_holidays"]
+        DF_DRLS["Dataflow Gen2:<br/>support_dynamic_rls"]
+        DF_SRLS["Dataflow Gen2:<br/>support_teams_static_rls"]
+        NB_RLS["PySpark Notebook:<br/>support_rls_dynamic_merged_path"]
+        LH[("Fabric Lakehouse<br/>scw_corporate_data_products")]
+    end
 
-- `Activity Time Billable_Int.Report/`
-- `Activity Time Recorded.Report/`
-- `dynamic_structure_chart.Report/`
-- `Income and Contribution by Sales Contract.Report/`
-- `smarttime_data_semantic_model.Report/`
-- `smarttime_data_semantic_model_project_view.Report/`
-- `smartworking_operational_report_121_compliance.Report/`
-- `smartworking_operational_report_cover.Report/`
-- `smartworking_operational_report_directorate_costcentre.Report/`
-- `smartworking_operational_report_line_manager.Report/`
-- `smartworking_operational_report_project.Report/`
-- `smartworking_operational_report_utilisation.Report/`
+    subgraph BI["3. Semantic Models & Reports"]
+        SM_HUB[["Core Hub Semantic Model<br/>semantic_model_smarttime"]]
+        SM_PROJ[["Project View Model<br/>smarttime_data_semantic_model_project_view"]]
+        RPT_DSC["Dynamic Structure Chart<br/>(P00287)"]
+        RPT_OPS["SmartWorking Operational Reports<br/>(Cover, 1:1, Cost Centre, Line Mgr, Utilisation)"]
+        RPT_ACT["Activity Time Reports<br/>(Recorded & Billable_Int)"]
+        RPT_PROJ["SmartWorking Project Report"]
+    end
 
-Each report folder generally contains a `definition.pbir`, a `definition/` subfolder for report parts, and `StaticResources/` for images and assets.
+    SQL1 --> DF_ST
+    SQL2 --> DF_DRLS
+    GRAPH --> DF_DRLS
+    SP_META --> DF_META
+    SP_RLS --> DF_SRLS
+    GOV --> DF_BH
 
-### Semantic model folders
+    PIPE -.->|1. Trigger| DF_ST
+    DF_ST -.->|2. Fan-out on Success| DF_CAL & DF_META & DF_BH & DF_DRLS & DF_SRLS
+    DF_ST & DF_CAL & DF_META & DF_BH & DF_DRLS & DF_SRLS -->|FastCopy Write| LH
+    DF_DRLS -.->|3. Fan-in| NB_RLS
+    LH <-->|Read support_rls_dynamic_merged /<br/>Write support_rls_hierarchy_gold| NB_RLS
+    NB_RLS -.->|4. Trigger Refresh| SM_HUB
 
-- `dynamic_structure_chart.SemanticModel/`
-- `smarttime_data_semantic_model.SemanticModel/`
-- `smarttime_data_semantic_model_project_view.SemanticModel/`
-- `smartworking_operational_report_121_compliance.SemanticModel/`
-- `smartworking_operational_report_cover.SemanticModel/`
-- `smartworking_operational_report_directorate_costcentre.SemanticModel/`
-- `smartworking_operational_report_line_manager.SemanticModel/`
-- `smartworking_operational_report_project.SemanticModel/`
-- `smartworking_operational_report_utilisation.SemanticModel/`
+    LH -->|DirectQuery SQL Endpoint| SM_HUB
+    SQL1 -->|Import Mode| SM_PROJ
 
-Semantic model folders typically contain a `definition.pbism`, `diagramLayout.json` and a `definition/` folder with model metadata.
-
-### Datasets
-
-- `Income and Contribution by Sales Contract.Dataset/`
-
-Dataset folders may hold exported dataset/model files used by reports.
-
-## Quick start
-
-1. Requirements: Windows + Power BI Desktop (latest stable). Optional: Tabular Editor, DAX Studio, ALM Toolkit.
-2. Open a packaged report: double-click `*.pbip`/`*.pbix` or use `File -> Open` in Power BI Desktop.
-3. Work with decomposed projects: open `*.Report/definition.pbir` in Power BI Desktop; edit models using Tabular Editor or via XMLA.
-4. Update static assets in `*.Report/StaticResources/` as needed and commit changes.
-
-## Recommended tools & workflow
-
-- Power BI Desktop — authoring and local validation.
-- Tabular Editor — model metadata editing and validation.
-- DAX Studio — query profiling and measure validation.
-- Git + Git LFS — store large binaries (`*.pbix`, `*.pbip`) using LFS to keep the repo performant.
-
-Add this to `.gitattributes` to enable Git LFS for typical Power BI files:
-
-```text
-*.pbix filter=lfs diff=lfs merge=lfs -text
-*.pbip filter=lfs diff=lfs merge=lfs -text
+    SM_HUB -->|DirectQuery / Live| RPT_DSC & RPT_OPS & RPT_ACT
+    SM_PROJ -->|DirectQuery to AS| RPT_PROJ
 ```
 
-## Data refresh & deployment
+---
 
-- Local refresh: open the report in Power BI Desktop and click `Refresh` (ensure data source credentials are configured locally).
-- Publish: use Power BI Desktop `Publish` to send the report to the Power BI Service; configure gateways and scheduled refresh in the service.
-- CI/CD: use the decomposed `definition.pbism` and deployment scripts (Tabular Editor, TMSL, Azure DevOps pipelines, PowerShell) for automated model deployments.
+## 3. Handover Documentation Index
 
-## Security & sensitive data
+This repository includes a complete handover documentation suite in [`docs/`](docs/) designed so an incoming developer or BI engineer with zero prior context can maintain, troubleshoot, and extend the platform:
 
-- Do not commit credentials, connection strings, or secrets. Use secure secret storage (e.g. Azure Key Vault, pipeline variables) for CI/CD.
-- If secrets are committed accidentally: rotate credentials immediately and remove them from history using `git filter-repo` or equivalent.
+1. **[Architecture & Data Lineage (`docs/01-architecture-and-data-lineage.md`)](docs/01-architecture-and-data-lineage.md)**
+   * Full inventory of Fabric workspace identifiers, Lakehouse SQL endpoints, Data Pipelines, Dataflows Gen2 (`.pqt` / `.pq`), PySpark Notebook logic, and upstream source systems.
+2. **[Semantic Models, Reports & DAX Dictionary (`docs/02-semantic-models-and-dax-dictionary.md`)](docs/02-semantic-models-and-dax-dictionary.md)**
+   * Detailed breakdown of the hub-and-spoke semantic model design, table schemas, relationships, every DAX measure and calculated column, and the 10 Power BI report packages.
+3. **[Security & Row-Level Security (RLS) Guide (`docs/03-security-and-rls-guide.md`)](docs/03-security-and-rls-guide.md)**
+   * Deep dive into both Static RLS (`teams_rls_static` via SharePoint Excel) and Dynamic Hierarchy RLS (`vw_StaffHierarchy` + Entra ID + manual overrides in `support_rls_dynamic_missing` + PySpark `OrgPath` generation + `PATHCONTAINS` DAX security rules).
+4. **[Operations & Handover Runbook (`docs/04-operations-and-handover-runbook.md`)](docs/04-operations-and-handover-runbook.md)**
+   * **Mandatory Handover Checklist** (re-binding personal connections/credentials), routine operational tasks, on-demand pipeline triggers, and troubleshooting playbooks.
 
-## Contribution guidelines
+---
 
-- Branching: create feature branches from `dev`. Open PRs against `dev`; merge to `main` for releases.
-- PRs should be small and focused (model-only, report-only, or assets-only) to simplify reviews.
-- Include validation checks in PR descriptions, e.g. "Tabular Editor validation", "DAX Studio smoke test", "Power BI Desktop visual check".
+## 4. Repository Layout
 
-## Troubleshooting
+```text
+├── dataflows/                                   # Fabric Dataflow Gen2 templates (.pqt) & extracted Power Query (.pq)
+│   ├── base_calendar.pqt / .pq                  # Financial & standard calendar generator (from 2024-04-01)
+│   ├── base_metadata.pqt / .pq                  # SharePoint 'Products' list metadata (IDs 404 & 426)
+│   ├── data_smarttime.pqt / .pq                 # SmartTime + Oracle agency rates & staff cost exceptions
+│   ├── support_bank_holidays.pqt / .pq          # UK Gov bank holidays API ingestion
+│   ├── support_dynamic_rls.pqt / .pq            # Entra ID users/groups + vw_StaffHierarchy + missing staff overrides
+│   └── support_teams_static_rls.pqt / .pq       # SharePoint Excel rls_static.xlsx ingestion
+├── notebooks/
+│   └── support_rls_dynamic_merged_path.ipynb    # PySpark notebook building pipe-delimited OrgPath -> support_rls_hierarchy_gold
+├── pipelines/                                   # Fabric Data Pipeline ARM/JSON definitions & SVG manifests
+│   ├── scw_corporate_data_products/             # Main scheduled E2E orchestration pipeline
+│   ├── metadata update (on demand)/             # On-demand SharePoint metadata + semantic model refresh
+│   └── static_rls_update (on demand)/           # On-demand static RLS Excel + semantic model refresh
+├── docs/                                        # Comprehensive Handover & Technical Documentation
+├── assets/                                      # Report cover images & visual assets
+├── sharepoint list items.csv                    # Export of SharePoint Product Registry items (P00287 & P00278)
+├── semantic_model_smarttime.*                   # Core Hub Semantic Model (.SemanticModel) & authoring report (.Report / .pbip)
+├── smarttime_data_semantic_model_project_view.* # Project-level Import Semantic Model & authoring report
+├── dynamic_structure_chart.*                    # P00287 Dynamic Structure Chart composite model & report
+├── smartworking_operational_report_*            # P00278 Operational report suite (cover, 121_compliance, directorate_costcentre, line_manager, project, utilisation)
+├── Activity Time Recorded.*                     # Thin report bound to semantic_model_smarttime (all recorded time w/ comments)
+└── Activity Time Billable_Int.*                 # Thin report bound to semantic_model_smarttime (billable/internal time w/ comments)
+```
 
-- Decomposed report recompose issues: inspect the `definition/` folder for missing files and check `definition.pbir` references.
-- Model compatibility problems: use Tabular Editor and DAX Studio to validate measures and metadata.
+---
 
-## Contact & maintainers
+## 5. Quick Start for Developers
 
-- Repository owner / primary maintainer: `brunoalvesdesousa`.
-- For dataset access, credentials or environment details, contact the Smarttime BI team or the repository owner.
+### Prerequisites
+* **Power BI Desktop** (with **Power BI Project `.pbip`** and **TMDL** preview features enabled).
+* **Tabular Editor 2/3** or **Power BI Modeling MCP** (for editing `.tmdl` definitions).
+* Access to the Microsoft Fabric workspace **`[DI] SCW Corporate Products`** (`704dee3e-0fbd-4f0a-9f73-6165e7c95516`).
+
+### Opening & Editing Reports Locally
+1. Clone this repository.
+2. Double-click any `.pbip` file to open the corresponding report and model in Power BI Desktop:
+   * To edit **central measures, relationships, or RLS roles**, open [`semantic_model_smarttime.pbip`](semantic_model_smarttime.pbip) or edit the text files under [`semantic_model_smarttime.SemanticModel/definition/`](semantic_model_smarttime.SemanticModel/definition/).
+   * To edit individual **operational report visuals**, open the respective `smartworking_operational_report_*.pbip`, [`dynamic_structure_chart.pbip`](dynamic_structure_chart.pbip), or `Activity Time *.pbip`.
+3. Commit changes using [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): summary`) so TMDL and report JSON diffs remain clean and reviewable in Git.

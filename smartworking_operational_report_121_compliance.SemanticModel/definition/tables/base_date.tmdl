@@ -38,6 +38,9 @@ table base_date
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Month Year
+		sortByColumn: MonthKey
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = User
 

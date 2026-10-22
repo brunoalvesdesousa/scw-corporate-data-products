@@ -3,17 +3,17 @@
   "name": "extension",
   "entities": [
     {
-      "name": "_calculations",
+      "name": "data_smarttime",
       "measures": [
         {
           "name": "txt_smarttime_updatedat",
           "dataType": "Double",
-          "expression": "\"Latest SmartTime data as at: \" & _calculations[calc_smarttime_latestdate]",
+          "expression": "\"Latest SmartTime data as at: \" & data_smarttime[calc_smarttime_latestdate]",
           "formatString": "General Number",
           "references": {
             "measures": [
               {
-                "entity": "_calculations",
+                "entity": "data_smarttime",
                 "name": "calc_smarttime_latestdate"
               }
             ]

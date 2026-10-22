@@ -1061,17 +1061,6 @@ table data_smarttime
 
 		annotation SummarizationSetBy = User
 
-	column calc_hierarchy_path
-		dataType: int64
-		displayFolder: _Calculations
-		lineageTag: e2e2252c-0fb1-4d43-b8b6-b80ba56218ae
-		sourceLineageTag: 2dd64d64-a4fd-4004-8968-a21db2b5a633
-		dataCategory: Uncategorized
-		summarizeBy: none
-		sourceColumn: calc_hierarchy_path
-
-		annotation SummarizationSetBy = User
-
 	column calc_smarttime_days
 		dataType: double
 		displayFolder: _Calculations

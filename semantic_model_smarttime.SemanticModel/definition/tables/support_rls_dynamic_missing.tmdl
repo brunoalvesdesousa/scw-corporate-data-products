@@ -146,6 +146,25 @@ table support_rls_dynamic_missing
 
 		annotation SummarizationSetBy = Automatic
 
+	column Leaver
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c293fb3b-1b40-4dbc-a926-6139caec330b
+		summarizeBy: sum
+		sourceColumn: Leaver
+
+		annotation SummarizationSetBy = Automatic
+
+	column userPrincipalName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: afd4a0b3-9507-41f0-8d9d-2eaca90576aa
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		annotation SummarizationSetBy = Automatic
+
 	partition support_rls_dynamic_missing = m
 		mode: directQuery
 		source =

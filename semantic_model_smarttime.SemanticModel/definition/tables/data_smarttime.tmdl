@@ -705,6 +705,27 @@ table data_smarttime
 
 		changedProperty = Name
 
+	measure calc_smarttime_latestdate = MAX(data_smarttime[Activity_Created_Date])
+		formatString: dd/mm/yyyy hh:nn
+		displayFolder: _Calculations
+		lineageTag: f8185185-6f9a-4b5a-b8ea-15738853d886
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure calc_smarttime_fresheness = ```
+			
+			    IF(
+			        DATEDIFF(TODAY(),[calc_smarttime_latestdate],DAY)>1,
+			        "#F80101",
+			        "#78be20")
+			```
+		displayFolder: _Calculations
+		lineageTag: 42ff4112-f35f-4bd8-9594-bb36a87b863f
+
+	measure txt_smarttime_updatedat = "Latest SmartTime data as at: " & [calc_smarttime_latestdate]
+		displayFolder: _Calculations
+		lineageTag: 73a8b512-9c41-4e7a-8b10-12a4d89e3c01
+
 	column Timesheet_Id
 		dataType: int64
 		formatString: 0
@@ -1498,6 +1519,156 @@ table data_smarttime
 	column work_activity_name_wanumber = "WA" & data_smarttime[Work_Activity_Id] & " - " & data_smarttime[Work_Activity_Name]
 		lineageTag: 344cff14-8f7f-4bc9-93fd-2a9c0064a432
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_activity_name_oppnumber =
+			
+			IF(
+			    ISBLANK(data_smarttime[Work_Activity_Pipeline_Code]),
+			    data_smarttime[Work_Activity_Name],
+			    data_smarttime[Work_Activity_Pipeline_Code] & " - " & data_smarttime[Work_Activity_Name]
+			)
+		lineageTag: 98d2f695-45e0-40f7-8741-4effdc532586
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_activity_number = "WA" & data_smarttime[Work_Activity_Id]
+		lineageTag: 5cc5c0a6-cfaa-4b72-b440-949ead0cfca8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_FirstName2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c786c5b2-2ff5-4993-bda6-14c3f4144765
+		summarizeBy: none
+		sourceColumn: Person_FirstName2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_LastName2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c93a84bb-8bd8-483c-863e-76de1b284905
+		summarizeBy: none
+		sourceColumn: Person_LastName2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Out_Of_Hours
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 41c13c64-9610-466b-beb8-73e9bc9ecf36
+		summarizeBy: none
+		sourceColumn: Activity_Out_Of_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_Contract_Type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c936bbb-d44e-4de3-9d85-2854279bb70e
+		summarizeBy: none
+		sourceColumn: Contract_Contract_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_End_Date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		sourceProviderType: date
+		lineageTag: cd7a3a44-3368-4326-bd1d-8513ba76517c
+		summarizeBy: none
+		sourceColumn: Contract_End_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Contract_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 672d9ce9-abcd-45c1-8654-b94366f9a0e2
+		summarizeBy: none
+		sourceColumn: Contract_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_Start_Date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		sourceProviderType: date
+		lineageTag: c02c3704-67b6-4b08-8d6a-312de4857138
+		summarizeBy: none
+		sourceColumn: Contract_Start_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Is_UnPriced
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9affc9b4-eb68-490c-892a-e28f81c7f279
+		summarizeBy: sum
+		sourceColumn: Is_UnPriced
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate_Is_Exception
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5f060a6b-ea59-42c5-9298-d43e6ccd2474
+		summarizeBy: sum
+		sourceColumn: Rate_Is_Exception
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rate_Table_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 637626ec-9c69-428c-bf57-64df0bcc64a9
+		summarizeBy: none
+		sourceColumn: Rate_Table_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Solution_Notional
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 4011c324-95d5-480b-b722-c6720cb38956
+		summarizeBy: none
+		sourceColumn: Solution_Notional
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Is_Retired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0c046b74-8859-4a7b-a108-de81b249ea9d
+		summarizeBy: none
+		sourceColumn: Work_Activity_Is_Retired
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Priority
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0b0a7207-95c5-4fbe-aaa0-3e88449ef148
+		summarizeBy: none
+		sourceColumn: Work_Activity_Priority
 
 		annotation SummarizationSetBy = Automatic
 

@@ -37,6 +37,9 @@ table base_date
 		lineageTag: 7cf269ea-1aab-4ce0-aebf-6191730b5d29
 		summarizeBy: none
 		sourceColumn: Month Year
+		sortByColumn: MonthKey
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 

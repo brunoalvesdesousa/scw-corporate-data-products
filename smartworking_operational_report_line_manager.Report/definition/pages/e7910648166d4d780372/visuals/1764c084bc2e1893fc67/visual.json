@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "1764c084bc2e1893fc67",
   "position": {
     "x": 440.33566433566432,
@@ -534,5 +534,79 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b3beed3556001470d39e"
+  "parentGroupName": "b3beed3556001470d39e",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2e6be54919d95255c6f4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_date"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cbed54dfcd33fea3c794",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "base_date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "141ab1eb3ab659216110",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_submitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bfc9833b620d8ec10a4f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_late_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "35cb09169759182e0544",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_unsubmitted_timesheets_%"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

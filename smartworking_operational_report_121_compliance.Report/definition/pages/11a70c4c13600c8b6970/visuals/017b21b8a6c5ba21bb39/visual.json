@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "017b21b8a6c5ba21bb39",
   "position": {
     "x": 848,
@@ -335,37 +335,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cfd4ab34718ac43ae27c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "Person_Cost_Centre_Level_6"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "952572c30477b3b6b271",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "data_smarttime"
-              }
-            },
-            "Property": "calc_121_compliance_ActiveStaff"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
