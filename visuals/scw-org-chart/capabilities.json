@@ -1,0 +1,112 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Employee ID",
+      "name": "employeeId",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Manager ID",
+      "name": "managerId",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Full Name",
+      "name": "name",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Extra Details (Level 3, Level 6, Status)",
+      "name": "Extra",
+      "kind": "Grouping"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "employeeId": {
+            "max": 1
+          },
+          "managerId": {
+            "max": 1
+          },
+          "name": {
+            "max": 1
+          }
+        }
+      ],
+      "table": {
+        "rows": {
+          "select": [
+            {
+              "for": {
+                "in": "employeeId"
+              }
+            },
+            {
+              "for": {
+                "in": "managerId"
+              }
+            },
+            {
+              "for": {
+                "in": "name"
+              }
+            },
+            {
+              "for": {
+                "in": "Extra"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 30000
+            }
+          }
+        }
+      }
+    }
+  ],
+  "supportsHighlight": true,
+  "privileges": [],
+  "objects": {
+    "SearchSettings": {
+      "displayName": "Search Settings",
+      "properties": {
+        "SearchHighlightColor": {
+          "displayName": "Search Highlight Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataCard": {
+      "displayName": "Node Card",
+      "properties": {
+        "NodeBackgroundColor": {
+          "displayName": "Card Background",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "ShowID": {
+          "displayName": "Show Person ID",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  }
+}

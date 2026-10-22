@@ -1,2 +1,9 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+
+# Node / Custom Visual build artifacts (keep dist/*.pbiviz tracked)
+node_modules/
+visuals/scw-org-chart/.tmp/
+visuals/scw-org-chart/webpack.statistics*.html
+npm-debug.log*
+.DS_Store

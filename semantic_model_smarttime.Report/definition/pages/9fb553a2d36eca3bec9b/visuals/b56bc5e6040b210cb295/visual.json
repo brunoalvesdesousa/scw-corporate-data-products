@@ -95,6 +95,20 @@
               },
               "queryRef": "support_rls_hierarchy_gold.Level6",
               "nativeQueryRef": "Level6"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "HierarchyStatus"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.HierarchyStatus",
+              "nativeQueryRef": "HierarchyStatus"
             }
           ]
         }

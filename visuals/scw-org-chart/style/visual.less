@@ -1,0 +1,165 @@
+.scw-org-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #0f172a;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.scw-org-toolbar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.scw-search-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 280px;
+  max-width: 460px;
+}
+
+.scw-search-input {
+  flex: 1;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 12.5px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  outline: none;
+  color: #0f172a;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.scw-search-input:focus {
+  border-color: #005eb8;
+  box-shadow: 0 0 0 2px rgba(0, 94, 184, 0.2);
+}
+
+.scw-match-count {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #475569;
+  min-width: 58px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.scw-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.scw-btn {
+  height: 28px;
+  padding: 0 9px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1e293b;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+}
+
+.scw-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.scw-btn:active {
+  background: #cbd5e1;
+}
+
+.scw-btn-primary {
+  background: #005eb8;
+  color: #ffffff;
+  border-color: #004b93;
+}
+
+.scw-btn-primary:hover {
+  background: #003087;
+  border-color: #002266;
+}
+
+.scw-btn-badge-active {
+  background: #fffbeb;
+  color: #b45309;
+  border-color: #f59e0b;
+}
+
+.scw-canvas-svg {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  display: block;
+}
+
+.scw-canvas-svg:active {
+  cursor: grabbing;
+}
+
+.scw-link {
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 1.75px;
+  transition: stroke 0.2s ease;
+}
+
+.scw-link-highlighted {
+  stroke: #005eb8;
+  stroke-width: 2.5px;
+}
+
+.scw-node-group {
+  cursor: pointer;
+}
+
+.scw-status-bar {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  right: 12px;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  font-size: 11px;
+  color: #475569;
+}
+
+.scw-status-pill {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 3px 10px;
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}

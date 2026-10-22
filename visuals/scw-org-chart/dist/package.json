@@ -1,0 +1,17 @@
+{
+		"version": "1.0.0.0",
+		"author": {"name":"NHS SCW CSU Corporate Data Products","email":"bruno.alvesdesousa@nhs.net"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.pbiviz.json"
+			}
+		],
+		"visual": {"name":"scwOrgChart","displayName":"SCW CSU Org Chart","guid":"scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD","visualClassName":"Visual","version":"1.0.0.0","description":"Interactive organisational hierarchy chart for NHS SCW CSU with instant search, path auto-expansion, zoom/pan controls, hierarchy health badges, and Power BI cross-filtering.","supportUrl":"https://github.com/brunoalvesdesousa/scw_corporate_data_products","gitHubUrl":"https://github.com/brunoalvesdesousa/scw_corporate_data_products"},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}

@@ -1,0 +1,16 @@
+{
+  "name": "scw-org-chart",
+  "version": "1.0.0",
+  "description": "NHS SCW CSU Interactive Organisational Hierarchy Chart for Power BI with search, auto-pan/zoom, subtree expand/collapse, and hierarchy health indicators.",
+  "scripts": {
+    "start": "pbiviz start",
+    "package": "pbiviz package --no-minify"
+  },
+  "dependencies": {
+    "powerbi-visuals-api": "~5.11.0"
+  },
+  "devDependencies": {
+    "powerbi-visuals-tools": "~7.2.1",
+    "typescript": "~5.5.4"
+  }
+}

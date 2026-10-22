@@ -65,8 +65,9 @@ shared support_rls_dynamic = let
     #"Merged Queries" = Table.FuzzyNestedJoin(dbo_vw_StaffHierarchy, {"Email"}, support_entraid_users, {"mail"}, "support_entraid_users", JoinKind.LeftOuter, [IgnoreCase = true, IgnoreSpace = true]),
     #"Changed Type" = Table.TransformColumnTypes(#"Merged Queries",{{"PersonFk", type text}, {"SupervisorId", type text}}),
   #"Expanded support_entraid_users" = Table.ExpandTableColumn(#"Changed Type", "support_entraid_users", {"userPrincipalName"}, {"userPrincipalName"}),
-  #"Filtered rows" = Table.SelectRows(#"Expanded support_entraid_users", each ([Leaver] = 0)),
-    #"Removed Duplicates" = Table.Distinct(#"Filtered rows", {"PersonFk"}),
+  // Retain Leaver = 1 rows (sorted so Leaver = 0 wins on deduplication) so PySpark can bridge departed managers
+  #"Sorted rows" = Table.Sort(#"Expanded support_entraid_users", {{"Leaver", Order.Ascending}}),
+    #"Removed Duplicates" = Table.Distinct(#"Sorted rows", {"PersonFk"}),
   #"Filtered rows 1" = Table.SelectRows(#"Removed Duplicates", each [PersonFk] <> "3207")
 in
     #"Filtered rows 1";

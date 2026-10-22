@@ -62,15 +62,26 @@ All role definitions live under [`semantic_model_smarttime.SemanticModel/definit
 
 ---
 
-## 4. Dynamic RLS & Hardcoded Business Rules
+## 4. Dynamic RLS, Hierarchy Safeguards & Hardcoded Business Rules
 
-### 4.1 Why `PersonFk = "4037"` is Forced to Root in PySpark
-In [`notebooks/support_rls_dynamic_merged_path.ipynb`](../notebooks/support_rls_dynamic_merged_path.ipynb):
-```python
-F.when(F.col("PersonFk") == "4037", None) # Absolute Root
-```
-* **`PersonFk = 4037`** is the Managing Director / top of the SCW CSU hierarchy.
-* In upstream HR data (`vw_StaffHierarchy`), the root record can occasionally have a self-reference or external supervisor ID, which would break top-down tree traversal. Forcing `PersonFk == "4037"` to `SupervisorId = None` guarantees a single clean root for `OrgPath`.
+### 4.1 Deterministic Hierarchy Engine & Safeguards (`support_rls_dynamic_merged_path.ipynb`)
+In [`notebooks/support_rls_dynamic_merged_path.ipynb`](../notebooks/support_rls_dynamic_merged_path.ipynb), `resolve_staff_hierarchy()` builds `support_rls_hierarchy_gold` with five built-in safeguards so active staff **never** scatter into disconnected islands on the Org Chart:
+1. **Root Integrity & Explicit Manual Overrides:** Forces `PersonFk == "4037"` (Managing Director) to `SupervisorId = None` (`Leaver = 0`) and applies the 16 explicit supervisor overrides defined in `MANUAL_SUPERVISOR_OVERRIDES` directly in version-controlled Python.
+2. **Leaver Path Compression (`Bridged via Leaver`):** `dataflows/support_dynamic_rls.pq` retains `Leaver = 1` records (sorted so `Leaver = 0` takes priority on deduplication). When an active employee reports to a departed line manager (`Leaver = 1`), the notebook walks up the supervisory chain and compresses the link directly to their nearest **active** ancestor (`Leaver = 0`), recording the original raw manager in `OriginalSupervisorId` and tagging `HierarchyStatus = "Bridged via Leaver"`.
+3. **Token-Safe Cycle Detection (`Cycle Repaired`):** Uses exact set membership (`visited`) rather than substring `.contains()` (preventing false collisions like `"403"` inside `"4037"`) and breaks any supervisory loops deterministically.
+4. **Tiered Org-Unit Lead Fallback:** Any remaining disconnected subtree root is attached to the shallowest-depth connected active supervisor in its:
+   * **Tier 1:** `Level6` (`Fallback: Level6 Lead`)
+   * **Tier 2:** `CostCentre` (`Fallback: CostCentre Lead`)
+   * **Tier 3:** `Level3` Directorate (`Fallback: Level3 Lead`)
+   * **Tier 4:** Root `4037` (`Fallback: Root (4037)`)
+   Intact teams under an orphaned manager stay grouped under their manager while the manager is attached to the unit lead.
+5. **Audit & Metric Columns Added to `support_rls_hierarchy_gold`:**
+   * `SupervisorId` — Repaired active manager ID (guaranteed single tree rooted at `4037`).
+   * `OriginalSupervisorId` — Raw unmodified `SupervisorId` from ESR/SmartTime for data-quality auditing.
+   * `HierarchyStatus` — Resolution status (`Root`, `Direct`, `Manual Override`, `Bridged via Leaver`, `Fallback: Level6 Lead`, `Fallback: CostCentre Lead`, `Fallback: Level3 Lead`, `Fallback: Root (4037)`, `Cycle Repaired`).
+   * `HierarchyDepth` — 1-based depth from `4037`.
+   * `DirectReportsCount` & `TotalReportsCount` — Precomputed active direct and total subtree report counts.
+   * **Custom Visual (`visuals/scw-org-chart/`):** The in-house [`scwOrgChart` Power BI Custom Visual](../visuals/scw-org-chart/README.md) consumes these columns to provide instant search, path auto-expansion, pan/zoom, cross-filtering, and toggleable `⚡` Hierarchy Health Badges.
 
 ### 4.2 Why `PersonFk <> "3207"` is Excluded in `support_rls_dynamic`
 In [`dataflows/support_dynamic_rls.pq`](../dataflows/support_dynamic_rls.pq):

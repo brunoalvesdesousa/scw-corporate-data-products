@@ -100,7 +100,9 @@ This repository includes a complete handover documentation suite in [`docs/`](do
 │   ├── support_dynamic_rls.pqt / .pq            # Entra ID users/groups + vw_StaffHierarchy + missing staff overrides
 │   └── support_teams_static_rls.pqt / .pq       # SharePoint Excel rls_static.xlsx ingestion
 ├── notebooks/
-│   └── support_rls_dynamic_merged_path.ipynb    # PySpark notebook building pipe-delimited OrgPath -> support_rls_hierarchy_gold
+│   └── support_rls_dynamic_merged_path.ipynb    # PySpark notebook: leaver bridging, tiered fallback & OrgPath -> support_rls_hierarchy_gold
+├── visuals/
+│   └── scw-org-chart/                           # Custom Power BI Org Chart visual (.pbiviz + TypeScript source)
 ├── pipelines/                                   # Fabric Data Pipeline ARM/JSON definitions & SVG manifests
 │   ├── scw_corporate_data_products/             # Main scheduled E2E orchestration pipeline
 │   ├── metadata update (on demand)/             # On-demand SharePoint metadata + semantic model refresh
