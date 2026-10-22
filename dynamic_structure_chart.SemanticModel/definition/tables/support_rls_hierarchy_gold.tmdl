@@ -183,6 +183,54 @@ table support_rls_hierarchy_gold
 
 		annotation SummarizationSetBy = User
 
+	/// Raw unmodified SupervisorId from ESR/SmartTime before hierarchy repair and leaver bridging.
+	column OriginalSupervisorId
+		dataType: string
+		lineageTag: 853810d4-c153-4219-8ddf-9a30fb81b51e
+		sourceLineageTag: 0aefaa28-8805-4e5c-be73-38ea358c5490
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OriginalSupervisorId
+
+	/// Resolution status of the reporting line (Root, Direct, Manual Override, Bridged via Leaver, Fallback: Level6 Lead, Fallback: CostCentre Lead, Fallback: Level3 Lead, Fallback: Root (4037), Cycle Repaired).
+	column HierarchyStatus
+		dataType: string
+		lineageTag: 7f0f913a-559e-4220-95ba-0b91e8c37361
+		sourceLineageTag: 2dfe1d17-6dba-4dc4-bf40-ffcaa516ec39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HierarchyStatus
+
+	/// 1-based depth in the SCW CSU hierarchy tree (1 = Root 4037).
+	column HierarchyDepth
+		dataType: int64
+		formatString: 0
+		lineageTag: c9740558-8020-4aa4-9922-197e6ccfd5a7
+		sourceLineageTag: beb04e78-b77a-46e2-b990-28b35dfe0557
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HierarchyDepth
+
+	/// Number of active direct reports reporting immediately to this person.
+	column DirectReportsCount
+		dataType: int64
+		formatString: 0
+		lineageTag: d13a9334-e64d-449a-850f-06616fda82ca
+		sourceLineageTag: 6db48d58-4561-41e4-9a27-228bde5431f4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DirectReportsCount
+
+	/// Total number of active staff in this person's downward management subtree (excluding themselves).
+	column TotalReportsCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 2791f75c-81c9-46a7-b459-f3f0d5a1574a
+		sourceLineageTag: 1d905259-e1ec-4d04-9754-033082b635ef
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TotalReportsCount
+
 	partition support_rls_hierarchy_gold = entity
 		mode: directQuery
 		source

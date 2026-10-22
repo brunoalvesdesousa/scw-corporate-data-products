@@ -26,11 +26,11 @@ A 100% free, in-house Power BI Custom Visual (`.pbiviz`) built specifically for 
 The pre-compiled package is tracked directly in this repository at:
 [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz)
 
-1. Open [`semantic_model_smarttime.pbip`](../../semantic_model_smarttime.pbip) in **Power BI Desktop**.
-2. In the **Visualizations** pane, click the **`...` (Get more visuals)** ellipsis icon and select **Import a visual from a file**.
-3. Select [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz).
-4. Click the existing Org Chart container on **Duplicate of Page 7** (`SCWCSU Hierarchy Chart`) and click the newly imported **SCW CSU Org Chart** icon in the Visualizations pane to switch its visual type.
-5. Verify the field wells:
+1. Open [`dynamic_structure_chart.pbip`](../../dynamic_structure_chart.pbip) in **Power BI Desktop**.
+2. Navigate to the **Hierarchy Chart** page (`264103d2d229dbc0d855`).
+3. In the **Visualizations** pane, click the **`...` (Get more visuals)** ellipsis icon and select **Import a visual from a file**.
+4. Select [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz).
+5. Click the existing Org Chart container on the **Hierarchy Chart** page and click the newly imported **SCW CSU Org Chart** icon in the Visualizations pane to switch its visual type. Because the data role names (`employeeId`, `managerId`, `name`, `Extra`) match 1-to-1, all field bindings carry over automatically:
    * **Employee ID:** `support_rls_hierarchy_gold[PersonFk]`
    * **Manager ID:** `support_rls_hierarchy_gold[supervisorid_corrected]`
    * **Full Name:** `support_rls_hierarchy_gold[fullname]`
