@@ -26,7 +26,7 @@ A 100% free, in-house Power BI Custom Visual (`.pbiviz`) built specifically for 
 The pre-compiled package is tracked directly in this repository at:
 [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz)
 
-1. Open [`dynamic_structure_chart.pbip`](../../dynamic_structure_chart.pbip) in **Power BI Desktop**.
+1. Open [`dynamic_structure_chart.pbip`](../../fabric/dynamic_structure_chart.pbip) in **Power BI Desktop**.
 2. Navigate to the **Hierarchy Chart** page (`264103d2d229dbc0d855`).
 3. In the **Visualizations** pane, click the **`...` (Get more visuals)** ellipsis icon and select **Import a visual from a file**.
 4. Select [`visuals/scw-org-chart/dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz`](dist/scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.1.0.0.0.pbiviz).

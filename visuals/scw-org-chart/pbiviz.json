@@ -6,8 +6,8 @@
     "visualClassName": "Visual",
     "version": "1.0.0.0",
     "description": "Interactive organisational hierarchy chart for NHS SCW CSU with instant search, path auto-expansion, zoom/pan controls, hierarchy health badges, and Power BI cross-filtering.",
-    "supportUrl": "https://github.com/brunoalvesdesousa/scw_corporate_data_products",
-    "gitHubUrl": "https://github.com/brunoalvesdesousa/scw_corporate_data_products"
+    "supportUrl": "https://github.com/brunoalvesdesousa/scw-corporate-data-products",
+    "gitHubUrl": "https://github.com/brunoalvesdesousa/scw-corporate-data-products"
   },
   "apiVersion": "5.11.0",
   "author": {
