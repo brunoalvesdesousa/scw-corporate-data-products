@@ -112,7 +112,7 @@ This repository includes a complete handover documentation suite in [`docs/`](do
 │   └── static_rls_update (on demand)/           # On-demand static RLS Excel + semantic model refresh
 ├── docs/                                        # Comprehensive Handover & Technical Documentation
 ├── assets/                                      # Report cover images & visual assets
-└── fabric/                                      # Power BI Projects (.pbip), Reports (.Report), and Semantic Models (.SemanticModel)
+└── pbi/                                         # Power BI Projects (.pbip), Reports (.Report), and Semantic Models (.SemanticModel)
     ├── semantic_model_smarttime.*                   # Core Hub Semantic Model (.SemanticModel) & authoring report (.Report / .pbip)
     ├── smarttime_data_semantic_model_project_view.* # Project-level Import Semantic Model & authoring report
     ├── dynamic_structure_chart.*                    # P00287 Dynamic Structure Chart composite model & report
@@ -133,6 +133,6 @@ This repository includes a complete handover documentation suite in [`docs/`](do
 ### Opening & Editing Reports Locally
 1. Clone this repository.
 2. Double-click any `.pbip` file to open the corresponding report and model in Power BI Desktop:
-   * To edit **central measures, relationships, or RLS roles**, open [`fabric/semantic_model_smarttime.pbip`](fabric/semantic_model_smarttime.pbip) or edit the text files under [`fabric/semantic_model_smarttime.SemanticModel/definition/`](fabric/semantic_model_smarttime.SemanticModel/definition/).
-   * To edit individual **operational report visuals**, open the respective `smartworking_operational_report_*.pbip`, [`fabric/dynamic_structure_chart.pbip`](fabric/dynamic_structure_chart.pbip), or `Activity Time *.pbip`.
+   * To edit **central measures, relationships, or RLS roles**, open [`pbi/semantic_model_smarttime.pbip`](pbi/semantic_model_smarttime.pbip) or edit the text files under [`pbi/semantic_model_smarttime.SemanticModel/definition/`](pbi/semantic_model_smarttime.SemanticModel/definition/).
+   * To edit individual **operational report visuals**, open the respective `smartworking_operational_report_*.pbip`, [`pbi/dynamic_structure_chart.pbip`](pbi/dynamic_structure_chart.pbip), or `Activity Time *.pbip`.
 3. Commit changes using [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): summary`) so TMDL and report JSON diffs remain clean and reviewable in Git.
