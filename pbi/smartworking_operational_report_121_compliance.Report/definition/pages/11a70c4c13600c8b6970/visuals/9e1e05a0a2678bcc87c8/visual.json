@@ -5,7 +5,7 @@
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 136,
+    "height": 56,
     "width": 1280,
     "tabOrder": 3000
   },
@@ -54,6 +54,13 @@
                   }
                 }
               }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -74,10 +81,10 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Title'"
+                  "Value": "false"
                 }
               }
             }

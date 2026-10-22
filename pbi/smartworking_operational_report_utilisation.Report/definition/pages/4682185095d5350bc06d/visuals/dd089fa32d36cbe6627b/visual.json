@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "dd089fa32d36cbe6627b",
   "position": {
-    "x": 64,
-    "y": 16,
+    "x": 68,
+    "y": 8,
     "z": 2000,
-    "height": 48,
-    "width": 584,
+    "height": 40,
+    "width": 680,
     "tabOrder": 8003
   },
   "visual": {
@@ -19,10 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "SmartWorking operational report - utilisation dashboard",
+                    "value": "SmartWorking \u2014 Staff Utilisation Dashboard",
                     "textStyle": {
-                      "fontSize": "21.3333px",
-                      "color": "#ffffff"
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold",
+                      "fontSize": "18pt",
+                      "color": "#FFFFFF"
                     }
                   }
                 ]
@@ -36,6 +38,13 @@
       "background": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -50,13 +59,26 @@
           }
         }
       ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "title": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Title_Text'"
+                  "Value": "false"
                 }
               }
             }

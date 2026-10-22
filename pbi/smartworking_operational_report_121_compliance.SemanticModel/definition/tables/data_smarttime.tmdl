@@ -325,6 +325,66 @@ table data_smarttime
 		sourceLineageTag: 37991150-62bc-41f1-aeb6-abf62414e5f6
 		dataCategory: Uncategorized
 
+	measure calc_compliance_rag_bg = EXTERNALMEASURE("calc_compliance_rag_bg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0001-4000-8000-000000000001
+		sourceLineageTag: a1000001-0001-4000-8000-000000000001
+		dataCategory: Uncategorized
+
+	measure calc_compliance_rag_fg = EXTERNALMEASURE("calc_compliance_rag_fg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0002-4000-8000-000000000002
+		sourceLineageTag: a1000001-0002-4000-8000-000000000002
+		dataCategory: Uncategorized
+
+	measure calc_smarttime_compliance_rag_bg = EXTERNALMEASURE("calc_smarttime_compliance_rag_bg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0003-4000-8000-000000000003
+		sourceLineageTag: a1000001-0003-4000-8000-000000000003
+		dataCategory: Uncategorized
+
+	measure calc_smarttime_compliance_rag_fg = EXTERNALMEASURE("calc_smarttime_compliance_rag_fg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0004-4000-8000-000000000004
+		sourceLineageTag: a1000001-0004-4000-8000-000000000004
+		dataCategory: Uncategorized
+
+	measure calc_121_compliance_rag_bg = EXTERNALMEASURE("calc_121_compliance_rag_bg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0005-4000-8000-000000000005
+		sourceLineageTag: a1000001-0005-4000-8000-000000000005
+		dataCategory: Uncategorized
+
+	measure calc_121_compliance_rag_fg = EXTERNALMEASURE("calc_121_compliance_rag_fg", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0006-4000-8000-000000000006
+		sourceLineageTag: a1000001-0006-4000-8000-000000000006
+		dataCategory: Uncategorized
+
+	measure svg_compliance_progress = EXTERNALMEASURE("svg_compliance_progress", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0007-4000-8000-000000000007
+		sourceLineageTag: a1000001-0007-4000-8000-000000000007
+		dataCategory: ImageUrl
+
+	measure svg_smarttime_compliance_progress = EXTERNALMEASURE("svg_smarttime_compliance_progress", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0008-4000-8000-000000000008
+		sourceLineageTag: a1000001-0008-4000-8000-000000000008
+		dataCategory: ImageUrl
+
+	measure svg_billable_utilisation_progress = EXTERNALMEASURE("svg_billable_utilisation_progress", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: b1000001-0009-4000-8000-000000000009
+		sourceLineageTag: a1000001-0009-4000-8000-000000000009
+		dataCategory: ImageUrl
+
+	measure svg_121_compliance_badge = EXTERNALMEASURE("svg_121_compliance_badge", STRING, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: b1000001-0010-4000-8000-000000000010
+		sourceLineageTag: a1000001-0010-4000-8000-000000000010
+		dataCategory: ImageUrl
+
 	column Timesheet_Id
 		dataType: int64
 		formatString: 0

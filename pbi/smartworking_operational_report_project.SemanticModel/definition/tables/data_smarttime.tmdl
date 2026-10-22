@@ -236,6 +236,30 @@ table data_smarttime
 		sourceLineageTag: d8925775-a17f-43e1-813f-431c2fa09a0a
 		dataCategory: Uncategorized
 
+	measure calc_compliance_rag_bg = EXTERNALMEASURE("calc_compliance_rag_bg", STRING, "DirectQuery to AS - smarttime_data_semantic_model_project_view")
+		displayFolder: _Calculations\Compliance
+		lineageTag: f1000001-0001-4000-8000-000000000001
+		sourceLineageTag: a1000001-0001-4000-8000-000000000001
+		dataCategory: Uncategorized
+
+	measure calc_compliance_rag_fg = EXTERNALMEASURE("calc_compliance_rag_fg", STRING, "DirectQuery to AS - smarttime_data_semantic_model_project_view")
+		displayFolder: _Calculations\Compliance
+		lineageTag: f1000001-0002-4000-8000-000000000002
+		sourceLineageTag: a1000001-0002-4000-8000-000000000002
+		dataCategory: Uncategorized
+
+	measure svg_compliance_progress = EXTERNALMEASURE("svg_compliance_progress", STRING, "DirectQuery to AS - smarttime_data_semantic_model_project_view")
+		displayFolder: _Calculations\Compliance
+		lineageTag: f1000001-0007-4000-8000-000000000007
+		sourceLineageTag: a1000001-0007-4000-8000-000000000007
+		dataCategory: ImageUrl
+
+	measure svg_billable_utilisation_progress = EXTERNALMEASURE("svg_billable_utilisation_progress", STRING, "DirectQuery to AS - smarttime_data_semantic_model_project_view")
+		displayFolder: _Calculations\Finance
+		lineageTag: f1000001-0009-4000-8000-000000000009
+		sourceLineageTag: a1000001-0009-4000-8000-000000000009
+		dataCategory: ImageUrl
+
 	column tmp_Id
 		dataType: int64
 		formatString: 0

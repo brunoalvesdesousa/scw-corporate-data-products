@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "48e95f1600445278ace4",
   "position": {
-    "x": 64,
-    "y": 13.176470588235293,
+    "x": 68,
+    "y": 8,
     "z": 2000,
-    "height": 47.686274509803923,
-    "width": 352,
+    "height": 40,
+    "width": 680,
     "tabOrder": 2000
   },
   "visual": {
@@ -19,10 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "SmartTime data quality - notes",
+                    "value": "SmartWorking Operational Report \u2014 Notes & Metadata",
                     "textStyle": {
-                      "fontSize": "16pt",
-                      "color": "#ffffff"
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold",
+                      "fontSize": "18pt",
+                      "color": "#FFFFFF"
                     }
                   }
                 ]
@@ -36,6 +38,13 @@
       "background": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -50,13 +59,26 @@
           }
         }
       ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "title": [
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Title_Text'"
+                  "Value": "false"
                 }
               }
             }

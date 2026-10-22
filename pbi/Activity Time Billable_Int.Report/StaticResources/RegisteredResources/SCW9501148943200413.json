@@ -2,13 +2,13 @@
   "name": "SCW",
   "icons": [],
   "dataColors": [
-    "#005eb8",
-    "#1c355e",
-    "#00a9ce",
+    "#005EB8",
+    "#1C355E",
+    "#00A9CE",
     "#003087",
-    "#78be20",
+    "#78BE20",
     "#330072",
-    "#00a499",
+    "#00A499",
     "#768692",
     "#3599B8",
     "#DFBFBF",
@@ -483,65 +483,76 @@
     "#0D2E25",
     "#54484E"
   ],
-  "tableAccent": "#768692",
-  "good": "#1AAB40",
+  "tableAccent": "#005EB8",
+  "good": "#78BE20",
   "neutral": "#D9B300",
   "bad": "#D64554",
-  "maximum": "#118DFF",
+  "maximum": "#78BE20",
   "center": "#D9B300",
-  "minimum": "#DEEFFF",
-  "foreground": "#252423",
-  "foregroundNeutralSecondary": "#605E5C",
-  "backgroundLight": "#F3F2F1",
-  "foregroundNeutralTertiary": "#B3B0AD",
+  "minimum": "#D64554",
+  "foreground": "#0F172A",
+  "foregroundNeutralSecondary": "#475569",
+  "backgroundLight": "#F8FAFC",
+  "foregroundNeutralTertiary": "#64748B",
   "background": "#FFFFFF",
-  "backgroundNeutral": "#C8C6C4",
+  "backgroundNeutral": "#CBD5E1",
   "textClasses": {
     "callout": {
-      "fontFace": "Arial",
-      "color": "#252423",
-      "fontSize": 45
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1C355E",
+      "fontSize": 24
     },
     "title": {
-      "fontFace": "Arial",
-      "color": "#252423",
-      "fontSize": 12
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1C355E",
+      "fontSize": 11
     },
     "header": {
-      "fontFace": "Arial",
-      "color": "#252423",
-      "fontSize": 12
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1C355E",
+      "fontSize": 10
     },
     "label": {
-      "fontFace": "Arial",
-      "color": "#252423",
+      "fontFace": "Segoe UI",
+      "color": "#0F172A",
       "fontSize": 10
     },
     "smallLightLabel": {
-      "color": "#605E5C",
-      "fontSize": 10
+      "fontFace": "Segoe UI",
+      "color": "#475569",
+      "fontSize": 9
     },
     "largeLightLabel": {
-      "color": "#605E5C",
+      "fontFace": "Segoe UI",
+      "color": "#475569",
       "fontSize": 10
     },
     "boldLabel": {
-      "fontFace": "Arial"
+      "fontFace": "Segoe UI Semibold",
+      "color": "#0F172A"
     },
     "lightLabel": {
-      "color": "#605E5C"
+      "fontFace": "Segoe UI",
+      "color": "#475569"
     },
     "smallLabel": {
-      "fontSize": 10
+      "fontFace": "Segoe UI",
+      "color": "#0F172A",
+      "fontSize": 9
     },
     "largeLabel": {
-      "fontSize": 10
+      "fontFace": "Segoe UI",
+      "color": "#0F172A",
+      "fontSize": 11
     },
     "semiboldLabel": {
-      "fontFace": "Arial"
+      "fontFace": "Segoe UI Semibold",
+      "color": "#0F172A"
     },
     "largeTitle": {
-      "fontSize": 12
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1C355E",
+      "fontSize": 14
     }
   },
   "visualStyles": {
@@ -549,6 +560,7 @@
       "*": {
         "background": [
           {
+            "show": true,
             "color": {
               "solid": {
                 "color": "#FFFFFF"
@@ -559,13 +571,13 @@
         ],
         "border": [
           {
+            "show": true,
             "color": {
               "solid": {
-                "color": "#000000"
+                "color": "#CBD5E1"
               }
             },
-            "show": false,
-            "radius": 0
+            "radius": 8
           }
         ],
         "visualHeader": [
@@ -633,7 +645,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#C8C8C8"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -642,42 +654,40 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
+            "bold": true
           }
         ],
         "outspacePane": [
           {
             "backgroundColor": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#F8FAFC"
               }
             },
             "transparency": 0,
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
-            "titleSize": 12,
-            "headerSize": 10,
+            "titleSize": 11,
+            "headerSize": 9,
             "fontFamily": "Segoe UI",
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#B3B0AD"
+                "color": "#CBD5E1"
               }
             },
-            "width": 200,
+            "width": 220,
             "checkboxAndApplyColor": {
               "solid": {
-                "color": "#F2C811"
+                "color": "#005EB8"
               }
             },
-            "searchTextSize": 10,
+            "searchTextSize": 9,
             "inputBoxColor": {
               "solid": {
                 "color": "#FFFFFF"
@@ -690,7 +700,7 @@
             "$id": "Available",
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backgroundColor": {
@@ -704,7 +714,7 @@
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#C8C8C8"
+                "color": "#CBD5E1"
               }
             },
             "inputBoxColor": {
@@ -717,21 +727,21 @@
             "$id": "Applied",
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "backgroundColor": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#EFF6FF"
               }
             },
             "textSize": 9,
-            "fontFamily": "Segoe UI",
+            "fontFamily": "Segoe UI Semibold",
             "transparency": 0,
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#C8C8C8"
+                "color": "#005EB8"
               }
             },
             "inputBoxColor": {
@@ -739,6 +749,23 @@
                 "color": "#FFFFFF"
               }
             }
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#0F172A"
+              }
+            },
+            "position": "Outer",
+            "preset": "BottomRight",
+            "shadowSpread": 0,
+            "shadowBlur": 8,
+            "angle": 45,
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ]
       }
@@ -755,15 +782,10 @@
           {
             "color": {
               "solid": {
-                "color": "#f5f5f5"
+                "color": "#F8FAFC"
               }
             },
-            "transparency": 0,
-            "image": {
-              "name": "",
-              "url": "",
-              "scaling": "Normal"
-            }
+            "transparency": 0
           }
         ],
         "displayArea": [
@@ -778,46 +800,41 @@
           {
             "color": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#F1F5F9"
               }
             },
-            "transparency": 0,
-            "image": {
-              "name": "",
-              "url": "",
-              "scaling": "Normal"
-            }
+            "transparency": 0
           }
         ],
         "outspacePane": [
           {
             "backgroundColor": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#F8FAFC"
               }
             },
             "transparency": 0,
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
-            "titleSize": 12,
+            "titleSize": 11,
             "headerSize": 9,
             "fontFamily": "Segoe UI",
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#B3B0AD"
+                "color": "#CBD5E1"
               }
             },
-            "width": 200,
+            "width": 220,
             "checkboxAndApplyColor": {
               "solid": {
-                "color": "#F2C811"
+                "color": "#005EB8"
               }
             },
-            "searchTextSize": 10,
+            "searchTextSize": 9,
             "inputBoxColor": {
               "solid": {
                 "color": "#FFFFFF"
@@ -830,7 +847,7 @@
             "$id": "Available",
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backgroundColor": {
@@ -844,7 +861,7 @@
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#C8C8C8"
+                "color": "#CBD5E1"
               }
             },
             "inputBoxColor": {
@@ -857,21 +874,21 @@
             "$id": "Applied",
             "foregroundColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "backgroundColor": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#EFF6FF"
               }
             },
             "textSize": 9,
-            "fontFamily": "Segoe UI",
+            "fontFamily": "Segoe UI Semibold",
             "transparency": 0,
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#C8C8C8"
+                "color": "#005EB8"
               }
             },
             "inputBoxColor": {
@@ -901,7 +918,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -921,7 +938,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -938,7 +955,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -965,7 +982,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -980,7 +997,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -1022,7 +1039,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1052,7 +1069,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "enableBackground": false,
             "backgroundColor": {
               "solid": {
@@ -1087,7 +1104,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -1096,8 +1113,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -1106,7 +1123,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1149,19 +1166,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -1184,7 +1201,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1240,13 +1257,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -1269,7 +1297,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1289,7 +1317,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1306,7 +1334,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -1333,7 +1361,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1348,7 +1376,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -1390,7 +1418,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1420,7 +1448,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "enableBackground": false,
             "backgroundColor": {
               "solid": {
@@ -1455,7 +1483,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -1464,8 +1492,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -1474,7 +1502,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1517,19 +1545,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -1552,7 +1580,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1608,13 +1636,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -1637,7 +1676,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1657,7 +1696,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1674,7 +1713,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -1701,7 +1740,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1716,7 +1755,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -1758,7 +1797,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1796,7 +1835,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -1805,8 +1844,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -1815,7 +1854,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1858,19 +1897,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -1893,7 +1932,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -1949,13 +1988,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -1978,7 +2028,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -1998,7 +2048,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2015,7 +2065,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2042,7 +2092,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2057,7 +2107,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2099,7 +2149,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2142,7 +2192,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -2151,8 +2201,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -2161,7 +2211,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -2204,19 +2254,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -2239,7 +2289,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2295,13 +2345,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -2324,7 +2385,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -2344,7 +2405,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2361,7 +2422,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2388,7 +2449,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2403,7 +2464,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2445,7 +2506,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2488,7 +2549,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -2497,8 +2558,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -2507,7 +2568,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -2550,19 +2611,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -2585,7 +2646,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2641,13 +2702,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -2670,7 +2742,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -2690,7 +2762,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2707,7 +2779,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2734,7 +2806,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2749,7 +2821,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -2791,7 +2863,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -2834,7 +2906,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -2843,8 +2915,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -2853,7 +2925,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -2896,19 +2968,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -2967,13 +3039,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -2999,7 +3082,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -3019,7 +3102,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3036,7 +3119,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3063,7 +3146,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3078,7 +3161,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3101,7 +3184,7 @@
               }
             },
             "secFontSize": 10,
-            "secFontFamily": "Arial",
+            "secFontFamily": "Segoe UI",
             "secBold": false,
             "secItalic": false,
             "secUnderline": false,
@@ -3150,7 +3233,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3173,7 +3256,7 @@
           {
             "show": false,
             "seriesPosition": "Right",
-            "seriesFontFamily": "Arial",
+            "seriesFontFamily": "Segoe UI",
             "textSize": 10,
             "bold": false,
             "italic": false,
@@ -3233,7 +3316,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -3242,8 +3325,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -3252,7 +3335,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -3295,19 +3378,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -3330,7 +3413,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3386,13 +3469,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -3418,7 +3512,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -3438,7 +3532,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3455,7 +3549,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3482,7 +3576,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3497,7 +3591,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3520,7 +3614,7 @@
               }
             },
             "secFontSize": 10,
-            "secFontFamily": "Arial",
+            "secFontFamily": "Segoe UI",
             "secBold": false,
             "secItalic": false,
             "secUnderline": false,
@@ -3570,7 +3664,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3593,7 +3687,7 @@
           {
             "show": false,
             "seriesPosition": "Right",
-            "seriesFontFamily": "Arial",
+            "seriesFontFamily": "Segoe UI",
             "textSize": 10,
             "bold": false,
             "italic": false,
@@ -3653,7 +3747,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -3662,8 +3756,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -3672,7 +3766,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -3715,19 +3809,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -3750,7 +3844,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3806,13 +3900,24 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -3838,7 +3943,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -3858,7 +3963,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3874,7 +3979,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3901,7 +4006,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3916,7 +4021,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -3958,7 +4063,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -3981,7 +4086,7 @@
           {
             "show": false,
             "seriesPosition": "Right",
-            "seriesFontFamily": "Arial",
+            "seriesFontFamily": "Segoe UI",
             "textSize": 10,
             "bold": false,
             "italic": false,
@@ -4012,7 +4117,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "enableBackground": false,
             "backgroundColor": {
               "solid": {
@@ -4072,7 +4177,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -4081,7 +4186,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -4159,7 +4264,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4215,7 +4320,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -4247,7 +4352,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -4267,7 +4372,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4284,7 +4389,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -4311,7 +4416,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4326,7 +4431,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -4368,7 +4473,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4391,7 +4496,7 @@
           {
             "show": false,
             "seriesPosition": "Right",
-            "seriesFontFamily": "Arial",
+            "seriesFontFamily": "Segoe UI",
             "textSize": 10,
             "bold": false,
             "italic": false,
@@ -4422,7 +4527,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "enableBackground": false,
             "backgroundColor": {
               "solid": {
@@ -4484,7 +4589,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -4493,7 +4598,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -4571,7 +4676,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4627,7 +4732,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -4659,7 +4764,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -4679,7 +4784,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4696,7 +4801,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -4723,7 +4828,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4738,7 +4843,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -4780,7 +4885,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -4803,7 +4908,7 @@
           {
             "show": false,
             "seriesPosition": "Right",
-            "seriesFontFamily": "Arial",
+            "seriesFontFamily": "Segoe UI",
             "textSize": 10,
             "bold": false,
             "italic": false,
@@ -4874,7 +4979,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -4883,7 +4988,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -4961,7 +5066,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5017,7 +5122,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -5046,7 +5151,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -5066,7 +5171,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5082,7 +5187,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -5125,7 +5230,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5185,7 +5290,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5194,7 +5299,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -5272,7 +5377,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5328,7 +5433,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -5351,7 +5456,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 45,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5367,7 +5472,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5392,7 +5497,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -5401,8 +5506,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5411,7 +5516,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -5454,19 +5559,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -5489,7 +5594,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5545,13 +5650,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -5574,7 +5690,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -5594,7 +5710,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5608,7 +5724,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "gridlineColor": {
               "solid": {
                 "color": "#F3F2F1"
@@ -5630,7 +5746,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5645,7 +5761,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -5668,7 +5784,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5708,7 +5824,7 @@
             },
             "totalFill": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "otherFill": {
@@ -5742,7 +5858,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5751,7 +5867,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -5829,7 +5945,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -5885,7 +6001,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -5907,7 +6023,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5937,7 +6053,7 @@
             "percentageLabelPrecision": 0,
             "labelPosition": "InsideCenter",
             "fontSize": 10,
-            "fontFamily": "Arial"
+            "fontFamily": "Segoe UI"
           }
         ],
         "percentBarLabel": [
@@ -5949,7 +6065,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5979,7 +6095,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -5988,7 +6104,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6066,7 +6182,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6122,7 +6238,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -6151,7 +6267,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6171,7 +6287,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6184,7 +6300,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -6210,7 +6326,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6225,7 +6341,7 @@
               }
             },
             "titleFontSize": 12,
-            "titleFontFamily": "Arial",
+            "titleFontFamily": "Segoe UI",
             "titleBold": false,
             "titleItalic": false,
             "titleUnderline": false,
@@ -6282,7 +6398,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6331,7 +6447,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -6340,7 +6456,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6418,7 +6534,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6474,7 +6590,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -6497,7 +6613,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6517,7 +6633,7 @@
             "labelPrecision": 2,
             "percentageLabelPrecision": 2,
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "position": "outside",
             "overflow": true,
             "background": "auto"
@@ -6552,7 +6668,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -6561,7 +6677,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6639,7 +6755,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6695,7 +6811,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -6718,7 +6834,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6738,7 +6854,7 @@
             "labelPrecision": 2,
             "percentageLabelPrecision": 2,
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "position": "outside",
             "overflow": true,
             "background": "auto"
@@ -6773,7 +6889,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -6782,7 +6898,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6860,7 +6976,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6916,7 +7032,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -6939,7 +7055,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -6956,7 +7072,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -6972,7 +7088,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7002,7 +7118,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7011,7 +7127,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7089,7 +7205,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7145,7 +7261,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -7168,7 +7284,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7201,7 +7317,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7276,7 +7392,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7285,7 +7401,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7363,7 +7479,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7419,7 +7535,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -7442,7 +7558,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7500,7 +7616,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7509,7 +7625,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7587,7 +7703,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7643,7 +7759,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -7679,7 +7795,7 @@
                 "color": "#605E5C"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7738,7 +7854,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7747,7 +7863,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -7825,7 +7941,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7881,7 +7997,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -7905,12 +8021,12 @@
           {
             "fill": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "target": {
               "solid": {
-                "color": "#12239E"
+                "color": "#1C355E"
               }
             }
           }
@@ -7925,7 +8041,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7942,7 +8058,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7959,7 +8075,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -7980,7 +8096,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -7989,8 +8105,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -7999,7 +8115,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -8042,19 +8158,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -8077,7 +8193,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -8133,13 +8249,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -8156,7 +8283,7 @@
             "labelDisplayUnits": 0,
             "labelPrecision": 0,
             "fontSize": 45,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -8172,7 +8299,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -8186,7 +8313,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial"
+            "fontFamily": "Segoe UI"
           }
         ],
         "card": [
@@ -8237,7 +8364,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -8246,7 +8373,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -8347,7 +8474,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -8378,7 +8505,7 @@
             "indicatorDisplayUnits": 0,
             "indicatorPrecision": 0,
             "fontSize": 45,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -8407,7 +8534,7 @@
                 "color": "#252423"
               }
             },
-            "goalFontFamily": "Arial",
+            "goalFontFamily": "Segoe UI",
             "fontSize": 12,
             "distanceLabel": "Value, percent",
             "labelPrecision": 2,
@@ -8416,7 +8543,7 @@
                 "color": "#252423"
               }
             },
-            "distanceFontFamily": "Arial",
+            "distanceFontFamily": "Segoe UI",
             "titleFontSize": 12
           }
         ],
@@ -8448,7 +8575,7 @@
                 "color": "#252423"
               }
             },
-            "lastDateFontFamily": "Arial",
+            "lastDateFontFamily": "Segoe UI",
             "fontSize": 10
           }
         ],
@@ -8476,7 +8603,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -8485,7 +8612,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -8586,7 +8713,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -8637,7 +8764,7 @@
             "show": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -8646,34 +8773,25 @@
               }
             },
             "outline": "None",
-            "outlineStyle": 0,
-            "textSize": 12,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "textSize": 9,
+            "fontFamily": "Segoe UI Semibold"
           }
         ],
         "items": [
           {
             "fontColor": {
               "solid": {
-                "color": "#605E5C"
+                "color": "#0F172A"
               }
             },
             "background": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#F8FAFC"
               }
             },
-            "padding": 0,
             "outline": "None",
-            "outlineStyle": 0,
-            "textSize": 10,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "textSize": 9,
+            "fontFamily": "Segoe UI"
           }
         ],
         "padding": [
@@ -8690,7 +8808,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -8699,8 +8817,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -8709,7 +8827,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -8752,19 +8870,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualHeader": [
@@ -8810,7 +8928,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -8831,6 +8949,17 @@
             "transparency": 5,
             "page": "Auto"
           }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
+          }
         ]
       }
     },
@@ -8844,57 +8973,39 @@
         "grid": [
           {
             "gridVertical": false,
-            "gridVerticalColor": {
-              "solid": {
-                "color": "#F3F2F1"
-              }
-            },
-            "gridVerticalWeight": 1,
-            "gridHorizontal": false,
+            "gridHorizontal": true,
             "gridHorizontalColor": {
               "solid": {
-                "color": "#F3F2F1"
+                "color": "#E2E8F0"
               }
             },
             "gridHorizontalWeight": 1,
-            "rowPadding": 1,
+            "rowPadding": 3,
             "outlineColor": {
               "solid": {
-                "color": "#426871"
+                "color": "#005EB8"
               }
             },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
-            "textSize": 10,
-            "imageHeight": 75
+            "outlineWeight": 1
           }
         ],
         "columnHeaders": [
           {
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#FFFFFF"
               }
             },
             "backColor": {
               "solid": {
-                "color": "#FFFFFF"
+                "color": "#1C355E"
               }
             },
-            "outlineColor": {
-              "solid": {
-                "color": "#426871"
-              }
-            },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
+            "outline": "BottomOnly",
             "autoSizeColumnWidth": true,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontSize": 10,
-            "alignment": "Auto",
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 9.5,
+            "alignment": "Left",
             "wordWrap": true
           }
         ],
@@ -8902,7 +9013,7 @@
           {
             "fontColorPrimary": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backColorPrimary": {
@@ -8912,28 +9023,17 @@
             },
             "fontColorSecondary": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backColorSecondary": {
               "solid": {
-                "color": "#F3F2F1"
+                "color": "#F8FAFC"
               }
             },
-            "outlineColor": {
-              "solid": {
-                "color": "#426871"
-              }
-            },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
-            "urlIcon": false,
-            "wordWrap": true,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontSize": 10
+            "fontFamily": "Segoe UI",
+            "fontSize": 9,
+            "wordWrap": false
           }
         ],
         "total": [
@@ -8943,7 +9043,7 @@
                 "color": "#252423"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -8976,7 +9076,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -8985,8 +9085,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -8995,7 +9095,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -9038,19 +9138,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -9073,7 +9173,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -9129,13 +9229,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -9150,59 +9261,39 @@
         "grid": [
           {
             "gridVertical": false,
-            "gridVerticalColor": {
-              "solid": {
-                "color": "#F3F2F1"
-              }
-            },
-            "gridVerticalWeight": 1,
-            "gridHorizontal": false,
+            "gridHorizontal": true,
             "gridHorizontalColor": {
               "solid": {
-                "color": "#F3F2F1"
+                "color": "#E2E8F0"
               }
             },
             "gridHorizontalWeight": 1,
-            "rowPadding": 1,
+            "rowPadding": 3,
             "outlineColor": {
               "solid": {
-                "color": "#426871"
+                "color": "#005EB8"
               }
             },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
-            "textSize": 10,
-            "imageHeight": 75
+            "outlineWeight": 1
           }
         ],
         "columnHeaders": [
           {
-            "titleAlignment": "Auto",
-            "urlIcon": false,
             "fontColor": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "backColor": {
               "solid": {
                 "color": "#FFFFFF"
               }
             },
-            "outlineColor": {
+            "backColor": {
               "solid": {
-                "color": "#426871"
+                "color": "#1C355E"
               }
             },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
+            "outline": "BottomOnly",
             "autoSizeColumnWidth": true,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontSize": 10,
-            "alignment": "Auto",
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 9.5,
+            "alignment": "Left",
             "wordWrap": true
           }
         ],
@@ -9210,7 +9301,7 @@
           {
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backColor": {
@@ -9218,39 +9309,17 @@
                 "color": "#FFFFFF"
               }
             },
-            "outlineColor": {
-              "solid": {
-                "color": "#426871"
-              }
-            },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 9,
             "stepped": true,
-            "steppedLayoutIndentation": 10,
-            "urlIcon": false,
-            "wordWrap": true,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontSize": 10,
-            "alignment": "Auto",
-            "showExpandCollapseButtons": true,
-            "expandCollapseButtonsColor": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "expandCollapseButtonsSize": 8
+            "wordWrap": true
           }
         ],
         "values": [
           {
-            "bandedRowHeaders": true,
-            "valuesOnRow": false,
             "fontColorPrimary": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backColorPrimary": {
@@ -9260,28 +9329,17 @@
             },
             "fontColorSecondary": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "backColorSecondary": {
               "solid": {
-                "color": "#F3F2F1"
+                "color": "#F8FAFC"
               }
             },
-            "outlineColor": {
-              "solid": {
-                "color": "#426871"
-              }
-            },
-            "outlineWeight": 1,
-            "outlineStyle": 0,
-            "urlIcon": false,
-            "wordWrap": true,
-            "fontFamily": "Arial",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontSize": 10
+            "fontFamily": "Segoe UI",
+            "fontSize": 9,
+            "wordWrap": false
           }
         ],
         "subTotals": [
@@ -9293,7 +9351,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": true,
             "italic": false,
             "underline": false,
@@ -9339,7 +9397,7 @@
                 "color": "#252423"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": true,
             "italic": false,
             "underline": false,
@@ -9359,7 +9417,7 @@
                 "color": "#252423"
               }
             },
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": true,
             "italic": false,
             "underline": false,
@@ -9385,7 +9443,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -9394,8 +9452,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -9404,7 +9462,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -9447,19 +9505,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -9482,7 +9540,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -9538,13 +9596,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -9567,7 +9636,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -9576,7 +9645,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -9677,7 +9746,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -9719,7 +9788,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -9728,7 +9797,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -9842,7 +9911,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -9868,7 +9937,7 @@
           {
             "primaryColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "primaryFontColor": {
@@ -9902,7 +9971,7 @@
           {
             "defaultColor": {
               "solid": {
-                "color": "#12239E"
+                "color": "#1C355E"
               }
             },
             "referenceLineColor": {
@@ -9936,7 +10005,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -9945,7 +10014,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -10059,7 +10128,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -10083,7 +10152,7 @@
             "density": "default",
             "connectorDefaultColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "accentColor": {
@@ -10101,12 +10170,12 @@
           {
             "positiveBarColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "negativeBarColor": {
               "solid": {
-                "color": "#12239E"
+                "color": "#1C355E"
               }
             },
             "dataBarBackgroundColor": {
@@ -10128,12 +10197,12 @@
               }
             },
             "categoryLabelFontSize": 10,
-            "categoryLabelFontFamily": "Arial"
+            "categoryLabelFontFamily": "Segoe UI"
           }
         ],
         "dataLabels": [
           {
-            "dataLabelFontFamily": "Arial",
+            "dataLabelFontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -10154,7 +10223,7 @@
                 "color": "#FFFFFF"
               }
             },
-            "levelTitleFontFamily": "Arial",
+            "levelTitleFontFamily": "Segoe UI",
             "levelTitleFontSize": 12,
             "levelTitleFontColor": {
               "solid": {
@@ -10195,7 +10264,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -10204,7 +10273,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -10282,7 +10351,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -10338,7 +10407,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -10364,7 +10433,7 @@
               }
             },
             "questionFontSize": 10,
-            "questionFontFamily": "Arial",
+            "questionFontFamily": "Segoe UI",
             "acceptedColor": {
               "solid": {
                 "color": "#0078D4"
@@ -10391,7 +10460,7 @@
               }
             },
             "restatementFontSize": 9,
-            "restatementFontFamily": "Arial"
+            "restatementFontFamily": "Segoe UI"
           }
         ],
         "suggestions": [
@@ -10403,7 +10472,7 @@
               }
             },
             "headerFontSize": 12,
-            "headerFontFamily": "Arial",
+            "headerFontFamily": "Segoe UI",
             "cardBackground": {
               "solid": {
                 "color": "#FFFFFF"
@@ -10411,11 +10480,11 @@
             },
             "cardFontColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "cardFontSize": 10,
-            "cardFontFamily": "Arial"
+            "cardFontFamily": "Segoe UI"
           }
         ],
         "padding": [
@@ -10442,7 +10511,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -10451,7 +10520,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -10552,7 +10621,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -10613,7 +10682,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -10622,7 +10691,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -10700,7 +10769,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -10756,7 +10825,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -10783,7 +10852,7 @@
             "titleWrap": true,
             "fontColor": {
               "solid": {
-                "color": "#252423"
+                "color": "#1C355E"
               }
             },
             "background": {
@@ -10792,8 +10861,8 @@
               }
             },
             "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold",
             "bold": false,
             "italic": false,
             "underline": false
@@ -10802,7 +10871,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -10845,19 +10914,19 @@
         ],
         "dropShadow": [
           {
-            "show": false,
+            "show": true,
             "color": {
               "solid": {
-                "color": "#252423"
+                "color": "#0F172A"
               }
             },
             "position": "Outer",
             "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
+            "shadowSpread": 0,
+            "shadowBlur": 8,
             "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "shadowDistance": 2,
+            "transparency": 88
           }
         ],
         "visualTooltip": [
@@ -10880,7 +10949,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -10936,13 +11005,24 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
               }
             },
             "transparency": 5
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#CBD5E1"
+              }
+            },
+            "radius": 8
           }
         ]
       }
@@ -11004,7 +11084,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -11013,7 +11093,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -11091,7 +11171,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -11133,7 +11213,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -11170,7 +11250,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -11179,7 +11259,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -11280,7 +11360,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -11309,7 +11389,7 @@
         "*": [
           {
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "wordWrap": true,
             "color": {
               "solid": {
@@ -11342,7 +11422,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -11351,7 +11431,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -11474,7 +11554,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -11510,7 +11590,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -11729,7 +11809,7 @@
             },
             "fillColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0
@@ -11743,7 +11823,7 @@
             },
             "fillColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0
@@ -11757,7 +11837,7 @@
             },
             "fillColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0
@@ -11771,7 +11851,7 @@
             },
             "fillColor": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0
@@ -11842,7 +11922,7 @@
             "$id": "default",
             "color": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0,
@@ -11852,7 +11932,7 @@
             "$id": "hover",
             "color": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0,
@@ -11862,7 +11942,7 @@
             "$id": "selected",
             "color": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0,
@@ -11872,7 +11952,7 @@
             "$id": "disabled",
             "color": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0,
@@ -11909,13 +11989,13 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial"
+            "fontFamily": "Segoe UI"
           }
         ],
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -11993,7 +12073,7 @@
               }
             },
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -12049,7 +12129,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -12109,7 +12189,7 @@
               }
             },
             "fontSize": 10,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false,
@@ -12154,7 +12234,7 @@
             "id": "default",
             "color": {
               "solid": {
-                "color": "#118DFF"
+                "color": "#005EB8"
               }
             },
             "transparency": 0,
@@ -12192,7 +12272,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -12201,7 +12281,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -12315,7 +12395,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"
@@ -12357,7 +12437,7 @@
             },
             "alignment": "left",
             "fontSize": 12,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "bold": false,
             "italic": false,
             "underline": false
@@ -12366,7 +12446,7 @@
         "subTitle": [
           {
             "show": false,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "fontSize": 10,
             "bold": false,
             "italic": false,
@@ -12467,7 +12547,7 @@
               }
             },
             "fontSize": 9,
-            "fontFamily": "Arial",
+            "fontFamily": "Segoe UI",
             "background": {
               "solid": {
                 "color": "#333333"

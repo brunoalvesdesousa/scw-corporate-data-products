@@ -79,6 +79,51 @@
             }
           ]
         }
+      },
+      {
+        "name": "scw_sec_filter_0001",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Is_Retired"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "scw_sec_filter_0002",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Work_Activity_Priority"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "scw_sec_filter_0003",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "work_activity_name_oppnumber"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
       }
     ]
   },

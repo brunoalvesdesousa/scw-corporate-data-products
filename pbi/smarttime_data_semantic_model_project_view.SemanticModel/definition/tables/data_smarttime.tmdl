@@ -492,6 +492,86 @@ table data_smarttime
 
 		changedProperty = FormatString
 
+	/// SCW RAG pastel background colour hex for Timesheet Submission Compliance (>=85% Green, 50-84% Amber, <50% Red)
+	measure calc_compliance_rag_bg =
+			VAR _val = [calc_compliance]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_val), BLANK(),
+			        _val >= 0.85, "#DCFCE7",
+			        _val >= 0.50, "#FEF3C7",
+			        "#FEE2E2"
+			    )
+		displayFolder: _Calculations\Compliance
+		lineageTag: a1000001-0001-4000-8000-000000000001
+
+	/// SCW RAG foreground/bar colour hex for Timesheet Submission Compliance (>=85% Green, 50-84% Amber, <50% Red)
+	measure calc_compliance_rag_fg =
+			VAR _val = [calc_compliance]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_val), BLANK(),
+			        _val >= 0.85, "#166534",
+			        _val >= 0.50, "#92400E",
+			        "#991B1B"
+			    )
+		displayFolder: _Calculations\Compliance
+		lineageTag: a1000001-0002-4000-8000-000000000002
+
+	/// Inline SCW SVG progress bar for Timesheet Submission Compliance %
+	measure svg_compliance_progress =
+			VAR _raw = [calc_compliance]
+			VAR _pct = MIN(MAX(COALESCE(_raw, 0), 0), 1)
+			VAR _w = INT(_pct * 72)
+			VAR _col =
+			    SWITCH(
+			        TRUE(),
+			        _raw >= 0.85, "%2378BE20",
+			        _raw >= 0.50, "%23D9B300",
+			        "%23D64554"
+			    )
+			VAR _lbl = FORMAT(_raw, "0.0%")
+			RETURN
+			    IF(
+			        ISBLANK(_raw),
+			        BLANK(),
+			        "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='125' height='20' viewBox='0 0 125 20'>" &
+			        "<rect x='2' y='5' width='72' height='10' rx='5' fill='%23E2E8F0'/>" &
+			        "<rect x='2' y='5' width='" & _w & "' height='10' rx='5' fill='" & _col & "'/>" &
+			        "<text x='80' y='14' font-family='Segoe UI, sans-serif' font-size='11' font-weight='600' fill='%230F172A'>" & _lbl & "</text></svg>"
+			    )
+		displayFolder: _Calculations\Compliance
+		lineageTag: a1000001-0007-4000-8000-000000000007
+		dataCategory: ImageUrl
+
+	/// Inline SCW SVG progress bar for Billable Utilisation %
+	measure svg_billable_utilisation_progress =
+			VAR _raw = [calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours]
+			VAR _pct = MIN(MAX(COALESCE(_raw, 0), 0), 1)
+			VAR _w = INT(_pct * 72)
+			VAR _col =
+			    SWITCH(
+			        TRUE(),
+			        _raw >= 0.70, "%23005EB8",
+			        _raw >= 0.40, "%2300A9CE",
+			        "%23768692"
+			    )
+			VAR _lbl = FORMAT(_raw, "0.0%")
+			RETURN
+			    IF(
+			        ISBLANK(_raw),
+			        BLANK(),
+			        "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='125' height='20' viewBox='0 0 125 20'>" &
+			        "<rect x='2' y='5' width='72' height='10' rx='5' fill='%23E2E8F0'/>" &
+			        "<rect x='2' y='5' width='" & _w & "' height='10' rx='5' fill='" & _col & "'/>" &
+			        "<text x='80' y='14' font-family='Segoe UI, sans-serif' font-size='11' font-weight='600' fill='%230F172A'>" & _lbl & "</text></svg>"
+			    )
+		displayFolder: _Calculations\Finance
+		lineageTag: a1000001-0009-4000-8000-000000000009
+		dataCategory: ImageUrl
+
 	column tmp_Id
 		dataType: int64
 		formatString: 0
