@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9b72daa98daff1790ae1",
   "position": {
     "x": 290,
@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 68,
     "width": 216,
-    "tabOrder": 4000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -168,7 +168,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "8D"
                 }
               }
             },
@@ -193,10 +193,10 @@
                 }
               }
             },
-            "title": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Activity Type \u25b8 Work Activity'"
+                  "Value": "'Act Type, Subtype and WA'"
                 }
               }
             }

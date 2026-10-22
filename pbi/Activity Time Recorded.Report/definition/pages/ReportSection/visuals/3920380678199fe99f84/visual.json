@@ -187,13 +187,6 @@
                   "Value": "0D"
                 }
               }
-            },
-            "title": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Activity Date'"
-                }
-              }
             }
           }
         }

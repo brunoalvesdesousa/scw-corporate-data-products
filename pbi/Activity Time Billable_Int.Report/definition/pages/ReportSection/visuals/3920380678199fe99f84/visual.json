@@ -6,7 +6,8 @@
     "y": 0,
     "z": 1000,
     "height": 68,
-    "width": 280
+    "width": 280,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -55,13 +56,6 @@
       "data": [
         {
           "properties": {
-            "mode": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Between'"
-                }
-              }
-            },
             "startDate": {
               "expr": {
                 "Literal": {
@@ -73,6 +67,13 @@
               "expr": {
                 "Literal": {
                   "Value": "datetime'2027-03-31T00:00:00'"
+                }
+              }
+            },
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
                 }
               }
             }
@@ -185,13 +186,6 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
-                }
-              }
-            },
-            "title": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Activity Date'"
                 }
               }
             }
@@ -588,5 +582,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "764b950564794476f9f9"
+  "parentGroupName": "764b950564794476f9f9",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5182bdb8f1b3e12a0bf3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "Activity_Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

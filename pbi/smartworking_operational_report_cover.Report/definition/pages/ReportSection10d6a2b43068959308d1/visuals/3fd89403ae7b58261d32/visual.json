@@ -87,7 +87,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Line Manager View\u00a0",
+                    "value": "Line Manager View ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
@@ -97,7 +97,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ability to see your direct reports time sheet submissions.\u00a0 Also able to see if staff member files by the due date or is yet to file\u00a0",
+                    "value": "Ability to see your direct reports time sheet submissions.  Also able to see if staff member files by the due date or is yet to file ",
                     "textStyle": {
                       "color": "#323130"
                     }
@@ -107,7 +107,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Directorate View\u00a0",
+                    "value": "Directorate View ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
@@ -117,7 +117,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ability to see the whole directorates time sheet submissions.\u00a0 Also able to see if staff member files by the due date or is yet to file\u00a0",
+                    "value": "Ability to see the whole directorates time sheet submissions.  Also able to see if staff member files by the due date or is yet to file ",
                     "textStyle": {
                       "color": "#323130"
                     }
@@ -127,7 +127,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Cost Centre View\u00a0",
+                    "value": "Cost Centre View ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
@@ -137,7 +137,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ability to see cost centres time sheet submissions.\u00a0 Also able to see if staff member files by the due date or is yet to file\u00a0",
+                    "value": "Ability to see cost centres time sheet submissions.  Also able to see if staff member files by the due date or is yet to file ",
                     "textStyle": {
                       "color": "#323130"
                     }
@@ -147,7 +147,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Project View\u00a0",
+                    "value": "Project View ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
@@ -157,7 +157,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ability to see time recorded against a specific project (or programme of projects), split between billable hours and non-invoiceable time.\u00a0 Can also see who\u2019s been working on the project and if their time sheet submissions are up to date\u00a0",
+                    "value": "Ability to see time recorded against a specific project (or programme of projects), split between billable hours and non-invoiceable time.  Can also see who’s been working on the project and if their time sheet submissions are up to date ",
                     "textStyle": {
                       "color": "#323130"
                     }
@@ -167,7 +167,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Utilisation View\u00a0",
+                    "value": "Utilisation View ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
@@ -177,7 +177,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ability to see members of your cost centre and their time recorded categorised against the business plan categories.\u00a0 In time this can be mapped against income forecasting apportionments\u00a0",
+                    "value": "Ability to see members of your cost centre and their time recorded categorised against the business plan categories.  In time this can be mapped against income forecasting apportionments ",
                     "textStyle": {
                       "color": "#323130"
                     }

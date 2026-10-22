@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f80fa8c8014b2254fc33",
   "position": {
     "x": 16,
@@ -928,7 +928,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9.5D"
+                  "Value": "8D"
                 }
               }
             },
@@ -939,17 +939,17 @@
                 }
               }
             },
-            "outline": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomOnly'"
-                }
-              }
-            },
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -1069,7 +1069,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "background": [
         {
@@ -1356,6 +1355,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

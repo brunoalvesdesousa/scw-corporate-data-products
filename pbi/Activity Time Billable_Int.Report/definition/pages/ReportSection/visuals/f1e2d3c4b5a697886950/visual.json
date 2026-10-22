@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f1e2d3c4b5a697886950",
   "position": {
     "x": 16,
     "y": 144,
     "z": 6500,
-    "width": 1408,
     "height": 74,
+    "width": 1408,
     "tabOrder": 1500
   },
   "visual": {
@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "Sum(data_smarttime.Cost)",
-              "nativeQueryRef": "Total Recorded Cost (\u00a3)",
-              "displayName": "Total Recorded Cost (\u00a3)"
+              "nativeQueryRef": "Total Recorded Cost (£)",
+              "displayName": "Total Recorded Cost (£)"
             }
           ]
         }
@@ -531,5 +531,80 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d8bc1655cdb966ac862",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Activity_Hours"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ea1e4007bdf00b592167",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "calc_smarttime_days"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a3c4d665b353066c68a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_smarttime_days_invoiceable"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "00919568e706e90e1c97",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "data_smarttime"
+                  }
+                },
+                "Property": "Cost"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

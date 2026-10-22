@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e844e9b07978a2cce500",
   "position": {
     "x": 0,
-    "y": 336,
+    "y": 376,
     "z": 2000,
-    "height": 136,
-    "width": 512
+    "height": 104,
+    "width": 504
   },
   "visualGroup": {
     "displayName": "Latest Refresh& Data periods",

@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "8e1e70de12003d036089",
   "position": {
-    "x": 248,
+    "x": 244.125,
     "y": 0,
     "z": 2000,
-    "height": 72,
-    "width": 264,
-    "tabOrder": 3000
+    "height": 55.058823529411768,
+    "width": 259.875
   },
   "visual": {
     "visualType": "card",
@@ -165,7 +164,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -204,28 +203,28 @@
             "shadowDistance": {
               "expr": {
                 "Literal": {
-                  "Value": "2L"
+                  "Value": "10L"
                 }
               }
             },
             "shadowBlur": {
               "expr": {
                 "Literal": {
-                  "Value": "8L"
+                  "Value": "10L"
                 }
               }
             },
             "shadowSpread": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
+                  "Value": "3L"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "88L"
+                  "Value": "70L"
                 }
               }
             }

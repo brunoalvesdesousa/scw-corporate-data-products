@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "13e0a5d29f43af63d98b",
   "position": {
     "x": 968,
@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 68,
     "width": 212,
-    "tabOrder": 6000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -65,10 +65,35 @@
               "data_smarttime.person_full_name"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "Person_Assignment_Category"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Permanent'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -169,7 +194,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "8D"
                 }
               }
             },
@@ -194,10 +219,10 @@
                 }
               }
             },
-            "title": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Category \u25b8 Staff Member'"
+                  "Value": "'Assignment Category, Staff'"
                 }
               }
             }

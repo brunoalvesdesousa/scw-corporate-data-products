@@ -87,8 +87,8 @@
                 }
               },
               "queryRef": "Sum(data_smarttime.Cost)",
-              "nativeQueryRef": "Total Recorded Cost (\u00a3)",
-              "displayName": "Total Recorded Cost (\u00a3)"
+              "nativeQueryRef": "Total Recorded Cost (£)",
+              "displayName": "Total Recorded Cost (£)"
             }
           ]
         }
