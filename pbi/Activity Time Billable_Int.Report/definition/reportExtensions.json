@@ -9,7 +9,6 @@
           "name": "txt_smarttime_updatedat",
           "dataType": "Double",
           "expression": "\"Latest SmartTime data as at: \" & data_smarttime[calc_smarttime_latestdate]",
-          "formatString": "General Number",
           "references": {
             "measures": [
               {
