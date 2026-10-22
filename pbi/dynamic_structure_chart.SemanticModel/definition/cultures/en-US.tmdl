@@ -2,8 +2,115 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "support_rls_hierarchy_gold.personfk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_hierarchy_gold",
+			          "ConceptualProperty": "PersonFk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_hierarchy_gold.supervisorid_corrected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_hierarchy_gold",
+			          "ConceptualProperty": "supervisorid_corrected"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "manager ID": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_hierarchy_gold.fullname": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_hierarchy_gold",
+			          "ConceptualProperty": "fullname"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "full name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_hierarchy_gold.level3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_hierarchy_gold",
+			          "ConceptualProperty": "Level3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L3": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "support_rls_hierarchy_gold.level6": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_hierarchy_gold",
+			          "ConceptualProperty": "Level6"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L6": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
 			}
 		contentType: json
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY24SU10",
@@ -47,8 +47,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "nhs_white_transparent_bg8551789625227306.png",
-          "path": "nhs_white_transparent_bg8551789625227306.png",
+          "name": "dynamic_structure_chart8745851964260057.jpg",
+          "path": "dynamic_structure_chart8745851964260057.jpg",
           "type": "Image"
         },
         {
@@ -57,9 +57,20 @@
           "type": "Image"
         },
         {
-          "name": "dynamic_structure_chart8745851964260057.jpg",
-          "path": "dynamic_structure_chart8745851964260057.jpg",
+          "name": "nhs_white_transparent_bg8551789625227306.png",
+          "path": "nhs_white_transparent_bg8551789625227306.png",
           "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.pbiviz.json",
+          "path": "scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD.pbiviz.json",
+          "type": "CustomVisualMetadata"
         }
       ]
     }

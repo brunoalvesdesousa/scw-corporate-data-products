@@ -1,0 +1,200 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a4597cc3da9b6d171820",
+  "position": {
+    "x": 16,
+    "y": 88,
+    "z": 1001,
+    "height": 616,
+    "width": 1248,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "scwOrgChartB8A4E9C14F2D48E79A1234567890ABCD",
+    "query": {
+      "queryState": {
+        "employeeId": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "PersonFk"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.PersonFk",
+              "nativeQueryRef": "ID",
+              "displayName": "ID"
+            }
+          ]
+        },
+        "managerId": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "supervisorid_corrected"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.supervisorid_corrected",
+              "nativeQueryRef": "manager ID",
+              "displayName": "manager ID"
+            }
+          ]
+        },
+        "name": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "fullname"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.fullname",
+              "nativeQueryRef": "full name",
+              "displayName": "full name"
+            }
+          ]
+        },
+        "Extra": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "Level3"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.Level3",
+              "nativeQueryRef": "L3",
+              "displayName": "L3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_rls_hierarchy_gold"
+                    }
+                  },
+                  "Property": "Level6"
+                }
+              },
+              "queryRef": "support_rls_hierarchy_gold.Level6",
+              "nativeQueryRef": "L6",
+              "displayName": "L6"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4fd7b84dfc3489da1820",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "PersonFk"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b2e86e9d9d5b27e7f2d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "supervisorid_corrected"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ce292dd25750efdf24d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "fullname"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d0688ac85ba83109b4e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "Level3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a710a5f3b4bb283db7ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "support_rls_hierarchy_gold"
+              }
+            },
+            "Property": "Level6"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
