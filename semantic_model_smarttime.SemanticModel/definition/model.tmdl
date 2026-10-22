@@ -1,0 +1,42 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["data_oracle_agency_cost_rates","data_oracle_staff_cost_exceptions","data_smarttime","support_bank_holidays","support_entraid_groups","support_entraid_users","support_rls_dynamic","support_rls_dynamic_merged","support_rls_dynamic_missing","teams_rls_static","support_rls_hierarchy_gold","base_date","base_metadata_dynamic_structure_chart","base_metadata_smarttime"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation __TEdtr = 1
+
+ref table data_oracle_agency_cost_rates
+ref table data_oracle_staff_cost_exceptions
+ref table data_smarttime
+ref table support_bank_holidays
+ref table support_entraid_groups
+ref table support_entraid_users
+ref table support_rls_dynamic
+ref table support_rls_dynamic_merged
+ref table support_rls_dynamic_missing
+ref table teams_rls_static
+ref table support_rls_hierarchy_gold
+ref table RLS_Metadata
+ref table base_date
+ref table base_metadata_dynamic_structure_chart
+ref table base_metadata_smarttime
+
+ref role 'service line'
+ref role person_cost_centre_l3
+ref role person_cost_centre_l6
+ref role project
+ref role utilisation
+ref role person_cost_centre_l4
+
+ref cultureInfo en-GB
+

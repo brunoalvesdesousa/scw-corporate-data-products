@@ -1,0 +1,131 @@
+table support_rls_static
+	lineageTag: 16386c9d-a96a-4ac3-83a5-d6f443148e7a
+
+	column PersonFk
+		dataType: string
+		lineageTag: fd36086c-4373-4873-9772-522aa8cb9714
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		lineageTag: a71dd56d-a9c3-4aa6-a6de-a0ef4f85ab86
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		lineageTag: f310d8a3-86d5-4868-ad93-65b67bcdce98
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 20d7c6c3-8ca3-4422-904c-7583e3eb2808
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: 78ab3a54-abca-440b-a7b6-4a9b93a37fc4
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access CostCentre'
+		dataType: string
+		lineageTag: 6315cbb7-2238-462c-897b-afad8b203150
+		summarizeBy: none
+		sourceColumn: Access CostCentre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Level3'
+		dataType: string
+		lineageTag: aa817a4d-cca4-41bf-8652-bd916722fe16
+		summarizeBy: none
+		sourceColumn: Access Level3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access L4'
+		dataType: string
+		lineageTag: 0a3f90d9-c8ac-4578-b6dc-5d3a4bf534f1
+		summarizeBy: none
+		sourceColumn: Access L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Level6'
+		dataType: string
+		lineageTag: 1b4d6135-13b0-4b31-beeb-0e0a8fa7f22b
+		summarizeBy: none
+		sourceColumn: Access Level6
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisorId
+		dataType: string
+		lineageTag: b3302711-e7af-4bef-b05f-a304059b8b18
+		summarizeBy: none
+		sourceColumn: supervisorId
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisor
+		dataType: string
+		lineageTag: 63db9e32-0a9a-4824-be2a-f715952510be
+		summarizeBy: none
+		sourceColumn: supervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'scwcsu email'
+		dataType: string
+		lineageTag: b16abeb9-5682-4c8b-98a5-c372adc4c39d
+		summarizeBy: none
+		sourceColumn: scwcsu email
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: f11d35a3-8abd-48ec-9c8e-87863a3c6d7c
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'pg group'
+		dataType: string
+		lineageTag: 41b30335-6902-4fbf-9748-caa527a70123
+		summarizeBy: none
+		sourceColumn: pg group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_static = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"704dee3e-0fbd-4f0a-9f73-6165e7c95516" = Workspaces{[workspaceId="704dee3e-0fbd-4f0a-9f73-6165e7c95516"]}[Data],
+				    #"64502ccd-a6f4-4611-be9e-8cc57eeaf7dc" = #"704dee3e-0fbd-4f0a-9f73-6165e7c95516"{[dataflowId="64502ccd-a6f4-4611-be9e-8cc57eeaf7dc"]}[Data],
+				    Query_ = #"64502ccd-a6f4-4611-be9e-8cc57eeaf7dc"{[entity="Query",version=""]}[Data]
+				in
+				    Query_
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

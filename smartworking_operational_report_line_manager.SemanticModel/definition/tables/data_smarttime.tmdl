@@ -1,0 +1,1154 @@
+table data_smarttime
+	lineageTag: 3979a9f8-5a57-4072-a722-c5f619d009ac
+	sourceLineageTag: 6a6dcd86-d570-40da-a3a1-b6501c02fcf1
+
+	measure calc_workingdays = EXTERNALMEASURE("calc_workingdays", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		displayFolder: _Calculations
+		lineageTag: 666dc89a-f4ed-4f85-902d-97a585b27192
+		sourceLineageTag: 65de27dd-3935-4d77-9ae3-353315e4976d
+		dataCategory: Uncategorized
+
+	measure calc_contractedhours = EXTERNALMEASURE("calc_contractedhours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 701fe803-5e6f-4598-8e6c-f5863021871a
+		sourceLineageTag: 42d8dd35-d157-453a-89d6-13ce5b65d23a
+		dataCategory: Uncategorized
+
+	measure calc_smarttime_days_invoiceable = EXTERNALMEASURE("calc_smarttime_days_invoiceable", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: c3a7b464-8cd9-46dc-877b-73fd377e6a2a
+		sourceLineageTag: 13482bb4-0e9c-4ff1-a3fb-cbf819c40290
+		dataCategory: Uncategorized
+
+	measure calc_smarttime_days_non_invoiceable = EXTERNALMEASURE("calc_smarttime_days_non_invoiceable", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: #,0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: 574507d0-bd76-454a-ad9b-f766433d6a63
+		sourceLineageTag: aa7572cf-3c4d-49ce-a8b1-916d16f404a9
+		dataCategory: Uncategorized
+
+	measure calc_NonWorkingHours = EXTERNALMEASURE("calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: b029bde9-0214-4070-96e9-3099c884a805
+		sourceLineageTag: 77b644b0-9c4e-4c71-904e-77d296d7c120
+		dataCategory: Uncategorized
+
+	measure 'calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 655fb33c-aefb-4971-ba12-f01de9bcda07
+		sourceLineageTag: bf071590-b9b1-4e4b-8d4e-b0799c3ddcfe
+		dataCategory: Uncategorized
+
+	measure 'Activity_Hours minus calc_contractedhours 2' = EXTERNALMEASURE("Activity_Hours minus calc_contractedhours 2", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 7a0365df-b0a1-43db-91f4-945f6296a1b4
+		sourceLineageTag: 70b7de60-daf0-49b3-a71e-de8530a24f4d
+		dataCategory: Uncategorized
+
+	measure 'calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 0367e545-f98d-4327-80cd-0c685ebf0c20
+		sourceLineageTag: 47dabb04-e2c6-4aa3-96f6-d356366ad66b
+		dataCategory: Uncategorized
+
+	measure calc_BillableHours = EXTERNALMEASURE("calc_BillableHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: a2546b21-496c-4ea8-a830-e90c414de225
+		sourceLineageTag: bd3e50f3-a335-417c-b47c-fb1ab57e002e
+		dataCategory: Uncategorized
+
+	measure 'calc_CORE BAU Hours' = EXTERNALMEASURE("calc_CORE BAU Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: efc3e87d-6b7f-4fab-af83-159c06e6e440
+		sourceLineageTag: e35474ea-76e5-4cd8-acfa-4d696f1b9751
+		dataCategory: Uncategorized
+
+	measure 'calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 4cf48703-0a4d-43d7-b1ed-3880681c1f1c
+		sourceLineageTag: 10e355e0-d24a-4ab9-9d2a-44ea5e23d79c
+		dataCategory: Uncategorized
+
+	measure 'calc_CORE DisccretionaryHours' = EXTERNALMEASURE("calc_CORE DisccretionaryHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 331e3b1c-263f-49af-ba84-975b33b3c607
+		sourceLineageTag: 7f8b21ad-a092-406b-ad8f-f0b57093bcaf
+		dataCategory: Uncategorized
+
+	measure 'calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 73d1358d-ba92-4324-8767-3436bca08bc8
+		sourceLineageTag: 7dd83b36-046a-47ee-8b53-b0f3f99192cc
+		dataCategory: Uncategorized
+
+	measure 'calc_PipeLine Project Hours' = EXTERNALMEASURE("calc_PipeLine Project Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 46d1de44-a6bb-4368-abb1-d9863f5baa24
+		sourceLineageTag: 2a25c84e-810e-4fc9-929f-b617d02c029f
+		dataCategory: Uncategorized
+
+	measure 'calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 0b582cd2-e152-4dfe-bb9f-638483a674a1
+		sourceLineageTag: db05d315-5b50-4e6c-922c-29245e42451b
+		dataCategory: Uncategorized
+
+	measure 'calc_Int SLA Hours' = EXTERNALMEASURE("calc_Int SLA Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 28614093-d498-41f8-b836-9d42e9054c28
+		sourceLineageTag: e129d047-1bf0-4b18-9466-7856c875efa9
+		dataCategory: Uncategorized
+
+	measure 'calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: d99b9a36-9023-487e-9f2a-4009104fcaf6
+		sourceLineageTag: c6b4aa4b-75a9-44b2-84aa-8f7b3abaf9e7
+		dataCategory: Uncategorized
+
+	measure 'calc_Int Serv Mgmt Hours' = EXTERNALMEASURE("calc_Int Serv Mgmt Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: e464e244-0d2d-44c1-8451-5d006b2646cc
+		sourceLineageTag: 92cac75e-4b5d-45e7-bfad-6796825224cd
+		dataCategory: Uncategorized
+
+	measure 'calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: d90fbc5f-4eb7-4a36-80f4-64585220c80c
+		sourceLineageTag: 8762596b-b6c2-44ff-8147-980b13e994f7
+		dataCategory: Uncategorized
+
+	measure 'calc_Non-Charge Hours' = EXTERNALMEASURE("calc_Non-Charge Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: f50aa8d7-97dd-4105-a618-06a61eb403b8
+		sourceLineageTag: 2f57b2a6-fb9e-4eac-9fa1-3d059e2c5de8
+		dataCategory: Uncategorized
+
+	measure 'calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 87d080fa-2258-46ec-8a4e-27fec66c508d
+		sourceLineageTag: cd4bad9d-33ee-4830-a453-9d8c97da4e4a
+		dataCategory: Uncategorized
+
+	measure 'calc_App Inv Hours' = EXTERNALMEASURE("calc_App Inv Hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: d40967a7-1a96-471d-a983-3273d9a1b060
+		sourceLineageTag: b154be05-0562-4cf7-9c79-99f1ae05dba2
+		dataCategory: Uncategorized
+
+	measure 'calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 25c9666e-20b1-4924-8cc6-7ded11fb6b79
+		sourceLineageTag: 2d21e865-7b34-4a59-8a50-a15040dac890
+		dataCategory: Uncategorized
+
+	measure 'calc_Win WorkHours' = EXTERNALMEASURE("calc_Win WorkHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: a51c2ffa-722e-4715-a6bb-d5ed76c5ae0e
+		sourceLineageTag: cf5cacbb-cdd2-4ea4-8665-1652292b3f2c
+		dataCategory: Uncategorized
+
+	measure 'calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: e218a6c8-74e3-4de6-8de6-004df4b0c22b
+		sourceLineageTag: e024ea25-4bcc-4156-aa95-18affea32826
+		dataCategory: Uncategorized
+
+	measure 'calc_Prod DevHours' = EXTERNALMEASURE("calc_Prod DevHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: 80a0b4d1-315a-4e5b-b13b-c90d820dc14c
+		sourceLineageTag: 1aae9f1a-cf4e-4eba-8279-c11485fc5a91
+		dataCategory: Uncategorized
+
+	measure 'calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: b6ec93f9-f481-47af-975e-8ff33a4b1c31
+		sourceLineageTag: d5a199e3-43f9-4f6a-b5ed-925a0d393653
+		dataCategory: Uncategorized
+
+	measure 'calc_Acct MgmtHours' = EXTERNALMEASURE("calc_Acct MgmtHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Finance
+		lineageTag: fe18a83f-2535-4f38-b72f-f1de10374df9
+		sourceLineageTag: ad43b981-74c6-400d-83c9-9dba6834a2eb
+		dataCategory: Uncategorized
+
+	measure 'calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours' = EXTERNALMEASURE("calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 212f018c-37d2-474c-a729-15d64f9b6980
+		sourceLineageTag: ce299b3b-8fc1-457f-a148-65773ecfee28
+		dataCategory: Uncategorized
+
+	measure calc_rate2 = EXTERNALMEASURE("calc_rate2", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: 2d214db3-945e-4f7d-a877-c8167879c31f
+		sourceLineageTag: 12841ff0-eccf-4c77-953e-a00914c5590c
+		dataCategory: Uncategorized
+
+	measure calc_timesheet_count = EXTERNALMEASURE("calc_timesheet_count", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: a1eba6e6-8fa6-4abc-9d74-7e9079ea5288
+		sourceLineageTag: 386156ca-81a8-4cb1-af60-2a9cb001111c
+		dataCategory: Uncategorized
+
+	measure calc_submitted_timesheets = EXTERNALMEASURE("calc_submitted_timesheets", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: c74f44e6-0a66-4154-a4e9-ee5285234821
+		sourceLineageTag: 851edb21-2c7f-4139-bcff-84706627fee9
+		dataCategory: Uncategorized
+
+	measure calc_unsubmitted_timesheets = EXTERNALMEASURE("calc_unsubmitted_timesheets", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 0fa7bcf8-0af6-42ce-894b-2623f7363f7c
+		sourceLineageTag: f61d4ace-cf98-46e6-8271-926e67b9f76e
+		dataCategory: Uncategorized
+
+	measure calc_submitted_timesheets_% = EXTERNALMEASURE("calc_submitted_timesheets_%", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: d9f5a96f-f7cd-4ba6-8646-1e6e3e22b747
+		sourceLineageTag: 352d2a92-0fa7-45ed-a67a-d55e1efc27dc
+		dataCategory: Uncategorized
+
+	measure calc_unsubmitted_timesheets_% = EXTERNALMEASURE("calc_unsubmitted_timesheets_%", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: aa64c04c-a86f-40a4-bcc8-3ad2319072a4
+		sourceLineageTag: 582d47d5-ed7a-4b87-a8e4-b486b230200f
+		dataCategory: Uncategorized
+
+	measure calc_late_timesheets = EXTERNALMEASURE("calc_late_timesheets", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 4e683c41-35c6-43e7-ba55-8a9af7dff096
+		sourceLineageTag: e38f81d9-6fa9-4fa9-b32b-ecbc652bb972
+		dataCategory: Uncategorized
+
+	measure calc_late_timesheets_% = EXTERNALMEASURE("calc_late_timesheets_%", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: ea3950d6-4bd8-4dae-b80a-7d6962ddd41a
+		sourceLineageTag: bb774c8a-4ef4-4d02-a766-10157c37bbaf
+		dataCategory: Uncategorized
+
+	measure calc_timesheet_expected_hours = EXTERNALMEASURE("calc_timesheet_expected_hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 2338c68b-2fed-4143-8ef9-94e06128aafb
+		sourceLineageTag: 7b9d7269-7275-4ac9-9c54-3ab2e5c6e170
+		dataCategory: Uncategorized
+
+	measure calc_compliance = EXTERNALMEASURE("calc_compliance", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Compliance
+		lineageTag: 0a3d9e2e-f01c-4768-87f9-701576b841a7
+		sourceLineageTag: 07ba1dda-8f8a-45be-a4be-2a7134cbfce5
+		dataCategory: Uncategorized
+
+	measure %SmartTimeCompliance = EXTERNALMEASURE("%SmartTimeCompliance", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: db1445b3-8c16-4c30-85a8-4ae36f15dbb0
+		sourceLineageTag: 335beee2-dcdb-4296-b19a-7f6c621629fe
+		dataCategory: Uncategorized
+
+	measure MonthlyExpectedHours = EXTERNALMEASURE("MonthlyExpectedHours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Compliance
+		lineageTag: 079a3e22-4d93-40e4-b42b-b06954765750
+		sourceLineageTag: 20ab7e30-3e9a-4ce3-bd1d-6eacc982278e
+		dataCategory: Uncategorized
+
+	measure calc_121_compliance_ActiveStaff = EXTERNALMEASURE("calc_121_compliance_ActiveStaff", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0%;-0%;0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: 9cb686c0-2050-4aaa-b2e2-3a0a18fad3ce
+		sourceLineageTag: 1c489949-5106-4ad4-abf7-bee715edd38a
+		dataCategory: Uncategorized
+
+	measure calc_121_compliance_ActiveStaff_cond_tickmark = EXTERNALMEASURE("calc_121_compliance_ActiveStaff_cond_tickmark", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0%;-0%;0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: 3365e9e6-ebaa-4647-ae34-a9f872f290f1
+		sourceLineageTag: 6ef832b4-4529-440d-88b1-cc47d58f75d9
+		dataCategory: Uncategorized
+
+	measure calc_submitted_hours = EXTERNALMEASURE("calc_submitted_hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Hours
+		lineageTag: 4d456ced-aace-41be-b848-064ef7707ada
+		sourceLineageTag: b8c7aa8e-6ad8-454e-b995-9c82922e6f4c
+		dataCategory: Uncategorized
+
+	measure calc_unsubmitted_hours = EXTERNALMEASURE("calc_unsubmitted_hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Hours
+		lineageTag: 56498bb1-e36d-4ff0-9c7f-069ec2e030d1
+		sourceLineageTag: b0176a6c-13dd-4eb0-9655-3cbf2c60346c
+		dataCategory: Uncategorized
+
+	measure calc_total_activity_hours = EXTERNALMEASURE("calc_total_activity_hours", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		displayFolder: _Calculations\Hours
+		lineageTag: 09836c15-be24-418f-b28d-34ad19e04b83
+		sourceLineageTag: 0c38576a-f5ea-433a-a9f2-cfa1aaa6f10f
+		dataCategory: Uncategorized
+
+	measure calc_submitted_hours_% = EXTERNALMEASURE("calc_submitted_hours_%", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Hours
+		lineageTag: b517089e-07ed-48da-9625-27d57d24e35c
+		sourceLineageTag: 3f587b19-441f-492e-9407-2049dd0aafb8
+		dataCategory: Uncategorized
+
+	measure calc_unsubmitted_hours_% = EXTERNALMEASURE("calc_unsubmitted_hours_%", DOUBLE, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Hours
+		lineageTag: e007ac03-1e0b-4847-b900-74cc95928a93
+		sourceLineageTag: 6dc6cd4e-f980-4876-af69-421a7b9abc44
+		dataCategory: Uncategorized
+
+	measure calc_activity_start_date = EXTERNALMEASURE("calc_activity_start_date", DATETIME, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: General Number
+		displayFolder: _Calculations
+		lineageTag: 5a4b7565-0672-4eee-abd9-7ee3fe5310ff
+		sourceLineageTag: 37991150-62bc-41f1-aeb6-abf62414e5f6
+		dataCategory: Uncategorized
+
+	column Timesheet_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: a25d3b1f-1082-4ab4-ae41-dba8086133b6
+		sourceLineageTag: 8914c664-03d1-4de2-9b75-28aa0a80f8e6
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Timesheet_Id
+
+		annotation SummarizationSetBy = User
+
+	column Timesheet_Start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 42928d38-afd0-45c5-8628-f4656d4160b5
+		sourceLineageTag: c1e9561a-bdde-4fce-8085-f381bb855c61
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Timesheet_Start
+
+		annotation SummarizationSetBy = User
+
+	column Timesheet_End
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a2806fe2-8847-44f7-8ca0-77195a781de7
+		sourceLineageTag: bf360fbc-ea78-4a2d-b533-9704ba24c111
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Timesheet_End
+
+		annotation SummarizationSetBy = User
+
+	column Timesheet_Closed_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8eaf40fa-6f2b-4497-b2fa-47f6a219f5b7
+		sourceLineageTag: cda2cfd5-5940-48e2-9b14-31462cd19af0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Timesheet_Closed_Date
+
+		annotation SummarizationSetBy = User
+
+	column Timesheet_Submitted_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 756f7313-9e89-4d71-9ac5-62167c78beb4
+		sourceLineageTag: 6c6f7be0-1baa-4812-8cb3-9dcb030a5712
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Timesheet_Submitted_By_Id
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2dd2af4a-4817-4f79-a08b-23026dc6db7b
+		sourceLineageTag: 3f92b6ed-af99-496d-a219-8ecabfbba74d
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Activity_Id
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 85b0edc4-944d-43cc-8680-58ba41aaff1d
+		sourceLineageTag: 99756d65-2c3b-49f0-acdc-925b9b4444fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Date
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Hours
+		dataType: double
+		lineageTag: 511dfd8d-de7a-4ee9-8fc5-5d8f6a352442
+		sourceLineageTag: f149c246-012a-41b3-949d-509938635334
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Activity_Hours
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Comments
+		dataType: string
+		lineageTag: c92b0e7d-51ad-45d0-851e-1acbe2409585
+		sourceLineageTag: e3d3b925-7d34-4f23-bcdd-0d846e817420
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Comments
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Non_Invoiceable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d637af13-93fc-4116-99d4-38ef02baa795
+		sourceLineageTag: 02127169-2f04-4f38-9874-1334ba58f4d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Non_Invoiceable
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Created_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 329e2227-e858-4fda-909b-387ff5f34a74
+		sourceLineageTag: e917ac0f-04a0-416c-8f4a-d9ae33bcfe23
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Activity_Created_By_Id
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Submitted_Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 8e3d44bc-e989-40bf-a613-fd657a1d60a6
+		sourceLineageTag: 573ad474-f157-4c68-a536-240c7baac13a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Submitted_Date
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Created_By_First_Name
+		dataType: string
+		lineageTag: 3810deb9-c588-4543-87ac-4b89798981eb
+		sourceLineageTag: 9b19878e-96bd-48e6-8750-225928987dc0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Created_By_First_Name
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Created_By_Last_Name
+		dataType: string
+		lineageTag: 40d0a415-620b-4731-a293-569f6a5e5a33
+		sourceLineageTag: 3363aef9-9408-45c3-acb4-5bed82669f32
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Created_By_Last_Name
+
+		annotation SummarizationSetBy = User
+
+	column Activity_Created_Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: e858b833-cad4-429f-9365-24db6beb1a36
+		sourceLineageTag: 31a7b76f-a89a-43dd-8dc1-210efbd79371
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Activity_Created_Date
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Type_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1129b924-c516-4f97-9689-759d34639a35
+		sourceLineageTag: cdf3c6eb-ec4e-4ead-b07a-338ae97305b8
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Work_Activity_Type_Id
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Type
+		dataType: string
+		lineageTag: 560b63ef-64c2-4a82-90ab-2750a114338d
+		sourceLineageTag: df9cf656-56d0-4493-9260-56e12e4aec38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Type
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Type_Detail_Sub_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: dab0f467-c1fa-4ed8-a766-3c1554a320f3
+		sourceLineageTag: cd807990-603b-4477-a522-15ad5cffd031
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Work_Activity_Type_Detail_Sub_Id
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Type_Detail_Sub
+		dataType: string
+		lineageTag: 5ba10d38-df99-4591-ad06-62e0ee32d624
+		sourceLineageTag: 12d89eeb-a84d-4876-aad8-ae3157c087e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Type_Detail_Sub
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: c2eb49dd-09e1-404c-9e17-3b3f892ab07b
+		sourceLineageTag: 8aa7b805-51ea-4902-92f6-48d2ab077304
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Work_Activity_Id
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Name
+		dataType: string
+		lineageTag: bf956ea1-cc57-497a-b561-b76e05eb27eb
+		sourceLineageTag: 6fa0fe0a-f389-4ac9-bff1-e081f2b08f09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Name
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8a325cc9-a95f-4f95-963d-206dd79f0747
+		sourceLineageTag: 17bedf68-2f7a-4e49-85c4-09946c3bea52
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Start
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_End
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5cfacc72-8151-4f77-b1ed-731ffc2c5425
+		sourceLineageTag: a35eec5e-edd9-4be2-bcbb-dc275026d449
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_End
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Pipeline_Code
+		dataType: string
+		lineageTag: e3415219-c472-483a-9674-7a892924012c
+		sourceLineageTag: c0ba4b8b-3899-40ac-b5ec-b00fb0e159a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Pipeline_Code
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Verto_Number
+		dataType: string
+		lineageTag: 6254d514-95ae-4960-88c5-bdf715aca7e1
+		sourceLineageTag: 46b3039e-fafd-4cfd-b9ee-ef98d54b8d38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Verto_Number
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre
+		dataType: string
+		lineageTag: 91963bcb-b34f-4a6d-b488-d3ffc275babf
+		sourceLineageTag: da808018-cbc4-4b44-b16b-5c2402152608
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_1
+		dataType: string
+		lineageTag: 2a352c98-9a82-47ce-b001-0b77ed5dd617
+		sourceLineageTag: edcb215f-5a3b-4d61-b0c1-a6759d3a8ea2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_1
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_2
+		dataType: string
+		lineageTag: 67afbe24-058f-4391-abdc-4b1a5e202f4e
+		sourceLineageTag: a4b17c2c-0423-4502-9e58-1dc723874397
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_2
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_3
+		dataType: string
+		lineageTag: 76559c00-4379-42a1-8af9-584bcd94702f
+		sourceLineageTag: b0d1366b-5c49-4d6f-8160-28beb828586d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_3
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_4
+		dataType: string
+		lineageTag: b2ab4cc6-6847-44f3-893e-db48e46ff1f5
+		sourceLineageTag: 1f9e52f3-3fd0-46b3-97ea-d31c512e0527
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_4
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_5
+		dataType: string
+		lineageTag: 1d72aeba-8dab-404d-86e3-4b6c5bb608eb
+		sourceLineageTag: c5ba031a-bd51-4163-9078-13cc5c755e6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_5
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Cost_Centre_Level_6
+		dataType: string
+		lineageTag: 1c5b6fac-a352-47d3-9353-143b5d1a9449
+		sourceLineageTag: dbee67eb-b7bc-4fed-a9db-61f133839216
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_6
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Funding_Stream
+		dataType: string
+		lineageTag: a42024f6-2bc1-4e00-8adb-843621924c34
+		sourceLineageTag: 24707093-5e22-40d0-8bec-4d43a0c636b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Funding_Stream
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Created_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8658db75-6dc5-49a9-a5d2-ba0355a0c73f
+		sourceLineageTag: a8b27a52-22e5-4612-bbb8-c7b287048578
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Work_Activity_Created_By_Id
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Created_By_First_Name
+		dataType: string
+		lineageTag: f034dd88-874c-4d2d-b333-1a6727529f8e
+		sourceLineageTag: 3fdad5aa-5508-42af-8537-c44f560d765a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Created_By_First_Name
+
+		annotation SummarizationSetBy = User
+
+	column Work_Activity_Created_By_Last_Name
+		dataType: string
+		lineageTag: d073efe5-f34c-4827-baae-2d269968bdf5
+		sourceLineageTag: 1a913362-8393-492a-8072-d0126de419ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Work_Activity_Created_By_Last_Name
+
+		annotation SummarizationSetBy = User
+
+	column Person_Id
+		dataType: string
+		lineageTag: d5f47fe3-b08c-46c0-b19c-43fe2fb702ac
+		sourceLineageTag: 3b51f857-e4ea-4ab1-9713-dc17d33a704e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Id
+
+		annotation SummarizationSetBy = User
+
+	column Person_FirstName
+		dataType: string
+		lineageTag: 4c49ef46-4cf5-4c49-8a31-cd2c1b003d0a
+		sourceLineageTag: e4321f98-2fe3-4099-bde5-d6ac5cbc63a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_FirstName
+
+		annotation SummarizationSetBy = User
+
+	column Person_LastName
+		dataType: string
+		lineageTag: f9e4d76e-d41c-486a-9b03-c0fa29bc9fb5
+		sourceLineageTag: 68b7afa0-5120-4e92-92b4-0873990cfa5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_LastName
+
+		annotation SummarizationSetBy = User
+
+	column Person_Email
+		dataType: string
+		lineageTag: 9c9015cc-f827-4482-a3df-ade541191ea3
+		sourceLineageTag: 8a302e48-b0a4-4c14-adbc-5f0c3ad68e40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Email
+
+		annotation SummarizationSetBy = User
+
+	column Person_Hours_Per_Week
+		dataType: double
+		lineageTag: ee602117-51fd-4615-9cdf-fc65b79e5bcf
+		sourceLineageTag: a6a3deb1-7088-4d50-bfa6-78a072fb0f9b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Person_Hours_Per_Week
+
+		annotation SummarizationSetBy = User
+
+	column Person_Assignment_Category
+		dataType: string
+		lineageTag: db165b89-81ab-4156-9879-c68d2ff991a6
+		sourceLineageTag: c0b2a733-cc21-442b-a569-994d3422147e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Assignment_Category
+
+		annotation SummarizationSetBy = User
+
+	column Person_Payroll_Number
+		dataType: string
+		lineageTag: 23e5f321-47cf-49a1-89f6-7a6d8930ae36
+		sourceLineageTag: e690555e-21fe-45d7-885a-d5dc86d90a86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Payroll_Number
+
+		annotation SummarizationSetBy = User
+
+	column Person_Payscale_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 156b8958-e059-4f6b-88e1-c16a7d77558b
+		sourceLineageTag: f3ea0d51-e258-4b4f-a0bb-3a7206d0b80f
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Person_Payscale_Id
+
+		annotation SummarizationSetBy = User
+
+	column Person_Payscale
+		dataType: string
+		lineageTag: e46c3dee-002b-488e-a759-12fd28a15a13
+		sourceLineageTag: aaa8ccea-dd5d-4904-b523-1134f785e4e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Payscale
+
+		annotation SummarizationSetBy = User
+
+	column Person_CostCentre
+		dataType: string
+		lineageTag: 7eb64293-bf7c-4f81-8ff7-5403a0e8095b
+		sourceLineageTag: 88ab2995-d830-43fb-9dfd-e0572c657592
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_CostCentre
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_1
+		dataType: string
+		lineageTag: 20d26a2f-afcd-499e-9335-db07e4e72ace
+		sourceLineageTag: 0ebf338d-0021-42be-8e38-7d3dfe7e99f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_1
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_2
+		dataType: string
+		lineageTag: d79dce8c-a286-432e-92c6-91b275c604a5
+		sourceLineageTag: 98c2c223-e0fd-4098-959b-c3d241fc1ec6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_2
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_3
+		dataType: string
+		lineageTag: a06c5a15-a78a-4ea5-b495-a790b11cc950
+		sourceLineageTag: 20d8ff8b-2a24-4de0-92fe-914c1439a308
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_3
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_4
+		dataType: string
+		lineageTag: e5a205b8-9018-4cd4-9933-7639b75e8afa
+		sourceLineageTag: cdf9ae5b-be34-4b65-83aa-a101ee83b6da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_4
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_5
+		dataType: string
+		lineageTag: a45b5cbd-a34f-4092-9ba6-eb351d449c00
+		sourceLineageTag: a9f8a5f9-4ee3-4396-8c9d-091731f0abbd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_5
+
+		annotation SummarizationSetBy = User
+
+	column Person_Cost_Centre_Level_6
+		dataType: string
+		lineageTag: b764afbe-d8f9-4d99-a393-3cd223f0f5f2
+		sourceLineageTag: 41b0e42a-02fa-41b3-9cae-73ac3c4caf5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_6
+
+		annotation SummarizationSetBy = User
+
+	column Manager_Id
+		dataType: string
+		lineageTag: 9b70ff9d-0ccc-47b2-9c89-e4fd5a70703d
+		sourceLineageTag: c6877e01-53d6-4fd5-8caa-cbc299f8ae46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Manager_Id
+
+		annotation SummarizationSetBy = User
+
+	column Line_Manager_First_Name
+		dataType: string
+		lineageTag: c01b638a-af22-4d0f-9850-e9ddb963fd27
+		sourceLineageTag: 281a4752-819f-41b7-a0a4-033fb70a09eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line_Manager_First_Name
+
+		annotation SummarizationSetBy = User
+
+	column Line_Manager_Last_Name
+		dataType: string
+		lineageTag: 3d7a5748-696c-432e-9df2-b56a96b52e08
+		sourceLineageTag: 103ba07a-71e4-4b93-8652-8c167923a66a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line_Manager_Last_Name
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 546e8eae-d1ea-4674-8fbd-672ffb2e57e2
+		sourceLineageTag: 562811fb-6735-4a41-9330-8dfa63023d27
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Customer_Id
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Name_Short
+		dataType: string
+		lineageTag: 7cfa95c9-0640-416d-9434-52758f9f09bb
+		sourceLineageTag: 6164157a-326b-446a-98c3-0cf90a9372f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Name_Short
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Name_Common
+		dataType: string
+		lineageTag: d92f3791-8b02-4363-98c1-53392e8d4c2e
+		sourceLineageTag: 0b812b50-7d89-483e-a399-439697d3c442
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Name_Common
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Name_Full
+		dataType: string
+		lineageTag: 62243f14-adbd-4981-a133-9306331903eb
+		sourceLineageTag: 24021807-1d0b-4c6c-9bd8-a75270b01a85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Name_Full
+
+		annotation SummarizationSetBy = User
+
+	column Oracle_Number
+		dataType: string
+		lineageTag: 31fe0b32-f5e1-4e7f-8940-3e3104de8547
+		sourceLineageTag: 9bed96e9-38ef-41cc-acf9-622d2d65e8d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Oracle_Number
+
+		annotation SummarizationSetBy = User
+
+	column Selected_Group_Name_Short
+		dataType: string
+		lineageTag: 50046e08-38da-4bc5-a10a-a7e87df0e13a
+		sourceLineageTag: 0f8a9b83-58c1-481b-b587-6246b32fc65f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selected_Group_Name_Short
+
+		annotation SummarizationSetBy = User
+
+	column Day_Rate
+		dataType: double
+		lineageTag: 17b0a412-6a63-4ee6-9f7b-58eedf4da2a9
+		sourceLineageTag: 20728096-11fb-41d9-95e8-15925b321ea6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Day_Rate
+
+		annotation SummarizationSetBy = User
+
+	column Rate
+		dataType: double
+		lineageTag: c5683045-2406-4bb2-835e-b2b034ae9d0d
+		sourceLineageTag: 4f94ef01-fc07-43a8-bf8e-a0c72ff71ad8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		annotation SummarizationSetBy = User
+
+	column Day_Cost
+		dataType: double
+		lineageTag: ccc76b49-43df-48cd-b6dd-8fadc96f27a2
+		sourceLineageTag: c1d8b1d2-e0c4-4366-ad8b-4acd64a73dfa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Day_Cost
+
+		annotation SummarizationSetBy = User
+
+	column Cost
+		dataType: double
+		lineageTag: 41259db2-4b14-46e8-aa98-36b5e7811ddd
+		sourceLineageTag: 508fd3b7-484c-4a9c-bae1-79dcdf93d9c9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost
+
+		annotation SummarizationSetBy = User
+
+	column calc_burn_invoiceable
+		dataType: double
+		displayFolder: _Calculations\Finance
+		lineageTag: 8031c1dc-d181-4241-88b5-0222e9690805
+		sourceLineageTag: 29b00e29-23ce-42ed-a838-da897a7fde7b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: calc_burn_invoiceable
+
+		annotation SummarizationSetBy = User
+
+	column calc_burn_non_invoiceable
+		dataType: double
+		displayFolder: _Calculations\Finance
+		lineageTag: e9c1bec2-cb68-4f10-92ed-33c9ff6b6609
+		sourceLineageTag: 3a3063f8-3a53-4e16-9626-7bcf76571a75
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: calc_burn_non_invoiceable
+
+		annotation SummarizationSetBy = User
+
+	column calc_lateness
+		dataType: string
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 8678de0b-1fb2-4f69-ac04-d3871d709a79
+		sourceLineageTag: f3703f02-75e5-45ba-b076-a94ebdd59467
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: calc_lateness
+
+		annotation SummarizationSetBy = User
+
+	column calc_lateness_conditional_formatting
+		dataType: string
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 09089f73-36e7-4602-9888-519869b1d5b3
+		sourceLineageTag: 4318476f-f4b5-4cb0-b6b5-d642a2546522
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: calc_lateness_conditional_formatting
+
+		annotation SummarizationSetBy = User
+
+	column %SmartTimeCompliance_daily
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Compliance
+		lineageTag: 54f4b3eb-09bd-4613-94c6-72d38ebbfecf
+		sourceLineageTag: 67e10ef6-8fb2-4a06-b389-5e91868d2823
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: %SmartTimeCompliance_daily
+
+		annotation SummarizationSetBy = User
+
+	column DailyExpectedHours
+		dataType: double
+		displayFolder: _Calculations\Hours
+		lineageTag: fa650578-d960-428f-90e2-9e63a71e9921
+		sourceLineageTag: 50088841-f686-4d07-97fa-8640a0e27b9f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DailyExpectedHours
+
+		annotation SummarizationSetBy = User
+
+	column calc_hierarchy_path
+		dataType: int64
+		displayFolder: _Calculations
+		lineageTag: e2e2252c-0fb1-4d43-b8b6-b80ba56218ae
+		sourceLineageTag: 2dd64d64-a4fd-4004-8968-a21db2b5a633
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: calc_hierarchy_path
+
+		annotation SummarizationSetBy = User
+
+	column calc_smarttime_days
+		dataType: double
+		displayFolder: _Calculations
+		lineageTag: 86606098-5357-483a-b791-ea81469fd8a1
+		sourceLineageTag: 2ac3d3aa-5d44-4aef-a30b-c05bea35dab1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: calc_smarttime_days
+
+		annotation SummarizationSetBy = User
+
+	column calc_timesheet_due_by
+		dataType: dateTime
+		formatString: General Number
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 43ef32df-30eb-4de1-84fd-34316f90a748
+		sourceLineageTag: 3db62cbe-358f-4730-a0d5-da66a361bb69
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: calc_timesheet_due_by
+
+		annotation SummarizationSetBy = User
+
+	column person_full_name
+		dataType: string
+		lineageTag: 43a9e7c0-adb4-4118-9889-9c1173980a43
+		sourceLineageTag: 1aac7f42-286a-4529-bfb8-7b5c82eb9406
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: person_full_name
+
+		annotation SummarizationSetBy = User
+
+	column line_manager_full_name
+		dataType: string
+		lineageTag: 81c5ca62-09c1-4eaa-a87a-24fca4f30ae7
+		sourceLineageTag: 07626cb3-f52f-4fe5-b182-3d143385e770
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: line_manager_full_name
+
+		annotation SummarizationSetBy = User
+
+	column person_fullname2
+		dataType: string
+		lineageTag: 33bda79e-1e98-4fd2-a02b-f727596cadfe
+		sourceLineageTag: 9a2301aa-c9d9-4209-a509-2e89e92f8096
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: person_fullname2
+
+		annotation SummarizationSetBy = User
+
+	column test
+		dataType: int64
+		formatString: 0
+		lineageTag: db539326-5d72-4ae5-b352-05f98e3a3b74
+		sourceLineageTag: 17421b2f-5221-4d91-9de1-ed9527967f6d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: test
+
+		annotation SummarizationSetBy = User
+
+	column work_activity_name_wanumber
+		dataType: string
+		lineageTag: 53b03b7f-c743-45bc-817c-808e2e753e6b
+		sourceLineageTag: 344cff14-8f7f-4bc9-93fd-2a9c0064a432
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: work_activity_name_wanumber
+
+		annotation SummarizationSetBy = User
+
+	partition data_smarttime = entity
+		mode: directQuery
+		source
+			entityName: data_smarttime
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "d25896b0341c384c6427",
+  "position": {
+    "x": 216,
+    "y": 48,
+    "z": 0,
+    "height": 632,
+    "width": 752.00000000000011
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_smarttime_permissions"
+                    }
+                  },
+                  "Property": "full_name"
+                }
+              },
+              "queryRef": "support_smarttime_permissions.full_name",
+              "nativeQueryRef": "full_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_smarttime_permissions"
+                    }
+                  },
+                  "Property": "PersonFk"
+                }
+              },
+              "queryRef": "Sum(support_smarttime_permissions.PersonFk)",
+              "nativeQueryRef": "PersonFk"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_smarttime_permissions"
+                    }
+                  },
+                  "Property": "SupervisorId"
+                }
+              },
+              "queryRef": "CountNonNull(support_smarttime_permissions.SupervisorId)",
+              "nativeQueryRef": "SupervisorId"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "support_smarttime_permissions"
+                    }
+                  },
+                  "Property": "hierarchy_path"
+                }
+              },
+              "queryRef": "support_smarttime_permissions.hierarchy_path",
+              "nativeQueryRef": "hierarchy_path"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "support_smarttime_permissions"
+                      }
+                    },
+                    "Property": "PersonFk"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

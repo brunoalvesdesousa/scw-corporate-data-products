@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Activity Time Recorded"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "aff5c153-446d-405d-895c-c16ba21ea326"
+  }
+}

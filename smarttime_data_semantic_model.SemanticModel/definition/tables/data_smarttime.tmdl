@@ -1,0 +1,1499 @@
+table data_smarttime
+	lineageTag: da5ede5f-b391-47d2-85a2-b676b9854734
+
+	measure calc_workingdays =
+			
+			VAR StartDate = CALCULATE(MIN(data_smarttime[Activity_Date]),ALLSELECTED())
+			VAR EndDate = CALCULATE(MAX(data_smarttime[Activity_Date]),ALLSELECTED())
+			VAR DateTable = CALENDAR(StartDate, EndDate)
+			VAR WorkingDaysTable = FILTER(DateTable, WEEKDAY([Date], 2) <= 5)
+			RETURN COUNTROWS(WorkingDaysTable)
+		formatString: 0
+		displayFolder: _Calculations
+		lineageTag: 01c78df4-1dfa-46a7-8c63-a1bb971f2676
+
+	measure calc_contractedhours =
+			
+			(AVERAGE(data_smarttime[Person_Hours_Per_Week])/5)*[calc_workingdays]
+		displayFolder: _Calculations\Finance
+		lineageTag: 37288a89-1af3-4a8f-bade-9a1adb964c51
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_timesheet_count = ```
+			
+			    DISTINCTCOUNT(data_smarttime[Timesheet_Id])
+			```
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: c5d5562f-c832-4af6-941e-17c6393af482
+
+		changedProperty = Name
+
+	measure calc_compliance =
+			
+			[calc_submitted_timesheets]/[calc_timesheet_count]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Compliance
+		lineageTag: d3b799ec-2cfc-4bf2-a3e3-60e22f417c70
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_submitted_timesheets =
+			
+			IF(
+			    ISBLANK(
+			        MAX(data_smarttime[Timesheet_Submitted_By_Id])
+			    ),
+			    0,
+			CALCULATE(
+			    [calc_timesheet_count],
+			    NOT(ISBLANK(data_smarttime[Timesheet_Submitted_By_Id]))
+			)
+			)
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 1ecbdad6-198b-4492-ac32-cc6a8c966e4a
+
+		changedProperty = Name
+
+	measure calc_unsubmitted_timesheets = ```
+			
+			
+			    [calc_timesheet_count]
+			    -
+			   [calc_submitted_timesheets]
+			```
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 8ee28be9-e99e-4e1f-966f-b1f737996c46
+
+		changedProperty = Name
+
+	measure calc_submitted_hours =
+			
+			CALCULATE(
+			    [calc_total_activity_hours],
+			    data_smarttime[calc_lateness] = "late" || data_smarttime[calc_lateness] = "on time"
+			)
+		displayFolder: _Calculations\Hours
+		lineageTag: 835fe66c-d727-4f4f-88f4-53b2e23e217d
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_unsubmitted_hours =
+			
+			CALCULATE(
+			    [calc_timesheet_expected_hours]-[calc_submitted_hours]
+			)
+		displayFolder: _Calculations\Hours
+		lineageTag: ae5d3f9c-556f-42df-b2e8-742f572761c6
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_total_activity_hours =
+			
+			SUM(data_smarttime[Activity_Hours])
+		displayFolder: _Calculations\Hours
+		lineageTag: ec4d7bd8-e01d-4455-bcbb-c7e0bfa8147a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_smarttime_days_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[calc_smarttime_days]),
+			        data_smarttime[Activity_Non_Invoiceable]=FALSE
+			    )
+			```
+		formatString: 0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: 60804c2a-a03e-489e-9b0e-375fe650cbd6
+
+		changedProperty = FormatString
+
+	measure calc_smarttime_days_non_invoiceable = ```
+			
+			    CALCULATE(
+			        SUM(data_smarttime[calc_smarttime_days]),
+			        data_smarttime[Activity_Non_Invoiceable]=TRUE
+			    )
+			```
+		formatString: #,0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: f5399b35-cc09-47c3-9c19-fd2dd9072536
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_activity_start_date = ```
+			
+			    CALCULATE(MIN(data_smarttime[Activity_Date]),
+			    REMOVEFILTERS(data_smarttime[Activity_Date])
+			    )
+			```
+		formatString: General Date
+		displayFolder: _Calculations
+		lineageTag: 543233a4-1ff3-48a4-b2ae-bf9df3a2e886
+
+		changedProperty = Name
+
+	measure calc_NonWorkingHours =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER((data_smarttime),data_smarttime[Work_Activity_Type] = "Non-Working")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 1b235038-4a61-4a51-9ca0-2dc4c5f74183
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_contractedhours minus calc_NonWorkingHours' =
+			
+			[calc_contractedhours] - [calc_NonWorkingHours]
+		displayFolder: _Calculations\Finance
+		lineageTag: fad2428b-cacf-4e42-8637-361a891c4ede
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Activity_Hours minus calc_contractedhours 2' =
+			
+			SUM('data_smarttime'[Activity_Hours]) - [calc_contractedhours]
+		displayFolder: _Calculations\Finance
+		lineageTag: b98b7ce5-50d1-4c59-81a3-dc70ec5c1031
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_BillableHours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: c6703576-54c2-4927-a457-dcdf310d004d
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_BillableHours =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Billable")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 9b3635f4-a7c7-4be0-91b5-913382fb5e88
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_CORE BAU Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type_Detail_Sub] = "CORE BAU")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: c32df86e-f163-4578-9d48-002d53624c86
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_CORE BAU Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 56fdd21c-53cb-4f83-a1b9-3191b3ecbe3f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_CORE DisccretionaryHours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type_Detail_Sub] = "CORE Discretionary")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: bf2ac265-beb4-4bbc-b76b-8d7865d402ff
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_CORE DisccretionaryHours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 5a5dabc0-9b1f-4b83-bf27-25977ef561de
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_PipeLine Project Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type_Detail_Sub] = "Pipeline Project")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: b557c0af-c6d0-4d75-84c4-b6e7506d04b8
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_PipeLine Project Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 0b9d1153-22e9-4633-8cd8-f8f9a91de26e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Int SLA Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Internal SLA")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: ae082df7-c643-4e72-bd28-b62907107d15
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Int SLA Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Int SLA Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 39de351c-e6e0-47c8-8720-a3e7a0fd1dbe
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Int Serv Mgmt Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Internal Service Management")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 4fd6da95-5ff2-40cc-930f-2b1e81a01e94
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Int Serv Mgmt Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Int Serv Mgmt Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: a1be3318-bac7-4667-b55b-e3b6e34fb638
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Non-Charge Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Non-Chargeable")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: e464a355-4c5d-4dda-9d59-aa34ccf872be
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Non-Charge Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Non-Charge Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 627cdc61-7220-496b-ab16-eaf3d9a7b7f7
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_App Inv Hours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Approved Investment")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 7b49bbbd-8f56-4ef2-b11e-b6740901048f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_App Inv Hours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_App Inv Hours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: c62613c5-70bb-4a60-9c22-dc6df0e8de7a
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Win WorkHours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Winning Work")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 69a9e07d-0441-4703-8031-b5d4bae8f398
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Win WorkHours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Win WorkHours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 3b97a0b0-f4ab-4e41-b93b-dbf83b464939
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Prod DevHours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Product Devlopment")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 2be49c56-44ea-4383-b238-f322b5cea13f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Prod DevHours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Prod DevHours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 380acf5a-de33-4ff4-9d8c-40c1bcc95042
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'calc_Acct MgmtHours' =
+			
+			CALCULATE(
+			    SUM('data_smarttime'[Activity_Hours]),
+			    FILTER(('data_smarttime'), 'data_smarttime'[Work_Activity_Type] = "Account Management")
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: a5b5f030-35ab-421c-91de-82d2440dd84a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'calc_Acct MgmtHours divided by calc_contractedhours minus calc_NonWorkingHours' =
+			
+			DIVIDE(
+				[calc_Acct MgmtHours],
+				[calc_contractedhours minus calc_NonWorkingHours]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Finance
+		lineageTag: 9d5cb22e-112f-4583-9dcc-307acfeee1a1
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_rate2 =
+			
+			sum(data_smarttime[calc_burn_invoiceable])+sum(data_smarttime[calc_burn_non_invoiceable])
+		formatString: "£"#,0.00;-"£"#,0.00;"£"#,0.00
+		displayFolder: _Calculations\Finance
+		lineageTag: 6f4a3049-2cf8-4343-8b8f-b2c86bef734e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-GB"}
+
+	measure calc_submitted_timesheets_% =
+			
+			[calc_submitted_timesheets]/[calc_timesheet_count]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 817b3407-92f9-4bbd-8fed-9f5059cad82e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_unsubmitted_timesheets_% =
+			
+			[calc_unsubmitted_timesheets]/[calc_timesheet_count]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: c1c21b5f-b470-4fdd-8dce-7ca09a0a1c4e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_submitted_hours_% =
+			
+			[calc_submitted_hours]/[calc_total_activity_hours]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Hours
+		lineageTag: 8154c2ac-852a-4d86-b59d-8c14f355d657
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_unsubmitted_hours_% =
+			
+			[calc_unsubmitted_hours]/[calc_total_activity_hours]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Hours
+		lineageTag: 4496fac2-73f0-48a0-9e81-8a39891089e0
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure %SmartTimeCompliance = DIVIDE(SUM(data_smarttime[Activity_Hours]),data_smarttime[MonthlyExpectedHours],0)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: a0f3f6d0-306c-4685-9f89-bc724f1ff652
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+	measure calc_late_timesheets =
+			
+			CALCULATE(
+			    [calc_submitted_timesheets],
+			    data_smarttime[calc_lateness] = "late"
+			)
+		formatString: 0
+		displayFolder: _Calculations\Timesheets
+		lineageTag: f01321d1-5333-4fb5-b720-584ecf7e6bd2
+
+		changedProperty = Name
+
+	measure calc_late_timesheets_% =
+			
+			[calc_late_timesheets]/(DISTINCTCOUNT(base_date[Financial Week Start])*DISTINCTCOUNT(data_smarttime[Person_Id]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Timesheets
+		lineageTag: eef2d923-58b1-42bd-a09e-796b7cb9b446
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure calc_timesheet_expected_hours =
+			
+			VAR StartDate =
+			    CALCULATE(
+			        MIN(data_smarttime[Activity_Date]),
+			        ALLSELECTED(data_smarttime[Activity_Date])
+			    )
+			VAR SlicerEndDate = -- The last date selected in the slicer
+			    CALCULATE(
+			        MAX(data_smarttime[Activity_Date]),
+			        ALLSELECTED(data_smarttime[Activity_Date])
+			    )
+			
+			-- Use the slicer's end date OR today, whichever is earlier.
+			VAR EffectiveEndDate = MIN(SlicerEndDate, TODAY())
+			
+			-- Only calculate if the period is not entirely in the future
+			VAR IsPeriodStarted = StartDate <= EffectiveEndDate
+			
+			VAR NumberOfDays = DATEDIFF(StartDate, EffectiveEndDate, DAY) + 1
+			VAR NumberOfWeeks = NumberOfDays / 7.0
+			VAR ContractedHoursPerWeek = min(data_smarttime[Person_Hours_Per_Week])
+			
+			RETURN
+			IF(
+			    IsPeriodStarted,
+			    NumberOfWeeks * ContractedHoursPerWeek
+			)
+		displayFolder: _Calculations\Timesheets
+		lineageTag: b6f604f3-1c51-46bb-8af0-378a6e54b4ce
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MonthlyExpectedHours = (max(data_smarttime[DailyExpectedHours]) * [Count_Days_in_Month])
+		displayFolder: _Calculations\Compliance
+		lineageTag: 8e2aadc1-88e2-48f3-ae5d-a35d6581d32c
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure calc_121_compliance_ActiveStaff = ```
+			
+			-- 1. Get the list of people in the current context
+			VAR PeopleInContext =
+			    VALUES ( data_smarttime[Person_Id] )
+			
+			-- 2. Get the list of all months in the current context
+			VAR MonthsInContext =
+			    VALUES ( base_date[Month Year] )
+			
+			-- 3. DENOMINATOR: Create a grid of all (Person, Month) pairs and count only the ones that were "active" (had *any* activity)
+			VAR expected_121 =
+			    COUNTROWS (
+			        FILTER (
+			            CROSSJOIN ( PeopleInContext, MonthsInContext ),
+			            -- This checks if the (Person, Month) pair has at least one timesheet entry of any kind
+			            CALCULATE ( COUNTROWS ( data_smarttime ) ) > 0
+			        )
+			    )
+			
+			-- 4. NUMERATOR: Create the same grid, but count only the ones that were "compliant" (had the 7016 activity)
+			VAR received_121 =
+			    COUNTROWS (
+			        FILTER (
+			            CROSSJOIN ( PeopleInContext, MonthsInContext ),
+			            -- This checks if the (Person, Month) pair has at least one '7016' activity
+			            CALCULATE (
+			                COUNTROWS ( data_smarttime ),
+			                data_smarttime[Work_Activity_Id] = 7016
+			            ) > 0
+			        )
+			    )
+			
+			-- 5. Calculate the final rate
+			RETURN  
+			    DIVIDE( received_121, expected_121)
+			        
+			```
+		formatString: 0%;-0%;0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: fac849a2-74b9-4f8e-97d4-661894b05454
+
+		changedProperty = FormatString
+
+		changedProperty = Name
+
+	measure calc_121_compliance_ActiveStaff_cond_tickmark =
+			
+			-- 1. Get the list of people in the current context
+			VAR PeopleInContext =
+			    VALUES ( data_smarttime[Person_Id] )
+			
+			-- 2. Get the list of all months in the current context
+			VAR MonthsInContext =
+			    VALUES ( base_date[Month Year] )
+			
+			-- 3. DENOMINATOR: Create a grid of all (Person, Month) pairs and count only the ones that were "active" (had *any* activity)
+			VAR expected_121 =
+			    COUNTROWS (
+			        FILTER (
+			            CROSSJOIN ( PeopleInContext, MonthsInContext ),
+			            -- This checks if the (Person, Month) pair has at least one timesheet entry of any kind
+			            CALCULATE ( COUNTROWS ( data_smarttime ) ) > 0
+			        )
+			    )
+			
+			-- 4. NUMERATOR: Create the same grid, but count only the ones that were "compliant" (had the 7016 activity)
+			VAR received_121 =
+			    COUNTROWS (
+			        FILTER (
+			            CROSSJOIN ( PeopleInContext, MonthsInContext ),
+			            -- This checks if the (Person, Month) pair has at least one '7016' activity
+			            CALCULATE (
+			                COUNTROWS ( data_smarttime ),
+			                data_smarttime[Work_Activity_Id] = 7016
+			            ) > 0
+			        )
+			    )
+			
+			-- 5. Calculate the final rate
+			RETURN
+			    IF(
+			        DIVIDE( received_121, expected_121 )>=1,
+			        UNICHAR(10003),
+			        DIVIDE( received_121, expected_121)
+			        )
+		formatString: 0%;-0%;0%
+		displayFolder: _Calculations\Compliance
+		lineageTag: de1ce0a8-4e2c-4734-a8c2-519dffc1edaa
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column Timesheet_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 832225c2-fedd-4f92-bfab-0f53c4fab2c0
+		summarizeBy: count
+		sourceColumn: Timesheet_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Timesheet_Start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 17bd66b2-af77-4d9a-beb6-c1bb65d982ed
+		summarizeBy: none
+		sourceColumn: Timesheet_Start
+
+		variation Variation
+			isDefault
+			relationship: db9604cf-90b4-4183-809d-a48be0c33a5f
+			defaultHierarchy: LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Timesheet_End
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 72fe0642-ba6a-4a82-864b-110581c8715a
+		summarizeBy: none
+		sourceColumn: Timesheet_End
+
+		variation Variation
+			isDefault
+			relationship: b3e253e5-67eb-44fe-960f-9184efcd1063
+			defaultHierarchy: LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Timesheet_Closed_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6a4b119c-3b39-40bc-af65-69634bb4f6b3
+		summarizeBy: none
+		sourceColumn: Timesheet_Closed_Date
+
+		variation Variation
+			isDefault
+			relationship: 099becb4-78dc-4057-aa63-dba8f29229da
+			defaultHierarchy: LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Timesheet_Submitted_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d1c544b-15a4-441d-b5c3-b113f6ef5e5a
+		summarizeBy: count
+		sourceColumn: Timesheet_Submitted_By_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 669a5d60-3a5b-438f-a374-4d6f006f8a3b
+		summarizeBy: count
+		sourceColumn: Activity_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2ddfbf5f-e434-477a-9a8a-7f974c9b979d
+		summarizeBy: none
+		sourceColumn: Activity_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Activity_Hours
+		dataType: double
+		lineageTag: fafdc13b-55c2-4596-851f-96aff4bf1be0
+		summarizeBy: sum
+		sourceColumn: Activity_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Activity_Comments
+		dataType: string
+		lineageTag: 6268a6c5-0d91-42aa-9446-ea141bee8d4d
+		summarizeBy: none
+		sourceColumn: Activity_Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Non_Invoiceable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 64fd55db-8a19-4722-b052-bd5136227a20
+		summarizeBy: none
+		sourceColumn: Activity_Non_Invoiceable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Created_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c35c35e-cc77-46e1-adeb-fcb15f8bd9e1
+		summarizeBy: count
+		sourceColumn: Activity_Created_By_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Submitted_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d604f1f3-0b2e-4845-8a3b-846d0d52fda9
+		summarizeBy: none
+		sourceColumn: Activity_Submitted_Date
+
+		variation Variation
+			isDefault
+			relationship: c3429662-a397-412f-b3d7-ce9b0ca764cc
+			defaultHierarchy: LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Created_By_First_Name
+		dataType: string
+		lineageTag: e6319043-8b87-46e6-a877-5a9b36cf4ce3
+		summarizeBy: none
+		sourceColumn: Activity_Created_By_First_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Created_By_Last_Name
+		dataType: string
+		lineageTag: 05ef6132-3666-4227-a681-f848a7f57141
+		summarizeBy: none
+		sourceColumn: Activity_Created_By_Last_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_Created_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 82080b00-48e5-4dc5-b1c6-af3d51a787bf
+		summarizeBy: none
+		sourceColumn: Activity_Created_Date
+
+		variation Variation
+			isDefault
+			relationship: 45b86804-57cf-4e2d-9750-73257fb8f476
+			defaultHierarchy: LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Type_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: eaba876c-4787-4aef-97fd-594687702330
+		summarizeBy: count
+		sourceColumn: Work_Activity_Type_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Type
+		dataType: string
+		lineageTag: 03617df1-01ce-4df1-9cba-2e7135f317cf
+		summarizeBy: none
+		sourceColumn: Work_Activity_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Type_Detail_Sub_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 77df1834-f4aa-4855-8197-afd772bba86a
+		summarizeBy: count
+		sourceColumn: Work_Activity_Type_Detail_Sub_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Type_Detail_Sub
+		dataType: string
+		lineageTag: 2f1bd38f-7a29-4574-968f-47eb2d68ecf1
+		summarizeBy: none
+		sourceColumn: Work_Activity_Type_Detail_Sub
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b039e70-3842-4480-a37e-0eb0e7abd27c
+		summarizeBy: count
+		sourceColumn: Work_Activity_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Name
+		dataType: string
+		lineageTag: bf19646d-b16a-49e6-a2f2-4ff6bc516d4f
+		summarizeBy: none
+		sourceColumn: Work_Activity_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ce5e18d0-b73a-4b2a-a407-6b02a12dcde5
+		summarizeBy: none
+		sourceColumn: Work_Activity_Start
+
+		variation Variation
+			isDefault
+			relationship: e4191c86-f1e9-4892-a200-2e9b4962ee79
+			defaultHierarchy: LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Work_Activity_End
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 88856033-2280-43be-8fe5-5e4dec878ed0
+		summarizeBy: none
+		sourceColumn: Work_Activity_End
+
+		variation Variation
+			isDefault
+			relationship: 09321d22-2878-417a-9a96-21ba0df58fa6
+			defaultHierarchy: LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Work_Activity_Pipeline_Code
+		dataType: string
+		lineageTag: 85c8c906-3800-433a-8373-c5e1c33e3f17
+		summarizeBy: none
+		sourceColumn: Work_Activity_Pipeline_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Verto_Number
+		dataType: string
+		lineageTag: 3d0fbf4c-55dc-4b47-a86a-1722ceb991bf
+		summarizeBy: none
+		sourceColumn: Work_Activity_Verto_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre
+		dataType: string
+		lineageTag: 53b8f15e-fc07-45f1-a5c0-1bd79987d10e
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_1
+		dataType: string
+		lineageTag: 7310236b-e9c0-49ad-839a-0017bd67047b
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_2
+		dataType: string
+		lineageTag: 6a9be60b-e52e-4e25-9756-c5523279a749
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_3
+		dataType: string
+		lineageTag: ce19d0a6-bae9-492a-b6cb-868bf6d5dffd
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_4
+		dataType: string
+		lineageTag: 23229d4a-4ce4-41fb-a7de-9925b77f5bcf
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_5
+		dataType: string
+		lineageTag: 4c52fb12-670c-4ceb-92ef-d7fdda361d5d
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Cost_Centre_Level_6
+		dataType: string
+		lineageTag: eee53a66-04c1-49de-98ea-a435fb300c24
+		summarizeBy: none
+		sourceColumn: Work_Activity_Cost_Centre_Level_6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Funding_Stream
+		dataType: string
+		lineageTag: 078fdb78-4669-4ed2-a29a-fa0a9c6426f7
+		summarizeBy: none
+		sourceColumn: Work_Activity_Funding_Stream
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Created_By_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c86aa1e-8ada-4854-b835-cd8cafefaa62
+		summarizeBy: count
+		sourceColumn: Work_Activity_Created_By_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Created_By_First_Name
+		dataType: string
+		lineageTag: ed8ff5b6-b37a-47fe-b94c-0ff9dd2ff2a1
+		summarizeBy: none
+		sourceColumn: Work_Activity_Created_By_First_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Work_Activity_Created_By_Last_Name
+		dataType: string
+		lineageTag: fafc91aa-fadb-4354-af58-4fbb88320aed
+		summarizeBy: none
+		sourceColumn: Work_Activity_Created_By_Last_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Id
+		dataType: string
+		lineageTag: a4468581-6d87-48ff-9a9e-6ef1781d4601
+		summarizeBy: none
+		sourceColumn: Person_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_FirstName
+		dataType: string
+		lineageTag: 10d45e46-bf80-4d89-87bc-92d752c68a17
+		summarizeBy: none
+		sourceColumn: Person_FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_LastName
+		dataType: string
+		lineageTag: a5969217-4f4f-4728-afd9-bdfc957455ef
+		summarizeBy: none
+		sourceColumn: Person_LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Email
+		dataType: string
+		lineageTag: ba3b71d7-bf26-469e-8040-e62d5a72db8f
+		summarizeBy: none
+		sourceColumn: Person_Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Hours_Per_Week
+		dataType: double
+		lineageTag: bb214fd4-e5fa-4e8f-b4e0-c37c6041c96d
+		summarizeBy: sum
+		sourceColumn: Person_Hours_Per_Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Person_Assignment_Category
+		dataType: string
+		lineageTag: 296b936f-c2ec-413b-9e99-42dbe82e0b8e
+		summarizeBy: none
+		sourceColumn: Person_Assignment_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Payroll_Number
+		dataType: string
+		lineageTag: 8a3eb10d-2ce3-4527-9878-22f3e9169eae
+		summarizeBy: none
+		sourceColumn: Person_Payroll_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Payscale_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: de94eacf-b927-49dc-b864-242ba21c86a9
+		summarizeBy: count
+		sourceColumn: Person_Payscale_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Payscale
+		dataType: string
+		lineageTag: 92a1e065-bd5e-4800-b744-3d2e1928cd04
+		summarizeBy: none
+		sourceColumn: Person_Payscale
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_CostCentre
+		dataType: string
+		lineageTag: 6eef71f7-917a-4f4e-bfaf-168a3ab510f4
+		summarizeBy: none
+		sourceColumn: Person_CostCentre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_1
+		dataType: string
+		lineageTag: 6f596ff7-f7c6-4fc7-9e39-1f8f0367df47
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_2
+		dataType: string
+		lineageTag: e224951d-06ee-4c28-8036-de58f5bfaf8e
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_3
+		dataType: string
+		lineageTag: 25be798d-023f-4672-bc0c-6db871aaefd0
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_4
+		dataType: string
+		lineageTag: 34a34268-6128-4933-a435-6d2a7492a3c9
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_5
+		dataType: string
+		lineageTag: b8a5a249-7bcf-4e53-be45-0f3d332fb588
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Person_Cost_Centre_Level_6
+		dataType: string
+		lineageTag: 151bced3-bed2-4e0c-a2cd-f4801cb8249a
+		summarizeBy: none
+		sourceColumn: Person_Cost_Centre_Level_6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manager_Id
+		dataType: string
+		lineageTag: aba3702c-a7f0-4bac-ad04-7b17144f1ec1
+		summarizeBy: none
+		sourceColumn: Manager_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line_Manager_First_Name
+		dataType: string
+		lineageTag: ad43fbca-5ee1-4ce2-bf54-57d6c95ccf6f
+		summarizeBy: none
+		sourceColumn: Line_Manager_First_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Line_Manager_Last_Name
+		dataType: string
+		lineageTag: d3da985f-acd2-4a5b-a3ab-3b2d5146e086
+		summarizeBy: none
+		sourceColumn: Line_Manager_Last_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 359fef12-e6c4-4252-96a6-cd5c2ae3bcb2
+		summarizeBy: count
+		sourceColumn: Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Name_Short
+		dataType: string
+		lineageTag: 4c4f72bd-1a3d-4e1e-ac10-01add7a41129
+		summarizeBy: none
+		sourceColumn: Customer_Name_Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Name_Common
+		dataType: string
+		lineageTag: d98b5650-6f3a-43c3-a7fc-b5af46e0ed31
+		summarizeBy: none
+		sourceColumn: Customer_Name_Common
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Name_Full
+		dataType: string
+		lineageTag: 75073042-7d09-4438-96c7-809ca12e8070
+		summarizeBy: none
+		sourceColumn: Customer_Name_Full
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oracle_Number
+		dataType: string
+		lineageTag: 2b2a6679-235f-4ce5-9cf4-84515595c3c1
+		summarizeBy: none
+		sourceColumn: Oracle_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day_Rate
+		dataType: double
+		lineageTag: 7ea403c0-a2b8-4763-b971-fbd7d2ece70a
+		summarizeBy: sum
+		sourceColumn: Day_Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rate
+		dataType: double
+		lineageTag: b81af538-557c-4954-8c2e-f782bef7c639
+		summarizeBy: sum
+		sourceColumn: Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Day_Cost
+		dataType: double
+		lineageTag: 48aef7e6-4f83-45c5-b80f-20ed8ed37bc9
+		summarizeBy: sum
+		sourceColumn: Day_Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cost
+		dataType: double
+		lineageTag: 1595d09c-8a97-46fc-9f5d-98fa3ed02eb0
+		summarizeBy: sum
+		sourceColumn: Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column line_manager_full_name =
+			
+			data_smarttime[Line_Manager_First_Name] & " " & data_smarttime[Line_Manager_Last_Name]
+		lineageTag: 7bf00437-10b5-4c29-a1cb-776f440d2ad8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column person_full_name =
+			
+			data_smarttime[Person_FirstName] & " " & data_smarttime[Person_LastName]
+		lineageTag: 3be5d257-be9c-4190-a48d-194a6cc33adc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_timesheet_due_by =
+			
+			data_smarttime[Timesheet_Start]+7
+		formatString: General Date
+		displayFolder: _Calculations\Timesheets
+		lineageTag: 40047870-7abc-484c-87ad-3b6884cd7121
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: cdd637e7-cd21-4703-8143-391698d534fd
+			defaultHierarchy: LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_hierarchy_path =
+			
+			
+			RELATED(support_rls_merged[hierarchy_path])
+		displayFolder: _Calculations
+		lineageTag: 0474cb19-706f-4313-9ff0-55aa5e15d25e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_burn_invoiceable =
+			
+			IF(
+			    data_smarttime[Activity_Non_Invoiceable]=FALSE,
+			    data_smarttime[Day_Rate]*data_smarttime[calc_smarttime_days],
+			    0
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 91cb5126-a2c4-4d60-bf0b-1d38990cc0dd
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_burn_non_invoiceable =
+			
+			IF(
+			    data_smarttime[Activity_Non_Invoiceable]=TRUE,
+			    data_smarttime[Day_Rate]*data_smarttime[calc_smarttime_days],
+			    0
+			)
+		displayFolder: _Calculations\Finance
+		lineageTag: 980c8985-f28c-4f92-b6ac-135329f3b88a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_lateness = ```
+			
+			IF(
+			    AND(
+			        ISBLANK(data_smarttime[calc_timesheet_due_by]),
+			        ISBLANK(data_smarttime[Timesheet_Closed_Date])
+			    ),
+			    "not due",
+			   IF(
+			           ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
+			           NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
+			           data_smarttime[calc_timesheet_due_by]<TODAY(),        
+			        "unsubmitted",
+			        IF(
+			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
+			            "late",
+			            "on time"
+			        )
+			    ))
+			```
+		displayFolder: _Calculations\Timesheets
+		lineageTag: d2dc6c50-c355-4691-b583-eb0b8736d1a5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_lateness_conditional_formatting = ```
+			
+			IF(
+			    AND(
+			        ISBLANK(data_smarttime[calc_timesheet_due_by]),
+			        ISBLANK(data_smarttime[Timesheet_Closed_Date])
+			    ),
+			    "grey",
+			    IF(
+			            ISBLANK(data_smarttime[Timesheet_Closed_Date]) &&
+			            NOT(ISBLANK(data_smarttime[calc_timesheet_due_by])) &&
+			            data_smarttime[calc_timesheet_due_by]<TODAY(),        
+			        "red",
+			        IF(
+			            DATEDIFF(data_smarttime[calc_timesheet_due_by],data_smarttime[Timesheet_Closed_Date],DAY)>=1,
+			            "orange",
+			            ""
+			        )
+			    )
+			)
+			```
+		displayFolder: _Calculations\Timesheets
+		lineageTag: b575a658-23b4-40b4-bd3b-53dc394d46e0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column calc_smarttime_days = data_smarttime[Activity_Hours]/7.5
+		displayFolder: _Calculations
+		lineageTag: 29990d9d-eab1-4828-bc51-d0ddcc25f543
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column %SmartTimeCompliance_daily = ```
+			
+			    DIVIDE(
+			        data_smarttime[Activity_Hours],
+			        data_smarttime[DailyExpectedHours],
+			        0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: _Calculations\Compliance
+		lineageTag: 06cf4e30-1a6f-4cab-b56b-795eb0ac7ed9
+		summarizeBy: sum
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column DailyExpectedHours = (data_smarttime[Person_Hours_Per_Week]/5)
+		displayFolder: _Calculations\Hours
+		lineageTag: 712f797c-90aa-4f69-a4ba-95cd982ef136
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Selected_Group_Name_Short
+		dataType: string
+		lineageTag: fe9b2f72-946e-4dc7-8898-02e8417eb3a9
+		summarizeBy: none
+		sourceColumn: Selected_Group_Name_Short
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_smarttime = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Smart_Time = Source{[Schema="dbo",Item="Smart_Time"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_Smart_Time, each [Timesheet_Start] >= #datetime(2024, 04, 1, 0, 0, 0)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Timesheet_Start", type date}, {"Timesheet_End", type date}, {"Timesheet_Closed_Date", type date}, {"Activity_Date", type date}, {"Work_Activity_Start", type date}, {"Work_Activity_End", type date}, {"Work_Activity_Retire_Date", type date}, {"Solution_Start_Date", type date}, {"Solution_End_Date", type date}, {"Contract_Start_Date", type date}, {"Contract_End_Date", type date}, {"Rate_Start_Date", type date}, {"Rate_End_Date", type date}, {"Contract_Id", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","Non Review Body ","",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Review Body ","",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Replaced Value1", "opp-cost", each Text.Combine({[Work_Activity_Pipeline_Code], [Person_CostCentre]}, "-"), type text),
+				    #"Merged Queries" = Table.NestedJoin(#"Inserted Merged Column", {"Person_Payroll_Number"}, data_oracle_agency_cost_rates, {"Assignment_no"}, "data_oracle_agency_cost_rates", JoinKind.LeftOuter),
+				    #"Expanded data_oracle_agency_cost_rates" = Table.ExpandTableColumn(#"Merged Queries", "data_oracle_agency_cost_rates", {"Hrly_rate"}, {"data_oracle_agency_cost_rates.Hrly_rate"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded data_oracle_agency_cost_rates",{{"data_oracle_agency_cost_rates.Hrly_rate", "agency_rate"}}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Renamed Columns", {"Person_Payroll_Number"}, data_oracle_staff_cost_exceptions, {"Assignment_no"}, "data_oracle_staff_cost_exceptions", JoinKind.LeftOuter),
+				    #"Expanded data_oracle_staff_cost_exceptions" = Table.ExpandTableColumn(#"Merged Queries1", "data_oracle_staff_cost_exceptions", {"Hrly_rate"}, {"data_oracle_staff_cost_exceptions.Hrly_rate"}),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Expanded data_oracle_staff_cost_exceptions",{{"data_oracle_staff_cost_exceptions.Hrly_rate", "exception_rate"}}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Renamed Columns2"," - Range"," ",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","A","(A)",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value4"," B"," (B)",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value2"," C"," (C)",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5"," D"," (D)",Replacer.ReplaceText,{"Person_Payscale"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value6",{{"Person_CostCentre", type text}, {"Person_Id", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"tmp_Id", "Timesheet_Token", "Activity_Out_Of_Hours", "Activity_Is_Edit_History", "Activity_With_Person_Id", "Activity_With_Person_First_Name", "Activity_With_Person_Last_Name", "Work_Activity_Is_Retired", "Work_Activity_Retire_Date", "Work_Activity_Filter_Code", "Work_Activity_Priority_Id", "Work_Activity_Priority", "Champion_Id", "Champion_First_Name", "Champion_Last_Name", "Solution_Id", "Solution_Name", "Solution_Lead_Id", "Solution_Lead_First_Name", "Solution_Lead_Last_Name", "Solution_Type_Id", "Solution_Value", "Solution_Start_Date", "Solution_End_Date", "Solution_funding_Stream", "Solution_Notional", "Contract_Id", "Contract_Name", "Contract_Start_Date", "Contract_End_Date", "Contract_Ref_No", "Contract_Owner_Id", "Contract_Owner_First_Name", "Contract_Owner_Last_Name", "Contract_Pipeline_Ref", "Contract_Value", "Contract_Consultancy_Value", "Contract_Contractual_Value", "Contract_Income_Category_Id", "Contract_Income_Category", "Contract_Contract_Type_Id", "Contract_Contract_Type", "Selected_Group_Id", "Selected_Group_Name_Common", "Selected_Group_Name_Full", "Rate_Table_Name", "Rate_Table_Code", "Rate_Table_Description", "Rate_Start_Date", "Rate_End_Date", "Rate_Is_By_Band", "Rate_Is_Exception", "Is_UnPriced", "Is_Travel", "Derived_ID", "opp-cost", "agency_rate", "exception_rate"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Manager_Id", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,30 @@
+table base_metadata_dynamic_structure_chart
+	lineageTag: a62e9a3d-1112-4a33-84dd-dabb76a3937d
+	sourceLineageTag: c790e4fa-6c78-423f-ac8e-09925fe06d24
+
+	column Attribute
+		dataType: string
+		lineageTag: be9d5cb4-4439-4cbd-b974-0ab8470992cc
+		sourceLineageTag: 8e9f245c-2417-4c5e-a8bd-02ed10b07528
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = User
+
+	column Value
+		dataType: string
+		lineageTag: 8490297a-9c99-4898-98b2-9e9c69369a9e
+		sourceLineageTag: e0c5dfc1-2dec-4734-96b2-1ecb53be14f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = User
+
+	partition base_metadata_dynamic_structure_chart = entity
+		mode: directQuery
+		source
+			entityName: base_metadata_dynamic_structure_chart
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+

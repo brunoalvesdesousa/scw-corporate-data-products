@@ -1,0 +1,176 @@
+table data_costcentre_master
+	lineageTag: cb3d3b39-3a31-49da-acf0-1b81cdedec80
+
+	column Status
+		dataType: string
+		lineageTag: 1a4d3989-3523-42a7-953a-b5698b42a123
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c8c0f4e-2b6d-4334-8130-4e7860054f98
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_Centre
+		dataType: string
+		lineageTag: a65a117c-ce79-4579-b45f-c040b683cccb
+		summarizeBy: none
+		sourceColumn: Cost_Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISFE_TB_CC_Name
+		dataType: string
+		lineageTag: 64b52f14-c6f3-43b1-9fd6-13957a4ae568
+		summarizeBy: none
+		sourceColumn: ISFE_TB_CC_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prog_Admin
+		dataType: string
+		lineageTag: daf699bd-724e-4522-b844-80a1d73ef0f6
+		summarizeBy: none
+		sourceColumn: Prog_Admin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_1
+		dataType: string
+		lineageTag: b20a15e9-c51a-4f18-8593-01a7db6facfc
+		summarizeBy: none
+		sourceColumn: Level_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_2_Executive_Portfolio
+		dataType: string
+		lineageTag: 5ca3d31a-bc9f-4dd6-9aa3-7f131a24156b
+		summarizeBy: none
+		sourceColumn: Level_2_Executive_Portfolio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_3_Service_Line
+		dataType: string
+		lineageTag: 02267bce-59b1-4c52-a1c7-6cdb29c8feac
+		summarizeBy: none
+		sourceColumn: Level_3_Service_Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level_4_Sub Service_Line'
+		dataType: string
+		lineageTag: 67948e8e-de62-421d-adba-3a637900770a
+		summarizeBy: none
+		sourceColumn: Level_4_Sub Service_Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_5_SERVICE_LINE_plus_LOCALISED_CC_NAME
+		dataType: string
+		lineageTag: 8f4c51d5-d556-4be7-a93b-c6ab7c00b6f5
+		summarizeBy: none
+		sourceColumn: Level_5_SERVICE_LINE_plus_LOCALISED_CC_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_6_LOCALISED_CC_NAME
+		dataType: string
+		lineageTag: 4f222ed0-7c5e-4c57-be09-233575192517
+		summarizeBy: none
+		sourceColumn: Level_6_LOCALISED_CC_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reporting_group_notes
+		dataType: string
+		lineageTag: 8d1905a5-884e-4f2f-aac3-6f7a0e221bbd
+		summarizeBy: none
+		sourceColumn: Reporting_group_notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contribution_Report_WTE_Mapping
+		dataType: string
+		lineageTag: 550d798b-7a92-4e83-8150-3506e4ff1b42
+		summarizeBy: none
+		sourceColumn: Contribution_Report_WTE_Mapping
+
+		annotation SummarizationSetBy = Automatic
+
+	column D27_Dashboard_Mapping
+		dataType: string
+		lineageTag: 26b733b6-a0fd-4142-8db1-4271d5ce68af
+		summarizeBy: none
+		sourceColumn: D27_Dashboard_Mapping
+
+		annotation SummarizationSetBy = Automatic
+
+	column New_Contrib_Sheet_Tab
+		dataType: string
+		lineageTag: e2703569-a5b2-43fe-9c67-9425589b3c3e
+		summarizeBy: none
+		sourceColumn: New_Contrib_Sheet_Tab
+
+		annotation SummarizationSetBy = Automatic
+
+	column Executive_Role
+		dataType: string
+		lineageTag: 034e719a-c6b6-4bce-b54c-267af481a613
+		summarizeBy: none
+		sourceColumn: Executive_Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column Executive_Name
+		dataType: string
+		lineageTag: fa9f16b9-e54c-4312-86a6-e0ac9b9e243f
+		summarizeBy: none
+		sourceColumn: Executive_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget_Manager
+		dataType: string
+		lineageTag: 969deba1-5d52-46bb-b7a4-06c79efe1ae2
+		summarizeBy: none
+		sourceColumn: Budget_Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finance_Manager
+		dataType: string
+		lineageTag: b6a07a20-e184-43c6-bb5d-5314e637c301
+		summarizeBy: none
+		sourceColumn: Finance_Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Lead
+		dataType: string
+		lineageTag: f05aca2f-8edb-481d-a0f1-9f4fe18af365
+		summarizeBy: none
+		sourceColumn: Service_Line_Lead
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_costcentre_master = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Cost_Master = Source{[Schema="dbo",Item="Cost_Master"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_Cost_Master,{{"Cost_Centre", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

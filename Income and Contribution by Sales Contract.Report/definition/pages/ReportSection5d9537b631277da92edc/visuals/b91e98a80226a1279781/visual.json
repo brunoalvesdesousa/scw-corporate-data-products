@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "b91e98a80226a1279781",
+  "position": {
+    "x": 336.36363636363637,
+    "y": 7.9999999999999991,
+    "z": 1000,
+    "height": 39.999999999999993,
+    "width": 63.636363636363647
+  },
+  "visual": {
+    "visualType": "actionButton",
+    "objects": {
+      "icon": [
+        {
+          "properties": {
+            "shapeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rightArrow'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "45612e88c05154e09ca9",
+  "howCreated": "InsertVisualButton"
+}

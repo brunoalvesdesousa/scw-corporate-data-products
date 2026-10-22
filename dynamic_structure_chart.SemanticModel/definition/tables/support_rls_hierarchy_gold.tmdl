@@ -1,0 +1,193 @@
+table support_rls_hierarchy_gold
+	lineageTag: e3f1dfb0-9bdd-4f77-8096-1d98f7e5c949
+	sourceLineageTag: 943924b0-e671-458d-bf76-312fb8bbfd98
+
+	column PersonFk
+		dataType: string
+		lineageTag: 83fd99d1-c138-4bf4-ad63-8741879b7faf
+		sourceLineageTag: 949b97f5-85ab-4bad-b5b7-61ae343719a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column OrgPath
+		dataType: string
+		lineageTag: af2fc9ff-cd0d-4152-ab2d-9ba93d259fa2
+		sourceLineageTag: 234c4155-e773-476a-bbf2-61c48f3e9276
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OrgPath
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Level3
+		dataType: string
+		lineageTag: 9c2a3549-0976-4d3e-b6da-ba07e45350e0
+		sourceLineageTag: 79ea7a18-8717-4e6b-a699-2430ee2a7f0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Level3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre
+		dataType: string
+		lineageTag: 6e3526c4-5863-4bfb-abcd-1fe4e20646b7
+		sourceLineageTag: 9fa83492-b23f-4c02-9e07-c757cd5b3b69
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Level6
+		dataType: string
+		lineageTag: ea4439b0-3760-4a95-aaca-4de6315020f2
+		sourceLineageTag: a0f892ea-0a53-477d-ba3a-36d9711daff6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Level6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column NameFirst
+		dataType: string
+		lineageTag: cc5300ad-5355-494e-a13b-033ff3fc7ef9
+		sourceLineageTag: 3defc4eb-6864-4246-b002-0b08c4c11a72
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column NameLast
+		dataType: string
+		lineageTag: e1973ceb-ce0c-4ba3-8de7-6a2cff8475c5
+		sourceLineageTag: 7012edba-2949-4b1a-a5aa-9a36db3f363e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Email
+		dataType: string
+		lineageTag: f8d07178-731a-4389-b023-98ce178aff9c
+		sourceLineageTag: b883a8eb-f0dd-4abd-899e-568ce31a13d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column SupervisorId
+		dataType: string
+		lineageTag: 4c55890e-1d71-481c-ac25-61b2a58a4f58
+		sourceLineageTag: 7d1d5f7c-0bb3-4b4a-a0e5-6186138a1bb9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SupervisorId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Supervisor
+		dataType: string
+		lineageTag: d107bb2c-b18c-41ef-b2c7-55b3c0f9e8fb
+		sourceLineageTag: 9fee6a6f-bbf2-4711-9ca6-da73adf44c68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Name
+		dataType: string
+		lineageTag: a6f9a0f0-6d70-48c6-9458-bfabda2a6eab
+		sourceLineageTag: 0dab4621-83df-4ac6-89d6-b29b8af37c5a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Leaver
+		dataType: int64
+		formatString: 0
+		lineageTag: 28be1df5-43f4-412c-8efa-8879ac4199c1
+		sourceLineageTag: 9132e10c-b262-4246-b643-8e3a4c49eda2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Leaver
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column userPrincipalName
+		dataType: string
+		lineageTag: 1bea6c5c-b7ec-4b9e-a63a-34fc2baf288f
+		sourceLineageTag: 38100dfd-53d7-419e-a7e2-d1480a548f5f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column supervisorid_corrected
+		dataType: string
+		lineageTag: 120130e3-b9e2-4de4-9c70-5ca9dfde9262
+		sourceLineageTag: 090a71ea-4a6a-46f3-b130-7e4ba13e3d3f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supervisorid_corrected
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column fullname
+		dataType: string
+		lineageTag: 105f749a-1c14-4f70-b7b2-5f43ab73ac2c
+		sourceLineageTag: 3c965c1e-5957-4660-a51f-bfd178a56f85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: fullname
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition support_rls_hierarchy_gold = entity
+		mode: directQuery
+		source
+			entityName: support_rls_hierarchy_gold
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+
+	changedProperty = IsHidden
+

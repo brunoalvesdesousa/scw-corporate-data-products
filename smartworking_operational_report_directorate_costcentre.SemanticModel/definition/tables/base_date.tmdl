@@ -1,0 +1,150 @@
+table base_date
+	lineageTag: 6904552e-d2b4-4437-8fcf-e0451856ebf2
+	sourceLineageTag: 49f459be-62ce-42d0-b14f-c94f0e11adc5
+
+	column Date
+		dataType: dateTime
+		isNullable: false
+		formatString: Long Date
+		lineageTag: ec0e0b45-33b6-41a5-9f23-182120f0bd68
+		sourceLineageTag: 666f3f35-b6d8-4e3a-81ea-b9a6c19beeaf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 28feaca3-fa12-468c-8c07-563aad9a0a60
+		sourceLineageTag: 4fee0498-4e09-49fd-a615-44f94c713b38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 60a5a65f-94c3-428b-a90b-a9afc7d296d7
+		sourceLineageTag: 7cf269ea-1aab-4ce0-aebf-6191730b5d29
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		lineageTag: 2bec99f0-52f1-4761-a2d3-f1a94cfe0497
+		sourceLineageTag: 66273ed1-50da-4442-88a7-0b13530222c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: befea705-895f-414b-909b-ce3d126c0036
+		sourceLineageTag: 259994db-3c5a-4082-b470-5bdab61da2d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of Week'
+		dataType: string
+		lineageTag: 539ed5b6-750b-44f2-967c-d5b246a5efb1
+		sourceLineageTag: 370b06ee-2def-4fd1-bc42-ff88ca483d6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 57e6df29-850e-4ace-89a0-3bba33a3e794
+		sourceLineageTag: bc530f22-6dfb-4514-ab88-dcf2e2a01137
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of Week Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of the Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8323f12f-bff5-4589-8a23-8e7b4330ffd3
+		sourceLineageTag: 5e130b89-b008-44d0-a7f6-0588c87bb050
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of the Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Year'
+		dataType: string
+		lineageTag: ae8d36ab-0989-42a7-b4d4-7c28c6a2ce0e
+		sourceLineageTag: 515708fd-abf6-4ea8-95c7-d3ce0b5e7f5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 62167b41-7648-4a04-85df-83704273858c
+		sourceLineageTag: 4660cc17-0b42-4572-8419-0024a99d27b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8c9171ee-5b9e-48f4-8dd0-9b996351994f
+		sourceLineageTag: b3a606aa-02cf-4517-bd23-0bf402c2e4c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Start
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 51ac74d5-40a5-48ac-9e0a-06eae29650fe
+		sourceLineageTag: 833dd378-9d33-403f-bdef-7f5d06f3a278
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week End
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Start Plus 7'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0441c31e-a31c-4eb5-996b-5c6f2a2c309e
+		sourceLineageTag: 5c213ba7-c4b1-4a0f-9cc5-c20493e3d602
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Start Plus 7
+
+		annotation SummarizationSetBy = User
+
+	partition base_date = entity
+		mode: directQuery
+		source
+			entityName: base_date
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+

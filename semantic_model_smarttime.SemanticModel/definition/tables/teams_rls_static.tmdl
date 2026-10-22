@@ -1,0 +1,147 @@
+table teams_rls_static
+	isHidden
+	lineageTag: 3de85585-0595-49af-bf80-c8f502c35746
+
+	column 'Access CostCentre'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 16d7b8a5-69c5-486f-aae9-8b605741e0ec
+		summarizeBy: none
+		sourceColumn: Access CostCentre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Level3'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 711bcf8c-fbe5-4939-b637-94ad74ab3814
+		summarizeBy: none
+		sourceColumn: Access Level3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access L4'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 7c362c2c-43bc-4280-be0e-9766fccc99a7
+		summarizeBy: none
+		sourceColumn: Access L4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Access Level6'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 6f538578-fbf5-467e-9918-aedd2a535cfa
+		summarizeBy: none
+		sourceColumn: Access Level6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 5d7eb048-7c6a-4da6-84b6-19c4f29d4c0f
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: fdf7fd18-7055-49b0-8eee-18c14ea02217
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 4fd4c9c8-82d2-4f1c-b06d-07621c45ce51
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisor
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: be75bb06-44a3-4914-9557-295d589489e1
+		summarizeBy: none
+		sourceColumn: supervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'scwcsu email'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 1f61306b-fcda-4a6f-962e-bbc2f0da7f97
+		summarizeBy: none
+		sourceColumn: scwcsu email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: b25ea15e-1174-4a6a-b7b0-a2703430424e
+		summarizeBy: none
+		sourceColumn: full_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'pg group'
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: b8f1ad78-c621-4535-8cb8-abfbbdc1a144
+		summarizeBy: none
+		sourceColumn: pg group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition teams_rls_static = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_teams_rls_static = Source{[Schema="dbo",Item="teams_rls_static"]}[Data]
+				in
+				    dbo_teams_rls_static
+
+	changedProperty = IsHidden
+

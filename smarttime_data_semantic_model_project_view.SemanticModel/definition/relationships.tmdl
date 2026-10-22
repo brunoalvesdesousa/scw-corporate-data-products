@@ -1,0 +1,90 @@
+relationship db9604cf-90b4-4183-809d-a48be0c33a5f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Timesheet_Start
+	toColumn: LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad.Date
+
+relationship b3e253e5-67eb-44fe-960f-9184efcd1063
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Timesheet_End
+	toColumn: LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9.Date
+
+relationship 099becb4-78dc-4057-aa63-dba8f29229da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Timesheet_Closed_Date
+	toColumn: LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8.Date
+
+relationship 07520650-dd0e-48ca-8401-93f329c083e0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5.Date
+
+relationship c3429662-a397-412f-b3d7-ce9b0ca764cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Activity_Submitted_Date
+	toColumn: LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478.Date
+
+relationship 45b86804-57cf-4e2d-9750-73257fb8f476
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Activity_Created_Date
+	toColumn: LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1.Date
+
+relationship e4191c86-f1e9-4892-a200-2e9b4962ee79
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Work_Activity_Start
+	toColumn: LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f.Date
+
+relationship 09321d22-2878-417a-9a96-21ba0df58fa6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Work_Activity_End
+	toColumn: LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079.Date
+
+relationship db8ba8e3-2e65-47f2-8e1d-35028c51d9bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Work_Activity_Retire_Date
+	toColumn: LocalDateTable_6851690c-909b-45d1-8492-6d3a0826b01d.Date
+
+relationship 7f7f20f4-cad5-4c7f-9068-5c6773a193ff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Solution_Start_Date
+	toColumn: LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51.Date
+
+relationship 7b8b7510-cd1e-4494-a53e-c51e8f8cacb6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Solution_End_Date
+	toColumn: LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0.Date
+
+relationship 111e3e0d-5346-4ff3-ba8e-5d7d3883e04f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Contract_Start_Date
+	toColumn: LocalDateTable_9ef9bfae-9967-4a5e-8360-af829fa81e1c.Date
+
+relationship d3e1ed84-542e-4af7-b28d-f591f3229708
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Contract_End_Date
+	toColumn: LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e.Date
+
+relationship aa8f54b9-3b47-4ae0-88ea-13afd8eb675d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Rate_Start_Date
+	toColumn: LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1.Date
+
+relationship 9c4f16ba-4441-482b-9351-781bfc521ab2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.Rate_End_Date
+	toColumn: LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079.Date
+
+relationship 3d0579a4-8c53-49f4-995e-9b6bd0780824
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_oracle_staff_cost_exceptions.Effective_from
+	toColumn: LocalDateTable_110c007c-b262-4fe6-bead-c589dcdceddb.Date
+
+relationship 790af70e-b3cc-4d13-b3d7-e782e590941e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_oracle_staff_cost_exceptions.Month
+	toColumn: LocalDateTable_e008df71-985d-4ca8-8fd1-85f2995ddc9e.Date
+
+relationship cdd637e7-cd21-4703-8143-391698d534fd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_smarttime.calc_timesheet_due_by
+	toColumn: LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8.Date
+

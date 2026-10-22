@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "46fdb3a53a92d2c0b9a7",
+  "position": {
+    "x": 0,
+    "y": 0.13897631024909174,
+    "z": 0,
+    "height": 560,
+    "width": 1248,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "Income - Contract View",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "84724074c789945c0961",
+  "isHidden": true
+}

@@ -1,0 +1,165 @@
+table data_oracle_staff_cost_exceptions
+	isHidden
+	lineageTag: ec859cd1-dfaa-44f0-a05e-36c13ed48032
+
+	column Source
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: a7e4339d-8042-40c9-a085-e132b5d334c0
+		summarizeBy: none
+		sourceColumn: Source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assignment_no
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: eb973b47-6c20-4cff-995e-c538641ae334
+		summarizeBy: none
+		sourceColumn: Assignment_no
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 84851e4f-e7e6-435e-bb3f-aec1fd9ad7d3
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_centre
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 6fb558cd-3f55-4ad9-80c8-67ef15a49171
+		summarizeBy: none
+		sourceColumn: Cost_centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_3
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: f0d96a9b-7037-48ce-96d0-302710f0d741
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_4
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 937234c0-0a40-477a-b4fa-bcc3de7d04aa
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hrly_rate
+		dataType: double
+		isHidden
+		sourceProviderType: float
+		lineageTag: 835e99eb-8b26-441f-9d18-3600a41bd17c
+		summarizeBy: sum
+		sourceColumn: Hrly_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Effective_from
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 31a98b9b-fd46-4c4d-9e8c-ad294f590512
+		summarizeBy: none
+		sourceColumn: Effective_from
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: a07b7d8c-60be-4838-9dd4-46736154a87d
+		summarizeBy: none
+		sourceColumn: Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Year
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: cf661366-ac08-47e3-9d6d-b2cf48583ca0
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c6b9f902-e028-4abf-8ff5-14f326cf50b7
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1dfa6b19-6513-4378-bef0-447230fd6829
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_oracle_staff_cost_exceptions = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_data_oracle_staff_cost_exceptions = Source{[Schema="dbo",Item="data_oracle_staff_cost_exceptions"]}[Data]
+				in
+				    dbo_data_oracle_staff_cost_exceptions
+
+	changedProperty = IsHidden
+

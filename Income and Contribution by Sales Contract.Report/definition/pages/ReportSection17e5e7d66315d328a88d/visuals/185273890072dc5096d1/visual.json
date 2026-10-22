@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "185273890072dc5096d1",
+  "position": {
+    "x": 0.25806451612903203,
+    "y": 0,
+    "z": 3000,
+    "height": 560.39704082637809,
+    "width": 1248
+  },
+  "visualGroup": {
+    "displayName": "Income and Contributions - Service View",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "84724074c789945c0961"
+}

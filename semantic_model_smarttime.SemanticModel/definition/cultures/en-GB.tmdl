@@ -1,0 +1,232 @@
+cultureInfo en-GB
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "support_rls_merged.personfk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "PersonFk"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "support_rls_merged.supervisorid_corrected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "supervisorid_corrected"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "support_rls_merged.full_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "support_rls_merged",
+			          "ConceptualProperty": "full_name"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "data_smarttime.calc_submitted_timesheets_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_submitted_timesheets_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "submitted %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_late_timesheets_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_late_timesheets_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "late %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_unsubmitted_timesheets_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_unsubmitted_timesheets_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unsubmitted %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_cost_centre_level_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Cost_Centre_Level_3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "directorate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_cost_centre_level_6": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_Cost_Centre_Level_6"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "service line": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.person_costcentre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "Person_CostCentre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cost centre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_timesheet_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_timesheet_count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total timesheets": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_total_activity_hours": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_total_activity_hours"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "activity hours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_smarttime.calc_submitted_hours_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "data_smarttime",
+			          "ConceptualProperty": "calc_submitted_hours_%"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "submitted hours %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

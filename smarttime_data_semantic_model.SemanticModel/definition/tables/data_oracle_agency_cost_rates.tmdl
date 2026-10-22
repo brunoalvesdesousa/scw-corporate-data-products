@@ -1,0 +1,133 @@
+table data_oracle_agency_cost_rates
+	lineageTag: 99efddeb-6f43-4750-ab8f-464ed2630169
+
+	column Source
+		dataType: string
+		lineageTag: 37581167-9057-47bb-9b56-b8d1cada23bb
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assignment_no
+		dataType: string
+		lineageTag: 1814fe37-25f8-4a14-8f5f-bbd539e1aeed
+		summarizeBy: none
+		sourceColumn: Assignment_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 54e038b3-defc-4333-9f26-481864235c68
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_centre
+		dataType: string
+		lineageTag: 8dc9c86d-6034-4a43-9cb9-e8f5abc618e8
+		summarizeBy: none
+		sourceColumn: Cost_centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_3
+		dataType: string
+		lineageTag: 665e12ba-46dd-4271-a2f9-5a5c91a17ed8
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_4
+		dataType: string
+		lineageTag: 000be809-c7dc-4237-b2d3-de0c347af92e
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hrly_rate
+		dataType: double
+		lineageTag: df2058d0-f9b7-47b0-8fb6-c0239e2004cc
+		summarizeBy: sum
+		sourceColumn: Hrly_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Effective_from
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e3ab920a-690e-417e-8bdd-229fb702ad08
+		summarizeBy: none
+		sourceColumn: Effective_from
+
+		variation Variation
+			isDefault
+			relationship: 2327a072-6226-4edf-b008-6964b0bd5293
+			defaultHierarchy: LocalDateTable_c0b34c37-2c19-405b-930f-6c50fedfa2c7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d8c0d547-9526-48cf-bea0-0071f7d27bdd
+		summarizeBy: none
+		sourceColumn: Month
+
+		variation Variation
+			isDefault
+			relationship: af1176d7-0956-4ff7-bae6-303608afd5db
+			defaultHierarchy: LocalDateTable_2517b613-fee1-47f7-8c59-836c5ab8aa6e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Year
+		dataType: string
+		lineageTag: 0b0ddb9a-d1ad-47ea-be57-c7fad641ea81
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: a6386479-953f-419d-8844-9646776727bf
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3da22916-317a-4c07-aea2-c8f50d7dcb1c
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_oracle_agency_cost_rates = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Oracle_Agency_cost_rates = Source{[Schema="dbo",Item="Oracle_Agency_cost_rates"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_Oracle_Agency_cost_rates,{{"Hrly_rate", type number}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","44930","04/01/23",Replacer.ReplaceText,{"Effective_from"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Effective_from", type date}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,2625 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Income - Contract",
+  "name": "Bookmark73dde736e1a5da5b8dda",
+  "options": {
+    "targetVisualNames": [
+      "32073dbc963980d470c6"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection17e5e7d66315d328a88d",
+    "sections": {
+      "ReportSection17e5e7d66315d328a88d": {
+        "visualContainers": {
+          "2ee1ff91a6a02aa03853": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "4fee26e15e38543b178f": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "99e955b9a01386ac825d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b64ba78bc9926267e85d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "c56a4fd6da0473038753": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f77736c5040190334a8e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f935d73cb77907c68c54": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "29ca18cdc43c72e80ea2": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "017d7bb67580cb2cec82": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter4405ae0d1393df45e6da",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "Customer Name"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filtera7116ccd320fcc9077a4",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "f3d96f7aa8f96006a1a1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "16a401d7aee5a0003516": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "27ad0d8faf00ad117132",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "txt_opportunity_amount"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_contract_value"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "86d4cd55829290aa0bc2": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d3486faf5d270ad34ebd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter6bee092f65330c705d51",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "6bd7eedcb8d83f0b598f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_invoice_value"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "241da476364e3e3515de",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "337ee57c7aefa9190448",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_oppo_currentfy_amount"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "scatterChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_invoice_value"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "X": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_invoice_value"
+                    }
+                  }
+                ],
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "467151bd99946cb810c1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter4d8a63cb55a07c6b804c",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "Customer Name"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filterb6b567c157acbddb830b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter805cdc9fa9a21c66d192",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "5c80e263b5607c639643",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d8618ca94ad9c9d5fc6e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "4d67ed53448b150c6aa1": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "5b11e05e600357ce1ea1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6e74124b4820bd401428",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "txt_contribution_%"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_contribution_%"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "6705f51bc31d5e74c2bd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter40e39b8123bb5aa7adc3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Contract Name"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filterb92c5966ec6f33f7ecc9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "4618b6f13c9a628c107e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Name"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fa0704563553e92ee72d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1d2a8a8f160c3cca20dc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_oppo_currentfy_amount"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "scatterChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Name"
+                    }
+                  }
+                ],
+                "X": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7b747970e7aceac0558c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "697a5599532abe062f30",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a1a16f0b4b3579973012",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8ac3620be1e18502895d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9f67f3fddfcbc661053a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "txt_opportunity_amount"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_contract_value"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "dd6d3af2406cb0d6eea6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a1b80cf3e3d59c5d4001",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "328ed1a1d9846429135f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_oracle_income"
+                        }
+                      },
+                      "Property": "Category"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_oracle_income"
+                        }
+                      },
+                      "Property": "Category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fd9d5d902b0040178095": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "2f762606784da63ba25c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "23a09842c535afea1f2f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9b58c67b37b3e7f2e630",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "135b37197a7a091358bc",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "47f1088f328e0c0332b3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b7fd87b5e16fca4f5f76",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_non_pay"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "19011fd3ba04b7f357cb",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_pay"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_oracle_non_pay"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "49b84da784c4c032ebeb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "43f5a536e650de539bf4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "42245eb3a139ffadf606",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "work_activity_number"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3179876ab49a86280c02",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Property": "Cost"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "work_activity_number"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7a7f90b5d2130e02b997": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b1ee7452d9a4624d7261",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7aaa14c0d8107fd3d53e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_oracle_income"
+                        }
+                      },
+                      "Property": "Category"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_income"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_oracle_income"
+                        }
+                      },
+                      "Property": "Category"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "9c4af613e9db9e04d64e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "95aeb17f4b6d8826a627",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "b9423bbaee73d210f84b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Person_Payscale"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e5a4a572625f82c60ae6",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Property": "Person_Id"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0abdbc948d175b4cc4d2",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Property": "Cost"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Person_Payscale"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_smarttime"
+                        }
+                      },
+                      "Property": "Person_Payscale"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b7b7d1e38cc2bc5d3b7d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "744fb3283cefd01d76ae",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "txt_contribution_%"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "f380f114000dac464e2e": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "32073dbc963980d470c6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterd94c985d7eed70278e65",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter2a96deee48cadf98a811",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "oppno_name"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "oppno_name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "oppno_name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "3fcc0a3cc8d65e0ecce6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filtera83b598d920a636f494d",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter4653949049fc84f71873",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "b",
+                        "Entity": "base_date",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "b"
+                                        }
+                                      },
+                                      "Property": "Month Year"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "base_date"
+                        }
+                      },
+                      "Property": "Month Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "base_date"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "base_date"
+                        }
+                      },
+                      "Property": "Month Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "af271dcb0906c73dad60": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filtera5e25c6546769858abea",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter5a24e25a063001075ad5",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "SCW Lead"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "SCW Lead"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "SCW Lead"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e06ae7ad877a9e6b498f": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filtera83b598d920a636f494d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter23f6f635aa6d3b2944b4",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "b",
+                        "Entity": "base_date",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "b"
+                                        }
+                                      },
+                                      "Property": "Financial Year"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "base_date"
+                        }
+                      },
+                      "Property": "Financial Year"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "base_date"
+                        }
+                      },
+                      "Property": "Financial Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "e81b7c502c48dd4c01de": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter080fca04c107622e8d08",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_cost_all"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter0693ee655494785e2f19",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter74828d1308c772cdc9d4",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "Customer Name"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "Customer Name"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "data_salesforce_master.Customer Name"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "e9127bd88b8d0d166ac6": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter0ffd3357b2b333ed7f77",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter8df3b7e433b982b8fcae",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_costcentre_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "Level_3_Service_Line"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_3_Service_Line"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "data_costcentre_master",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Level_3_Service_Line"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Transformation'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_3_Service_Line"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f64987c266a4496763d5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterfc65b5b7efbab48761e9",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filterae9a95fffe972c9c9183",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "data_salesforce_master",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "StageName"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "StageName"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_salesforce_master"
+                        }
+                      },
+                      "Property": "StageName"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fefb9c3d0df1ce763b5c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter2b08965a1fc52b62cf35",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_calculations",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "calc_valid_cost_income"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "'true'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_calculations"
+                        }
+                      },
+                      "Property": "calc_valid_cost_income"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "eb92d3132fb9435746bf",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data_costcentre_master"
+                        }
+                      },
+                      "Property": "Level_4_Sub Service_Line"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fa5b5af19f82e8dcd428": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "84724074c789945c0961": {
+            "children": {
+              "090becf46150b4ddaa28": {
+                "isHidden": true
+              },
+              "185273890072dc5096d1": {
+                "isHidden": true
+              },
+              "46fdb3a53a92d2c0b9a7": {
+                "isHidden": false
+              },
+              "e56faa680220d857d20c": {
+                "isHidden": true
+              }
+            }
+          },
+          "b1e49ac0894223616605": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

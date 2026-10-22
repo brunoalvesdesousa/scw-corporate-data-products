@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "name": "21023a973b430178c900",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 232,
+    "width": 1280,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Title&MenuBar",
+    "groupMode": "ScaleMode"
+  }
+}

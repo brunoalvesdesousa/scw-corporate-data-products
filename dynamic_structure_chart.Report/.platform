@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "dynamic_structure_chart"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9310655b-81ef-416a-8951-f009ed91d817"
+  }
+}

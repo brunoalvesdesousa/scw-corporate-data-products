@@ -1,0 +1,12 @@
+role person_cost_centre_l4
+	modelPermission: read
+
+	tablePermission data_smarttime =
+			[Person_Cost_Centre_Level_3] IN
+			CALCULATETABLE(
+			    VALUES('teams_rls_static'[Access L4]),
+			    teams_rls_static[scwcsu email]= USERPRINCIPALNAME()
+			)
+
+	annotation PBI_Id = 4565d1e09ddb4f3988ba53c68c7edf1b
+

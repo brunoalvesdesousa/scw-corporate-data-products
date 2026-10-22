@@ -1,0 +1,47 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'SQL Resources'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["0_Environment","DirectQuery to AS - smarttime_data_semantic_model_project_view"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation __TEdtr = 1
+
+ref table DateTableTemplate_5bea37e1-dcac-4d17-bea8-6fe8b8fd7306
+ref table 0_Environment
+ref table LocalDateTable_1bf9ab83-455b-4186-aa51-b31af66c5eba
+ref table data_smarttime
+ref table LocalDateTable_2bc67057-9e82-4766-883d-ea5c2da2bcad
+ref table LocalDateTable_0c69c1f6-9975-45c6-8295-775a55ff87b9
+ref table LocalDateTable_7cb2b29b-ec9f-4e34-b7c9-bef32f7cb9b8
+ref table LocalDateTable_b45d2d54-a8f3-494d-afbe-5601047f29d5
+ref table LocalDateTable_46de0139-3892-4988-82a3-3a3a14b74478
+ref table LocalDateTable_162730c3-83fe-4c25-b79c-2a7738687df1
+ref table LocalDateTable_bced55ed-9cfd-4dbd-a9e4-9aa24945021f
+ref table LocalDateTable_d2ebefb5-e9b5-4406-abd3-402670657079
+ref table LocalDateTable_6851690c-909b-45d1-8492-6d3a0826b01d
+ref table LocalDateTable_d9ed0ca8-f2cf-4552-82c7-e64737d88f51
+ref table LocalDateTable_b5b25ed7-9de4-4869-9d4c-268ee9fcaef0
+ref table LocalDateTable_9ef9bfae-9967-4a5e-8360-af829fa81e1c
+ref table LocalDateTable_8e712437-7936-4fd3-a62d-a502cfb13c8e
+ref table LocalDateTable_5439be40-20b6-4644-97af-8c9f5378afd1
+ref table LocalDateTable_2df95f02-f54a-47bc-aa43-c5a47e0e6079
+ref table base_date
+ref table data_oracle_staff_cost_exceptions
+ref table LocalDateTable_8336a70e-f0f5-4f02-a99f-3918dbe434a8
+ref table LocalDateTable_110c007c-b262-4fe6-bead-c589dcdceddb
+ref table LocalDateTable_e008df71-985d-4ca8-8fd1-85f2995ddc9e
+
+ref cultureInfo en-US
+

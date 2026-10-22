@@ -1,0 +1,23 @@
+role 'service line'
+	modelPermission: read
+
+	tablePermission data_smarttime = ```
+			VAR CurrentUserEmail = USERPRINCIPALNAME()
+			VAR LoggedInEmployeeID = 
+			    LOOKUPVALUE(
+			        'support_rls_merged'[PersonFk],
+			        'support_rls_merged'[support_entraid.userPrincipalName], 
+			        CurrentUserEmail
+			    )
+			
+			RETURN
+			
+			    IF(
+			        ISBLANK(LoggedInEmployeeID), 
+			        FALSE,
+			        PATHCONTAINS(data_smarttime[calc_hierarchy_path],LoggedInEmployeeID)
+			    )
+			```
+
+	annotation PBI_Id = b3effcc1b0154522b300a7b18db5c3fd
+

@@ -1,0 +1,156 @@
+table base_date
+	lineageTag: f6e05e2d-a2d0-48c2-b44f-fed3199264ff
+	sourceLineageTag: 49f459be-62ce-42d0-b14f-c94f0e11adc5
+
+	measure Count_Days_in_Month = EXTERNALMEASURE("Count_Days_in_Month", INTEGER, "DirectQuery to AS - semantic_model_smarttime")
+		formatString: 0
+		lineageTag: 228e0990-ac5f-4c77-8e14-8f521e39cde6
+		sourceLineageTag: 93c57e76-1791-48c6-ad31-61885c9e4c6b
+		dataCategory: Uncategorized
+
+	column Date
+		dataType: dateTime
+		isNullable: false
+		formatString: Long Date
+		lineageTag: ff90f21a-daef-4822-a18a-6f1dc446502f
+		sourceLineageTag: 666f3f35-b6d8-4e3a-81ea-b9a6c19beeaf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: c86700e8-446c-4659-b173-50566d7ba3bc
+		sourceLineageTag: 4fee0498-4e09-49fd-a615-44f94c713b38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 262c359e-3f77-4270-80dc-5b99b648d57d
+		sourceLineageTag: 7cf269ea-1aab-4ce0-aebf-6191730b5d29
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		lineageTag: e35a5ae3-e961-4728-b602-49067b16787a
+		sourceLineageTag: 66273ed1-50da-4442-88a7-0b13530222c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 49fc8371-2abc-4246-8bae-1f23fcbec5d6
+		sourceLineageTag: 259994db-3c5a-4082-b470-5bdab61da2d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of Week'
+		dataType: string
+		lineageTag: 7f6e5c9d-b541-4d8b-ae1f-f9baf46ba17d
+		sourceLineageTag: 370b06ee-2def-4fd1-bc42-ff88ca483d6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 79fd3fca-e422-4d82-bfa0-574f6ee80c59
+		sourceLineageTag: bc530f22-6dfb-4514-ab88-dcf2e2a01137
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of Week Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Day of the Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 64088292-57cb-4306-8efc-8a3026204687
+		sourceLineageTag: 5e130b89-b008-44d0-a7f6-0588c87bb050
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day of the Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Year'
+		dataType: string
+		lineageTag: e147fa9b-e1cd-49b2-95e7-f8ad2d9eacc8
+		sourceLineageTag: 515708fd-abf6-4ea8-95c7-d3ce0b5e7f5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a166cca-c276-4236-bf54-804336d6156c
+		sourceLineageTag: 4660cc17-0b42-4572-8419-0024a99d27b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bdae64a1-ceca-445a-9891-40774ecefb6a
+		sourceLineageTag: b3a606aa-02cf-4517-bd23-0bf402c2e4c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Start
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week End'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 745f46ec-c328-4f37-8b18-da7508f6e924
+		sourceLineageTag: 833dd378-9d33-403f-bdef-7f5d06f3a278
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week End
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Week Start Plus 7'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 90612ac6-1c64-4b2a-9482-9bdc6ff133a5
+		sourceLineageTag: 5c213ba7-c4b1-4a0f-9cc5-c20493e3d602
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Week Start Plus 7
+
+		annotation SummarizationSetBy = User
+
+	partition base_date = entity
+		mode: directQuery
+		source
+			entityName: base_date
+			expressionSource: 'DirectQuery to AS - semantic_model_smarttime'
+

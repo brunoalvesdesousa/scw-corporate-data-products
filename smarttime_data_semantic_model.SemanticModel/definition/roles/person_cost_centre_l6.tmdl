@@ -1,0 +1,12 @@
+role person_cost_centre_l6
+	modelPermission: read
+
+	tablePermission data_smarttime =
+			[Person_CostCentre] IN
+			CALCULATETABLE(
+			    VALUES(support_rls_static[Access CostCentre]),
+			    support_rls_static[scwcsu email] = USERPRINCIPALNAME()
+			)
+
+	annotation PBI_Id = b9dfdb66c1e645eb9265dc15d289b3c1
+

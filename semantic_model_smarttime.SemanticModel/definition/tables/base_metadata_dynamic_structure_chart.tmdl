@@ -1,0 +1,28 @@
+table base_metadata_dynamic_structure_chart
+	lineageTag: c790e4fa-6c78-423f-ac8e-09925fe06d24
+
+	column Attribute
+		dataType: string
+		lineageTag: 8e9f245c-2417-4c5e-a8bd-02ed10b07528
+		summarizeBy: none
+		sourceColumn: Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: e0c5dfc1-2dec-4734-96b2-1ecb53be14f0
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition base_metadata_dynamic_structure_chart = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_base_metadata_dynamic_structure_chart = Source{[Schema="dbo",Item="base_metadata_dynamic_structure_chart"]}[Data]
+				in
+				    dbo_base_metadata_dynamic_structure_chart
+

@@ -1,0 +1,163 @@
+table base_date
+	lineageTag: 49f459be-62ce-42d0-b14f-c94f0e11adc5
+	dataCategory: Time
+
+	measure Count_Days_in_Month =
+			CALCULATE(DISTINCTCOUNT(base_date[Date]),
+			    base_date[Day of Week Number]<>6 && base_date[Day of Week Number]<>7)
+		formatString: 0
+		lineageTag: 93c57e76-1791-48c6-ad31-61885c9e4c6b
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 666f3f35-b6d8-4e3a-81ea-b9a6c19beeaf
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4fee0498-4e09-49fd-a615-44f94c713b38
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7cf269ea-1aab-4ce0-aebf-6191730b5d29
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 66273ed1-50da-4442-88a7-0b13530222c7
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 259994db-3c5a-4082-b470-5bdab61da2d1
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 370b06ee-2def-4fd1-bc42-ff88ca483d6c
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: bc530f22-6dfb-4514-ab88-dcf2e2a01137
+		summarizeBy: none
+		sourceColumn: Day of Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of the Month Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5e130b89-b008-44d0-a7f6-0588c87bb050
+		summarizeBy: none
+		sourceColumn: Day of the Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Year'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 515708fd-abf6-4ea8-95c7-d3ce0b5e7f5d
+		summarizeBy: none
+		sourceColumn: Financial Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4660cc17-0b42-4572-8419-0024a99d27b9
+		summarizeBy: none
+		sourceColumn: Financial Week Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: b3a606aa-02cf-4517-bd23-0bf402c2e4c5
+		summarizeBy: none
+		sourceColumn: Financial Week Start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Financial Week End'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 833dd378-9d33-403f-bdef-7f5d06f3a278
+		summarizeBy: none
+		sourceColumn: Financial Week End
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Financial Week Start Plus 7'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 5c213ba7-c4b1-4a0f-9cc5-c20493e3d602
+		summarizeBy: none
+		sourceColumn: Financial Week Start Plus 7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b073f1e9-fc06-4899-af8e-2185dd8c68a4
+		summarizeBy: none
+		sourceColumn: MonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition base_date = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_base_date = Source{[Schema="dbo",Item="base_date"]}[Data]
+				in
+				    dbo_base_date
+

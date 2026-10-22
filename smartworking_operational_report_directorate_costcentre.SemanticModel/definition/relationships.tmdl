@@ -1,0 +1,9 @@
+relationship ad5e508e-39f8-4e42-b008-054dfa25e018
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 0_Environment.'Latest Refresh Date'
+	toColumn: LocalDateTable_1bf9ab83-455b-4186-aa51-b31af66c5eba.Date
+
+relationship 17036850-d26b-4516-8fb1-86ef005930e8
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: base_date.Date
+

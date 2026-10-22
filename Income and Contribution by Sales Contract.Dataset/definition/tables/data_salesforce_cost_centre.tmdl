@@ -1,0 +1,297 @@
+table data_salesforce_cost_centre
+	lineageTag: 4d8d16bc-777a-44bd-a3c6-7cbf84562767
+
+	column RowID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9205ea23-edd5-4b59-a8e7-39d84a81fb35
+		summarizeBy: none
+		sourceColumn: RowID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0edc8c0c-bf7f-45e8-9673-443dd66be498
+		summarizeBy: none
+		sourceColumn: ParentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_type
+		dataType: string
+		lineageTag: 19fcc5ab-7298-4370-ab02-0b88cd5e17ce
+		summarizeBy: none
+		sourceColumn: attributes_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column attributes_url
+		dataType: string
+		lineageTag: dc01164e-3090-446f-a01e-f29c42f2d068
+		summarizeBy: none
+		sourceColumn: attributes_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: c86bf46b-aba0-4699-8142-4256d07b2cef
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column OwnerId
+		dataType: string
+		lineageTag: f09c5356-99f1-4ee3-9d8e-ff3e8e0f4e60
+		summarizeBy: none
+		sourceColumn: OwnerId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: string
+		lineageTag: f270395d-65fb-4bef-9ae5-471c9dd73e44
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 720966e5-cbb2-45b5-802e-c1f2083508ad
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 32dab557-91d2-4391-8668-73e404fa1891
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastModifiedById
+		dataType: string
+		lineageTag: fca481ba-83fd-43b0-8497-1fe175ec6a26
+		summarizeBy: none
+		sourceColumn: LastModifiedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code__c
+		dataType: string
+		lineageTag: 3feba00a-1ab6-4738-93b2-fe505ec091f5
+		summarizeBy: none
+		sourceColumn: Code__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Directorate__c
+		dataType: string
+		lineageTag: 17d7523b-b27b-48ee-8d8e-113aeca1d50a
+		summarizeBy: none
+		sourceColumn: Directorate__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line__c
+		dataType: string
+		lineageTag: 5d98d48b-4eb3-4470-9fec-d5a8719b5c11
+		summarizeBy: none
+		sourceColumn: Service_Line__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column LPF_Category__c
+		dataType: string
+		lineageTag: e50f5eac-0212-43b5-90b3-f7f2fdb41434
+		summarizeBy: none
+		sourceColumn: LPF_Category__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Local_Name__c
+		dataType: string
+		lineageTag: 690267b4-ab02-46a3-b560-3b36e6ab94ac
+		summarizeBy: none
+		sourceColumn: Local_Name__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exclude_from_Opportunity_List__c
+		dataType: string
+		lineageTag: 1a017998-7b10-40c0-aebb-7e90f58f8c81
+		summarizeBy: none
+		sourceColumn: Exclude_from_Opportunity_List__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Central_Budgets_Reserves__c
+		dataType: string
+		lineageTag: 5fc918a8-fec8-4ad1-9771-abe9e148824a
+		summarizeBy: none
+		sourceColumn: Central_Budgets_Reserves__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contribution_Report_WTE_Mapping__c
+		dataType: string
+		lineageTag: 8cfd6c3c-2c15-4253-b367-d427a10438d2
+		summarizeBy: none
+		sourceColumn: Contribution_Report_WTE_Mapping__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column D27_Dashboard_Mapping__c
+		dataType: string
+		lineageTag: c8280e9b-95b6-4e53-a9d9-f8af359ad64a
+		summarizeBy: none
+		sourceColumn: D27_Dashboard_Mapping__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Executive_Role__c
+		dataType: string
+		lineageTag: 5a672f5d-afa1-427b-a199-626b81093114
+		summarizeBy: none
+		sourceColumn: Executive_Role__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISFE_TB_CC_Name__c
+		dataType: string
+		lineageTag: 19f1675e-d9ea-485e-9575-8f96eb26edcf
+		summarizeBy: none
+		sourceColumn: ISFE_TB_CC_Name__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_1__c
+		dataType: string
+		lineageTag: 6724dfdf-c423-4291-8589-0af9fc114106
+		summarizeBy: none
+		sourceColumn: Level_1__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_4_incl_prev_servline__c
+		dataType: string
+		lineageTag: b6196f04-df70-4cd3-b953-6d97bd6ea081
+		summarizeBy: none
+		sourceColumn: Level_4_incl_prev_servline__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level_5_Service_Line_Localised_CC_Name__c
+		dataType: string
+		lineageTag: 20a68c27-dd14-4dd5-baa9-4645e6fc9600
+		summarizeBy: none
+		sourceColumn: Level_5_Service_Line_Localised_CC_Name__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name__c
+		dataType: string
+		lineageTag: 1b8bb38f-aeb9-4dbb-9bd5-b9750d3dbf6a
+		summarizeBy: none
+		sourceColumn: Full_Name__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prog_Admin__c
+		dataType: string
+		lineageTag: 411e9276-cdc6-4b38-a446-40bc4e6b0f09
+		summarizeBy: none
+		sourceColumn: Prog_Admin__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status__c
+		dataType: string
+		lineageTag: 0e9daf43-5c2d-4ac3-9f8c-bbd5791a33db
+		summarizeBy: none
+		sourceColumn: Status__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget_Manager__c
+		dataType: string
+		lineageTag: c3e17bf3-aee3-462f-b72a-d5890000098d
+		summarizeBy: none
+		sourceColumn: Budget_Manager__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Executive_Director_Name__c
+		dataType: string
+		lineageTag: 1a2bbde8-1299-4eab-855a-7c0e50d040a4
+		summarizeBy: none
+		sourceColumn: Executive_Director_Name__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finance_Manager__c
+		dataType: string
+		lineageTag: df580fd5-9bcf-417c-be7a-57018b85629b
+		summarizeBy: none
+		sourceColumn: Finance_Manager__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business_planning_service_line__c
+		dataType: string
+		lineageTag: 8adfacc2-769b-4697-84fa-c41c9fa7ced9
+		summarizeBy: none
+		sourceColumn: Business_planning_service_line__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_line_lead__c
+		dataType: string
+		lineageTag: bbdb48e5-c7db-4a2c-b7aa-93c6be0cf065
+		summarizeBy: none
+		sourceColumn: Service_line_lead__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_line_lead_2__c
+		dataType: string
+		lineageTag: c2033c8f-d43d-467a-95b1-90d7dd6f7017
+		summarizeBy: none
+		sourceColumn: Service_line_lead_2__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget_Manager_2__c
+		dataType: string
+		lineageTag: dcb8e454-3ae9-4c04-adf1-9da039b51053
+		summarizeBy: none
+		sourceColumn: Budget_Manager_2__c
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a32762d-9b6b-42b6-a9af-520e9de07577
+		summarizeBy: none
+		sourceColumn: Derived_File_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_salesforce_cost_centre = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Salesforce_Cost_Centre = Source{[Schema="dbo",Item="Salesforce_Cost_Centre"]}[Data]
+				in
+				    dbo_Salesforce_Cost_Centre
+
+	annotation PBI_ResultType = Table
+

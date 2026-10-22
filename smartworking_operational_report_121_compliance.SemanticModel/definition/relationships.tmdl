@@ -1,0 +1,8 @@
+relationship 65ddaeab-2309-46f4-a5c0-110832f2ce58
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: base_date.Date
+
+relationship 0259bcfe-44b1-4ad2-bfc5-9be3cae5e4d4
+	fromColumn: data_smarttime.Person_Id
+	toColumn: support_rls_dynamic.PersonFk
+

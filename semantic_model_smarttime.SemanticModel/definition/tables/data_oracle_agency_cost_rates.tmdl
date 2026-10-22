@@ -1,0 +1,167 @@
+table data_oracle_agency_cost_rates
+	isHidden
+	lineageTag: 15506b55-7a4c-4493-823c-b6fed2b7a909
+
+	column Source
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: bd6c708e-1237-44d3-a96e-5b211f0ba0c4
+		summarizeBy: none
+		sourceColumn: Source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Assignment_no
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 8626bd52-c7ca-4546-a2f5-522df7749556
+		summarizeBy: none
+		sourceColumn: Assignment_no
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: cde5c2f5-214b-4d0b-ae11-7c1947aeef06
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_centre
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 518eb812-f538-4d44-ac01-38ef47dff020
+		summarizeBy: none
+		sourceColumn: Cost_centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_3
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 58a7c14e-d4a0-4c1e-b466-91f588d2e7a9
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Service_Line_Level_4
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 55be5e8c-b30b-445a-aff7-d27c5c06013d
+		summarizeBy: none
+		sourceColumn: Service_Line_Level_4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hrly_rate
+		dataType: double
+		isHidden
+		sourceProviderType: float
+		lineageTag: cae24520-0182-4b33-9adc-eeb80bfcb875
+		summarizeBy: sum
+		sourceColumn: Hrly_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Effective_from
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 70f698cf-999a-4ac2-9789-ac157e6b6920
+		summarizeBy: none
+		sourceColumn: Effective_from
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: bc176827-8a1a-4163-bf82-852fc5725b8d
+		summarizeBy: none
+		sourceColumn: Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Year
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: bf2d8ab0-7556-44dc-974f-6e0743071499
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: df4a7726-c490-4a87-a48b-cd7ee7762e65
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ef6eeffe-c87a-41e3-a493-c04612a54f01
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_oracle_agency_cost_rates = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_data_oracle_agency_cost_rates = Source{[Schema="dbo",Item="data_oracle_agency_cost_rates"]}[Data]
+				in
+				    dbo_data_oracle_agency_cost_rates
+
+	changedProperty = IsHidden
+

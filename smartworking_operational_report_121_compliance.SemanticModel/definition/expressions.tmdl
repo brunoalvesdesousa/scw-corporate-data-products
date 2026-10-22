@@ -1,0 +1,13 @@
+expression 'DirectQuery to AS - semantic_model_smarttime' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/%5BDI%5D%20SCW%20Corporate%20Products", "semantic_model_smarttime"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 250f5a69-d942-41e5-890b-a8a509c28736
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"15506b55-7a4c-4493-823c-b6fed2b7a909"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"ec859cd1-dfaa-44f0-a05e-36c13ed48032"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"304c1b9d-c3bc-4736-86a8-5c0e7cc408b1"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"c5c9c332-7ccb-46c7-b0db-76d281237e63"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"dcab03b7-f7e0-4f0f-b458-494f2016b0b3"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"5c6be17d-7175-45a0-95fe-0ad7d92994a1"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"803fa0dd-b682-410e-824b-54088dbda931"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"3de85585-0595-49af-bf80-c8f502c35746"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"943924b0-e671-458d-bf76-312fb8bbfd98"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"77f779fb-4930-4c62-af08-061d6facf539"}},"objectType":"Table"}]
+

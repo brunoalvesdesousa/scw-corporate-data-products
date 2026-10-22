@@ -1,0 +1,217 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1799.2649147624925,
+            "y": 684.79266990779843
+          },
+          "nodeIndex": "data_oracle_agency_cost_rates",
+          "nodeLineageTag": "15506b55-7a4c-4493-823c-b6fed2b7a909",
+          "size": {
+            "height": 389.22008886884043,
+            "width": 268.16939573700256
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2131.7906340363375,
+            "y": 463.83682769653853
+          },
+          "nodeIndex": "data_oracle_staff_cost_exceptions",
+          "nodeLineageTag": "ec859cd1-dfaa-44f0-a05e-36c13ed48032",
+          "size": {
+            "height": 467.05037915868,
+            "width": 338.4064869741751
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "data_smarttime",
+          "nodeLineageTag": "6a6dcd86-d570-40da-a3a1-b6501c02fcf1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1163.159850421293,
+            "y": 363.02401097225481
+          },
+          "nodeIndex": "support_bank_holidays",
+          "nodeLineageTag": "304c1b9d-c3bc-4736-86a8-5c0e7cc408b1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 2131.3904485347821,
+            "y": 2.2234932393721465
+          },
+          "nodeIndex": "support_entraid_groups",
+          "nodeLineageTag": "c5c9c332-7ccb-46c7-b0db-76d281237e63",
+          "size": {
+            "height": 415.72827607984868,
+            "width": 332.71158768467421
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1786.5570677794444,
+            "y": 345.4883092750797
+          },
+          "nodeIndex": "support_entraid_users",
+          "nodeLineageTag": "dcab03b7-f7e0-4f0f-b458-494f2016b0b3",
+          "size": {
+            "height": 302.05641808618566,
+            "width": 281.45749407917037
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 351.95059851102826,
+            "y": 374.51915082090414
+          },
+          "nodeIndex": "support_rls_dynamic",
+          "nodeLineageTag": "97485eba-3a08-42de-8230-f217c5142afc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1778.3119263267915,
+            "y": 0
+          },
+          "nodeIndex": "support_rls_dynamic_merged",
+          "nodeLineageTag": "5c6be17d-7175-45a0-95fe-0ad7d92994a1",
+          "size": {
+            "height": 300,
+            "width": 311.15229675975024
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1472.1269225098326,
+            "y": 333.75886963766095
+          },
+          "nodeIndex": "support_rls_dynamic_missing",
+          "nodeLineageTag": "803fa0dd-b682-410e-824b-54088dbda931",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1474.1655450547021,
+            "y": 0
+          },
+          "nodeIndex": "teams_rls_static",
+          "nodeLineageTag": "3de85585-0595-49af-bf80-c8f502c35746",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1466.6093725163064,
+            "y": 683.52521143431329
+          },
+          "nodeIndex": "support_rls_hierarchy_gold",
+          "nodeLineageTag": "943924b0-e671-458d-bf76-312fb8bbfd98",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 493.523735381933
+          },
+          "nodeIndex": "RLS_Metadata",
+          "nodeLineageTag": "77f779fb-4930-4c62-af08-061d6facf539",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 329.49076644749533,
+            "y": 1.9161235039218809
+          },
+          "nodeIndex": "base_date",
+          "nodeLineageTag": "49f459be-62ce-42d0-b14f-c94f0e11adc5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1164.0753571509483,
+            "y": 560.59553562869223
+          },
+          "nodeIndex": "base_metadata_dynamic_structure_chart",
+          "nodeLineageTag": "c790e4fa-6c78-423f-ac8e-09925fe06d24",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1176.2469412325502,
+            "y": 187.58654267400129
+          },
+          "nodeIndex": "base_metadata_smarttime",
+          "nodeLineageTag": "c4cd8a19-12f5-407a-b516-7d67f274ec19",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 66.2182426336308,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

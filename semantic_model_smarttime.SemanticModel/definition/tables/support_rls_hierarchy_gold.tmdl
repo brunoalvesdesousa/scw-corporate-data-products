@@ -1,0 +1,197 @@
+table support_rls_hierarchy_gold
+	isHidden
+	lineageTag: 943924b0-e671-458d-bf76-312fb8bbfd98
+
+	column PersonFk
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 949b97f5-85ab-4bad-b5b7-61ae343719a8
+		summarizeBy: none
+		sourceColumn: PersonFk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrgPath
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 234c4155-e773-476a-bbf2-61c48f3e9276
+		summarizeBy: none
+		sourceColumn: OrgPath
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level3
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 79ea7a18-8717-4e6b-a699-2430ee2a7f0d
+		summarizeBy: none
+		sourceColumn: Level3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 9fa83492-b23f-4c02-9e07-c757cd5b3b69
+		summarizeBy: none
+		sourceColumn: CostCentre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level6
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: a0f892ea-0a53-477d-ba3a-36d9711daff6
+		summarizeBy: none
+		sourceColumn: Level6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameFirst
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 3defc4eb-6864-4246-b002-0b08c4c11a72
+		summarizeBy: none
+		sourceColumn: NameFirst
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameLast
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 7012edba-2949-4b1a-a5aa-9a36db3f363e
+		summarizeBy: none
+		sourceColumn: NameLast
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: b883a8eb-f0dd-4abd-899e-568ce31a13d0
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorId
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 7d1d5f7c-0bb3-4b4a-a0e5-6186138a1bb9
+		summarizeBy: none
+		sourceColumn: SupervisorId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 9fee6a6f-bbf2-4711-9ca6-da73adf44c68
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 0dab4621-83df-4ac6-89d6-b29b8af37c5a
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Leaver
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9132e10c-b262-4246-b643-8e3a4c49eda2
+		summarizeBy: sum
+		sourceColumn: Leaver
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column userPrincipalName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 38100dfd-53d7-419e-a7e2-d1480a548f5f
+		summarizeBy: none
+		sourceColumn: userPrincipalName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisorid_corrected = ```
+			
+			    IF(
+			        support_rls_hierarchy_gold[PersonFk]="4037",
+			        BLANK(),
+			        support_rls_hierarchy_gold[SupervisorId]
+			        )
+			```
+		isHidden
+		lineageTag: 090a71ea-4a6a-46f3-b130-7e4ba13e3d3f
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fullname = support_rls_hierarchy_gold[NameFirst] & " " & support_rls_hierarchy_gold[NameLast]
+		isHidden
+		lineageTag: 3c965c1e-5957-4660-a51f-bfd178a56f85
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition support_rls_hierarchy_gold = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("6o7iqqh3u5ruxod3jwhnucnsru-h3xe24f5b4fe7h3tmfs6pskvcy.datawarehouse.fabric.microsoft.com", "scw_corporate_data_products"),
+				    dbo_support_rls_hierarchy_gold = Source{[Schema="dbo",Item="support_rls_hierarchy_gold"]}[Data]
+				in
+				    dbo_support_rls_hierarchy_gold
+
+	changedProperty = IsHidden
+

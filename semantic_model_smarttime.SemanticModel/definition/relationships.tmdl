@@ -1,0 +1,12 @@
+relationship 3972506c-6236-b332-b2f5-dc948f26be9d
+	fromColumn: data_smarttime.Person_Id
+	toColumn: RLS_Metadata.PersonFk
+
+relationship 9d4e78fd-956c-5acd-c014-6b0f8379a717
+	fromColumn: data_smarttime.Activity_Date
+	toColumn: base_date.Date
+
+relationship 331a876a-a5eb-5e6c-71ba-f4c179fb6e78
+	fromColumn: data_smarttime.Person_Id
+	toColumn: support_rls_dynamic.PersonFk
+

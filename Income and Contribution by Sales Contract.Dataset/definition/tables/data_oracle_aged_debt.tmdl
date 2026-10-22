@@ -1,0 +1,221 @@
+table data_oracle_aged_debt
+	lineageTag: c9987cff-e6c4-4e48-a3c5-17a61c47ffa8
+
+	column Source
+		dataType: string
+		lineageTag: 3e6d58ab-0248-4952-8e1d-da87ad5ead74
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 392b1391-613e-4bfb-b143-4e208a46ace8
+		summarizeBy: none
+		sourceColumn: Month
+
+		variation Variation
+			isDefault
+			relationship: 05e06c88-d920-4383-a64d-bea79f31d14b
+			defaultHierarchy: LocalDateTable_828b555e-bb85-4a8b-835f-15694c8928fc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_document_number
+		dataType: string
+		lineageTag: 27d25191-71a2-4403-a63a-72711f447fe3
+		summarizeBy: none
+		sourceColumn: Sales_document_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transaction_source
+		dataType: string
+		lineageTag: 1db8a0dd-2195-464e-9e98-0b5a6ab7d4e5
+		summarizeBy: none
+		sourceColumn: Transaction_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_PO_number
+		dataType: string
+		lineageTag: d055af30-7e4e-43f3-8b94-1a3fbe159dd5
+		summarizeBy: none
+		sourceColumn: Customer_PO_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Invoiced_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 46763389-5437-4612-84aa-22f63eaf591e
+		summarizeBy: none
+		sourceColumn: Invoiced_date
+
+		variation Variation
+			isDefault
+			relationship: eb462fec-cf28-4426-9e00-ff04f212f773
+			defaultHierarchy: LocalDateTable_3a6066d3-ab57-472a-b055-811a2d66a7d1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Due_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec09e3d5-bc26-4ef7-97d6-62dcbbeb3f28
+		summarizeBy: none
+		sourceColumn: Payment_Due_Date
+
+		variation Variation
+			isDefault
+			relationship: d802688d-ca79-414e-9670-6a7734b06b08
+			defaultHierarchy: LocalDateTable_a5a48b40-9e68-4077-9216-9d02f47b2a35.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_AR_due_amount
+		dataType: double
+		lineageTag: 88b0fd10-392a-4150-9fff-cc672abf7291
+		summarizeBy: sum
+		sourceColumn: Total_AR_due_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_1_30_amount
+		dataType: double
+		lineageTag: 5f12c73e-95fd-43dc-a44f-f2a109a90a3b
+		summarizeBy: sum
+		sourceColumn: AR_overdue_1_30_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_31_60_amount
+		dataType: double
+		lineageTag: 5f943e84-596b-4e7a-b026-655fb673105e
+		summarizeBy: sum
+		sourceColumn: AR_overdue_31_60_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_61_90_amount
+		dataType: double
+		lineageTag: c088112b-3a47-42f6-9f6f-205d749b522e
+		summarizeBy: sum
+		sourceColumn: AR_overdue_61_90_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_91_120_amount
+		dataType: double
+		lineageTag: 860ff1a6-d09e-49a0-a8e7-728c7496d9d1
+		summarizeBy: sum
+		sourceColumn: AR_overdue_91_120_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_121_180_amount
+		dataType: double
+		lineageTag: b6db5384-809c-45a1-b00e-0b963536eb04
+		summarizeBy: sum
+		sourceColumn: AR_overdue_121_180_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_181_360_amount
+		dataType: double
+		lineageTag: 4b9d751f-c3b7-4d7b-81c0-981d4c068608
+		summarizeBy: sum
+		sourceColumn: AR_overdue_181_360_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AR_overdue_361_plus_amount
+		dataType: double
+		lineageTag: 09017e04-04da-441a-8c2a-f7fbe3b0bf98
+		summarizeBy: sum
+		sourceColumn: AR_overdue_361_plus_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Total_AR_due_and_overdue_amount
+		dataType: double
+		lineageTag: 50cd476d-6554-4b00-b71e-13dad3ddb6bb
+		summarizeBy: sum
+		sourceColumn: Total_AR_due_and_overdue_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_number
+		dataType: string
+		lineageTag: b3b7ee5f-8545-4aee-9836-2029860f5201
+		summarizeBy: none
+		sourceColumn: Customer_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_name
+		dataType: string
+		lineageTag: 1bab385a-d105-472b-b763-9aa2503b4fc1
+		summarizeBy: none
+		sourceColumn: Customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Year
+		dataType: string
+		lineageTag: 571c1263-69dc-449e-b3d7-06e6c0271b06
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_File_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e9956435-4374-4cd2-96ea-31d39507ad79
+		summarizeBy: count
+		sourceColumn: Derived_File_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Derived_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: f2116365-b9e5-4982-bec4-37afa26e6d27
+		summarizeBy: count
+		sourceColumn: Derived_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_oracle_aged_debt = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("BIS-000-SP05.bis.xswhealth.nhs.uk, 14431", "Corporate_Data_Strategy"),
+				    dbo_Oracle_Aged_Debt = Source{[Schema="dbo",Item="Oracle_Aged_Debt"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_Oracle_Aged_Debt,{{"Total_AR_due_amount", type number}, {"AR_overdue_1_30_amount", type number}, {"AR_overdue_31_60_amount", type number}, {"AR_overdue_61_90_amount", type number}, {"AR_overdue_91_120_amount", type number}, {"AR_overdue_121_180_amount", type number}, {"AR_overdue_181_360_amount", type number}, {"AR_overdue_361_plus_amount", type number}, {"Total_AR_due_and_overdue_amount", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

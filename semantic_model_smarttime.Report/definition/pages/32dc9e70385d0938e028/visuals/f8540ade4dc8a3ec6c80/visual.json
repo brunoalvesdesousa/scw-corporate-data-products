@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "f8540ade4dc8a3ec6c80",
+  "position": {
+    "x": 744,
+    "y": 64,
+    "z": 3000,
+    "height": 152,
+    "width": 232
+  },
+  "visual": {
+    "visualType": "card",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_late_timesheets"
+                }
+              },
+              "queryRef": "data_smarttime.calc_late_timesheets",
+              "nativeQueryRef": "calc_late_timesheets"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4b8023a3b127262e3d00",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "data_smarttime"
+              }
+            },
+            "Property": "calc_late_timesheets"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
