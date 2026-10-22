@@ -79,7 +79,7 @@
           "displayName": "Tree Layout Mode",
           "type": {
             "enumeration": [
-              { "displayName": "Compact Hybrid (Grid + Wrap)", "value": "compact" },
+              { "displayName": "Dense Spine (2-Column Vertical)", "value": "compact" },
               { "displayName": "Horizontal (Left-to-Right)", "value": "horizontal" },
               { "displayName": "Classic Top-Down", "value": "classic" }
             ]
@@ -93,12 +93,6 @@
               { "displayName": "Compact (Recommended)", "value": "compact" },
               { "displayName": "Detailed (Large Cards)", "value": "detailed" }
             ]
-          }
-        },
-        "DefaultDepth": {
-          "displayName": "Initial Expanded Levels",
-          "type": {
-            "numeric": true
           }
         },
         "AccordionMode": {
@@ -124,8 +118,17 @@
     "dataCard": {
       "displayName": "Node Card & Font Sizing",
       "properties": {
+        "CardTheme": {
+          "displayName": "Card Color Theme",
+          "type": {
+            "enumeration": [
+              { "displayName": "SCW Dark Navy (#1C355E)", "value": "navy" },
+              { "displayName": "NHS Light White", "value": "light" }
+            ]
+          }
+        },
         "NodeBackgroundColor": {
-          "displayName": "Card Background",
+          "displayName": "Custom Card Background",
           "type": {
             "fill": {
               "solid": {
@@ -147,7 +150,7 @@
           }
         },
         "MaxColumnsWrap": {
-          "displayName": "Max Columns per Row (Compact Wrap)",
+          "displayName": "Max Columns per Row (Expanded Branches)",
           "type": {
             "numeric": true
           }

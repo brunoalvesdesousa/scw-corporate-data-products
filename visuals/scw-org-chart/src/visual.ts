@@ -17,6 +17,7 @@ import VisualObjectInstance = powerbi.VisualObjectInstance;
 
 type LayoutMode = "compact" | "horizontal" | "classic";
 type DensityMode = "mini" | "compact" | "detailed";
+type CardTheme = "navy" | "light";
 
 interface StaffNode {
     id: string;
@@ -47,6 +48,7 @@ interface DensityMetrics {
     cardH: number;
     hGap: number;
     vGap: number;
+    spineGap: number;
     nameFont: number;
     subFont: number;
     pillH: number;
@@ -88,19 +90,19 @@ export class Visual implements IVisual {
     // Layout, Density & Workaround states
     private layoutMode: LayoutMode = "compact";
     private densityMode: DensityMode = "compact";
+    private cardTheme: CardTheme = "navy";
     private accordionMode: boolean = true;
     private autoFitOnToggle: boolean = true;
     private showHealthBadges: boolean = true;
     private showMinimap: boolean = true;
-    private maxExpandedDepth: number = 1;
     private hasInitializedExpansion: boolean = false;
 
     // Custom Format Pane & Toolbar scaling
     private cardScalePct: number = 100;
     private fontScalePct: number = 100;
-    private maxColumnsWrap: number = 6;
-    private customCardBg: string = "#ffffff";
-    private searchHighlightColor: string = "#da291c";
+    private maxColumnsWrap: number = 4;
+    private customCardBg: string = "#1C355E";
+    private searchHighlightColor: string = "#FF0000";
     private showPersonId: boolean = false;
 
     // Camera Pan & Zoom state
@@ -111,7 +113,7 @@ export class Visual implements IVisual {
     private dragStartX: number = 0;
     private dragStartY: number = 0;
 
-    // Last computed tree bounds for minimap
+    // Last computed tree bounds for minimap & SVG export
     private treeMinX: number = 0;
     private treeMaxX: number = 1000;
     private treeMinY: number = 0;
@@ -137,37 +139,40 @@ export class Visual implements IVisual {
         let base: DensityMetrics;
         if (this.densityMode === "mini") {
             base = {
-                cardW: 138,
+                cardW: 144,
                 cardH: 46,
-                hGap: 10,
+                hGap: 12,
                 vGap: 28,
-                nameFont: 10,
+                spineGap: 22,
+                nameFont: 10.5,
                 subFont: 8.5,
                 pillH: 15,
-                pillW: 92,
+                pillW: 84,
             };
         } else if (this.densityMode === "detailed") {
             base = {
-                cardW: 224,
-                cardH: 100,
+                cardW: 230,
+                cardH: 98,
                 hGap: 22,
-                vGap: 56,
-                nameFont: 13,
+                vGap: 52,
+                spineGap: 32,
+                nameFont: 13.5,
                 subFont: 10.5,
                 pillH: 20,
-                pillW: 128,
+                pillW: 118,
             };
         } else {
             // "compact" default
             base = {
-                cardW: 174,
+                cardW: 184,
                 cardH: 68,
-                hGap: 14,
-                vGap: 40,
-                nameFont: 11.5,
+                hGap: 16,
+                vGap: 38,
+                spineGap: 26,
+                nameFont: 12,
                 subFont: 9.5,
                 pillH: 17,
-                pillW: 110,
+                pillW: 98,
             };
         }
 
@@ -177,12 +182,13 @@ export class Visual implements IVisual {
         return {
             cardW: Math.round(base.cardW * cFactor),
             cardH: Math.round(base.cardH * cFactor),
-            hGap: Math.max(6, Math.round(base.hGap * cFactor)),
-            vGap: Math.max(18, Math.round(base.vGap * cFactor)),
+            hGap: Math.max(8, Math.round(base.hGap * cFactor)),
+            vGap: Math.max(20, Math.round(base.vGap * cFactor)),
+            spineGap: Math.max(16, Math.round(base.spineGap * cFactor)),
             nameFont: +(base.nameFont * fFactor).toFixed(1),
             subFont: +(base.subFont * fFactor).toFixed(1),
             pillH: Math.max(13, Math.round(base.pillH * cFactor)),
-            pillW: Math.min(Math.round(base.cardW * cFactor) - 10, Math.round(base.pillW * cFactor)),
+            pillW: Math.min(Math.round(base.cardW * cFactor) - 12, Math.round(base.pillW * cFactor)),
         };
     }
 
@@ -190,14 +196,14 @@ export class Visual implements IVisual {
         const toolbar = document.createElement("div");
         toolbar.className = "scw-org-toolbar";
 
-        // 1. Search bar + Quick Filter group
+        // 1. Search bar + Quick Filter + Reset group
         const searchGroup = document.createElement("div");
         searchGroup.className = "scw-search-group";
 
         this.searchInput = document.createElement("input");
         this.searchInput.type = "search";
         this.searchInput.className = "scw-search-input";
-        this.searchInput.placeholder = "Search name, Directorate, Service Line, ID...";
+        this.searchInput.placeholder = "Search staff name, Directorate, Service Line, ID...";
         this.searchInput.addEventListener("input", () => {
             this.runSearch(this.searchInput.value);
         });
@@ -205,8 +211,7 @@ export class Visual implements IVisual {
             if (e.key === "Enter") {
                 this.stepSearchMatch(e.shiftKey ? -1 : 1);
             } else if (e.key === "Escape") {
-                this.searchInput.value = "";
-                this.runSearch("");
+                this.resetToDefaultState();
             }
         });
 
@@ -229,13 +234,22 @@ export class Visual implements IVisual {
             this.applyOrgQuickFilter(this.orgFilterSelect.value);
         });
 
+        // Prominent Reset Button (restores original initial L1 state, clears filters/search/focus, fits screen)
+        const resetBtn = this.createButton(
+            "↺ Reset",
+            "Reset chart to initial default state (Root + Level 1 only), clear search/filters, and center",
+            () => this.resetToDefaultState()
+        );
+        resetBtn.classList.add("scw-btn-reset");
+
         searchGroup.appendChild(this.searchInput);
         searchGroup.appendChild(this.matchCountLabel);
         searchGroup.appendChild(prevBtn);
         searchGroup.appendChild(nextBtn);
         searchGroup.appendChild(this.orgFilterSelect);
+        searchGroup.appendChild(resetBtn);
 
-        // 2. Controls group (Layout, Density, Font/Box Size, Depth, Workaround Toggles)
+        // 2. Streamlined Right Controls Group
         const controlsGroup = document.createElement("div");
         controlsGroup.className = "scw-btn-group";
 
@@ -244,7 +258,7 @@ export class Visual implements IVisual {
         this.layoutSelect.className = "scw-select";
         this.layoutSelect.title = "Switch Tree Layout Mode";
         [
-            { value: "compact", label: "Layout: Compact Grid" },
+            { value: "compact", label: "Layout: Dense Spine" },
             { value: "horizontal", label: "Layout: Left-to-Right" },
             { value: "classic", label: "Layout: Classic Wide" },
         ].forEach((opt) => {
@@ -265,7 +279,7 @@ export class Visual implements IVisual {
         this.densitySelect.className = "scw-select";
         this.densitySelect.title = "Switch Card & Font Density";
         [
-            { value: "mini", label: "Size: Mini Pills" },
+            { value: "mini", label: "Size: Mini" },
             { value: "compact", label: "Size: Compact" },
             { value: "detailed", label: "Size: Detailed" },
         ].forEach((opt) => {
@@ -303,28 +317,10 @@ export class Visual implements IVisual {
             }
         );
 
-        // Depth expansion presets
-        const lvl1Btn = this.createButton("L1", "Show Root + Executive Direct Reports", () => {
-            this.setExpansionToDepth(1);
-            this.fitToScreen();
-        });
-        const lvl2Btn = this.createButton("L2", "Expand 2 Levels", () => {
-            this.setExpansionToDepth(2);
-            this.fitToScreen();
-        });
-        const lvl3Btn = this.createButton("L3", "Expand 3 Levels", () => {
-            this.setExpansionToDepth(3);
-            this.fitToScreen();
-        });
-        const expandAllBtn = this.createButton("All", "Expand All Under Current Root", () => {
-            this.setExpansionToDepth(99);
-            this.fitToScreen();
-        });
-
         // Accordion Mode Toggle
         this.accordionBtn = this.createButton(
             "Accordion",
-            "Accordion Mode: Auto-collapse sibling branches when expanding a manager",
+            "Accordion Mode: Expanding a manager automatically collapses sibling branches at the same level",
             () => {
                 this.accordionMode = !this.accordionMode;
                 this.syncToggleButtons();
@@ -334,7 +330,7 @@ export class Visual implements IVisual {
         // Auto-Fit Mode Toggle
         this.autoFitBtn = this.createButton(
             "Auto-Fit",
-            "Automatically fit chart to page whenever branches are expanded or collapsed",
+            "Automatically fit chart to page whenever a node is expanded or collapsed",
             () => {
                 this.autoFitOnToggle = !this.autoFitOnToggle;
                 this.syncToggleButtons();
@@ -364,23 +360,24 @@ export class Visual implements IVisual {
             }
         );
 
-        // Camera controls
-        const zoomInBtn = this.createButton("＋", "Zoom In", () => this.zoomBy(1.25));
+        // Camera & Export controls
         const zoomOutBtn = this.createButton("－", "Zoom Out", () => this.zoomBy(0.8));
+        const zoomInBtn = this.createButton("＋", "Zoom In", () => this.zoomBy(1.25));
         const fitBtn = this.createButton("Fit", "Fit visible chart to screen", () =>
             this.fitToScreen()
         );
         fitBtn.classList.add("scw-btn-primary");
 
+        const exportBtn = this.createButton(
+            "⬇ SVG",
+            "Export current visible org chart view as a crisp SVG vector file",
+            () => this.exportCurrentSvg()
+        );
+
         controlsGroup.appendChild(this.layoutSelect);
         controlsGroup.appendChild(this.densitySelect);
         controlsGroup.appendChild(shrinkBoxBtn);
         controlsGroup.appendChild(growBoxBtn);
-        controlsGroup.appendChild(this.createDivider());
-        controlsGroup.appendChild(lvl1Btn);
-        controlsGroup.appendChild(lvl2Btn);
-        controlsGroup.appendChild(lvl3Btn);
-        controlsGroup.appendChild(expandAllBtn);
         controlsGroup.appendChild(this.createDivider());
         controlsGroup.appendChild(this.accordionBtn);
         controlsGroup.appendChild(this.autoFitBtn);
@@ -390,12 +387,56 @@ export class Visual implements IVisual {
         controlsGroup.appendChild(zoomOutBtn);
         controlsGroup.appendChild(zoomInBtn);
         controlsGroup.appendChild(fitBtn);
+        controlsGroup.appendChild(exportBtn);
 
         toolbar.appendChild(searchGroup);
         toolbar.appendChild(controlsGroup);
         this.rootElement.appendChild(toolbar);
 
         this.syncToggleButtons();
+    }
+
+    /**
+     * Resets the entire visual back to its exact original landing state:
+     * - Clears search, Directorate/Service Line filter, and selection
+     * - Unpins any focused subtree root
+     * - Collapses all nodes except the top Root (so only Root + Level 1 direct reports show)
+     * - Fits and centers the chart on screen
+     */
+    private resetToDefaultState(rerender: boolean = true): void {
+        this.focusedNodeId = null;
+        this.selectedNodeId = null;
+        this.matchedNodes = [];
+        this.activeMatchIndex = -1;
+        this.selectionManager.clear();
+
+        if (this.searchInput) {
+            this.searchInput.value = "";
+        }
+        if (this.matchCountLabel) {
+            this.matchCountLabel.textContent = "";
+        }
+        if (this.orgFilterSelect) {
+            this.orgFilterSelect.value = "";
+        }
+
+        // Strictly collapse every node in the tree, then open ONLY the root node (1 level below visible)
+        this.allNodesMap.forEach((node) => {
+            node.expanded = false;
+            node.isMatch = false;
+            node.isActiveMatch = false;
+        });
+        if (this.rootNode) {
+            this.rootNode.expanded = true;
+        }
+
+        this.updateBreadcrumbBar();
+        this.updateStatusBarSummary();
+
+        if (rerender) {
+            this.renderTree();
+            this.fitToScreen();
+        }
     }
 
     private syncToggleButtons(): void {
@@ -451,7 +492,6 @@ export class Visual implements IVisual {
 
         this.breadcrumbBar.classList.remove("scw-hidden");
 
-        // Build ancestor chain from global root down to activeRoot
         const chain: StaffNode[] = [];
         let curr: StaffNode | null = activeRoot;
         while (curr) {
@@ -464,7 +504,7 @@ export class Visual implements IVisual {
         homeCrumb.textContent = "🏠 Full Organisation";
         homeCrumb.title = "Return to full organisation root";
         homeCrumb.addEventListener("click", () => {
-            this.focusOnNode(null);
+            this.resetToDefaultState();
         });
         this.breadcrumbBar.appendChild(homeCrumb);
 
@@ -490,15 +530,20 @@ export class Visual implements IVisual {
         });
     }
 
+    /**
+     * Focuses a specific manager as the temporary root and expands strictly 1 level below them.
+     */
     private focusOnNode(nodeId: string | null): void {
+        if (!nodeId) {
+            this.resetToDefaultState();
+            return;
+        }
         this.focusedNodeId = nodeId;
         const targetRoot = this.getActiveRoot();
         if (targetRoot) {
+            // Collapse everything in this subtree first, then expand ONLY targetRoot (1 level below)
+            this.collapseSubtreeRecursive(targetRoot);
             targetRoot.expanded = true;
-            // Expand direct children one level relative to focused node
-            targetRoot.children.forEach((ch) => {
-                ch.expanded = false;
-            });
         }
         this.updateBreadcrumbBar();
         this.renderTree();
@@ -549,6 +594,7 @@ export class Visual implements IVisual {
             if (e.target === this.svgElement) {
                 this.selectedNodeId = null;
                 this.selectionManager.clear();
+                this.updateStatusBarSummary();
                 this.renderTree();
             }
         });
@@ -569,8 +615,8 @@ export class Visual implements IVisual {
                 this.panY = mouseY - ((mouseY - this.panY) / prevScale) * nextScale;
 
                 const crossedLod =
-                    (prevScale < 0.48 && nextScale >= 0.48) ||
-                    (prevScale >= 0.48 && nextScale < 0.48);
+                    (prevScale < 0.45 && nextScale >= 0.45) ||
+                    (prevScale >= 0.45 && nextScale < 0.45);
                 this.scale = nextScale;
                 if (crossedLod) {
                     this.renderTree();
@@ -629,11 +675,36 @@ export class Visual implements IVisual {
         this.statusRightPill = document.createElement("div");
         this.statusRightPill.className = "scw-status-pill";
         this.statusRightPill.textContent =
-            "Tip: Double-click or click 🎯 on any manager to focus their branch · Scroll to zoom";
+            "Click +N badge to expand 1 level · Double-click or 🎯 to focus branch · ↺ Reset to start over";
 
         statusBar.appendChild(this.statusLeftPill);
         statusBar.appendChild(this.statusRightPill);
         this.rootElement.appendChild(statusBar);
+    }
+
+    private updateStatusBarSummary(): void {
+        if (!this.statusLeftPill) return;
+        if (this.selectedNodeId && this.allNodesMap.has(this.selectedNodeId)) {
+            const sel = this.allNodesMap.get(this.selectedNodeId)!;
+            const mgrName = sel.parent ? sel.parent.name : "None (Root)";
+            const dirPart = sel.level3 ? ` · Dir: ${sel.level3}` : "";
+            const svcPart = sel.level6 ? ` · Svc: ${sel.level6}` : "";
+            this.statusLeftPill.textContent = `👤 ${sel.name} (#${sel.id}) · Manager: ${mgrName}${dirPart}${svcPart} · Reports: ${sel.directReports} direct (${sel.totalReports} total) · ${sel.status}`;
+            this.statusLeftPill.title = this.statusLeftPill.textContent;
+            return;
+        }
+
+        let bridgedOrFallback = 0;
+        this.allNodesMap.forEach((n) => {
+            if (n.status !== "Direct" && n.status !== "Root") {
+                bridgedOrFallback++;
+            }
+        });
+        this.statusLeftPill.textContent =
+            bridgedOrFallback > 0
+                ? `Active Staff: ${this.allNodesMap.size} · Auto-Healed Links: ${bridgedOrFallback}`
+                : `Active Staff: ${this.allNodesMap.size} · 100% Connected Tree`;
+        this.statusLeftPill.title = this.statusLeftPill.textContent;
     }
 
     public update(options: VisualUpdateOptions): void {
@@ -664,15 +735,9 @@ export class Visual implements IVisual {
             }
         });
 
-        if (empIdx === -1) {
-            empIdx = 0;
-        }
-        if (mgrIdx === -1 && columns.length > 1) {
-            mgrIdx = 1;
-        }
-        if (nameIdx === -1 && columns.length > 2) {
-            nameIdx = 2;
-        }
+        if (empIdx === -1) empIdx = 0;
+        if (mgrIdx === -1 && columns.length > 1) mgrIdx = 1;
+        if (nameIdx === -1 && columns.length > 2) nameIdx = 2;
 
         const prevExpandedIds = new Set<string>();
         this.allNodesMap.forEach((node, id) => {
@@ -771,10 +836,9 @@ export class Visual implements IVisual {
 
         if (!this.hasInitializedExpansion) {
             this.hasInitializedExpansion = true;
-            this.setExpansionToDepth(this.maxExpandedDepth, false);
-            this.renderTree();
-            this.fitToScreen();
+            this.resetToDefaultState(true);
         } else {
+            this.updateStatusBarSummary();
             if (this.searchInput.value.trim().length > 0) {
                 this.runSearch(this.searchInput.value, false);
             } else {
@@ -798,9 +862,6 @@ export class Visual implements IVisual {
                 this.densityMode = layoutObj["DefaultDensity"] as DensityMode;
                 this.densitySelect.value = this.densityMode;
             }
-            if (typeof layoutObj["DefaultDepth"] === "number" && !this.hasInitializedExpansion) {
-                this.maxExpandedDepth = Math.max(1, Math.min(10, layoutObj["DefaultDepth"] as number));
-            }
             if (typeof layoutObj["AccordionMode"] === "boolean" && !this.hasInitializedExpansion) {
                 this.accordionMode = layoutObj["AccordionMode"] as boolean;
             }
@@ -815,6 +876,9 @@ export class Visual implements IVisual {
 
         const cardObj = objs["dataCard"];
         if (cardObj) {
+            if (typeof cardObj["CardTheme"] === "string") {
+                this.cardTheme = cardObj["CardTheme"] as CardTheme;
+            }
             const bgFill = cardObj["NodeBackgroundColor"] as any;
             if (bgFill?.solid?.color) {
                 this.customCardBg = bgFill.solid.color;
@@ -826,7 +890,7 @@ export class Visual implements IVisual {
                 this.cardScalePct = Math.max(55, Math.min(150, cardObj["CardSizeScale"] as number));
             }
             if (typeof cardObj["MaxColumnsWrap"] === "number") {
-                this.maxColumnsWrap = Math.max(2, Math.min(14, cardObj["MaxColumnsWrap"] as number));
+                this.maxColumnsWrap = Math.max(2, Math.min(10, cardObj["MaxColumnsWrap"] as number));
             }
             if (typeof cardObj["ShowID"] === "boolean") {
                 this.showPersonId = cardObj["ShowID"] as boolean;
@@ -854,7 +918,6 @@ export class Visual implements IVisual {
                     properties: {
                         DefaultLayout: this.layoutMode,
                         DefaultDensity: this.densityMode,
-                        DefaultDepth: this.maxExpandedDepth,
                         AccordionMode: this.accordionMode,
                         AutoFitOnToggle: this.autoFitOnToggle,
                         ShowMinimap: this.showMinimap,
@@ -866,6 +929,7 @@ export class Visual implements IVisual {
                     objectName: "dataCard",
                     selector: null as any,
                     properties: {
+                        CardTheme: this.cardTheme,
                         NodeBackgroundColor: { solid: { color: this.customCardBg } },
                         FontSizeScale: this.fontScalePct,
                         CardSizeScale: this.cardScalePct,
@@ -895,7 +959,7 @@ export class Visual implements IVisual {
 
         const defaultOpt = document.createElement("option");
         defaultOpt.value = "";
-        defaultOpt.textContent = "Filter Directorate / Service Line...";
+        defaultOpt.textContent = "Jump to Directorate / Service Line...";
         this.orgFilterSelect.appendChild(defaultOpt);
 
         const l3Set = new Set<string>();
@@ -939,18 +1003,20 @@ export class Visual implements IVisual {
         }
     }
 
+    /**
+     * When the user selects a Directorate or Service Line from the toolbar dropdown,
+     * find the highest-level manager of that Directorate/Service Line, focus on them,
+     * and expand ONLY 1 level below them so the view stays clean and compact!
+     */
     private applyOrgQuickFilter(filterVal: string): void {
         if (!filterVal) {
-            this.focusOnNode(null);
-            this.searchInput.value = "";
-            this.runSearch("");
+            this.resetToDefaultState();
             return;
         }
 
         const isL3 = filterVal.startsWith("L3:");
         const targetOrg = filterVal.slice(3);
 
-        // Find all nodes belonging to this Directorate / Service Line
         const members: StaffNode[] = [];
         this.allNodesMap.forEach((node) => {
             const val = isL3 ? node.level3 : node.level6;
@@ -968,72 +1034,26 @@ export class Visual implements IVisual {
         });
 
         const topLead = members[0];
-        // Check if topLead is an ancestor of most members (>= 50%); if so, focus on topLead!
-        const memberIds = new Set(members.map((m) => m.id));
-        let coveredByTopLead = 0;
-        members.forEach((m) => {
-            let curr: StaffNode | null = m;
-            while (curr) {
-                if (curr.id === topLead.id) {
-                    coveredByTopLead++;
-                    break;
-                }
-                curr = curr.parent;
-            }
-        });
+        const focusTarget =
+            topLead.directReports > 0 ? topLead : topLead.parent || this.rootNode!;
 
-        if (topLead.directReports > 0 && coveredByTopLead >= Math.max(1, members.length * 0.45)) {
-            this.focusedNodeId = topLead.id;
-            // Collapse everything first, then expand paths to members under topLead
-            this.allNodesMap.forEach((n) => {
-                n.expanded = false;
-                n.isMatch = memberIds.has(n.id);
-                n.isActiveMatch = n.id === topLead.id;
-            });
-            topLead.expanded = true;
-            members.forEach((m) => {
-                let p = m.parent;
-                while (p && p.id !== topLead.parent?.id) {
-                    p.expanded = true;
-                    p = p.parent;
-                }
-            });
-            this.matchedNodes = members;
-            this.activeMatchIndex = 0;
-            this.matchCountLabel.textContent = `${members.length} staff`;
-            this.updateBreadcrumbBar();
-            this.renderTree();
-            this.fitToScreen();
-        } else {
-            // Otherwise run search filter across full tree and fit
-            this.focusedNodeId = null;
-            this.allNodesMap.forEach((n) => {
-                n.expanded = false;
-                n.isMatch = false;
-                n.isActiveMatch = false;
-            });
-            members.forEach((m) => {
-                m.isMatch = true;
-                let p = m.parent;
-                while (p) {
-                    p.expanded = true;
-                    p = p.parent;
-                }
-            });
-            this.matchedNodes = members;
-            this.activeMatchIndex = 0;
-            members[0].isActiveMatch = true;
-            this.matchCountLabel.textContent = `${members.length} staff`;
-            this.updateBreadcrumbBar();
-            this.renderTree();
-            this.fitToScreen();
-        }
+        // Focus on the lead of this Directorate/Service Line and expand strictly 1 level below them
+        this.focusedNodeId = focusTarget.id;
+        this.allNodesMap.forEach((n) => {
+            n.expanded = false;
+            n.isMatch = (isL3 ? n.level3 : n.level6) === targetOrg;
+            n.isActiveMatch = n.id === topLead.id;
+        });
+        focusTarget.expanded = true;
+
+        this.matchedNodes = members;
+        this.activeMatchIndex = 0;
+        this.matchCountLabel.textContent = `${members.length} in unit`;
+        this.updateBreadcrumbBar();
+        this.renderTree();
+        this.fitToScreen();
     }
 
-    /**
-     * Builds a guaranteed single-root, cycle-free hierarchy tree with defensive client-side
-     * cycle breaking and orphan collection so no staff member is ever lost or scattered.
-     */
     private assembleSafeHierarchy(): void {
         this.allNodesMap.forEach((node) => {
             node.children = [];
@@ -1117,17 +1137,7 @@ export class Visual implements IVisual {
 
         this.rootNode = explicitRoot;
         this.computeMetricsRecursive(this.rootNode, 0);
-
-        let bridgedOrFallback = 0;
-        this.allNodesMap.forEach((n) => {
-            if (n.status !== "Direct" && n.status !== "Root") {
-                bridgedOrFallback++;
-            }
-        });
-        this.statusLeftPill.textContent =
-            bridgedOrFallback > 0
-                ? `Total Active Staff: ${this.allNodesMap.size} · Auto-Healed Links: ${bridgedOrFallback}`
-                : `Total Active Staff: ${this.allNodesMap.size} · 100% Connected Tree`;
+        this.updateStatusBarSummary();
     }
 
     private computeMetricsRecursive(node: StaffNode, depth: number): number {
@@ -1147,19 +1157,10 @@ export class Visual implements IVisual {
         return total;
     }
 
-    private setExpansionToDepth(targetDepth: number, rerender: boolean = true): void {
-        this.maxExpandedDepth = targetDepth;
-        const activeRoot = this.getActiveRoot();
-        const baseDepth = activeRoot ? activeRoot.depth : 0;
-
-        this.allNodesMap.forEach((node) => {
-            node.expanded = node.depth >= baseDepth && node.depth - baseDepth < targetDepth;
-        });
-        if (rerender) {
-            this.renderTree();
-        }
-    }
-
+    /**
+     * Search opens ONLY the ancestor chain of the currently active match (1 path at a time),
+     * rather than exploding every matched person's branch simultaneously!
+     */
     private runSearch(query: string, centerFirst: boolean = true): void {
         const q = query.trim().toLowerCase();
         this.matchedNodes = [];
@@ -1176,8 +1177,6 @@ export class Visual implements IVisual {
             return;
         }
 
-        const activeRoot = this.getActiveRoot();
-
         this.allNodesMap.forEach((node) => {
             const hay = [
                 node.name,
@@ -1192,24 +1191,12 @@ export class Visual implements IVisual {
             if (hay.includes(q)) {
                 node.isMatch = true;
                 this.matchedNodes.push(node);
-                // Expand all ancestors so this matched node is visible in the layout
-                let p = node.parent;
-                while (p) {
-                    p.expanded = true;
-                    if (activeRoot && p.id === activeRoot.id) break;
-                    p = p.parent;
-                }
             }
         });
 
         if (this.matchedNodes.length > 0) {
             this.activeMatchIndex = 0;
-            this.matchedNodes[0].isActiveMatch = true;
-            this.matchCountLabel.textContent = `1 / ${this.matchedNodes.length}`;
-            this.renderTree();
-            if (centerFirst) {
-                this.centerOnNode(this.matchedNodes[0]);
-            }
+            this.revealSingleSearchMatch(this.matchedNodes[0], centerFirst);
         } else {
             this.matchCountLabel.textContent = "0 matches";
             this.renderTree();
@@ -1224,27 +1211,51 @@ export class Visual implements IVisual {
         this.activeMatchIndex =
             (this.activeMatchIndex + delta + this.matchedNodes.length) % this.matchedNodes.length;
         const target = this.matchedNodes[this.activeMatchIndex];
+        this.revealSingleSearchMatch(target, true);
+    }
+
+    /**
+     * Expands ONLY the ancestor path leading to `target` (collapsing unrelated branches
+     * when Accordion Mode is ON) so searching never explodes the entire organisation tree.
+     */
+    private revealSingleSearchMatch(target: StaffNode, centerCamera: boolean): void {
         target.isActiveMatch = true;
         this.matchCountLabel.textContent = `${this.activeMatchIndex + 1} / ${this.matchedNodes.length}`;
 
+        const ancestorIds = new Set<string>();
         let p = target.parent;
         while (p) {
-            p.expanded = true;
+            ancestorIds.add(p.id);
             p = p.parent;
         }
+
+        if (this.accordionMode) {
+            this.allNodesMap.forEach((n) => {
+                n.expanded = ancestorIds.has(n.id);
+            });
+            if (this.rootNode) this.rootNode.expanded = true;
+        } else {
+            ancestorIds.forEach((id) => {
+                const anc = this.allNodesMap.get(id);
+                if (anc) anc.expanded = true;
+            });
+        }
+
         this.renderTree();
-        this.centerOnNode(target);
+        if (centerCamera) {
+            this.centerOnNode(target);
+        }
     }
 
     // =========================================================================
-    // MULTI-MODE LAYOUT ENGINE (Compact Hybrid Grid / Horizontal / Classic)
+    // MULTI-MODE LAYOUT ENGINE (Dense 2-Column Center Spine / Horizontal / Classic)
     // =========================================================================
 
     private computeLayout(node: StaffNode, m: DensityMetrics): void {
         if (this.layoutMode === "horizontal") {
             this.computeHorizontalLayout(node, m);
         } else if (this.layoutMode === "compact") {
-            this.computeCompactHybridLayout(node, m);
+            this.computeDenseSpineLayout(node, m);
         } else {
             this.computeClassicLayout(node, m);
         }
@@ -1259,51 +1270,56 @@ export class Visual implements IVisual {
         if (this.layoutMode === "horizontal") {
             this.assignHorizontalCoordinates(node, leftX, topY, m);
         } else if (this.layoutMode === "compact") {
-            this.assignCompactHybridCoordinates(node, leftX, topY, m);
+            this.assignDenseSpineCoordinates(node, leftX, topY, m);
         } else {
             this.assignClassicCoordinates(node, leftX, topY, m);
         }
     }
 
     /**
-     * COMPACT HYBRID LAYOUT:
-     * 1. Leaf children (directReports === 0) are arranged in a tight 2-column vertical block
-     *    directly underneath their parent manager.
-     * 2. Sub-manager children (directReports > 0) are wrapped into rows of at most `maxColumnsWrap`
-     *    columns so wide departments never create a 20,000px horizontal ribbon.
+     * WORKFORCEVISION / D3-ORG-CHART 'DENSE' CENTER-SPINE LAYOUT:
+     * - Every currently-collapsed child (`!c.expanded || c.children.length === 0`) — including
+     *   collapsed managers! — is stacked into a compact 2-column vertical spine directly
+     *   underneath its parent manager (`├─ ┤`).
+     * - Only children that are actively expanded (`c.expanded && c.children.length > 0`)
+     *   branch out below the 2-column spine.
      */
-    private computeCompactHybridLayout(node: StaffNode, m: DensityMetrics): void {
+    private computeDenseSpineLayout(node: StaffNode, m: DensityMetrics): void {
         if (!node.expanded || node.children.length === 0) {
             node.subtreeWidth = m.cardW;
             node.subtreeHeight = m.cardH;
             return;
         }
 
-        const managers = node.children.filter((c) => c.children.length > 0);
-        const leaves = node.children.filter((c) => c.children.length === 0);
+        const collapsedOrLeaf = node.children.filter(
+            (c) => !c.expanded || c.children.length === 0
+        );
+        const expandedManagers = node.children.filter(
+            (c) => c.expanded && c.children.length > 0
+        );
 
-        // Compute leaf grid block dimensions (2 columns if >= 2 leaves)
-        let leafBlockW = 0;
-        let leafBlockH = 0;
-        if (leaves.length > 0) {
-            leaves.forEach((l) => {
-                l.subtreeWidth = m.cardW;
-                l.subtreeHeight = m.cardH;
+        let compactBlockW = 0;
+        let compactBlockH = 0;
+        const vRowGap = Math.max(10, Math.round(m.hGap * 0.8));
+
+        if (collapsedOrLeaf.length > 0) {
+            collapsedOrLeaf.forEach((c) => {
+                c.subtreeWidth = m.cardW;
+                c.subtreeHeight = m.cardH;
             });
-            const leafCols = leaves.length >= 2 ? 2 : 1;
-            const leafRows = Math.ceil(leaves.length / leafCols);
-            leafBlockW = leafCols * m.cardW + (leafCols - 1) * m.hGap;
-            leafBlockH = leafRows * m.cardH + (leafRows - 1) * Math.max(8, Math.round(m.hGap * 0.8));
+            const cols = collapsedOrLeaf.length >= 2 ? 2 : 1;
+            const rows = Math.ceil(collapsedOrLeaf.length / cols);
+            compactBlockW = cols === 2 ? 2 * m.cardW + m.spineGap : m.cardW;
+            compactBlockH = rows * m.cardH + (rows - 1) * vRowGap;
         }
 
-        // Compute sub-managers wrapped into rows of maxColumnsWrap
-        let mgrBlockW = 0;
-        let mgrBlockH = 0;
-        if (managers.length > 0) {
-            managers.forEach((mgr) => this.computeCompactHybridLayout(mgr, m));
+        let expandedBlockW = 0;
+        let expandedBlockH = 0;
+        if (expandedManagers.length > 0) {
+            expandedManagers.forEach((mgr) => this.computeDenseSpineLayout(mgr, m));
             const wrapCols = Math.max(2, this.maxColumnsWrap);
-            for (let i = 0; i < managers.length; i += wrapCols) {
-                const rowSlice = managers.slice(i, i + wrapCols);
+            for (let i = 0; i < expandedManagers.length; i += wrapCols) {
+                const rowSlice = expandedManagers.slice(i, i + wrapCols);
                 let rowW = 0;
                 let rowH = 0;
                 rowSlice.forEach((ch, idx) => {
@@ -1311,66 +1327,75 @@ export class Visual implements IVisual {
                     rowW += ch.subtreeWidth;
                     rowH = Math.max(rowH, ch.subtreeHeight);
                 });
-                mgrBlockW = Math.max(mgrBlockW, rowW);
-                if (i > 0) mgrBlockH += m.vGap;
-                mgrBlockH += rowH;
+                expandedBlockW = Math.max(expandedBlockW, rowW);
+                if (i > 0) expandedBlockH += m.vGap;
+                expandedBlockH += rowH;
             }
         }
 
-        const combinedChildrenW = Math.max(leafBlockW, mgrBlockW);
-        let combinedChildrenH = 0;
-        if (leafBlockH > 0 && mgrBlockH > 0) {
-            combinedChildrenH = leafBlockH + Math.round(m.vGap * 0.75) + mgrBlockH;
-        } else {
-            combinedChildrenH = leafBlockH + mgrBlockH;
-        }
+        const totalChildrenW = Math.max(compactBlockW, expandedBlockW);
+        const totalChildrenH =
+            compactBlockH > 0 && expandedBlockH > 0
+                ? compactBlockH + m.vGap + expandedBlockH
+                : compactBlockH + expandedBlockH;
 
-        node.subtreeWidth = Math.max(m.cardW, combinedChildrenW);
-        node.subtreeHeight = m.cardH + m.vGap + combinedChildrenH;
+        node.subtreeWidth = Math.max(m.cardW, totalChildrenW);
+        node.subtreeHeight = m.cardH + m.vGap + totalChildrenH;
     }
 
-    private assignCompactHybridCoordinates(
+    private assignDenseSpineCoordinates(
         node: StaffNode,
         leftX: number,
         topY: number,
         m: DensityMetrics
     ): void {
-        node.x = leftX + node.subtreeWidth / 2 - m.cardW / 2;
+        const centerX = leftX + node.subtreeWidth / 2;
+        node.x = centerX - m.cardW / 2;
         node.y = topY;
 
         if (!node.expanded || node.children.length === 0) return;
 
-        const managers = node.children.filter((c) => c.children.length > 0);
-        const leaves = node.children.filter((c) => c.children.length === 0);
+        const collapsedOrLeaf = node.children.filter(
+            (c) => !c.expanded || c.children.length === 0
+        );
+        const expandedManagers = node.children.filter(
+            (c) => c.expanded && c.children.length > 0
+        );
 
         let currentY = topY + m.cardH + m.vGap;
+        const vRowGap = Math.max(10, Math.round(m.hGap * 0.8));
 
-        // 1. Place leaf staff in a compact 2-column vertical sub-grid right below the manager
-        if (leaves.length > 0) {
-            const leafCols = leaves.length >= 2 ? 2 : 1;
-            const leafRows = Math.ceil(leaves.length / leafCols);
-            const vLeafGap = Math.max(8, Math.round(m.hGap * 0.8));
-            const leafBlockW = leafCols * m.cardW + (leafCols - 1) * m.hGap;
-            const startLeafX = leftX + (node.subtreeWidth - leafBlockW) / 2;
-
-            leaves.forEach((leaf, idx) => {
-                const col = idx % leafCols;
-                const row = Math.floor(idx / leafCols);
-                leaf.x = startLeafX + col * (m.cardW + m.hGap);
-                leaf.y = currentY + row * (m.cardH + vLeafGap);
+        // 1. Place all collapsed/leaf children in a 2-column vertical spine straddling centerX
+        if (collapsedOrLeaf.length === 1 && expandedManagers.length === 0) {
+            const single = collapsedOrLeaf[0];
+            single.x = centerX - m.cardW / 2;
+            single.y = currentY;
+            currentY += m.cardH;
+        } else if (collapsedOrLeaf.length > 0) {
+            const rows = Math.ceil(collapsedOrLeaf.length / 2);
+            collapsedOrLeaf.forEach((ch, idx) => {
+                const col = idx % 2;
+                const row = Math.floor(idx / 2);
+                if (col === 0) {
+                    // Left of center spine
+                    ch.x = centerX - m.spineGap / 2 - m.cardW;
+                } else {
+                    // Right of center spine
+                    ch.x = centerX + m.spineGap / 2;
+                }
+                ch.y = currentY + row * (m.cardH + vRowGap);
             });
-
-            currentY += leafRows * m.cardH + (leafRows - 1) * vLeafGap;
-            if (managers.length > 0) {
-                currentY += Math.round(m.vGap * 0.75);
+            currentY += rows * m.cardH + (rows - 1) * vRowGap;
+            if (expandedManagers.length > 0) {
+                currentY += m.vGap;
             }
         }
 
-        // 2. Place sub-managers in wrapped rows of up to maxColumnsWrap columns
-        if (managers.length > 0) {
+        // 2. Place any actively expanded child managers below the 2-column spine
+        if (expandedManagers.length > 0) {
             const wrapCols = Math.max(2, this.maxColumnsWrap);
-            for (let i = 0; i < managers.length; i += wrapCols) {
-                const rowSlice = managers.slice(i, i + wrapCols);
+            for (let i = 0; i < expandedManagers.length; i += wrapCols) {
+                const rowSlice = expandedManagers.slice(i, i + wrapCols);
                 let rowW = 0;
                 let rowH = 0;
                 rowSlice.forEach((ch, idx) => {
@@ -1381,7 +1406,7 @@ export class Visual implements IVisual {
 
                 let currX = leftX + (node.subtreeWidth - rowW) / 2;
                 rowSlice.forEach((ch) => {
-                    this.assignCompactHybridCoordinates(ch, currX, currentY, m);
+                    this.assignDenseSpineCoordinates(ch, currX, currentY, m);
                     currX += ch.subtreeWidth + m.hGap;
                 });
 
@@ -1390,10 +1415,6 @@ export class Visual implements IVisual {
         }
     }
 
-    /**
-     * HORIZONTAL (LEFT-TO-RIGHT) LAYOUT:
-     * Hierarchy flows left-to-right; siblings stack vertically.
-     */
     private computeHorizontalLayout(node: StaffNode, m: DensityMetrics): void {
         if (!node.expanded || node.children.length === 0) {
             node.subtreeWidth = m.cardW;
@@ -1440,9 +1461,6 @@ export class Visual implements IVisual {
         });
     }
 
-    /**
-     * CLASSIC TOP-DOWN LAYOUT:
-     */
     private computeClassicLayout(node: StaffNode, m: DensityMetrics): void {
         if (!node.expanded || node.children.length === 0) {
             node.subtreeWidth = m.cardW;
@@ -1488,7 +1506,7 @@ export class Visual implements IVisual {
     }
 
     // =========================================================================
-    // RENDERING & SEMANTIC ZOOM (AUTO-LOD)
+    // RENDERING, CENTER-SPINE CONNECTORS & CARDS
     // =========================================================================
 
     private renderTree(): void {
@@ -1541,17 +1559,13 @@ export class Visual implements IVisual {
                     const endX = ch.x;
                     const endY = ch.y + m.cardH / 2;
                     const midX = (startX + endX) / 2;
-                    const path = document.createElementNS(SVG_NS, "path");
-                    path.setAttribute(
-                        "d",
-                        `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`
+                    this.appendLinkPath(
+                        `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`,
+                        ch.isMatch || ch.isActiveMatch
                     );
-                    path.setAttribute(
-                        "class",
-                        ch.isMatch || ch.isActiveMatch ? "scw-link scw-link-highlighted" : "scw-link"
-                    );
-                    this.linksGroup.appendChild(path);
                 });
+            } else if (this.layoutMode === "compact") {
+                this.drawDenseSpineLinks(n, m);
             } else {
                 const startX = n.x + m.cardW / 2;
                 const startY = n.y + m.cardH;
@@ -1559,28 +1573,90 @@ export class Visual implements IVisual {
                 n.children.forEach((ch) => {
                     const endX = ch.x + m.cardW / 2;
                     const endY = ch.y;
-                    const path = document.createElementNS(SVG_NS, "path");
-                    // Orthogonal rounded step connector for clean multi-row / grid clarity
-                    const d = `M ${startX} ${startY} L ${startX} ${elbowY} L ${endX} ${elbowY} L ${endX} ${endY}`;
-                    path.setAttribute("d", d);
-                    path.setAttribute(
-                        "class",
-                        ch.isMatch || ch.isActiveMatch ? "scw-link scw-link-highlighted" : "scw-link"
+                    this.appendLinkPath(
+                        `M ${startX} ${startY} L ${startX} ${elbowY} L ${endX} ${elbowY} L ${endX} ${endY}`,
+                        ch.isMatch || ch.isActiveMatch
                     );
-                    this.linksGroup.appendChild(path);
                 });
             }
         });
 
         // Draw Node Cards
         const hasAnySearch = this.matchedNodes.length > 0;
-        const isSemanticZoomOut = this.scale < 0.48;
+        const isSemanticZoomOut = this.scale < 0.45;
         visibleNodes.forEach((node) => {
             const g = this.renderNodeCard(node, m, hasAnySearch, isSemanticZoomOut);
             this.nodesGroup.appendChild(g);
         });
 
         this.applyTransform();
+    }
+
+    /**
+     * Draws clean Center-Spine connectors (`├─ ┤`) for the 2-column vertical block of
+     * collapsed/leaf children and orthogonal branches for any expanded child managers below.
+     */
+    private drawDenseSpineLinks(n: StaffNode, m: DensityMetrics): void {
+        const spineX = n.x + m.cardW / 2;
+        const startY = n.y + m.cardH;
+
+        const collapsedOrLeaf = n.children.filter(
+            (c) => !c.expanded || c.children.length === 0
+        );
+        const expandedManagers = n.children.filter(
+            (c) => c.expanded && c.children.length > 0
+        );
+
+        if (collapsedOrLeaf.length === 1 && expandedManagers.length === 0) {
+            const ch = collapsedOrLeaf[0];
+            this.appendLinkPath(
+                `M ${spineX} ${startY} L ${ch.x + m.cardW / 2} ${ch.y}`,
+                ch.isMatch || ch.isActiveMatch
+            );
+            return;
+        }
+
+        let lowestSpineY = startY;
+
+        // Horizontal ticks from center spine into left/right column cards
+        collapsedOrLeaf.forEach((ch) => {
+            const midY = ch.y + m.cardH / 2;
+            lowestSpineY = Math.max(lowestSpineY, midY);
+            const isLeftCol = ch.x + m.cardW <= spineX + 1;
+            const targetEdgeX = isLeftCol ? ch.x + m.cardW : ch.x;
+            this.appendLinkPath(
+                `M ${spineX} ${midY} L ${targetEdgeX} ${midY}`,
+                ch.isMatch || ch.isActiveMatch
+            );
+        });
+
+        // Branches to any expanded managers placed below the 2-column block
+        if (expandedManagers.length > 0) {
+            expandedManagers.forEach((mgr) => {
+                const elbowY = mgr.y - Math.round(m.vGap * 0.45);
+                lowestSpineY = Math.max(lowestSpineY, elbowY);
+                const mgrCenterX = mgr.x + m.cardW / 2;
+                this.appendLinkPath(
+                    `M ${spineX} ${elbowY} L ${mgrCenterX} ${elbowY} L ${mgrCenterX} ${mgr.y}`,
+                    mgr.isMatch || mgr.isActiveMatch
+                );
+            });
+        }
+
+        // Main center vertical spine trunk
+        if (lowestSpineY > startY) {
+            this.appendLinkPath(`M ${spineX} ${startY} L ${spineX} ${lowestSpineY}`, false);
+        }
+    }
+
+    private appendLinkPath(d: string, highlighted: boolean): void {
+        const path = document.createElementNS(SVG_NS, "path");
+        path.setAttribute("d", d);
+        path.setAttribute(
+            "class",
+            highlighted ? "scw-link scw-link-highlighted" : "scw-link"
+        );
+        this.linksGroup.appendChild(path);
     }
 
     private renderNodeCard(
@@ -1596,10 +1672,13 @@ export class Visual implements IVisual {
         const isSelected = this.selectedNodeId === node.id;
         const isDimmed = hasAnySearch && !node.isMatch;
         if (isDimmed) {
-            g.setAttribute("opacity", "0.38");
+            g.setAttribute("opacity", "0.35");
         }
 
-        // Native SVG Tooltip (<title>) with complete details regardless of card size
+        const isNavy = this.cardTheme === "navy";
+        const isNonStandard = node.status !== "Direct" && node.status !== "Root";
+
+        // Native SVG Tooltip (<title>)
         const titleEl = document.createElementNS(SVG_NS, "title");
         const extraTooltip = node.extras.map((e) => `${e.label}: ${e.value}`).join("\n");
         titleEl.textContent = [
@@ -1607,7 +1686,7 @@ export class Visual implements IVisual {
             extraTooltip,
             `Direct Reports: ${node.directReports} | Total Subtree: ${node.totalReports}`,
             `Hierarchy Status: ${node.status}`,
-            node.directReports > 0 ? "Double-click or click 🎯 to focus this branch" : "",
+            node.directReports > 0 ? "Click +N to expand 1 level · Double-click or 🎯 to focus branch" : "",
         ]
             .filter(Boolean)
             .join("\n");
@@ -1619,61 +1698,76 @@ export class Visual implements IVisual {
         rect.setAttribute("height", String(m.cardH));
         rect.setAttribute("rx", "6");
         rect.setAttribute("ry", "6");
-        rect.setAttribute(
-            "fill",
-            node.isActiveMatch
+
+        let cardFill: string;
+        if (isNavy) {
+            cardFill =
+                this.customCardBg && this.customCardBg !== "#ffffff"
+                    ? this.customCardBg
+                    : "#1C355E";
+            if (node.depth === 0) cardFill = "#112240";
+            if (isSelected) cardFill = "#004b93";
+        } else {
+            cardFill = node.isActiveMatch
                 ? "#fff5f5"
                 : isSelected
                 ? "#eff6ff"
-                : this.customCardBg || "#ffffff"
-        );
+                : "#ffffff";
+        }
+        rect.setAttribute("fill", cardFill);
 
-        let strokeColor = "#cbd5e1";
-        let strokeWidth = "1.25";
+        let strokeColor = isNavy ? "#334155" : "#cbd5e1";
+        let strokeWidth = "1.5";
         if (node.isActiveMatch) {
-            strokeColor = this.searchHighlightColor || "#da291c";
-            strokeWidth = "3";
+            strokeColor = this.searchHighlightColor || "#FF0000";
+            strokeWidth = "3.5";
         } else if (node.isMatch) {
-            strokeColor = "#ed8b00";
+            strokeColor = "#f59e0b";
             strokeWidth = "2.5";
         } else if (isSelected) {
-            strokeColor = "#005eb8";
+            strokeColor = isNavy ? "#38bdf8" : "#005eb8";
             strokeWidth = "2.5";
+        } else if (this.showHealthBadges && isNonStandard) {
+            strokeColor = "#f59e0b";
+            strokeWidth = "2";
         }
         rect.setAttribute("stroke", strokeColor);
         rect.setAttribute("stroke-width", strokeWidth);
         g.appendChild(rect);
 
-        // Top NHS Accent Strip
-        const isNonStandard = node.status !== "Direct" && node.status !== "Root";
-        const headerColor =
-            node.depth <= 1
-                ? "#003087"
-                : node.isActiveMatch
-                ? this.searchHighlightColor || "#da291c"
-                : this.showHealthBadges && isNonStandard
-                ? "#ed8b00"
-                : "#005eb8";
+        // Top Accent Strip
+        const headerColor = node.isActiveMatch
+            ? this.searchHighlightColor || "#FF0000"
+            : this.showHealthBadges && isNonStandard
+            ? "#f59e0b"
+            : isNavy
+            ? "#38bdf8"
+            : "#005eb8";
 
         const topBar = document.createElementNS(SVG_NS, "rect");
         topBar.setAttribute("x", "0");
         topBar.setAttribute("y", "0");
         topBar.setAttribute("width", String(m.cardW));
-        topBar.setAttribute("height", this.densityMode === "mini" ? "4" : "6");
+        topBar.setAttribute("height", this.densityMode === "mini" ? "3.5" : "5");
         topBar.setAttribute("rx", "6");
         topBar.setAttribute("fill", headerColor);
         g.appendChild(topBar);
 
+        const nameColor = isNavy ? "#FFFFFF" : "#0f172a";
+        const sub1Color = isNavy ? "#dbeafe" : "#334155";
+        const sub2Color = isNavy ? "#cbd5e1" : "#64748b";
+        const badgeColor = isNavy ? "#fcd34d" : "#b45309";
+
         const maxNameChars = Math.max(12, Math.floor((m.cardW - 30) / (m.nameFont * 0.56)));
         const maxSubChars = Math.max(14, Math.floor((m.cardW - 20) / (m.subFont * 0.54)));
 
-        // SEMANTIC ZOOM (Auto-LOD when zoomed out < 48%) OR MINI DENSITY
+        // SEMANTIC ZOOM (Auto-LOD when zoomed out < 45%) OR MINI DENSITY
         if (isSemanticZoomOut || this.densityMode === "mini") {
             const nameText = document.createElementNS(SVG_NS, "text");
             nameText.setAttribute("x", "8");
-            nameText.setAttribute("y", String(Math.round(m.cardH * 0.48)));
-            nameText.setAttribute("fill", "#0f172a");
-            const lodFontSize = isSemanticZoomOut ? Math.max(12, m.nameFont * 1.2) : m.nameFont;
+            nameText.setAttribute("y", String(Math.round(m.cardH * 0.46)));
+            nameText.setAttribute("fill", nameColor);
+            const lodFontSize = isSemanticZoomOut ? Math.max(12, m.nameFont * 1.18) : m.nameFont;
             nameText.setAttribute("font-size", `${lodFontSize}px`);
             nameText.setAttribute("font-weight", "700");
             nameText.textContent = this.truncate(
@@ -1685,8 +1779,8 @@ export class Visual implements IVisual {
             if (!isSemanticZoomOut && node.level3) {
                 const sub1 = document.createElementNS(SVG_NS, "text");
                 sub1.setAttribute("x", "8");
-                sub1.setAttribute("y", String(Math.round(m.cardH * 0.76)));
-                sub1.setAttribute("fill", "#475569");
+                sub1.setAttribute("y", String(Math.round(m.cardH * 0.74)));
+                sub1.setAttribute("fill", sub1Color);
                 sub1.setAttribute("font-size", `${m.subFont}px`);
                 sub1.textContent = this.truncate(node.level3, maxSubChars);
                 g.appendChild(sub1);
@@ -1695,8 +1789,8 @@ export class Visual implements IVisual {
             // COMPACT OR DETAILED MODE
             const nameText = document.createElementNS(SVG_NS, "text");
             nameText.setAttribute("x", "10");
-            nameText.setAttribute("y", this.densityMode === "compact" ? "21" : "25");
-            nameText.setAttribute("fill", "#0f172a");
+            nameText.setAttribute("y", this.densityMode === "compact" ? "20" : "24");
+            nameText.setAttribute("fill", nameColor);
             nameText.setAttribute("font-size", `${m.nameFont}px`);
             nameText.setAttribute("font-weight", "700");
             nameText.textContent = this.truncate(
@@ -1705,13 +1799,13 @@ export class Visual implements IVisual {
             );
             g.appendChild(nameText);
 
-            // Subtitle 1 (Level 3 Directorate or Level 6)
+            // Subtitle 1 (Level 3 Directorate)
             const line1Val =
                 node.level3 || (node.extras.length > 0 ? node.extras[0].value : `ID: ${node.id}`);
             const sub1 = document.createElementNS(SVG_NS, "text");
             sub1.setAttribute("x", "10");
-            sub1.setAttribute("y", this.densityMode === "compact" ? "36" : "43");
-            sub1.setAttribute("fill", "#334155");
+            sub1.setAttribute("y", this.densityMode === "compact" ? "35" : "42");
+            sub1.setAttribute("fill", sub1Color);
             sub1.setAttribute("font-size", `${m.subFont}px`);
             sub1.setAttribute("font-weight", "600");
             sub1.textContent = this.truncate(line1Val, maxSubChars);
@@ -1727,8 +1821,8 @@ export class Visual implements IVisual {
             if (line2Val) {
                 const sub2 = document.createElementNS(SVG_NS, "text");
                 sub2.setAttribute("x", "10");
-                sub2.setAttribute("y", this.densityMode === "compact" ? "49" : "58");
-                sub2.setAttribute("fill", "#64748b");
+                sub2.setAttribute("y", this.densityMode === "compact" ? "48" : "57");
+                sub2.setAttribute("fill", sub2Color);
                 sub2.setAttribute("font-size", `${Math.max(8, m.subFont - 0.5)}px`);
                 sub2.textContent = this.truncate(line2Val, maxSubChars + 2);
                 g.appendChild(sub2);
@@ -1742,8 +1836,8 @@ export class Visual implements IVisual {
             ) {
                 const badgeText = document.createElementNS(SVG_NS, "text");
                 badgeText.setAttribute("x", "10");
-                badgeText.setAttribute("y", this.densityMode === "detailed" ? "74" : "50");
-                badgeText.setAttribute("fill", "#b45309");
+                badgeText.setAttribute("y", this.densityMode === "detailed" ? "73" : "49");
+                badgeText.setAttribute("fill", badgeColor);
                 badgeText.setAttribute("font-size", `${Math.max(8, m.subFont - 1)}px`);
                 badgeText.setAttribute("font-weight", "700");
                 badgeText.textContent = `⚡ ${this.truncate(node.status, maxSubChars)}`;
@@ -1754,9 +1848,9 @@ export class Visual implements IVisual {
         // Focus / Pin Subtree Icon Button (🎯) in top-right of manager cards
         if (node.directReports > 0) {
             const focusG = document.createElementNS(SVG_NS, "g") as SVGGElement;
-            const btnSize = this.densityMode === "mini" ? 14 : 18;
+            const btnSize = this.densityMode === "mini" ? 14 : 17;
             const fx = m.cardW - btnSize - 4;
-            const fy = 7;
+            const fy = 6;
 
             const focusBg = document.createElementNS(SVG_NS, "rect");
             focusBg.setAttribute("x", String(fx));
@@ -1766,23 +1860,27 @@ export class Visual implements IVisual {
             focusBg.setAttribute("rx", "4");
             focusBg.setAttribute(
                 "fill",
-                this.focusedNodeId === node.id ? "#dbeafe" : "#f1f5f9"
+                this.focusedNodeId === node.id
+                    ? "#38bdf8"
+                    : isNavy
+                    ? "rgba(255,255,255,0.14)"
+                    : "#f1f5f9"
             );
-            focusBg.setAttribute("stroke", "#94a3b8");
+            focusBg.setAttribute("stroke", isNavy ? "rgba(255,255,255,0.35)" : "#94a3b8");
             focusBg.setAttribute("stroke-width", "0.8");
 
             const focusLabel = document.createElementNS(SVG_NS, "text");
             focusLabel.setAttribute("x", String(fx + btnSize / 2));
             focusLabel.setAttribute("y", String(fy + btnSize * 0.74));
             focusLabel.setAttribute("text-anchor", "middle");
-            focusLabel.setAttribute("font-size", this.densityMode === "mini" ? "8.5px" : "10px");
+            focusLabel.setAttribute("font-size", this.densityMode === "mini" ? "8px" : "9.5px");
             focusLabel.textContent = "🎯";
 
             const focusTitle = document.createElementNS(SVG_NS, "title");
             focusTitle.textContent =
                 this.focusedNodeId === node.id
                     ? "Unpin branch (Return to Full Organisation)"
-                    : `Focus on ${node.name}'s branch (${node.totalReports} staff)`;
+                    : `Focus on ${node.name}'s branch (${node.directReports} direct, ${node.totalReports} total)`;
             focusG.appendChild(focusTitle);
             focusG.appendChild(focusBg);
             focusG.appendChild(focusLabel);
@@ -1790,7 +1888,7 @@ export class Visual implements IVisual {
             focusG.addEventListener("click", (e: MouseEvent) => {
                 e.stopPropagation();
                 if (this.focusedNodeId === node.id) {
-                    this.focusOnNode(null);
+                    this.resetToDefaultState();
                 } else {
                     this.focusOnNode(node.id);
                 }
@@ -1798,13 +1896,14 @@ export class Visual implements IVisual {
             g.appendChild(focusG);
         }
 
-        // Click card body -> cross-filter in Power BI
+        // Click card body -> cross-filter in Power BI + show full details in bottom status pill
         g.addEventListener("click", (e: MouseEvent) => {
             e.stopPropagation();
             this.selectedNodeId = this.selectedNodeId === node.id ? null : node.id;
             if (node.selectionId) {
                 this.selectionManager.select(node.selectionId, e.ctrlKey || e.metaKey);
             }
+            this.updateStatusBarSummary();
             this.renderTree();
         });
 
@@ -1812,11 +1911,15 @@ export class Visual implements IVisual {
         g.addEventListener("dblclick", (e: MouseEvent) => {
             e.stopPropagation();
             if (node.directReports > 0) {
-                this.focusOnNode(this.focusedNodeId === node.id ? null : node.id);
+                if (this.focusedNodeId === node.id) {
+                    this.resetToDefaultState();
+                } else {
+                    this.focusOnNode(node.id);
+                }
             }
         });
 
-        // Expand/Collapse Pill at bottom of card if node has direct reports
+        // Expand/Collapse Pill at bottom border of card (strictly expands 1 level below!)
         if (node.directReports > 0) {
             const pillG = document.createElementNS(SVG_NS, "g") as SVGGElement;
             const pillW = m.pillW;
@@ -1830,54 +1933,83 @@ export class Visual implements IVisual {
             pillRect.setAttribute("width", String(pillW));
             pillRect.setAttribute("height", String(pillH));
             pillRect.setAttribute("rx", String(Math.round(pillH / 2)));
-            pillRect.setAttribute("fill", node.expanded ? "#e2e8f0" : "#005eb8");
-            pillRect.setAttribute("stroke", node.expanded ? "#94a3b8" : "#003087");
-            pillRect.setAttribute("stroke-width", "1");
+
+            if (isNavy) {
+                pillRect.setAttribute("fill", node.expanded ? "#0284c7" : "#ffffff");
+                pillRect.setAttribute("stroke", node.expanded ? "#38bdf8" : "#1c355e");
+            } else {
+                pillRect.setAttribute("fill", node.expanded ? "#e2e8f0" : "#005eb8");
+                pillRect.setAttribute("stroke", node.expanded ? "#94a3b8" : "#003087");
+            }
+            pillRect.setAttribute("stroke-width", "1.2");
 
             const pillLabel = document.createElementNS(SVG_NS, "text");
             pillLabel.setAttribute("x", String(m.cardW / 2));
             pillLabel.setAttribute("y", String(pillY + pillH * 0.72));
             pillLabel.setAttribute("text-anchor", "middle");
-            pillLabel.setAttribute("fill", node.expanded ? "#1e293b" : "#ffffff");
+            pillLabel.setAttribute(
+                "fill",
+                isNavy
+                    ? node.expanded
+                        ? "#ffffff"
+                        : "#1c355e"
+                    : node.expanded
+                    ? "#1e293b"
+                    : "#ffffff"
+            );
             pillLabel.setAttribute(
                 "font-size",
-                `${Math.max(8, Math.min(10, m.subFont - 0.5))}px`
+                `${Math.max(8, Math.min(10, m.subFont - 0.3))}px`
             );
             pillLabel.setAttribute("font-weight", "700");
-            pillLabel.textContent =
-                this.densityMode === "mini"
-                    ? node.expanded
-                        ? `▼ ${node.directReports} (${node.totalReports})`
-                        : `▶ +${node.directReports} (${node.totalReports})`
-                    : node.expanded
-                    ? `▼ ${node.directReports} direct · ${node.totalReports} all`
-                    : `▶ +${node.directReports} (${node.totalReports} total)`;
+            pillLabel.textContent = node.expanded
+                ? `▲ -${node.directReports} (${node.totalReports})`
+                : `▼ +${node.directReports} (${node.totalReports})`;
 
             pillG.appendChild(pillRect);
             pillG.appendChild(pillLabel);
 
             pillG.addEventListener("click", (e: MouseEvent) => {
                 e.stopPropagation();
-                const willExpand = !node.expanded;
-                // Accordion Mode: auto-collapse sibling managers when opening a branch
-                if (willExpand && this.accordionMode && node.parent) {
-                    node.parent.children.forEach((sib) => {
-                        if (sib.id !== node.id) {
-                            this.collapseSubtreeRecursive(sib);
-                        }
-                    });
-                }
-                node.expanded = willExpand;
-                this.renderTree();
-                if (this.autoFitOnToggle) {
-                    this.fitToScreen();
-                }
+                this.toggleSingleLevelExpansion(node);
             });
 
             g.appendChild(pillG);
         }
 
         return g;
+    }
+
+    /**
+     * Strictly expands ONLY 1 level below `node` when expanding (forcing all grandchildren
+     * collapsed so a whole subtree never pops open unexpectedly), and recursively collapses
+     * all descendants when collapsing `node`.
+     */
+    private toggleSingleLevelExpansion(node: StaffNode): void {
+        const willExpand = !node.expanded;
+        if (willExpand) {
+            // 1. If Accordion Mode is ON, collapse sibling branches at the same level
+            if (this.accordionMode && node.parent) {
+                node.parent.children.forEach((sib) => {
+                    if (sib.id !== node.id) {
+                        this.collapseSubtreeRecursive(sib);
+                    }
+                });
+            }
+            // 2. Ensure ALL children of `node` start collapsed so ONLY 1 level below opens!
+            node.children.forEach((ch) => {
+                this.collapseSubtreeRecursive(ch);
+            });
+            node.expanded = true;
+        } else {
+            // Recursively collapse `node` and all its descendants
+            this.collapseSubtreeRecursive(node);
+        }
+
+        this.renderTree();
+        if (this.autoFitOnToggle) {
+            this.fitToScreen();
+        }
     }
 
     private collapseSubtreeRecursive(node: StaffNode): void {
@@ -1922,7 +2054,6 @@ export class Visual implements IVisual {
         this.minimapSvg.setAttribute("viewBox", `${minX} ${minY} ${spanW} ${spanH}`);
         this.minimapSvg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
-        // Draw miniature rectangles for visible nodes
         this.lastVisibleNodes.forEach((n) => {
             const r = document.createElementNS(SVG_NS, "rect");
             r.setAttribute("x", String(n.x));
@@ -1933,17 +2064,14 @@ export class Visual implements IVisual {
             r.setAttribute(
                 "fill",
                 n.isActiveMatch
-                    ? "#da291c"
+                    ? "#FF0000"
                     : n.isMatch
-                    ? "#ed8b00"
-                    : n.depth <= 1
-                    ? "#003087"
-                    : "#64748b"
+                    ? "#f59e0b"
+                    : "#1C355E"
             );
             this.minimapSvg.appendChild(r);
         });
 
-        // Draw current viewport rectangle
         const svgRect = this.svgElement.getBoundingClientRect();
         const viewW = (svgRect.width || 1100) / this.scale;
         const viewH = (svgRect.height || 640) / this.scale;
@@ -1955,10 +2083,54 @@ export class Visual implements IVisual {
         vpRect.setAttribute("y", String(viewY));
         vpRect.setAttribute("width", String(viewW));
         vpRect.setAttribute("height", String(viewH));
-        vpRect.setAttribute("fill", "rgba(0, 94, 184, 0.12)");
+        vpRect.setAttribute("fill", "rgba(0, 94, 184, 0.14)");
         vpRect.setAttribute("stroke", "#005eb8");
-        vpRect.setAttribute("stroke-width", String(Math.max(4, spanW * 0.012)));
+        vpRect.setAttribute("stroke-width", String(Math.max(4, spanW * 0.014)));
         this.minimapSvg.appendChild(vpRect);
+    }
+
+    private exportCurrentSvg(): void {
+        if (!this.svgElement || this.lastVisibleNodes.length === 0) return;
+
+        const pad = 32;
+        const vx = Math.floor(this.treeMinX - pad);
+        const vy = Math.floor(this.treeMinY - pad);
+        const vw = Math.ceil(this.treeMaxX - this.treeMinX + pad * 2);
+        const vh = Math.ceil(this.treeMaxY - this.treeMinY + pad * 2);
+
+        const cloneSvg = document.createElementNS(SVG_NS, "svg");
+        cloneSvg.setAttribute("xmlns", SVG_NS);
+        cloneSvg.setAttribute("viewBox", `${vx} ${vy} ${vw} ${vh}`);
+        cloneSvg.setAttribute("width", String(vw));
+        cloneSvg.setAttribute("height", String(vh));
+
+        const styleEl = document.createElementNS(SVG_NS, "style");
+        styleEl.textContent = `
+            svg { font-family: "Segoe UI", Arial, sans-serif; background: #f8fafc; }
+            .scw-link { fill: none; stroke: #64748b; stroke-width: 1.75px; stroke-linecap: round; stroke-linejoin: round; }
+            .scw-link-highlighted { fill: none; stroke: #da291c; stroke-width: 2.75px; }
+        `;
+        cloneSvg.appendChild(styleEl);
+
+        const contentGroup = document.createElementNS(SVG_NS, "g");
+        contentGroup.appendChild(this.linksGroup.cloneNode(true));
+        contentGroup.appendChild(this.nodesGroup.cloneNode(true));
+        cloneSvg.appendChild(contentGroup);
+
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(cloneSvg);
+        const dataUri = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgString);
+
+        try {
+            const a = document.createElement("a");
+            a.href = dataUri;
+            a.download = "scw-org-chart.svg";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        } catch {
+            this.host.launchUrl(dataUri);
+        }
     }
 
     private zoomBy(factor: number): void {
@@ -1971,8 +2143,8 @@ export class Visual implements IVisual {
         this.panY = cy - ((cy - this.panY) / prevScale) * nextScale;
 
         const crossedLod =
-            (prevScale < 0.48 && nextScale >= 0.48) ||
-            (prevScale >= 0.48 && nextScale < 0.48);
+            (prevScale < 0.45 && nextScale >= 0.45) ||
+            (prevScale >= 0.45 && nextScale < 0.45);
         this.scale = nextScale;
         if (crossedLod) {
             this.renderTree();
@@ -1990,7 +2162,7 @@ export class Visual implements IVisual {
         this.scale = Math.max(this.scale, 0.85);
         this.panX = w / 2 - (node.x + m.cardW / 2) * this.scale;
         this.panY = h / 2 - (node.y + m.cardH / 2) * this.scale;
-        if (prevScale < 0.48 && this.scale >= 0.48) {
+        if (prevScale < 0.45 && this.scale >= 0.45) {
             this.renderTree();
         } else {
             this.applyTransform();
@@ -2025,8 +2197,8 @@ export class Visual implements IVisual {
         const treeH = Math.max(m.cardH, maxY - minY);
         const hasBreadcrumbs = !this.breadcrumbBar.classList.contains("scw-hidden");
         const padX = 36;
-        const padTop = hasBreadcrumbs ? 92 : 62;
-        const padBottom = 40;
+        const padTop = hasBreadcrumbs ? 90 : 58;
+        const padBottom = 38;
 
         const availW = Math.max(200, w - padX * 2);
         const availH = Math.max(150, h - padTop - padBottom);
@@ -2037,8 +2209,8 @@ export class Visual implements IVisual {
         this.panY = padTop + (availH - treeH * this.scale) / 2 - minY * this.scale;
 
         const crossedLod =
-            (prevScale < 0.48 && this.scale >= 0.48) ||
-            (prevScale >= 0.48 && this.scale < 0.48);
+            (prevScale < 0.45 && this.scale >= 0.45) ||
+            (prevScale >= 0.45 && this.scale < 0.45);
         if (crossedLod) {
             this.renderTree();
         } else {
