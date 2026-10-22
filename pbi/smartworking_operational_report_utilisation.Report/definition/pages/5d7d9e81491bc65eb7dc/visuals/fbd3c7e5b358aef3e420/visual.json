@@ -326,13 +326,6 @@
                   "Value": "3D"
                 }
               }
-            },
-            "imageHeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
             }
           }
         }
@@ -528,6 +521,40 @@
               "expr": {
                 "Literal": {
                   "Value": "88L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
                 }
               }
             }

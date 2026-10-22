@@ -3,10 +3,10 @@
   "name": "b79f3b3cfb08265b02c2",
   "position": {
     "x": 0,
-    "y": 234,
+    "y": 292,
     "z": 1000,
-    "height": 348,
-    "width": 1248,
+    "height": 506,
+    "width": 1408,
     "tabOrder": 1000
   },
   "visual": {
@@ -443,13 +443,64 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "data_smarttime"
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "data_smarttime"
+                            }
+                          },
+                          "Property": "%SmartTimeCompliance"
                         }
                       },
-                      "Property": "calc_smarttime_compliance_rag_bg"
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FEE2E2'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FEF3C7'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0.5D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#DCFCE7'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "0.85D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -591,13 +642,6 @@
               "expr": {
                 "Literal": {
                   "Value": "3D"
-                }
-              }
-            },
-            "imageHeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
                 }
               }
             }
@@ -742,6 +786,40 @@
               "expr": {
                 "Literal": {
                   "Value": "88L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
                 }
               }
             }

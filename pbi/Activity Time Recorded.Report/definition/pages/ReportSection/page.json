@@ -3,8 +3,8 @@
   "name": "ReportSection",
   "displayName": "Activity time recorded (w/ comments)",
   "displayOption": "FitToPage",
-  "height": 720,
-  "width": 1280,
+  "height": 960,
+  "width": 1440,
   "visualInteractions": [
     {
       "source": "3920380678199fe99f84",

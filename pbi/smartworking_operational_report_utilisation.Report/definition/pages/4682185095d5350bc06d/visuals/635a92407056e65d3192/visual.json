@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "635a92407056e65d3192",
   "position": {
-    "x": 752,
-    "y": 208,
+    "x": 852,
+    "y": 310,
     "z": 7000,
-    "height": 144,
-    "width": 244,
+    "height": 186,
+    "width": 272,
     "tabOrder": 7000
   },
   "visual": {
@@ -453,13 +453,6 @@
                   "Value": "3D"
                 }
               }
-            },
-            "imageHeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
             }
           }
         }
@@ -598,143 +591,13 @@
       "columnFormatting": [
         {
           "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_contractedhours minus calc_NonWorkingHours"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_CORE BAU Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_CORE DisccretionaryHours divided by calc_contractedhours minus calc_NonWorkingHours"
-          }
-        },
-        {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "styleHeader": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "data_smarttime.calc_PipeLine Project Hours divided by calc_contractedhours minus calc_NonWorkingHours"
-          }
-        },
-        {
-          "properties": {
             "dataBars": {
               "positiveColor": {
                 "solid": {
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'maxColor'"
+                        "Value": "'#00A9CE'"
                       }
                     }
                   }
@@ -745,7 +608,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'minColor'"
+                        "Value": "'#D64554'"
                       }
                     }
                   }
@@ -756,7 +619,7 @@
                   "color": {
                     "expr": {
                       "Literal": {
-                        "Value": "'foreground'"
+                        "Value": "'#CBD5E1'"
                       }
                     }
                   }
@@ -928,6 +791,40 @@
               "expr": {
                 "Literal": {
                   "Value": "88L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
                 }
               }
             }

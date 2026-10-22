@@ -3,10 +3,10 @@
   "name": "a1b2c3d4e5f60718293a",
   "position": {
     "x": 16,
-    "y": 124,
+    "y": 144,
     "z": 6500,
-    "width": 1248,
-    "height": 56,
+    "width": 1408,
+    "height": 74,
     "tabOrder": 1500
   },
   "visual": {
@@ -23,42 +23,12 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_contractedhours"
-                }
-              },
-              "queryRef": "data_smarttime.calc_contractedhours",
-              "nativeQueryRef": "Contracted Hours",
-              "displayName": "Contracted Hours"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
-                  "Property": "calc_contractedhours minus calc_NonWorkingHours"
-                }
-              },
-              "queryRef": "data_smarttime.calc_contractedhours minus calc_NonWorkingHours",
-              "nativeQueryRef": "Net Available Hours",
-              "displayName": "Net Available Hours"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "data_smarttime"
-                    }
-                  },
                   "Property": "calc_total_activity_hours"
                 }
               },
               "queryRef": "data_smarttime.calc_total_activity_hours",
-              "nativeQueryRef": "Recorded Hours",
-              "displayName": "Recorded Hours"
+              "nativeQueryRef": "Total Recorded Hours",
+              "displayName": "Total Recorded Hours"
             },
             {
               "field": {
@@ -68,12 +38,27 @@
                       "Entity": "data_smarttime"
                     }
                   },
-                  "Property": "calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours"
+                  "Property": "calc_BillableHours"
                 }
               },
-              "queryRef": "data_smarttime.calc_BillableHours divided by calc_contractedhours minus calc_NonWorkingHours",
-              "nativeQueryRef": "Billable Utilisation %",
-              "displayName": "Billable Utilisation %"
+              "queryRef": "data_smarttime.calc_BillableHours",
+              "nativeQueryRef": "Billable Hours",
+              "displayName": "Billable Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_CORE BAU Hours"
+                }
+              },
+              "queryRef": "data_smarttime.calc_CORE BAU Hours",
+              "nativeQueryRef": "Core BAU Hours",
+              "displayName": "Core BAU Hours"
             },
             {
               "field": {
@@ -89,6 +74,21 @@
               "queryRef": "data_smarttime.calc_NonWorkingHours",
               "nativeQueryRef": "Non-Working Hours",
               "displayName": "Non-Working Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data_smarttime"
+                    }
+                  },
+                  "Property": "calc_compliance"
+                }
+              },
+              "queryRef": "data_smarttime.calc_compliance",
+              "nativeQueryRef": "On-Time Compliance %",
+              "displayName": "On-Time Compliance %"
             }
           ]
         }
@@ -108,7 +108,7 @@
             "cellPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "8L"
                 }
               }
             }
@@ -264,7 +264,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "15D"
                 }
               }
             },
@@ -344,7 +344,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8.5D"
+                  "Value": "9.5D"
                 }
               }
             },
@@ -367,35 +367,35 @@
             "paddingSelection": {
               "expr": {
                 "Literal": {
-                  "Value": "'Narrow'"
+                  "Value": "'Custom'"
                 }
               }
             },
             "leftMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "4L"
                 }
               }
             },
             "rightMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "4L"
                 }
               }
             },
             "topMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "4L"
                 }
               }
             },
             "bottomMargin": {
               "expr": {
                 "Literal": {
-                  "Value": "6L"
+                  "Value": "4L"
                 }
               }
             }
@@ -429,25 +429,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#F8FAFC'"
-                    }
-                  }
+                  "Value": "false"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }
@@ -460,32 +449,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#CBD5E1'"
-                    }
-                  }
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
+                  "Value": "false"
                 }
               }
             }
@@ -498,113 +462,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#0F172A'"
-                    }
-                  }
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Outer'"
-                }
-              }
-            },
-            "preset": {
-              "expr": {
-                "Literal": {
-                  "Value": "'BottomRight'"
-                }
-              }
-            },
-            "angle": {
-              "expr": {
-                "Literal": {
-                  "Value": "45L"
-                }
-              }
-            },
-            "shadowDistance": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            },
-            "shadowBlur": {
-              "expr": {
-                "Literal": {
-                  "Value": "8L"
-                }
-              }
-            },
-            "shadowSpread": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "88L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "background": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#FFFFFF'"
-                    }
-                  }
-                }
-              }
-            },
-            "foreground": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1C355E'"
-                    }
-                  }
-                }
-              }
-            },
-            "border": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#FFFFFF'"
-                    }
-                  }
+                  "Value": "false"
                 }
               }
             }
@@ -618,6 +476,53 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

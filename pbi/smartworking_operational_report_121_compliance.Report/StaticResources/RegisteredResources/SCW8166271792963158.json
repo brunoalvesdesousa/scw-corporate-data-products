@@ -500,7 +500,7 @@
     "callout": {
       "fontFace": "Segoe UI Semibold",
       "color": "#1C355E",
-      "fontSize": 24
+      "fontSize": 22
     },
     "title": {
       "fontFace": "Segoe UI Semibold",
@@ -510,12 +510,12 @@
     "header": {
       "fontFace": "Segoe UI Semibold",
       "color": "#1C355E",
-      "fontSize": 10
+      "fontSize": 9.5
     },
     "label": {
       "fontFace": "Segoe UI",
       "color": "#0F172A",
-      "fontSize": 10
+      "fontSize": 9.5
     },
     "smallLightLabel": {
       "fontFace": "Segoe UI",
@@ -766,6 +766,14 @@
             "angle": 45,
             "shadowDistance": 2,
             "transparency": 88
+          }
+        ],
+        "padding": [
+          {
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ]
       }
@@ -1092,10 +1100,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -1471,10 +1479,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -1823,10 +1831,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -2180,10 +2188,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -2537,10 +2545,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -2894,10 +2902,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -3304,10 +3312,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -3735,10 +3743,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -4155,10 +4163,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -4567,10 +4575,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -4957,10 +4965,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -5268,10 +5276,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -5485,10 +5493,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -5836,10 +5844,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -6073,10 +6081,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -6425,10 +6433,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -6646,10 +6654,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -6867,10 +6875,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -7096,10 +7104,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -7370,10 +7378,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -7594,10 +7602,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -7832,10 +7840,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -8084,10 +8092,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -8342,10 +8350,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -8581,10 +8589,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -8796,10 +8804,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 2,
+            "bottom": 2,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -9064,10 +9072,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -9431,10 +9439,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -9983,10 +9991,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -10242,10 +10250,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -10489,10 +10497,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -10660,10 +10668,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -10840,10 +10848,10 @@
       "*": {
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -11062,10 +11070,10 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -11228,10 +11236,10 @@
       "*": {
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 4,
+            "bottom": 4,
+            "left": 6,
+            "right": 6
           }
         ],
         "title": [
@@ -11400,32 +11408,15 @@
         ],
         "padding": [
           {
-            "top": 10,
-            "bottom": 10,
-            "left": 10,
-            "right": 10
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
           }
         ],
         "title": [
           {
-            "show": false,
-            "titleWrap": true,
-            "fontColor": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "background": {
-              "solid": {
-                "color": "#ffffff"
-              }
-            },
-            "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Segoe UI",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "show": false
           }
         ],
         "subTitle": [
@@ -11469,13 +11460,8 @@
         ],
         "background": [
           {
-            "show": true,
-            "color": {
-              "solid": {
-                "color": "#ffffff"
-              }
-            },
-            "transparency": 0
+            "show": false,
+            "transparency": 100
           }
         ],
         "Visual border": [
@@ -11496,54 +11482,12 @@
         ],
         "dropShadow": [
           {
-            "show": false,
-            "color": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "position": "Outer",
-            "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
-            "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "show": false
           }
         ],
         "visualHeader": [
           {
-            "show": true,
-            "background": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "border": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "transparency": 0,
-            "foreground": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "showVisualInformationButton": true,
-            "showVisualWarningButton": true,
-            "showVisualErrorButton": true,
-            "showDrillRoleSelector": true,
-            "showDrillUpButton": true,
-            "showDrillToggleButton": true,
-            "showDrillDownLevelButton": true,
-            "showDrillDownExpandButton": true,
-            "showPinButton": true,
-            "showFocusModeButton": true,
-            "showFilterRestatementButton": true,
-            "showSeeDataLayoutToggleButton": true,
-            "showOptionsMenu": true,
-            "showTooltipButton": false
+            "show": false
           }
         ],
         "visualHeaderTooltip": [
@@ -11574,6 +11518,12 @@
             "underline": false,
             "transparency": 5,
             "page": "Auto"
+          }
+        ],
+        "border": [
+          {
+            "show": false,
+            "radius": 0
           }
         ]
       }
@@ -11972,24 +11922,7 @@
         ],
         "title": [
           {
-            "show": false,
-            "titleWrap": true,
-            "background": {
-              "solid": {
-                "color": "#ffffff"
-              }
-            },
-            "alignment": "left",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "fontColor": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "fontSize": 12,
-            "fontFamily": "Segoe UI"
+            "show": false
           }
         ],
         "subTitle": [
@@ -12038,19 +11971,7 @@
         ],
         "dropShadow": [
           {
-            "show": false,
-            "color": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "position": "Outer",
-            "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
-            "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "show": false
           }
         ],
         "visualTooltip": [
@@ -12088,37 +12009,7 @@
         ],
         "visualHeader": [
           {
-            "show": true,
-            "background": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "border": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "transparency": 0,
-            "foreground": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "showVisualInformationButton": true,
-            "showVisualWarningButton": true,
-            "showVisualErrorButton": true,
-            "showDrillRoleSelector": true,
-            "showDrillUpButton": true,
-            "showDrillToggleButton": true,
-            "showDrillDownLevelButton": true,
-            "showDrillDownExpandButton": true,
-            "showPinButton": true,
-            "showFocusModeButton": true,
-            "showFilterRestatementButton": true,
-            "showSeeDataLayoutToggleButton": true,
-            "showOptionsMenu": true,
-            "showTooltipButton": false
+            "show": false
           }
         ],
         "visualHeaderTooltip": [
@@ -12136,6 +12027,18 @@
               }
             },
             "transparency": 5
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": false,
+            "radius": 0
           }
         ]
       }
@@ -12258,24 +12161,7 @@
         ],
         "title": [
           {
-            "show": false,
-            "titleWrap": true,
-            "fontColor": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "background": {
-              "solid": {
-                "color": "#ffffff"
-              }
-            },
-            "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Segoe UI",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "show": false
           }
         ],
         "subTitle": [
@@ -12324,19 +12210,7 @@
         ],
         "dropShadow": [
           {
-            "show": false,
-            "color": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "position": "Outer",
-            "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
-            "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "show": false
           }
         ],
         "visualTooltip": [
@@ -12354,37 +12228,7 @@
         ],
         "visualHeader": [
           {
-            "show": true,
-            "background": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "border": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "transparency": 0,
-            "foreground": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "showVisualInformationButton": true,
-            "showVisualWarningButton": true,
-            "showVisualErrorButton": true,
-            "showDrillRoleSelector": true,
-            "showDrillUpButton": true,
-            "showDrillToggleButton": true,
-            "showDrillDownLevelButton": true,
-            "showDrillDownExpandButton": true,
-            "showPinButton": true,
-            "showFocusModeButton": true,
-            "showFilterRestatementButton": true,
-            "showSeeDataLayoutToggleButton": true,
-            "showOptionsMenu": true,
-            "showTooltipButton": false
+            "show": false
           }
         ],
         "visualHeaderTooltip": [
@@ -12402,6 +12246,18 @@
               }
             },
             "transparency": 5
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": false,
+            "radius": 0
           }
         ]
       }
@@ -12423,24 +12279,7 @@
         ],
         "title": [
           {
-            "show": false,
-            "titleWrap": true,
-            "fontColor": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "background": {
-              "solid": {
-                "color": "#ffffff"
-              }
-            },
-            "alignment": "left",
-            "fontSize": 12,
-            "fontFamily": "Segoe UI",
-            "bold": false,
-            "italic": false,
-            "underline": false
+            "show": false
           }
         ],
         "subTitle": [
@@ -12489,54 +12328,12 @@
         ],
         "dropShadow": [
           {
-            "show": false,
-            "color": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "position": "Outer",
-            "preset": "BottomRight",
-            "shadowSpread": 3,
-            "shadowBlur": 10,
-            "angle": 45,
-            "shadowDistance": 10,
-            "transparency": 70
+            "show": false
           }
         ],
         "visualHeader": [
           {
-            "show": true,
-            "background": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "border": {
-              "solid": {
-                "color": "#FFFFFF"
-              }
-            },
-            "transparency": 0,
-            "foreground": {
-              "solid": {
-                "color": "#252423"
-              }
-            },
-            "showVisualInformationButton": true,
-            "showVisualWarningButton": true,
-            "showVisualErrorButton": true,
-            "showDrillRoleSelector": true,
-            "showDrillUpButton": true,
-            "showDrillToggleButton": true,
-            "showDrillDownLevelButton": true,
-            "showDrillDownExpandButton": true,
-            "showPinButton": true,
-            "showFocusModeButton": true,
-            "showFilterRestatementButton": true,
-            "showSeeDataLayoutToggleButton": true,
-            "showOptionsMenu": true,
-            "showTooltipButton": false
+            "show": false
           }
         ],
         "visualHeaderTooltip": [
@@ -12567,6 +12364,18 @@
             "underline": false,
             "transparency": 5,
             "page": "Auto"
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "border": [
+          {
+            "show": false,
+            "radius": 0
           }
         ]
       }
